@@ -957,7 +957,7 @@ classDiagram
 <p>PromQL is a powerful functional query language for time series data.</p>
 <h4 id="instant-vectors">Instant Vectors</h4>
 <p>An instant vector returns the most recent value for each time series:</p>
-<pre><code class="lang-promql"># All HTTP requests
+<pre><code class="lang-text"># All HTTP requests
 http_requests_total
 
 # Filtered by method
@@ -971,7 +971,7 @@ http_requests_total{status!~"2.."}
 </code></pre>
 <h4 id="range-vectors">Range Vectors</h4>
 <p>A range vector returns all values within a time window:</p>
-<pre><code class="lang-promql"># Last 5 minutes of data points
+<pre><code class="lang-text"># Last 5 minutes of data points
 http_requests_total[5m]
 
 # Last 1 hour
@@ -979,7 +979,7 @@ http_requests_total[1h]
 </code></pre>
 <h4 id="key-functions-and-operations">Key Functions and Operations</h4>
 <p><strong>Rate and Increase:</strong></p>
-<pre><code class="lang-promql"># Per-second rate over last 5 minutes (most common query)
+<pre><code class="lang-text"># Per-second rate over last 5 minutes (most common query)
 rate(http_requests_total[5m])
 
 # Total increase over last hour
@@ -989,7 +989,7 @@ increase(http_requests_total[1h])
 irate(http_requests_total[5m])
 </code></pre>
 <p><strong>Aggregation:</strong></p>
-<pre><code class="lang-promql"># Total requests across all instances
+<pre><code class="lang-text"># Total requests across all instances
 sum(rate(http_requests_total[5m]))
 
 # Requests per service
@@ -1002,7 +1002,7 @@ sum without (instance) (rate(http_requests_total[5m]))
 topk(5, sum by (service) (rate(http_requests_total[5m])))
 </code></pre>
 <p><strong>Percentiles (Histograms):</strong></p>
-<pre><code class="lang-promql"># 99th percentile latency
+<pre><code class="lang-text"># 99th percentile latency
 histogram_quantile(0.99, 
   sum by (le) (rate(http_request_duration_seconds_bucket[5m]))
 )
@@ -1013,7 +1013,7 @@ histogram_quantile(0.95,
 )
 </code></pre>
 <p><strong>Arithmetic and Comparison:</strong></p>
-<pre><code class="lang-promql"># Error rate percentage
+<pre><code class="lang-text"># Error rate percentage
 sum(rate(http_requests_total{status=~"5.."}[5m])) 
 / 
 sum(rate(http_requests_total[5m])) * 100
@@ -1028,7 +1028,7 @@ sum(rate(http_requests_total{status=~"5.."}[5m]))
 sum(rate(http_requests_total[5m])) &gt; 0.05
 </code></pre>
 <p><strong>Prediction and Trends:</strong></p>
-<pre><code class="lang-promql"># Predict when disk will be full (linear extrapolation)
+<pre><code class="lang-text"># Predict when disk will be full (linear extrapolation)
 predict_linear(node_filesystem_avail_bytes[6h], 24*3600) &lt; 0
 
 # Day-over-day comparison
@@ -1037,7 +1037,7 @@ rate(http_requests_total[5m])
 rate(http_requests_total[5m] offset 1d)
 </code></pre>
 <p><strong>Subqueries:</strong></p>
-<pre><code class="lang-promql"># Maximum rate over the last hour, sampled every minute
+<pre><code class="lang-text"># Maximum rate over the last hour, sampled every minute
 max_over_time(rate(http_requests_total[5m])[1h:1m])
 
 # Average 99th percentile latency over the last day
@@ -3374,7 +3374,7 @@ promtool tsdb analyze /prometheus/data
 <h2 id="11-debugging--observability">11. Debugging &amp; Observability</h2>
 <h3 id="111-prometheus-self-monitoring">11.1 Prometheus Self-Monitoring</h3>
 <p>Prometheus monitors itself. Key metrics to watch:</p>
-<pre><code class="lang-promql"># Is Prometheus healthy?
+<pre><code class="lang-text"># Is Prometheus healthy?
 up{job="prometheus"}
 
 # How many time series are active?
@@ -3424,7 +3424,7 @@ prometheus_target_scrapes_sample_duplicate_timestamp_total
 6. Check if recording rules are evaluating:
    prometheus_rule_group_last_evaluation_timestamp_seconds
 </code></pre><p><strong>Issue: "High cardinality warnings"</strong></p>
-<pre><code class="lang-promql"># Find metrics with most time series
+<pre><code class="lang-text"># Find metrics with most time series
 topk(10, count by (__name__) ({__name__=~".+"}))
 
 # Find labels causing cardinality explosion
@@ -3434,7 +3434,7 @@ count by (__name__, job) ({__name__=~".+"}) &gt; 1000
 count(http_requests_total) by (handler)
 </code></pre>
 <p><strong>Issue: "Slow queries"</strong></p>
-<pre><code class="lang-promql"># Find slow queries
+<pre><code class="lang-text"># Find slow queries
 topk(10, prometheus_engine_query_duration_seconds{quantile="0.99"})
 
 # Common causes:
@@ -3568,7 +3568,7 @@ topk(10, prometheus_engine_query_duration_seconds{quantile="0.99"})
 <li>Predict when disk will fill up at current growth rate</li>
 </ol>
 <p><strong>Solutions:</strong></p>
-<pre><code class="lang-promql"># 1. Total HTTP request rate
+<pre><code class="lang-text"># 1. Total HTTP request rate
 sum(rate(http_requests_total[5m]))
 
 # 2. Error rate percentage for payment service
@@ -3629,7 +3629,7 @@ predict_linear(node_filesystem_avail_bytes{mountpoint="/"}[6h], 24*3600) &lt; 0
 <li>Calculate error budget: 0.1% = 43.2 minutes of downtime per month</li>
 <li>Alert when error budget burn rate exceeds thresholds</li>
 </ul>
-<pre><code class="lang-promql"># Error budget burn rate alerting
+<pre><code class="lang-text"># Error budget burn rate alerting
 # Multi-window, multi-burn rate approach (Google SRE book)
 
 # 1-hour window, 14.4x burn rate (consuming monthly budget in 5 hours)
@@ -3956,7 +3956,7 @@ focus engineering effort on product rather than monitoring infrastructure.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chapter 25: Distributed Monitoring","level":"6.5","depth":1,"next":{"title":"Chapter 26: Event-Driven Architecture","level":"7.1","depth":1,"path":"PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.md","ref":"PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.md","articles":[]},"previous":{"title":"Chapter 24: Observability","level":"6.4","depth":1,"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.md","ref":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.md","mtime":"2026-05-23T05:06:49.284Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:21:13.964Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chapter 25: Distributed Monitoring","level":"6.5","depth":1,"next":{"title":"Chapter 26: Event-Driven Architecture","level":"7.1","depth":1,"path":"PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.md","ref":"PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.md","articles":[]},"previous":{"title":"Chapter 24: Observability","level":"6.4","depth":1,"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.md","ref":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.md","mtime":"2026-05-23T05:40:44.028Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:40:56.121Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

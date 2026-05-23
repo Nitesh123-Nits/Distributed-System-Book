@@ -3753,7 +3753,7 @@ Messages msg4, msg5 never get processed!
 </tbody>
 </table>
 <p><strong>Grafana Dashboard Queries (Prometheus):</strong></p>
-<pre><code class="lang-promql"># Circuit breaker state timeline
+<pre><code class="lang-text"># Circuit breaker state timeline
 circuit_breaker_state{service="payment-service"}
 
 # Failure rate over time
@@ -3829,7 +3829,7 @@ increase(circuit_breaker_state_transitions_total{service="payment-service"}[1h])
 }
 </code></pre>
 <h3 id="113-bulkhead-observability">11.3 Bulkhead Observability</h3>
-<pre><code class="lang-promql"># Active calls per bulkhead
+<pre><code class="lang-text"># Active calls per bulkhead
 bulkhead_active_calls{name="payment-service"}
 
 # Rejection rate
@@ -4336,7 +4336,7 @@ Google Client Throttling: P(reject) = max(0, (requests - K×accepts) / (requests
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chapter 23: Fault Tolerance","level":"6.3","depth":1,"next":{"title":"Chapter 24: Observability","level":"6.4","depth":1,"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.md","ref":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.md","articles":[]},"previous":{"title":"Chapter 22: Reliability Engineering","level":"6.2","depth":1,"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.md","ref":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.md","mtime":"2026-05-23T03:56:29.459Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:21:13.964Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chapter 23: Fault Tolerance","level":"6.3","depth":1,"next":{"title":"Chapter 24: Observability","level":"6.4","depth":1,"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.md","ref":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.md","articles":[]},"previous":{"title":"Chapter 22: Reliability Engineering","level":"6.2","depth":1,"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.md","ref":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.md","mtime":"2026-05-23T05:40:44.020Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:40:56.121Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
