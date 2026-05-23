@@ -246,7 +246,7 @@ PromQL is a powerful functional query language for time series data.
 
 An instant vector returns the most recent value for each time series:
 
-```promql
+```text
 # All HTTP requests
 http_requests_total
 
@@ -264,7 +264,7 @@ http_requests_total{status!~"2.."}
 
 A range vector returns all values within a time window:
 
-```promql
+```text
 # Last 5 minutes of data points
 http_requests_total[5m]
 
@@ -275,7 +275,7 @@ http_requests_total[1h]
 #### Key Functions and Operations
 
 **Rate and Increase:**
-```promql
+```text
 # Per-second rate over last 5 minutes (most common query)
 rate(http_requests_total[5m])
 
@@ -287,7 +287,7 @@ irate(http_requests_total[5m])
 ```
 
 **Aggregation:**
-```promql
+```text
 # Total requests across all instances
 sum(rate(http_requests_total[5m]))
 
@@ -302,7 +302,7 @@ topk(5, sum by (service) (rate(http_requests_total[5m])))
 ```
 
 **Percentiles (Histograms):**
-```promql
+```text
 # 99th percentile latency
 histogram_quantile(0.99, 
   sum by (le) (rate(http_request_duration_seconds_bucket[5m]))
@@ -315,7 +315,7 @@ histogram_quantile(0.95,
 ```
 
 **Arithmetic and Comparison:**
-```promql
+```text
 # Error rate percentage
 sum(rate(http_requests_total{status=~"5.."}[5m])) 
 / 
@@ -332,7 +332,7 @@ sum(rate(http_requests_total[5m])) > 0.05
 ```
 
 **Prediction and Trends:**
-```promql
+```text
 # Predict when disk will be full (linear extrapolation)
 predict_linear(node_filesystem_avail_bytes[6h], 24*3600) < 0
 
@@ -343,7 +343,7 @@ rate(http_requests_total[5m] offset 1d)
 ```
 
 **Subqueries:**
-```promql
+```text
 # Maximum rate over the last hour, sampled every minute
 max_over_time(rate(http_requests_total[5m])[1h:1m])
 
@@ -2615,7 +2615,7 @@ rm -rf /prometheus/data/01CORRUPTED_BLOCK_ID/
 
 Prometheus monitors itself. Key metrics to watch:
 
-```promql
+```text
 # Is Prometheus healthy?
 up{job="prometheus"}
 
@@ -2671,7 +2671,7 @@ Debugging checklist:
 ```
 
 **Issue: "High cardinality warnings"**
-```promql
+```text
 # Find metrics with most time series
 topk(10, count by (__name__) ({__name__=~".+"}))
 
@@ -2683,7 +2683,7 @@ count(http_requests_total) by (handler)
 ```
 
 **Issue: "Slow queries"**
-```promql
+```text
 # Find slow queries
 topk(10, prometheus_engine_query_duration_seconds{quantile="0.99"})
 
@@ -2824,7 +2824,7 @@ Write PromQL queries for:
 5. Predict when disk will fill up at current growth rate
 
 **Solutions:**
-```promql
+```text
 # 1. Total HTTP request rate
 sum(rate(http_requests_total[5m]))
 
@@ -2887,7 +2887,7 @@ Implement Google's SLO-based alerting using error budgets:
 - Calculate error budget: 0.1% = 43.2 minutes of downtime per month
 - Alert when error budget burn rate exceeds thresholds
 
-```promql
+```text
 # Error budget burn rate alerting
 # Multi-window, multi-burn rate approach (Google SRE book)
 

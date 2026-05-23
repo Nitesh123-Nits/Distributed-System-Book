@@ -2829,7 +2829,7 @@ Messages msg4, msg5 never get processed!
 
 **Grafana Dashboard Queries (Prometheus):**
 
-```promql
+```text
 # Circuit breaker state timeline
 circuit_breaker_state{service="payment-service"}
 
@@ -2896,7 +2896,7 @@ increase(circuit_breaker_state_transitions_total{service="payment-service"}[1h])
 
 ### 11.3 Bulkhead Observability
 
-```promql
+```text
 # Active calls per bulkhead
 bulkhead_active_calls{name="payment-service"}
 

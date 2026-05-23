@@ -13,5 +13,8 @@
   "dependencies": {
     "gitbook-plugin-mermaid-gb3": "^2.1.0",
     "honkit": "^6.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
