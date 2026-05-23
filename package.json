@@ -1,0 +1,17 @@
+{
+  "name": "distributed-system-book",
+  "version": "1.0.0",
+  "description": "Welcome to **Distributed Systems: From Fundamentals to Production**, a comprehensive, engineering-focused guide to understanding, designing, and operating distributed systems at scale.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nitesh Kumar Sah",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "gitbook-plugin-mermaid-gb3": "^2.1.0",
+    "honkit": "^6.2.0"
+  }
+}
