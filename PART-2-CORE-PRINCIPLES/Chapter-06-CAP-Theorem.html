@@ -1,0 +1,1360 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 6: CAP Theorem · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.0">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter-07-Consistency-Models.html" />
+    
+    
+    <link rel="prev" href="Chapter-05-Distributed-System-Models.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 1: Foundations</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                    
+                    Chapter 1: Introduction to Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                    
+                    Chapter 2: Networking Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                    
+                    Chapter 3: Time and Clocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                    
+                    Chapter 4: Processes, Threads, and Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2: Core Principles</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="Chapter-05-Distributed-System-Models.html">
+            
+                <a href="Chapter-05-Distributed-System-Models.html">
+            
+                    
+                    Chapter 5: Distributed System Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="Chapter-06-CAP-Theorem.html">
+            
+                <a href="Chapter-06-CAP-Theorem.html">
+            
+                    
+                    Chapter 6: CAP Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Chapter-07-Consistency-Models.html">
+            
+                <a href="Chapter-07-Consistency-Models.html">
+            
+                    
+                    Chapter 7: Consistency Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Chapter-08-Replication.html">
+            
+                <a href="Chapter-08-Replication.html">
+            
+                    
+                    Chapter 8: Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Chapter-09-Partitioning-and-Sharding.html">
+            
+                <a href="Chapter-09-Partitioning-and-Sharding.html">
+            
+                    
+                    Chapter 9: Partitioning and Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="Chapter-10-Consensus-Algorithms.html">
+            
+                <a href="Chapter-10-Consensus-Algorithms.html">
+            
+                    
+                    Chapter 10: Consensus Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3: Storage Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-11-Distributed-Databases.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-11-Distributed-Databases.html">
+            
+                    
+                    Chapter 11: Distributed Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.html">
+            
+                    
+                    Chapter 12: Distributed Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-13-Distributed-Caching.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-13-Distributed-Caching.html">
+            
+                    
+                    Chapter 13: Distributed Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-14-Distributed-File-Systems.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-14-Distributed-File-Systems.html">
+            
+                    
+                    Chapter 14: Distributed File Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-15-Stream-Processing-Systems.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-15-Stream-Processing-Systems.html">
+            
+                    
+                    Chapter 15: Stream Processing Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 4: Microservices and Cloud</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                    
+                    Chapter 16: Microservices Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                    
+                    Chapter 17: Service Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                    
+                    Chapter 18: Containerization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                    
+                    Chapter 19: Kubernetes Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                    
+                    Chapter 20: Service Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 5: Reliability and Scalability</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                    
+                    Chapter 21: Scalability Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                    
+                    Chapter 22: Reliability Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                    
+                    Chapter 23: Fault Tolerance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                    
+                    Chapter 24: Observability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                    
+                    Chapter 25: Distributed Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 6: Advanced Distributed Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                    
+                    Chapter 26: Event-Driven Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                    
+                    Chapter 27: Distributed Scheduling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                    
+                    Chapter 28: Geo-Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                    
+                    Chapter 29: Security in Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                    
+                    Chapter 30: Distributed Machine Learning Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 7: Modern System Design</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                    
+                    Chapter 31: Real-Time Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                    
+                    Chapter 32: Large Scale System Design Case Studies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                    
+                    Chapter 33: Distributed System Anti-Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                    
+                    Chapter 34: Performance Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                    
+                    Chapter 35: Future of Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extras</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../APPENDIX-Mastery-Roadmap.html">
+            
+                <a href="../APPENDIX-Mastery-Roadmap.html">
+            
+                    
+                    Appendix: Mastery Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 6: CAP Theorem</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-6-the-cap-theorem-and-consistency-tradeoffs">Chapter 6: The CAP Theorem and Consistency Tradeoffs</h1>
+<h2 id="1-why-this-matters">1. Why This Matters</h2>
+<p>If you remember only one concept from the entire field of distributed systems, it must be the CAP Theorem. It is the fundamental impossibility result that governs how data behaves when it is spread across a network.</p>
+<p>In a single-node system, life is simple. You write data to a hard drive; if the hard drive is working, you can immediately read that data back. If the computer crashes, the system is down, and nobody can read or write. There is no ambiguity. The system is either completely available or completely broken, and when it is available, the data is always consistent.</p>
+<p>However, modern systems cannot run on a single machine. The scale of the internet demands that data be replicated across multiple machines, multiple data centers, and even multiple continents to ensure high performance, survivability during disasters, and capacity scaling. </p>
+<p>As soon as you split data across a network, a harsh reality sets in: <strong>networks are unreliable</strong>. Packets get dropped, switches crash, fiber optic cables are accidentally severed by construction equipment, and routers become overloaded. When a network fails and your machines can no longer talk to each other, you face an unavoidable architectural choice:</p>
+<ol>
+<li>Do you continue to accept reads and writes on the disconnected machines, risking that they diverge and show users conflicting information?</li>
+<li>Or do you halt operations on some (or all) machines until the network heals, guaranteeing data correctness but causing an outage for your users?</li>
+</ol>
+<p>This is the essence of the CAP Theorem. It proves mathematically that you cannot have a distributed database that guarantees perfect consistency, perfect availability, and complete resilience to network partitions all at the same time. You must choose. </p>
+<p>This choice dictates the entire architecture of a distributed database. It determines whether a system is suitable for an e-commerce shopping cart, a banking ledger, a social media timeline, or a real-time multiplayer game. Understanding CAP and its nuances (like the PACELC theorem and the Consistency Spectrum) is the difference between an architect who builds robust, predictable systems and one who builds systems that silently corrupt user data or suffer catastrophic outages when a network switch blinks.</p>
+<hr></hr>
+<h2 id="2-beginner-intuition">2. Beginner Intuition</h2>
+<p>To truly understand CAP, forget about servers and networks for a moment. Let’s imagine a real-world scenario involving human beings.</p>
+<h3 id="the-two-branch-bank-analogy">The "Two-Branch Bank" Analogy</h3>
+<p>Imagine you are the CEO of a small bank, "Reliable Bank," which has exactly two branches: Branch A in New York and Branch B in London. To provide excellent customer service, you promise your customers two things:</p>
+<ol>
+<li><strong>Consistency:</strong> If a customer deposits money in New York, they can immediately walk into the London branch and see that updated balance.</li>
+<li><strong>Availability:</strong> The bank is always open, 24/7, and will always process transactions immediately.</li>
+</ol>
+<p>To make this work, you give the branch managers a dedicated, direct telephone line. Whenever a customer deposits money in New York, the New York manager tells the customer, "Please wait a moment," picks up the phone, calls London, and says, "Update Alice's account to add $100." Only after London confirms the update does New York tell the customer, "Your deposit is complete."</p>
+<p>This system works perfectly—until a storm severs the telephone line between New York and London. </p>
+<p>This severed telephone line is a <strong>Network Partition (P)</strong>. You, as the CEO, cannot prevent storms. The partition has happened. Now, a customer walks into the New York branch and wants to deposit $100. </p>
+<p>Because the managers cannot communicate, the New York manager must make a choice. They only have two options:</p>
+<p><strong>Option 1: The CP Choice (Consistency over Availability)</strong>
+The New York manager tells the customer, "I'm sorry, our communication line to London is down. I cannot accept your deposit right now because if I do, the London branch won't know about it, and your balance will be inconsistent."</p>
+<ul>
+<li><strong>Result:</strong> You maintained perfect <strong>Consistency (C)</strong> (neither branch has wrong information), but you sacrificed <strong>Availability (A)</strong> (the customer was turned away).</li>
+</ul>
+<p><strong>Option 2: The AP Choice (Availability over Consistency)</strong>
+The New York manager says, "No problem, I will take your $100." They write it down in their local ledger. However, London does not know about this. If the customer's spouse walks into the London branch five minutes later and asks for the balance, London will report the old balance.</p>
+<ul>
+<li><strong>Result:</strong> You maintained perfect <strong>Availability (A)</strong> (the customer's request was processed), but you sacrificed <strong>Consistency (C)</strong> (the two branches now have conflicting information about Alice's balance).</li>
+</ul>
+<p><strong>The Illusion of CA:</strong>
+What if you say, "I want both Consistency and Availability"? You would have to guarantee that the telephone line <em>never</em> breaks. In the real world (and in distributed systems), you cannot guarantee the network. Therefore, <strong>Partition Tolerance (P)</strong> is not a choice; it is a fact of life. You must choose how your system reacts <em>when</em> a partition occurs: do you become CP or AP?</p>
+<hr></hr>
+<h2 id="3-core-theory">3. Core Theory</h2>
+<p>The CAP theorem states that a distributed data store cannot simultaneously guarantee more than two of the following three properties: Consistency, Availability, and Partition tolerance. </p>
+<p>Let's rigorously define these terms, as their specific definitions in CAP are often misunderstood.</p>
+<h3 id="history">History</h3>
+<p>The concept was first presented as a conjecture by Dr. Eric Brewer at the Symposium on Principles of Distributed Computing (PODC) in the year 2000. It deeply influenced the NoSQL movement, giving engineers "permission" to relax consistency in exchange for extreme scalability and availability. </p>
+<p>In 2002, Seth Gilbert and Nancy Lynch of MIT published a formal mathematical proof of Brewer's conjecture, elevating it from a rule-of-thumb to a proven theorem in computer science.</p>
+<h3 id="the-definitions">The Definitions</h3>
+<p><strong>1. Consistency (C)</strong>
+In CAP, Consistency means <strong>Linearizability</strong>. It means that every read receives the most recent write or an error. It requires that the system behaves as if there were only a single copy of the data, and all operations occurred instantaneously in a single, global timeline. </p>
+<ul>
+<li><em>Note:</em> This is entirely different from the "C" in ACID (which stands for database constraints like foreign keys or unique indices). CAP consistency is about <em>staleness</em> and <em>recency</em> of distributed state.</li>
+</ul>
+<p><strong>2. Availability (A)</strong>
+Every non-failing node in the system returns a non-error response for every request, without guaranteeing that it contains the most recent write.</p>
+<ul>
+<li><em>Crucial Detail:</em> To be formally "Available" under CAP, the system must respond <em>eventually</em> (meaning it cannot block indefinitely). More importantly, if a node is alive, it <em>must</em> process the request. It cannot say, "I am alive, but I am in a partitioned state, so I am refusing your read." Refusing a read is a violation of CAP Availability.</li>
+</ul>
+<p><strong>3. Partition Tolerance (P)</strong>
+The system continues to operate despite an arbitrary number of messages being dropped, delayed, or lost by the network between nodes. </p>
+<ul>
+<li>As a system architect, you do not "choose" partition tolerance. The network will partition. Therefore, you are forced to build a system that tolerates it, and you must decide how it behaves (C or A) when the partition occurs.</li>
+</ul>
+<h3 id="the-gilbert-lynch-proof-intuition">The Gilbert-Lynch Proof Intuition</h3>
+<p>The proof relies on an asynchronous network model where messages can be delayed indefinitely. 
+Imagine a simple system with two nodes, Node $N_1$ and Node $N_2$.</p>
+<ol>
+<li>The network completely fails between $N_1$ and $N_2$. They cannot exchange messages (a Partition).</li>
+<li>A client sends a <code>write(X = 1)</code> to $N_1$.</li>
+<li>Since the system must be Available (A), $N_1$ must accept the write and respond "Success". $N_1$ now holds $X=1$.</li>
+<li>A split-second later, another client sends a <code>read(X)</code> to $N_2$.</li>
+<li>Since the system must be Available (A), $N_2$ must respond. </li>
+<li>Because the network is partitioned, $N_2$ never received the update from $N_1$. $N_2$ only knows the old value (e.g., $X=0$).</li>
+<li>$N_2$ returns $X=0$.</li>
+<li>The system has just returned a stale value after a successful write. <strong>Consistency (C) is violated.</strong></li>
+</ol>
+<p>To avoid returning $X=0$, $N_2$ would have had to block or return an error, which would violate Availability. Thus, during a partition, you cannot have both C and A. Q.E.D.</p>
+<h3 id="harvest-and-yield">Harvest and Yield</h3>
+<p>Eric Brewer later proposed thinking about availability in terms of <strong>Harvest</strong> and <strong>Yield</strong>:</p>
+<ul>
+<li><strong>Yield:</strong> The probability of completing a request (traditional availability). "Out of 100 requests, how many succeeded?"</li>
+<li><strong>Harvest:</strong> The fraction of the data reflected in the response. If you query a search engine and 1 out of 100 partitions is down, the system might return results from the 99 healthy partitions. The yield is 100% (the query succeeded), but the harvest is 99% (you missed 1% of the database). This is a practical way AP systems handle failures gracefully.</li>
+</ul>
+<hr></hr>
+<h2 id="4-architecture-deep-dive">4. Architecture Deep Dive</h2>
+<p>How do databases actually implement CP or AP behavior internally? It radically changes the core architecture.</p>
+<h3 id="ap-systems-architecture-high-availability-eventual-consistency">AP Systems Architecture (High Availability, Eventual Consistency)</h3>
+<p>Systems like Cassandra, DynamoDB, and Riak optimize for Availability.</p>
+<ul>
+<li><strong>Topology:</strong> Often peer-to-peer (no single master). Any node can accept writes.</li>
+<li><strong>Data Distribution:</strong> Consistent Hashing is used to distribute data across a ring of nodes.</li>
+<li><strong>Replication Strategy:</strong> "Sloppy Quorums" and asynchronous replication. When a write arrives, the coordinating node writes to whatever replicas are currently reachable.</li>
+<li><strong>Failure Handling:</strong> If the target replica for a write is unreachable, the system performs a <strong>Hinted Handoff</strong>. It writes the data to a <em>different</em>, reachable node with a "hint" saying, "When node X comes back online, give this to X."</li>
+<li><strong>Conflict Resolution:</strong> Because any node can accept writes during a partition, concurrent conflicting writes <em>will</em> happen. AP systems rely on:<ol>
+<li><strong>Last-Write-Wins (LWW):</strong> Using timestamps. Vulnerable to clock skew.</li>
+<li><strong>Vector Clocks:</strong> Tracking causality to detect conflicts and force the client to resolve them.</li>
+<li><strong>CRDTs (Conflict-free Replicated Data Types):</strong> Data structures that mathematically merge conflicting updates without data loss (e.g., a distributed counter).</li>
+</ol>
+</li>
+<li><strong>Read Repair:</strong> When a client reads data, the system queries multiple replicas. If it detects that some replicas have stale data, it returns the newest data to the client and asynchronously sends an update to the stale replicas to fix them.</li>
+</ul>
+<h3 id="cp-systems-architecture-strong-consistency-partial-unavailability">CP Systems Architecture (Strong Consistency, Partial Unavailability)</h3>
+<p>Systems like ZooKeeper, etcd, Spanner, and HBase optimize for Consistency.</p>
+<ul>
+<li><strong>Topology:</strong> Usually Leader-Follower (Master-Slave). </li>
+<li><strong>Data Distribution:</strong> Sharded, but each shard has a strict designated Leader.</li>
+<li><strong>Replication Strategy:</strong> Synchronous replication via Consensus Algorithms (Paxos, Raft, Zab).</li>
+<li><strong>Failure Handling:</strong> To accept a write, the Leader <em>must</em> receive acknowledgments from a majority (quorum) of nodes. E.g., in a 5-node cluster, 3 nodes must agree. </li>
+<li><strong>Partition Behavior:</strong> If a partition separates the Leader from the majority of the cluster, the Leader steps down. It realizes it cannot form a quorum, so it stops accepting reads and writes to prevent split-brain. The system becomes Unavailable in that minority partition. Meanwhile, the majority partition elects a new Leader and continues.</li>
+<li><strong>Consistency Guarantee:</strong> Because every write and every read goes through a rigorous quorum process or directly to the single Leader, stale reads are impossible.</li>
+</ul>
+<h3 id="the-pacelc-theorem">The PACELC Theorem</h3>
+<p>Daniel Abadi recognized that CAP only talks about what happens <em>during</em> a partition. But partitions are rare. What tradeoffs do systems make when the network is perfectly healthy?
+He proposed <strong>PACELC</strong>:</p>
+<ul>
+<li><strong>If P</strong> (Partition occurs): You must choose between <strong>A</strong> (Availability) and <strong>C</strong> (Consistency).</li>
+<li><strong>E</strong>lse (Network is healthy): You must choose between <strong>L</strong> (Latency) and <strong>C</strong> (Consistency).</li>
+</ul>
+<p><strong>PACELC breakdown:</strong></p>
+<ul>
+<li><strong>CP/EC (e.g., MongoDB with strict settings, HBase):</strong> If partition, choose Consistency. Else, choose Consistency (which implies higher Latency, as you must wait for synchronous replication).</li>
+<li><strong>AP/EL (e.g., Cassandra, DynamoDB):</strong> If partition, choose Availability. Else, choose Latency (serve responses extremely fast locally, replicate in the background, sacrificing Consistency).</li>
+<li><strong>CP/EL (e.g., Yahoo PNUTS):</strong> Very rare. Give up availability during partitions, but optimize for latency during normal operations.</li>
+</ul>
+<hr></hr>
+<h2 id="5-visual-diagrams">5. Visual Diagrams</h2>
+<h3 id="diagram-1-the-cap-triangle-mapping">Diagram 1: The CAP Triangle Mapping</h3>
+<p>While it's mathematically impossible to be strictly at the CA point in a distributed system, this triangle shows the design goals of various systems.</p>
+<div class="mermaid">
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#f4f4f4', 'edgeLabelBackground':'#ffffff'}}}%%
+flowchart TD
+    subgraph "The CAP Impossible Triangle"
+    C(("Consistency (C)<br></br><br></br>(ZooKeeper, HBase,<br></br>CockroachDB, Spanner)")) 
+    A(("Availability (A)<br></br><br></br>(Cassandra, DynamoDB,<br></br>Riak, CouchDB)"))
+    P(("Partition Tolerance (P)<br></br><br></br>(Required for Distributed)"))
+
+    C &lt;--&gt;|CP Systems| P
+    A &lt;--&gt;|AP Systems| P
+    C -. "CA (Impossible<br></br>in Distributed Sys)" .- A
+    end
+
+    style C fill:#ff9999,stroke:#333,stroke-width:2px
+    style A fill:#99ccff,stroke:#333,stroke-width:2px
+    style P fill:#99ff99,stroke:#333,stroke-width:2px
+</div>
+
+<h3 id="diagram-2-pacelc-decision-tree">Diagram 2: PACELC Decision Tree</h3>
+<div class="mermaid">
+graph TD
+    Start[System Receives Request] --&gt; PartitionCheck{Is there a Network Partition?}
+    PartitionCheck -- YES --&gt; CAP[CAP Tradeoff]
+    PartitionCheck -- NO --&gt; ELC[ELC Tradeoff]
+
+    CAP --&gt; ChooseA[Choose Availability<br></br>Accept Write, Allow Stale Read]
+    CAP --&gt; ChooseC[Choose Consistency<br></br>Block Write, Return Error]
+
+    ELC --&gt; ChooseL[Choose Latency<br></br>Return immediately, async replication]
+    ELC --&gt; ChooseC2[Choose Consistency<br></br>Wait for Quorum sync, higher latency]
+
+    ChooseA --&gt; SysAP[e.g. Cassandra, Dynamo]
+    ChooseL --&gt; SysAP
+
+    ChooseC --&gt; SysCP[e.g. ZooKeeper, HBase]
+    ChooseC2 --&gt; SysCP
+</div>
+
+<h3 id="diagram-3-network-partition-scenario-cp-vs-ap">Diagram 3: Network Partition Scenario (CP vs AP)</h3>
+<div class="mermaid">
+sequenceDiagram
+    autonumber
+    box LightGray Network Partition Boundary
+    participant Node A (NY)
+    participant Node B (London)
+    end
+    participant Client 1 (NY)
+    participant Client 2 (London)
+
+    Note over Node A (NY), Node B (London): Network Cable Severed!
+    Client 1 (NY)-&gt;&gt;Node A (NY): Write(X=100)
+
+    alt AP System (e.g., Cassandra)
+        Node A (NY)-&gt;&gt;Client 1 (NY): Success (Local write only)
+        Client 2 (London)-&gt;&gt;Node B (London): Read(X)
+        Node B (London)-&gt;&gt;Client 2 (London): Returns old X (Stale Read!)
+        Note right of Client 2 (London): System is Available, but Inconsistent
+    else CP System (e.g., ZooKeeper)
+        Node A (NY)-&gt;&gt;Node B (London): Attempt Quorum Sync... (Fails)
+        Node A (NY)--&gt;&gt;Client 1 (NY): Error / Timeout!
+        Client 2 (London)-&gt;&gt;Node B (London): Read(X)
+        Node B (London)--&gt;&gt;Client 2 (London): Error / Unavailable
+        Note right of Client 2 (London): System is Consistent (no stale data), but Unavailable
+    end
+</div>
+
+<h3 id="diagram-4-the-consistency-spectrum">Diagram 4: The Consistency Spectrum</h3>
+<div class="mermaid">
+graph LR
+    Weak[Weak Consistency] --&gt; Eventual[Eventual Consistency]
+    Eventual --&gt; Causal[Causal Consistency]
+    Causal --&gt; Sequential[Sequential Consistency]
+    Sequential --&gt; Strong[Strong / Linearizable]
+
+    subgraph AP Systems
+    Weak
+    Eventual
+    Causal
+    end
+
+    subgraph CP Systems
+    Sequential
+    Strong
+    end
+</div>
+
+<hr></hr>
+<h2 id="6-real-production-examples">6. Real Production Examples</h2>
+<h3 id="amazon-dynamodb-ap-origins-highly-configurable">Amazon DynamoDB (AP Origins, highly configurable)</h3>
+<p>Originally birthed from the famous "Dynamo" paper, which pioneered the AP architecture. Amazon realized that if the shopping cart was unavailable, they lost millions of dollars. If the shopping cart was inconsistent (a deleted item reappeared, or a quantity was slightly off), the user would just delete it again at checkout. Availability was strictly more profitable than Consistency.
+Today, DynamoDB allows you to configure reads: you can do "Eventually Consistent Reads" (AP, half the price, highly available) or "Strongly Consistent Reads" (CP, higher latency, might fail during partitions).</p>
+<h3 id="apache-cassandra-strict-ap">Apache Cassandra (Strict AP)</h3>
+<p>Designed to handle massive write volumes across multiple data centers without ever going down. It uses tunable consistency. You can say <code>WRITE QUORUM</code> and <code>READ QUORUM</code>. If <code>Read nodes + Write nodes &gt; Total Replication Factor</code>, you get strong consistency <em>assuming no partitions</em>. However, if a partition happens and nodes go down, you can gracefully degrade your application to <code>WRITE ONE</code> to keep the app alive (AP mode). </p>
+<h3 id="google-spanner-the-ca-illusion--extremely-high-availability-cp">Google Spanner (The "CA" Illusion / Extremely High-Availability CP)</h3>
+<p>Google published a paper claiming Spanner is effectively CA. Technically, under CAP, it is a <strong>CP</strong> system. It uses Paxos for strict consistency. If a partition occurs, minority nodes stop accepting reads/writes.
+However, Google controls their own fiber-optic private global network. They engineered the network so that partitions are phenomenally rare. Furthermore, they use atomic clocks and GPS receivers (TrueTime) in every data center to bound clock skew. Because network partitions almost never happen on Google's private fiber, and hardware redundancy is immense, Spanner achieves 5 nines (99.999%) of availability while maintaining strict linearizable consistency. It’s CP, but the 'P' failure is so rare that it feels CA to the user.</p>
+<h3 id="apache-zookeeper--etcd-strict-cp">Apache ZooKeeper / etcd (Strict CP)</h3>
+<p>Used for critical infrastructure coordination (e.g., "Which Kafka broker is the current leader?", "Where are the database shards located?").
+If there is a network partition, it is drastically better for the system to stop and wait than to elect two different leaders (Split-Brain) which would result in data corruption. Thus, etcd and ZooKeeper require a strict majority quorum. If they lose quorum, they completely shut down availability to protect consistency.</p>
+<h3 id="cockroachdb-cp">CockroachDB (CP)</h3>
+<p>Inspired by Spanner. Uses Raft for consensus at the range (shard) level. Guarantees Serializable transactions. If a region goes down in a multi-region deployment, reads and writes that require quorum from the downed region will stall or time out. It explicitly chooses C over A.</p>
+<hr></hr>
+<h2 id="7-java-implementations">7. Java Implementations</h2>
+<p>Let's build a conceptual simulation demonstrating how AP and CP systems react entirely differently to a network partition. </p>
+<p>We will create a simple Key-Value store interface and simulate a network that can forcefully drop packets.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.concurrent.*;
+<span class="hljs-keyword">import</span> java.util.concurrent.atomic.AtomicInteger;
+<span class="hljs-keyword">import</span> java.util.Map;
+<span class="hljs-keyword">import</span> java.util.HashMap;
+
+<span class="hljs-comment">/**
+ * Chapter 6: CAP Theorem Simulation
+ * This code demonstrates CP vs AP behavior under a network partition.
+ */</span>
+
+<span class="hljs-comment">// --- Network Simulation ---</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">NetworkSimulator</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">isPartitioned</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createPartition</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"\n[NETWORK ALERT] A physical cable was severed. Partition created!"</span>);
+        isPartitioned = <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">healPartition</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"\n[NETWORK ALERT] Cable repaired. Partition healed!"</span>);
+        isPartitioned = <span class="hljs-literal">false</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">canCommunicate</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> !isPartitioned;
+    }
+}
+
+<span class="hljs-comment">// --- Common Node Interface ---</span>
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">DatabaseNode</span> {
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">write</span><span class="hljs-params">(String key, String value)</span> <span class="hljs-keyword">throws</span> Exception;
+    String <span class="hljs-title function_">read</span><span class="hljs-params">(String key)</span> <span class="hljs-keyword">throws</span> Exception;
+}
+
+<span class="hljs-comment">// --- 1. The CP System (Consistency over Availability) ---</span>
+<span class="hljs-comment">// Simulates a Leader node that requires synchronous acknowledgment from Follower.</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">CPLeaderNode</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">DatabaseNode</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Map&lt;String, String&gt; dataStore = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentHashMap</span>&lt;&gt;();
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> NetworkSimulator network;
+    <span class="hljs-comment">// Simulating the follower node that must acknowledge writes</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Map&lt;String, String&gt; followerDataStore = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentHashMap</span>&lt;&gt;();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">CPLeaderNode</span><span class="hljs-params">(NetworkSimulator network)</span> {
+        <span class="hljs-built_in">this</span>.network = network;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">write</span><span class="hljs-params">(String key, String value)</span> <span class="hljs-keyword">throws</span> Exception {
+        System.out.println(<span class="hljs-string">"[CP] Client attempting to write: "</span> + key + <span class="hljs-string">"="</span> + value);
+
+        <span class="hljs-comment">// 1. Check if we can reach the quorum (follower)</span>
+        <span class="hljs-keyword">if</span> (!network.canCommunicate()) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Exception</span>(<span class="hljs-string">"CP Write Failed: Network Partition! Cannot reach quorum to guarantee consistency."</span>);
+        }
+
+        <span class="hljs-comment">// 2. Synchronous replication to follower</span>
+        followerDataStore.put(key, value); 
+
+        <span class="hljs-comment">// 3. Local commit</span>
+        dataStore.put(key, value);
+        System.out.println(<span class="hljs-string">"[CP] Write successful. Replicated across quorum."</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">read</span><span class="hljs-params">(String key)</span> <span class="hljs-keyword">throws</span> Exception {
+        System.out.println(<span class="hljs-string">"[CP] Client attempting to read: "</span> + key);
+
+        <span class="hljs-comment">// In strict CP, even reads might require checking quorum to ensure we are still the leader</span>
+        <span class="hljs-keyword">if</span> (!network.canCommunicate()) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Exception</span>(<span class="hljs-string">"CP Read Failed: Network Partition! I might be isolated and have stale data."</span>);
+        }
+        <span class="hljs-keyword">return</span> dataStore.get(key);
+    }
+}
+
+<span class="hljs-comment">// --- 2. The AP System (Availability over Consistency) ---</span>
+<span class="hljs-comment">// Simulates a masterless system where local writes are accepted and synced later.</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">APNode</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">DatabaseNode</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Map&lt;String, String&gt; dataStore = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentHashMap</span>&lt;&gt;();
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> NetworkSimulator network;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Map&lt;String, String&gt; remoteReplicaDataStore = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentHashMap</span>&lt;&gt;();
+
+    <span class="hljs-comment">// Hinted handoff queue</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> ConcurrentLinkedQueue&lt;Runnable&gt; pendingSyncs = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentLinkedQueue</span>&lt;&gt;();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">APNode</span><span class="hljs-params">(NetworkSimulator network)</span> {
+        <span class="hljs-built_in">this</span>.network = network;
+
+        <span class="hljs-comment">// Background thread to heal data when partition resolves</span>
+        <span class="hljs-type">Thread</span> <span class="hljs-variable">antiEntropy</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(() -&gt; {
+            <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+                <span class="hljs-keyword">try</span> {
+                    Thread.sleep(<span class="hljs-number">1000</span>);
+                    <span class="hljs-keyword">if</span> (network.canCommunicate() &amp;&amp; !pendingSyncs.isEmpty()) {
+                        System.out.println(<span class="hljs-string">"[AP Background] Network healed. Processing hinted handoffs..."</span>);
+                        <span class="hljs-keyword">while</span>(!pendingSyncs.isEmpty()) {
+                            pendingSyncs.poll().run();
+                        }
+                    }
+                } <span class="hljs-keyword">catch</span> (InterruptedException e) { <span class="hljs-keyword">break</span>; }
+            }
+        });
+        antiEntropy.setDaemon(<span class="hljs-literal">true</span>);
+        antiEntropy.start();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">write</span><span class="hljs-params">(String key, String value)</span> <span class="hljs-keyword">throws</span> Exception {
+        System.out.println(<span class="hljs-string">"[AP] Client attempting to write: "</span> + key + <span class="hljs-string">"="</span> + value);
+
+        <span class="hljs-comment">// 1. Always accept the write locally! (High Availability)</span>
+        dataStore.put(key, value);
+
+        <span class="hljs-comment">// 2. Try to replicate, if fail, queue it (Hinted Handoff)</span>
+        <span class="hljs-keyword">if</span> (network.canCommunicate()) {
+            remoteReplicaDataStore.put(key, value);
+            System.out.println(<span class="hljs-string">"[AP] Write successful and replicated."</span>);
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">"[AP] Write accepted locally, but partition detected. Queuing async sync."</span>);
+            pendingSyncs.add(() -&gt; remoteReplicaDataStore.put(key, value));
+        }
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">read</span><span class="hljs-params">(String key)</span> <span class="hljs-keyword">throws</span> Exception {
+        System.out.println(<span class="hljs-string">"[AP] Client attempting to read: "</span> + key);
+        <span class="hljs-comment">// Always return local data immediately, even if partitioned (High Availability)</span>
+        <span class="hljs-comment">// Warning: Might return stale data if we are partitioned from other writers!</span>
+        <span class="hljs-keyword">return</span> dataStore.get(key);
+    }
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">readRemote</span><span class="hljs-params">(String key)</span> {
+        <span class="hljs-keyword">return</span> remoteReplicaDataStore.get(key);
+    }
+}
+
+<span class="hljs-comment">// --- Main Execution ---</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CAPSimulation</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException {
+        <span class="hljs-type">NetworkSimulator</span> <span class="hljs-variable">network</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">NetworkSimulator</span>();
+
+        <span class="hljs-type">CPLeaderNode</span> <span class="hljs-variable">cpDatabase</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CPLeaderNode</span>(network);
+        <span class="hljs-type">APNode</span> <span class="hljs-variable">apDatabase</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">APNode</span>(network);
+
+        System.out.println(<span class="hljs-string">"=== NORMAL OPERATION (No Partition) ==="</span>);
+        <span class="hljs-keyword">try</span> {
+            cpDatabase.write(<span class="hljs-string">"balance"</span>, <span class="hljs-string">"100"</span>);
+            apDatabase.write(<span class="hljs-string">"balance"</span>, <span class="hljs-string">"100"</span>);
+        } <span class="hljs-keyword">catch</span> (Exception e) {}
+
+        <span class="hljs-comment">// Uh oh, backhoe cuts the fiber line</span>
+        network.createPartition();
+
+        System.out.println(<span class="hljs-string">"\n=== TESTING CP SYSTEM DURING PARTITION ==="</span>);
+        <span class="hljs-keyword">try</span> {
+            cpDatabase.write(<span class="hljs-string">"balance"</span>, <span class="hljs-string">"200"</span>);
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            System.err.println(e.getMessage()); <span class="hljs-comment">// Will throw Exception!</span>
+        }
+        <span class="hljs-keyword">try</span> {
+            cpDatabase.read(<span class="hljs-string">"balance"</span>);
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            System.err.println(e.getMessage()); <span class="hljs-comment">// Will throw Exception!</span>
+        }
+
+        System.out.println(<span class="hljs-string">"\n=== TESTING AP SYSTEM DURING PARTITION ==="</span>);
+        <span class="hljs-keyword">try</span> {
+            apDatabase.write(<span class="hljs-string">"balance"</span>, <span class="hljs-string">"200"</span>); <span class="hljs-comment">// Will succeed!</span>
+            <span class="hljs-type">String</span> <span class="hljs-variable">val</span> <span class="hljs-operator">=</span> apDatabase.read(<span class="hljs-string">"balance"</span>); <span class="hljs-comment">// Will succeed!</span>
+            System.out.println(<span class="hljs-string">"[AP] Read result from Node A: "</span> + val);
+            System.out.println(<span class="hljs-string">"[AP] Read result from Node B (Remote): "</span> + apDatabase.readRemote(<span class="hljs-string">"balance"</span>)); 
+            System.out.println(<span class="hljs-string">"[AP] Notice the inconsistency! Node A = 200, Node B = 100."</span>);
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            System.err.println(e.getMessage());
+        }
+
+        network.healPartition();
+        Thread.sleep(<span class="hljs-number">1500</span>); <span class="hljs-comment">// Wait for background AP sync</span>
+
+        System.out.println(<span class="hljs-string">"\n=== AFTER PARTITION HEALS ==="</span>);
+        System.out.println(<span class="hljs-string">"[AP] Read result from Node B (Remote): "</span> + apDatabase.readRemote(<span class="hljs-string">"balance"</span>));
+    }
+}
+</code></pre>
+<p><strong>Key Takeaways from the Code:</strong></p>
+<ul>
+<li>The CP System aggressively uses <code>throw new Exception()</code> when <code>!network.canCommunicate()</code>. It completely blocks the client to protect the sanctity of the data.</li>
+<li>The AP System never throws an exception on write. It uses a queue (<code>pendingSyncs</code>) to defer work, accepting that Node A and Node B will have different values temporarily.</li>
+</ul>
+<hr></hr>
+<h2 id="8-performance-analysis">8. Performance Analysis</h2>
+<p>The CAP theorem dictates behavior during failures, but PACELC highlights performance implications during normal operations.</p>
+<h3 id="cp-systems-and-latency-the-l-in-pacelc">CP Systems and Latency (The 'L' in PACELC)</h3>
+<p>When you choose Consistency, you generally pay a latency penalty even when the network is healthy. </p>
+<ul>
+<li>To commit a write, a CP system (like Raft or Paxos) must send the data to multiple nodes and wait for $N/2 + 1$ acknowledgments. </li>
+<li><strong>Throughput:</strong> Usually lower than AP systems. Every transaction requires cross-network coordination.</li>
+<li><strong>Tail Latency:</strong> P99 latency is heavily impacted by the slowest node in the quorum. If Node B is doing Java Garbage Collection and pauses for 50ms, the entire quorum write is delayed by 50ms.</li>
+<li><strong>Scaling bottleneck:</strong> The single Leader handles all writes. You can only scale writes vertically (bigger machine) or by sharding the data to multiple leaders.</li>
+</ul>
+<h3 id="ap-systems-and-latency">AP Systems and Latency</h3>
+<p>AP systems are designed for blistering speed.</p>
+<ul>
+<li>Because an AP system can accept a write on <em>any</em> node and return success immediately (replicating asynchronously in the background), the write latency is effectively the speed of local disk I/O.</li>
+<li><strong>Throughput:</strong> Incredibly high. Scaling is linear; just add more nodes.</li>
+<li><strong>Tail Latency:</strong> Very predictable and low. If a node is slow, the client library automatically routes requests to a faster replica (Hedging requests).</li>
+<li><strong>Cost:</strong> AP systems often consume more background network bandwidth and CPU (for read repairs, anti-entropy, and Merkle tree calculations) to constantly fix data divergence.</li>
+</ul>
+<hr></hr>
+<h2 id="9-tradeoffs">9. Tradeoffs</h2>
+<p>Designing a system requires mapping business requirements to CAP tradeoffs. </p>
+<h3 id="when-to-choose-cp-consistency">When to choose CP (Consistency)</h3>
+<p><strong>Use Cases:</strong> Banking ledgers, billing systems, inventory management, distributed locks.
+<strong>Pros:</strong> </p>
+<ul>
+<li>The developer experience is identical to a single SQL database. You write data, you read it, it’s correct. </li>
+<li>You never have to write complex business logic to resolve conflicts.
+<strong>Cons:</strong></li>
+<li>An outage in the data center or a network switch failure translates directly into user-facing downtime. </li>
+<li>Multi-region setups have high write latency (speed of light between regions).</li>
+</ul>
+<h3 id="when-to-choose-ap-availability">When to choose AP (Availability)</h3>
+<p><strong>Use Cases:</strong> Social media timelines, IoT sensor data, shopping carts, analytics metrics, messaging systems.
+<strong>Pros:</strong></p>
+<ul>
+<li>Extreme resilience. A whole rack of servers can catch fire, and the system won't drop a single user request.</li>
+<li>Very fast, localized response times, making it excellent for multi-continent deployments.
+<strong>Cons:</strong></li>
+<li>Application developers must handle data anomalies. You might read an old value. You might get "ghost" records.</li>
+<li>Conflict resolution is hard. If two users edit the same profile simultaneously during a partition, how do you merge the results? (Last-Write-Wins implies data loss for one user).</li>
+</ul>
+<hr></hr>
+<h2 id="10-failure-scenarios">10. Failure Scenarios</h2>
+<p>What actually happens when things break?</p>
+<p><strong>1. The Split Brain Scenario</strong>
+Imagine a 2-node cluster without a tie-breaker. The network partitions. Node A thinks Node B is dead. Node B thinks Node A is dead. If the system is misconfigured to promote both to Leader, they both accept independent writes. When the network heals, the databases have completely diverged. This is catastrophic data corruption. (This is why CP systems require an odd number of nodes—3, 5, or 7—so a strict majority can always be established).</p>
+<p><strong>2. Asymmetric Partitions</strong>
+Network failures are rarely clean. Often, Node A can talk to Node B, and Node B can talk to Node C, but Node A <em>cannot</em> talk to Node C. This breaks consensus algorithms that assume symmetric connectivity. Advanced CP systems (like Raft) implement specific pre-vote phases to handle this gracefully without causing endless leader election thrashing.</p>
+<p><strong>3. Retry Storms (Cascading Failures in CP)</strong>
+When a partition occurs in a CP system, requests start timing out. Client applications often automatically retry. Millions of clients retrying simultaneously can cause a massive DDoS attack against your own infrastructure. When the partition heals, the sudden flood of retried traffic can instantly crash the recovered nodes.</p>
+<p><strong>4. Clock Skew and Data Loss (AP)</strong>
+AP systems often use Last-Write-Wins (LWW) to resolve conflicts. If Node A's system clock drifts ahead by 5 minutes, every write Node A accepts will have a timestamp 5 minutes in the future. During replication, Node A's writes will silently overwrite and destroy legitimate, newer writes from Node B simply because of clock drift.</p>
+<hr></hr>
+<h2 id="11-debugging--observability">11. Debugging &amp; Observability</h2>
+<p>Validating that a system actually adheres to its CAP promises is notoriously difficult.</p>
+<h3 id="jepsen-testing">Jepsen Testing</h3>
+<p>Kyle Kingsbury created <strong>Jepsen</strong>, an open-source framework specifically designed to torture distributed databases and prove they violate their CAP claims. Jepsen:</p>
+<ol>
+<li>Spawns a cluster of database nodes.</li>
+<li>Generates a concurrent stream of reads and writes via client threads.</li>
+<li>Introduces a "Nemesis" - a process that intentionally wreaks havoc. It drops packets using <code>iptables</code>, kills processes with <code>SIGKILL</code>, pauses nodes using <code>SIGSTOP</code>, and desynchronizes clocks via NTP.</li>
+<li>Uses a linearizability checker (Knossos) to verify that the history of reads and writes makes logical sense. 
+Jepsen tests have found severe data loss and split-brain bugs in almost every major database (MongoDB, Cassandra, Elasticsearch, Kafka, etc.).</li>
+</ol>
+<h3 id="observability-metrics-to-track">Observability Metrics to Track</h3>
+<ul>
+<li><strong>Replica Lag (AP/CP):</strong> How far behind are the followers/replicas from the primary/coordinator? If this spikes, an AP system will start serving highly stale data.</li>
+<li><strong>Read Repair Rate (AP):</strong> In Cassandra, if this metric spikes, it indicates that nodes are diverging heavily and the background repair processes are working overtime.</li>
+<li><strong>Leader Election Count (CP):</strong> If your CP system is electing a new leader multiple times a day, your network is extremely unstable or nodes are experiencing severe GC pauses, causing constant micro-outages.</li>
+</ul>
+<hr></hr>
+<h2 id="12-interview-questions">12. Interview Questions</h2>
+<p>CAP theorem is heavily tested in Senior System Design interviews.</p>
+<h3 id="beginner-level">Beginner Level</h3>
+<p><strong>Q: Explain the CAP theorem in simple terms.</strong>
+<strong>A:</strong> The CAP theorem states that in a distributed computer system, you cannot simultaneously guarantee Consistency (every read gets the most recent write), Availability (every request receives a non-error response), and Partition Tolerance (the system operates despite network failures). Because networks are inherently unreliable, partitions will happen. Therefore, you must architect the system to favor either Consistency (CP) or Availability (AP) during a failure.</p>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<p><strong>Q: Can you just build a "CA" system and avoid partitions?</strong>
+<strong>A:</strong> No. A network partition is a physical reality (hardware failure, router misconfiguration, severed cables). You cannot programmatically prevent physics. Saying you have a "CA" system is equivalent to saying, "My system works perfectly as long as the network never ever fails." In the context of distributed systems spanning multiple machines, 'P' is a prerequisite, not an option. A single-node SQL database is CA, but it isn't a distributed system.</p>
+<p><strong>Q: In an e-commerce platform, which parts of the architecture should be CP and which should be AP?</strong>
+<strong>A:</strong> </p>
+<ul>
+<li><strong>Inventory/Checkout (CP):</strong> You cannot sell an item you don't have. Decrementing stock must be strongly consistent. If the network partitions, it is better to block checkout (sacrifice availability) than to oversell an item and anger a customer. Use a relational DB or CP store like Spanner.</li>
+<li><strong>Product Catalog / User Reviews / Shopping Cart (AP):</strong> If the catalog shows a price that is 5 minutes stale, or a review takes an extra minute to appear, or a shopping cart briefly shows 2 items instead of 3, the business impact is minimal. The priority is keeping the site browsing experience incredibly fast and 100% available. Use an AP store like Cassandra or DynamoDB.</li>
+</ul>
+<h3 id="advanced-faang-level">Advanced (FAANG-level)</h3>
+<p><strong>Q: Explain the PACELC theorem and how it applies to a database like MongoDB.</strong>
+<strong>A:</strong> PACELC expands on CAP. It states that during a Partition (P), you must choose between Availability (A) and Consistency (C). Else (E), during normal operation, you must choose between Latency (L) and Consistency (C). 
+MongoDB, by default, is a single-leader replica set. During a partition, if it loses the primary, it stops accepting writes (chooses C over A). During normal operations, if you set WriteConcern to <code>majority</code> and ReadConcern to <code>linearizable</code>, it waits for replication, sacrificing latency for consistency. Thus, under strict settings, Mongo is <strong>CP/EC</strong>. If you configure it to read from secondary nodes, you sacrifice Consistency for Latency, shifting its behavior.</p>
+<p><strong>Q: How does Google Spanner claim to circumvent CAP?</strong>
+<strong>A:</strong> Spanner doesn't violate CAP; mathematically, it is a CP system. It uses Paxos to ensure strong consistency and will become unavailable if quorum is lost. However, Google uses TrueTime (atomic clocks/GPS) to bound clock uncertainty, and they run on a highly redundant, privately owned fiber network. By virtually eliminating network partitions (the 'P' event) and bounding latency, the unavailability windows are so astronomically small that Google calls it "effectively CA." But under strict CAP definitions, it prioritizes C.</p>
+<hr></hr>
+<h2 id="13-exercises">13. Exercises</h2>
+<p><strong>Conceptual Exercise:</strong>
+Map the following real-world systems to CAP/PACELC:</p>
+<ol>
+<li>ATM Network (Cash withdrawals). <em>Hint: Do ATMs allow you to withdraw money if they lose connection to the central bank?</em></li>
+<li>Twitter / X Timeline.</li>
+<li>Multiplayer First-Person Shooter Game State.</li>
+</ol>
+<p><strong>System Design Exercise:</strong>
+Design a distributed counter system that tracks ad impressions. The system must never drop an impression count, even during network partitions. </p>
+<ul>
+<li><em>Goal:</em> Design an AP system.</li>
+<li><em>Challenge:</em> How do you merge the counts when the partition heals without overwriting data? Investigate CRDTs (specifically G-Counters or PN-Counters).</li>
+</ul>
+<p><strong>Coding Exercise:</strong>
+Take the Java <code>CAPSimulation</code> provided in Chapter 7. Modify the <code>APNode</code> to use a <strong>Vector Clock</strong> instead of blind overwrites. When a network partition heals and the system attempts hinted handoffs, write logic to detect if <code>Node A</code> and <code>Node B</code> have conflicting versions of the same key, and throw an <code>UnresolvedConflictException</code> requiring manual client intervention.</p>
+<hr></hr>
+<h2 id="14-expert-insights">14. Expert Insights</h2>
+<h3 id="the-misconception-of-2-out-of-3">The Misconception of "2 out of 3"</h3>
+<p>A massive disservice was done to the industry by explaining CAP as "Pick 2 out of 3." It implies you can choose CA and throw away P. 
+As Coda Hale famously wrote: "You cannot choose CA. That is like choosing to make a distributed system without the network. CAP means: When the network fails, you have to choose between C and A."</p>
+<h3 id="the-rise-of-newsql">The Rise of NewSQL</h3>
+<p>For a decade (2005-2015), the industry was obsessed with AP systems (NoSQL). Developers were told to accept eventual consistency to achieve scale. 
+However, eventually consistent applications are notoriously difficult to debug. Application developers ended up writing massive amounts of code to handle edge cases, race conditions, and dirty reads. 
+Experts realized that while extreme AP is necessary for things like Amazon's shopping cart, 95% of businesses do not need that level of scale. This led to the rise of <strong>NewSQL</strong> (CockroachDB, TiDB, Spanner)—systems that embrace CP architectures, use advanced consensus protocols (Raft), and rely on extremely fast modern data center networks to minimize the latency penalty. The industry pendulum is swinging back toward Strong Consistency.</p>
+<h3 id="cap-is-not-binary">CAP is Not Binary</h3>
+<p>Consistency is a spectrum (Eventual -&gt; Causal -&gt; Sequential -&gt; Strong). Availability is a spectrum (0 nines to 5 nines). Even "Partition Tolerance" isn't binary; a network can be slow, drop 50% of packets, or alter packet ordering. CAP provides the theoretical extremes, but in real life, you tune knobs. Cassandra lets you adjust consistency per-query. DynamoDB gives you a toggle switch in the API. The best architects don't lock themselves into C or A; they understand how to slide the dial dynamically based on the exact business transaction at hand.</p>
+<hr></hr>
+<h2 id="15-chapter-summary">15. Chapter Summary</h2>
+<ul>
+<li><strong>CAP Theorem:</strong> In a distributed system, you cannot have Consistency, Availability, and Partition Tolerance simultaneously. </li>
+<li><strong>The Reality of P:</strong> Partitions are inevitable due to the physical nature of networks. Therefore, the real choice is between Consistency (CP) and Availability (AP) <em>when</em> a failure occurs.</li>
+<li><strong>Consistency (C):</strong> Every read receives the most recent write. Requires synchronous replication and consensus algorithms.</li>
+<li><strong>Availability (A):</strong> Every request receives a response. Often relies on asynchronous replication and eventual consistency.</li>
+<li><strong>CP Systems:</strong> ZooKeeper, HBase, Spanner, CockroachDB. They protect data correctness at the cost of downtime during network failures.</li>
+<li><strong>AP Systems:</strong> Cassandra, DynamoDB, Riak. They keep the application alive at the cost of serving stale data and requiring complex conflict resolution.</li>
+<li><strong>PACELC:</strong> An extension of CAP that adds: Even when the network is healthy, you must trade off Latency (L) versus Consistency (C).</li>
+<li><strong>Testing:</strong> Verifying CAP properties requires sophisticated chaos engineering, exemplified by tools like Jepsen, which intentionally break networks to observe database behavior. </li>
+<li><strong>The Architect's Role:</strong> Real-world design is about mapping different features of a single application (e.g., checkout vs. product catalog) to the correct point on the CAP/PACELC spectrum.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter-05-Distributed-System-Models.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 5: Distributed System Models">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter-07-Consistency-Models.html" class="navigation navigation-next " aria-label="Next page: Chapter 7: Consistency Models">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 6: CAP Theorem","level":"3.2","depth":1,"next":{"title":"Chapter 7: Consistency Models","level":"3.3","depth":1,"path":"PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.md","ref":"PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.md","articles":[]},"previous":{"title":"Chapter 5: Distributed System Models","level":"3.1","depth":1,"path":"PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.md","ref":"PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.md","mtime":"2026-05-23T04:11:52.007Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:21:13.964Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

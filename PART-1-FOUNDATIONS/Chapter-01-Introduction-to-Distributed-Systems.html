@@ -1,0 +1,3281 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 1: Introduction to Distributed Systems · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.0">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter-02-Networking-Fundamentals.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 1: Foundations</li>
+        
+        
+    
+        <li class="chapter active" data-level="2.1" data-path="Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                <a href="Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                    
+                    Chapter 1: Introduction to Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Chapter-02-Networking-Fundamentals.html">
+            
+                <a href="Chapter-02-Networking-Fundamentals.html">
+            
+                    
+                    Chapter 2: Networking Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Chapter-03-Time-and-Clocks.html">
+            
+                <a href="Chapter-03-Time-and-Clocks.html">
+            
+                    
+                    Chapter 3: Time and Clocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Chapter-04-Processes-Threads-Concurrency.html">
+            
+                <a href="Chapter-04-Processes-Threads-Concurrency.html">
+            
+                    
+                    Chapter 4: Processes, Threads, and Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2: Core Principles</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                    
+                    Chapter 5: Distributed System Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                    
+                    Chapter 6: CAP Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                    
+                    Chapter 7: Consistency Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                    
+                    Chapter 8: Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                    
+                    Chapter 9: Partitioning and Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                    
+                    Chapter 10: Consensus Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3: Storage Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-11-Distributed-Databases.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-11-Distributed-Databases.html">
+            
+                    
+                    Chapter 11: Distributed Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.html">
+            
+                    
+                    Chapter 12: Distributed Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-13-Distributed-Caching.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-13-Distributed-Caching.html">
+            
+                    
+                    Chapter 13: Distributed Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-14-Distributed-File-Systems.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-14-Distributed-File-Systems.html">
+            
+                    
+                    Chapter 14: Distributed File Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-15-Stream-Processing-Systems.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-15-Stream-Processing-Systems.html">
+            
+                    
+                    Chapter 15: Stream Processing Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 4: Microservices and Cloud</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                    
+                    Chapter 16: Microservices Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                    
+                    Chapter 17: Service Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                    
+                    Chapter 18: Containerization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                    
+                    Chapter 19: Kubernetes Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                    
+                    Chapter 20: Service Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 5: Reliability and Scalability</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                    
+                    Chapter 21: Scalability Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                    
+                    Chapter 22: Reliability Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                    
+                    Chapter 23: Fault Tolerance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                    
+                    Chapter 24: Observability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                    
+                    Chapter 25: Distributed Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 6: Advanced Distributed Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                    
+                    Chapter 26: Event-Driven Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                    
+                    Chapter 27: Distributed Scheduling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                    
+                    Chapter 28: Geo-Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                    
+                    Chapter 29: Security in Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                    
+                    Chapter 30: Distributed Machine Learning Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 7: Modern System Design</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                    
+                    Chapter 31: Real-Time Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                    
+                    Chapter 32: Large Scale System Design Case Studies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                    
+                    Chapter 33: Distributed System Anti-Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                    
+                    Chapter 34: Performance Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                    
+                    Chapter 35: Future of Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extras</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../APPENDIX-Mastery-Roadmap.html">
+            
+                <a href="../APPENDIX-Mastery-Roadmap.html">
+            
+                    
+                    Appendix: Mastery Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 1: Introduction to Distributed Systems</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-1-introduction-to-distributed-systems">Chapter 1: Introduction to Distributed Systems</h1>
+<hr></hr>
+<blockquote>
+<p><em>"A distributed system is one in which the failure of a computer you didn't even know existed can render your own computer unusable."</em><br></br>— Leslie Lamport</p>
+</blockquote>
+<hr></hr>
+<h2 id="1-why-this-matters">1. Why This Matters</h2>
+<p>Every time you open Google Search, stream a movie on Netflix, order food through DoorDash, or send a message on WhatsApp, you are interacting with a distributed system. The phone in your pocket communicates with data centers spread across continents, and those data centers coordinate with each other to serve you a response in milliseconds. Understanding distributed systems is not optional for any serious software engineer — it is the <strong>foundation</strong> of modern computing.</p>
+<h3 id="the-scale-of-the-problem">The Scale of the Problem</h3>
+<p>Consider these numbers:</p>
+<table>
+<thead>
+<tr>
+<th>Company</th>
+<th>Scale Metric</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google</td>
+<td>8.5 billion searches/day</td>
+<td>~99,000 queries per second sustained</td>
+</tr>
+<tr>
+<td>Netflix</td>
+<td>238 million subscribers streaming</td>
+<td>Petabytes of video delivered per hour</td>
+</tr>
+<tr>
+<td>Amazon</td>
+<td>375 million items in catalog</td>
+<td>Millions of transactions per second on Prime Day</td>
+</tr>
+<tr>
+<td>WhatsApp</td>
+<td>100 billion messages/day</td>
+<td>~1.15 million messages per second</td>
+</tr>
+<tr>
+<td>Uber</td>
+<td>23 million trips/day</td>
+<td>Real-time matching, routing, pricing across 10,000+ cities</td>
+</tr>
+</tbody>
+</table>
+<p>No single computer — no matter how powerful — can handle this load. No single data center can survive a hurricane, earthquake, or power outage while maintaining 99.999% uptime. No single geographic location can serve users globally with sub-100ms latency.</p>
+<p><strong>This is why distributed systems exist.</strong></p>
+<h3 id="industry-relevance">Industry Relevance</h3>
+<ul>
+<li><strong>System Design Interviews</strong>: FAANG companies expect deep understanding of distributed systems. Every system design question (design Twitter, design Uber, design a URL shortener) is fundamentally a distributed systems problem.</li>
+<li><strong>Cloud-Native Development</strong>: AWS, GCP, and Azure are platforms for building distributed systems. Kubernetes, Kafka, DynamoDB — all distributed systems.</li>
+<li><strong>Career Growth</strong>: Senior engineers and architects must reason about consistency, availability, partitioning, replication, and consensus. These are all distributed systems concepts.</li>
+<li><strong>Production Reliability</strong>: Understanding distributed systems is the difference between building systems that gracefully handle failures and systems that cascade into total outages.</li>
+</ul>
+<h3 id="who-needs-this-knowledge">Who Needs This Knowledge</h3>
+<ul>
+<li>Backend engineers building microservices</li>
+<li>Platform/infrastructure engineers designing for scale</li>
+<li>Site Reliability Engineers (SREs) debugging production incidents</li>
+<li>Engineering managers making architectural decisions</li>
+<li>Anyone preparing for system design interviews</li>
+</ul>
+<hr></hr>
+<h2 id="2-beginner-intuition">2. Beginner Intuition</h2>
+<h3 id="the-restaurant-analogy">The Restaurant Analogy</h3>
+<p>Imagine you own a small restaurant with one chef, one waiter, and one cashier. Everything works fine when you have 10 customers. The chef cooks, the waiter serves, the cashier handles payments. Everyone communicates by shouting across the room.</p>
+<p><strong>This is a monolithic system.</strong></p>
+<p>Now imagine your restaurant becomes wildly popular. You have 10,000 customers per day. What do you do?</p>
+<p><strong>Option 1: Get a bigger restaurant (Vertical Scaling)</strong>
+You move to a bigger space, hire a faster chef, get a bigger oven. This works... until it doesn't. There's a limit to how fast one chef can cook, how big one oven can be. And if your chef gets sick, the entire restaurant shuts down.</p>
+<p><strong>Option 2: Open multiple restaurants (Horizontal Scaling)</strong>
+You open 10 restaurants across the city. Each restaurant handles a portion of the customers. Now you have new problems:</p>
+<ul>
+<li>How do you keep the menu consistent across all locations? (<strong>Consistency</strong>)</li>
+<li>If one restaurant catches fire, how do customers know to go to another? (<strong>Fault Tolerance</strong>)</li>
+<li>How do you ensure customers get routed to the nearest restaurant? (<strong>Load Balancing</strong>)</li>
+<li>If a customer starts dining at one location and wants to pay at another, how do you handle that? (<strong>State Management</strong>)</li>
+<li>What if the phone lines between restaurants go down? (<strong>Network Partitions</strong>)</li>
+</ul>
+<p><strong>This is a distributed system.</strong></p>
+<h3 id="the-simplest-definition">The Simplest Definition</h3>
+<p>A distributed system is a collection of independent computers (nodes) that appears to the user as a single coherent system.</p>
+<p>Think of it like a swan gliding across a lake — serene and effortless on the surface, but paddling furiously beneath the water. The user sees one system; underneath, dozens (or thousands) of machines are coordinating, failing, recovering, and communicating to maintain the illusion.</p>
+<h3 id="key-intuitions-to-build">Key Intuitions to Build</h3>
+<p>Before diving into formalism, build these intuitions:</p>
+<ol>
+<li><p><strong>Messages, not method calls</strong>: In a distributed system, components communicate by sending messages over a network, not by calling functions in the same process. Messages can be lost, delayed, duplicated, or reordered.</p>
+</li>
+<li><p><strong>Partial failure is the norm</strong>: In a single computer, either the whole machine works or the whole machine crashes. In a distributed system, some parts can fail while others continue working. This is the fundamental challenge.</p>
+</li>
+<li><p><strong>No global clock</strong>: Each machine has its own clock, and they drift. You cannot simply say "this event happened before that event" without careful coordination.</p>
+</li>
+<li><p><strong>No shared memory</strong>: Each machine has its own memory. To share data, you must send it over the network, which is slow and unreliable compared to local memory access.</p>
+</li>
+<li><p><strong>Things take time</strong>: Network communication adds latency. A local function call takes nanoseconds; a network round-trip takes milliseconds. That's a million-fold difference.</p>
+</li>
+</ol>
+<pre><code>Local function call:    ~1 nanosecond      (1 ns)
+In-memory cache:        ~100 nanoseconds   (100 ns)
+SSD read:               ~16 microseconds   (16,000 ns)
+Network round-trip:     ~500 microseconds  (500,000 ns)  — same data center
+Cross-region network:   ~50 milliseconds   (50,000,000 ns)
+Cross-continent:        ~150 milliseconds  (150,000,000 ns)
+</code></pre><hr></hr>
+<h2 id="3-core-theory">3. Core Theory</h2>
+<h3 id="31-formal-definition">3.1 Formal Definition</h3>
+<p><strong>Andrew Tanenbaum's Definition:</strong></p>
+<blockquote>
+<p>"A distributed system is a collection of independent computers that appears to its users as a single coherent system."</p>
+</blockquote>
+<p><strong>Leslie Lamport's (Humorous) Definition:</strong></p>
+<blockquote>
+<p>"A distributed system is one in which the failure of a computer you didn't even know existed can render your own computer unusable."</p>
+</blockquote>
+<p><strong>Coulouris et al.'s Definition:</strong></p>
+<blockquote>
+<p>"A distributed system is one in which components located at networked computers communicate and coordinate their actions only by passing messages."</p>
+</blockquote>
+<p>Let's formalize this. A distributed system <code>DS</code> can be characterized as a tuple:</p>
+<pre><code>DS = (N, C, P, F)
+</code></pre><p>Where:</p>
+<ul>
+<li><strong>N</strong> = {n₁, n₂, ..., nₖ} is a set of nodes (independent computing entities)</li>
+<li><strong>C</strong> = communication channels between nodes (the network)</li>
+<li><strong>P</strong> = a set of protocols governing how nodes interact</li>
+<li><strong>F</strong> = a failure model describing what can go wrong</li>
+</ul>
+<p>Each node <code>nᵢ</code> has:</p>
+<ul>
+<li>Its own local state <code>Sᵢ</code></li>
+<li>Its own local clock <code>Tᵢ</code></li>
+<li>Its own processing capability</li>
+<li>No direct access to the state of other nodes</li>
+</ul>
+<h3 id="32-why-distributed-systems-exist">3.2 Why Distributed Systems Exist</h3>
+<p>There are five fundamental reasons why we build distributed systems:</p>
+<h4 id="1-scalability">1. Scalability</h4>
+<p>A single machine has physical limits: CPU cores, RAM capacity, disk I/O bandwidth, network bandwidth. When your application exceeds these limits, you must distribute the workload across multiple machines.</p>
+<p><strong>Types of Scalability:</strong></p>
+<ul>
+<li><strong>Vertical Scaling (Scale Up)</strong>: Bigger machine, more RAM, faster CPU. Limited by hardware ceilings and increasingly expensive.</li>
+<li><strong>Horizontal Scaling (Scale Out)</strong>: More machines, each handling a portion of the work. Theoretically unlimited but introduces complexity.</li>
+</ul>
+<p><strong>Vertical Scaling Cost Curve</strong> <em>(Cost grows superlinearly with vertical scaling)</em>
+| Performance | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|-------------|---|---|---|---|---|---|---|---|---|----|
+| <strong>Cost ($)</strong>| 1 | 2 | 4 | 8 | 16| 28| 45| 65| 85| 100|</p>
+<p><br></br></p>
+<p><strong>Horizontal Scaling Cost Curve</strong> <em>(Cost grows roughly linearly with horizontal scaling)</em>
+| Performance | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|-------------|---|---|---|---|---|---|---|---|---|----|
+| <strong>Cost ($)</strong>| 10| 20| 30| 40| 50| 60| 70| 80| 90| 100|</p>
+<h4 id="2-reliability-and-fault-tolerance">2. Reliability and Fault Tolerance</h4>
+<p>Hardware fails. Networks fail. Data centers lose power. Natural disasters happen. A distributed system can be designed to tolerate failures by replicating data and computation across multiple independent nodes and locations.</p>
+<p><strong>The math of reliability:</strong></p>
+<ul>
+<li>Single server with 99.9% uptime = ~8.7 hours of downtime/year</li>
+<li>Two redundant servers, each 99.9%: P(both down) = 0.001 × 0.001 = 0.000001 = 99.9999% uptime = ~31 seconds of downtime/year</li>
+</ul>
+<p>This assumes independent failures, which in practice requires geographic separation, independent power supplies, and independent network paths.</p>
+<h4 id="3-geographic-distribution">3. Geographic Distribution</h4>
+<p>Users are spread across the globe. Physics limits the speed of light, and thus the minimum latency for network communication:</p>
+<ul>
+<li>New York to London: ~75ms round-trip (best case)</li>
+<li>New York to Tokyo: ~160ms round-trip (best case)</li>
+<li>New York to Sydney: ~230ms round-trip (best case)</li>
+</ul>
+<p>By placing servers close to users, you reduce latency. This requires a distributed system.</p>
+<h4 id="4-economic-efficiency">4. Economic Efficiency</h4>
+<ul>
+<li>Commodity hardware (many cheap machines) is more cost-effective than specialized supercomputers for most workloads.</li>
+<li>Cloud computing (AWS, GCP, Azure) makes it trivially easy to add machines.</li>
+<li>Pay-per-use models incentivize distributed architectures that can scale elastically.</li>
+</ul>
+<h4 id="5-regulatory-requirements">5. Regulatory Requirements</h4>
+<ul>
+<li>GDPR requires data about EU citizens to be stored in the EU.</li>
+<li>Data sovereignty laws in various countries mandate local data storage.</li>
+<li>This forces geographic distribution of data and computation.</li>
+</ul>
+<h3 id="33-characteristics-of-distributed-systems">3.3 Characteristics of Distributed Systems</h3>
+<h4 id="concurrency">Concurrency</h4>
+<p>Multiple components execute simultaneously. Two users on different continents might be updating the same record at the same time. Handling this correctly is one of the hardest problems in distributed systems.</p>
+<h4 id="no-global-clock">No Global Clock</h4>
+<p>Each node has its own clock, and clocks drift. NTP (Network Time Protocol) can synchronize clocks to within a few milliseconds, but not perfectly. This means:</p>
+<ul>
+<li>You cannot simply timestamp events and compare them across nodes.</li>
+<li>Ordering events requires logical clocks (Lamport timestamps) or vector clocks.</li>
+<li>Google's TrueTime API uses GPS and atomic clocks to bound clock uncertainty.</li>
+</ul>
+<h4 id="independent-failures">Independent Failures</h4>
+<p>Nodes and network links can fail independently. This leads to <strong>partial failures</strong> — some parts of the system work while others don't. Detecting whether a remote node has failed or is just slow is fundamentally impossible to distinguish with certainty (this is the crux of the FLP impossibility result).</p>
+<h4 id="message-passing">Message Passing</h4>
+<p>Nodes communicate by sending messages over a network. Messages can be:</p>
+<ul>
+<li><strong>Lost</strong>: The network can drop packets.</li>
+<li><strong>Delayed</strong>: Messages may arrive much later than expected.</li>
+<li><strong>Duplicated</strong>: Retransmission mechanisms can create duplicates.</li>
+<li><strong>Reordered</strong>: Messages may arrive in a different order than sent.</li>
+<li><strong>Corrupted</strong>: Bit flips can alter message contents (though checksums catch most).</li>
+</ul>
+<h3 id="34-models-of-distributed-systems">3.4 Models of Distributed Systems</h3>
+<h4 id="synchronous-model">Synchronous Model</h4>
+<ul>
+<li>Bounded message delivery time</li>
+<li>Bounded processing time</li>
+<li>Bounded clock drift</li>
+<li><strong>Theoretical assumption</strong>, rarely true in practice</li>
+<li>Simplifies algorithm design but is unrealistic</li>
+</ul>
+<h4 id="asynchronous-model">Asynchronous Model</h4>
+<ul>
+<li>No bounds on message delivery time</li>
+<li>No bounds on processing time</li>
+<li>No global clock</li>
+<li><strong>Most realistic</strong> model for the Internet</li>
+<li>Makes many problems harder or impossible (see FLP)</li>
+</ul>
+<h4 id="partially-synchronous-model">Partially Synchronous Model</h4>
+<ul>
+<li>Behaves asynchronously sometimes, synchronously at other times</li>
+<li>There exists an unknown bound after which the system behaves synchronously</li>
+<li><strong>Most practical</strong> model — used by most real distributed systems</li>
+</ul>
+<h4 id="failure-models">Failure Models</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crash-stop</td>
+<td>Node stops working and never recovers</td>
+<td>Power failure</td>
+</tr>
+<tr>
+<td>Crash-recovery</td>
+<td>Node stops but can recover with stable storage</td>
+<td>Process crash with restart</td>
+</tr>
+<tr>
+<td>Omission</td>
+<td>Node fails to send/receive some messages</td>
+<td>Network packet loss</td>
+</tr>
+<tr>
+<td>Byzantine</td>
+<td>Node behaves arbitrarily, including maliciously</td>
+<td>Compromised server, hardware bug</td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-the-8-fallacies-of-distributed-computing">3.5 The 8 Fallacies of Distributed Computing</h3>
+<p>In 1994, Peter Deutsch (with additions from James Gosling) identified eight false assumptions that programmers new to distributed systems commonly make. These fallacies are as relevant today as they were 30 years ago.</p>
+<h4 id="fallacy-1-the-network-is-reliable">Fallacy 1: The Network Is Reliable</h4>
+<p><strong>The Reality:</strong> Networks fail constantly. Cables get cut by construction workers. Routers crash. Switches get misconfigured. DNS servers go down. AWS us-east-1 has had multiple major network partitions.</p>
+<p><strong>Real-world Example:</strong> In 2017, a typo in an AWS S3 command caused a massive outage affecting thousands of websites. The S3 API became unavailable in us-east-1 for about 4 hours, bringing down services like Slack, Trello, and IFTTT.</p>
+<p><strong>Implications for Design:</strong></p>
+<ul>
+<li>Always implement retries with exponential backoff</li>
+<li>Design for idempotency (operations can be safely retried)</li>
+<li>Implement circuit breakers to prevent cascading failures</li>
+<li>Use dead letter queues for messages that can't be delivered</li>
+<li>Never assume a network call will succeed</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-comment">// BAD: Assuming the network is reliable</span>
+<span class="hljs-keyword">public</span> User <span class="hljs-title function_">getUser</span><span class="hljs-params">(String userId)</span> {
+    <span class="hljs-keyword">return</span> httpClient.get(<span class="hljs-string">"/users/"</span> + userId, User.class);
+    <span class="hljs-comment">// What if this call fails? Throws an exception? Times out?</span>
+}
+
+<span class="hljs-comment">// GOOD: Handling network unreliability</span>
+<span class="hljs-keyword">public</span> Optional&lt;User&gt; <span class="hljs-title function_">getUser</span><span class="hljs-params">(String userId)</span> {
+    <span class="hljs-type">int</span> <span class="hljs-variable">maxRetries</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">attempt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; attempt &lt; maxRetries; attempt++) {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> httpClient.get(<span class="hljs-string">"/users/"</span> + userId, User.class);
+            <span class="hljs-keyword">return</span> Optional.of(user);
+        } <span class="hljs-keyword">catch</span> (TimeoutException e) {
+            log.warn(<span class="hljs-string">"Timeout fetching user {}, attempt {}/{}"</span>, 
+                userId, attempt + <span class="hljs-number">1</span>, maxRetries);
+            <span class="hljs-keyword">if</span> (attempt &lt; maxRetries - <span class="hljs-number">1</span>) {
+                sleep(exponentialBackoff(attempt));
+            }
+        } <span class="hljs-keyword">catch</span> (NetworkException e) {
+            log.error(<span class="hljs-string">"Network error fetching user {}"</span>, userId, e);
+            circuitBreaker.recordFailure();
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    <span class="hljs-keyword">return</span> Optional.empty(); <span class="hljs-comment">// Graceful degradation</span>
+}
+</code></pre>
+<h4 id="fallacy-2-latency-is-zero">Fallacy 2: Latency Is Zero</h4>
+<p><strong>The Reality:</strong> Every network call adds latency. A local function call takes ~1 nanosecond. A network call to a machine in the same data center takes ~500 microseconds. A cross-continent call takes ~150 milliseconds. That's a factor of 150,000,000x.</p>
+<p><strong>The Chatty Service Problem:</strong> If your service makes 100 sequential network calls to process a single request, and each call takes 5ms, the total latency is 500ms — unacceptable for user-facing applications.</p>
+<p><strong>Implications for Design:</strong></p>
+<ul>
+<li>Batch requests where possible</li>
+<li>Use caching to avoid unnecessary network calls</li>
+<li>Colocate services that communicate frequently</li>
+<li>Use asynchronous communication for non-critical paths</li>
+<li>Monitor P50, P95, P99 latencies, not just averages</li>
+<li>Design APIs to return everything needed in a single call (avoid chatty interfaces)</li>
+</ul>
+<h4 id="fallacy-3-bandwidth-is-infinite">Fallacy 3: Bandwidth Is Infinite</h4>
+<p><strong>The Reality:</strong> While bandwidth has increased dramatically, so has the volume of data. Video streaming, machine learning model training, and big data analytics push bandwidth to its limits. Even within a data center, network bandwidth is shared and can become congested.</p>
+<p><strong>Implications for Design:</strong></p>
+<ul>
+<li>Compress data before sending</li>
+<li>Use efficient serialization formats (Protocol Buffers, Avro) instead of verbose JSON/XML for internal communication</li>
+<li>Implement pagination for large data sets</li>
+<li>Use streaming instead of loading entire data sets into memory</li>
+<li>Consider data locality — move computation to data, not data to computation</li>
+</ul>
+<h4 id="fallacy-4-the-network-is-secure">Fallacy 4: The Network Is Secure</h4>
+<p><strong>The Reality:</strong> Networks are hostile environments. Man-in-the-middle attacks, packet sniffing, DNS spoofing, DDoS attacks — these are daily realities for any system connected to the Internet.</p>
+<p><strong>Implications for Design:</strong></p>
+<ul>
+<li>Encrypt all communication (TLS/mTLS)</li>
+<li>Authenticate every request (JWT, OAuth, API keys)</li>
+<li>Implement zero-trust networking (don't trust internal networks)</li>
+<li>Use network segmentation</li>
+<li>Regular security audits and penetration testing</li>
+</ul>
+<h4 id="fallacy-5-topology-doesnt-change">Fallacy 5: Topology Doesn't Change</h4>
+<p><strong>The Reality:</strong> In modern cloud environments, topology changes constantly. VMs spin up and down. Containers are scheduled on different hosts. Auto-scaling groups add and remove instances. Service meshes route traffic dynamically.</p>
+<p><strong>Implications for Design:</strong></p>
+<ul>
+<li>Use service discovery (Consul, Eureka, Kubernetes DNS)</li>
+<li>Don't hardcode IP addresses</li>
+<li>Design for dynamic scaling</li>
+<li>Implement health checks and automatic failover</li>
+</ul>
+<h4 id="fallacy-6-there-is-one-administrator">Fallacy 6: There Is One Administrator</h4>
+<p><strong>The Reality:</strong> In a large distributed system, many teams manage different components. Your service depends on databases managed by the DBA team, networks managed by the infrastructure team, cloud resources managed by the platform team, and third-party APIs managed by external companies.</p>
+<p><strong>Implications for Design:</strong></p>
+<ul>
+<li>Design defensively — don't trust your dependencies</li>
+<li>Implement bulkheads to isolate failures</li>
+<li>Use contracts (API specifications) between teams</li>
+<li>Monitor your dependencies</li>
+</ul>
+<h4 id="fallacy-7-transport-cost-is-zero">Fallacy 7: Transport Cost Is Zero</h4>
+<p><strong>The Reality:</strong> Serializing data, sending it over the network, and deserializing it on the other end all cost CPU cycles and time. Cloud providers charge for data transfer. Cross-region and cross-provider transfer is expensive.</p>
+<p><strong>Implications for Design:</strong></p>
+<ul>
+<li>Be mindful of serialization overhead</li>
+<li>Cache aggressively to reduce network calls</li>
+<li>Colocate related services to minimize cross-zone traffic</li>
+<li>Use efficient wire formats (Protobuf over JSON for internal services)</li>
+</ul>
+<p><strong>Cost Reference (approximate):</strong></p>
+<pre><code>AWS Data Transfer Costs (2024):
+- Same Availability Zone: Free
+- Cross-AZ (same region): $0.01/GB each way
+- Cross-region: $0.02/GB
+- To internet: $0.09/GB (first 10 TB)
+</code></pre><h4 id="fallacy-8-the-network-is-homogeneous">Fallacy 8: The Network Is Homogeneous</h4>
+<p><strong>The Reality:</strong> Your distributed system will span multiple types of networks — data center LANs, WANs, cellular networks, WiFi. Each has different characteristics (bandwidth, latency, reliability, MTU).</p>
+<p><strong>Implications for Design:</strong></p>
+<ul>
+<li>Don't assume consistent network performance</li>
+<li>Implement adaptive behavior based on network conditions</li>
+<li>Use protocol negotiation</li>
+<li>Handle varying MTU sizes</li>
+<li>Design for the worst case while optimizing for the common case</li>
+</ul>
+<h3 id="36-key-properties-of-distributed-systems">3.6 Key Properties of Distributed Systems</h3>
+<h4 id="transparency">Transparency</h4>
+<p>Transparency in distributed systems means hiding the distributed nature from users and application programmers. ISO defines several types:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access Transparency</td>
+<td>Hide differences in data representation and invocation</td>
+<td>RPC making remote calls look local</td>
+</tr>
+<tr>
+<td>Location Transparency</td>
+<td>Hide where resources are located</td>
+<td>DNS names instead of IP addresses</td>
+</tr>
+<tr>
+<td>Migration Transparency</td>
+<td>Hide that resources may move</td>
+<td>VM live migration</td>
+</tr>
+<tr>
+<td>Relocation Transparency</td>
+<td>Hide that resources may move while in use</td>
+<td>Mobile IP</td>
+</tr>
+<tr>
+<td>Replication Transparency</td>
+<td>Hide that resources are replicated</td>
+<td>Read replicas behind a load balancer</td>
+</tr>
+<tr>
+<td>Concurrency Transparency</td>
+<td>Hide that resources are shared by concurrent users</td>
+<td>Database transactions</td>
+</tr>
+<tr>
+<td>Failure Transparency</td>
+<td>Hide failures and recovery</td>
+<td>Automatic failover</td>
+</tr>
+<tr>
+<td>Persistence Transparency</td>
+<td>Hide whether data is in memory or on disk</td>
+<td>Transparent caching layers</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important</strong>: Full transparency is often impossible or undesirable. Sometimes you <em>want</em> to expose the distributed nature. For example, you might want to let users choose their data center region for regulatory compliance.</p>
+<h4 id="openness">Openness</h4>
+<p>An open distributed system offers services according to standard rules (interfaces, protocols). This enables interoperability and extensibility. Key aspects:</p>
+<ul>
+<li>Well-defined interfaces (IDL, OpenAPI specifications)</li>
+<li>Standard protocols (HTTP, gRPC, AMQP)</li>
+<li>Separation of policy from mechanism</li>
+</ul>
+<h4 id="scalability">Scalability</h4>
+<p>A system is scalable if it can handle increased load without fundamental changes to its architecture. Scalability has three dimensions:</p>
+<ol>
+<li><strong>Size Scalability</strong>: Adding more users/resources without performance degradation</li>
+<li><strong>Geographic Scalability</strong>: Users and resources can be far apart without unacceptable latency</li>
+<li><strong>Administrative Scalability</strong>: Easy to manage even with many independent organizations</li>
+</ol>
+<h4 id="fault-tolerance">Fault Tolerance</h4>
+<p>The ability of a system to continue operating (possibly in a degraded mode) when some components fail. Key concepts:</p>
+<ul>
+<li><strong>Availability</strong>: Fraction of time the system is operational (measured in "nines")</li>
+<li><strong>Reliability</strong>: Ability to run continuously without failure</li>
+<li><strong>Safety</strong>: Nothing catastrophic happens when failures occur</li>
+<li><strong>Maintainability</strong>: How easily a failed system can be restored</li>
+</ul>
+<pre><code>Availability Levels:
+────────────────────────────────────────────────────
+99%      ("two nines")   = 3.65 days downtime/year
+99.9%    ("three nines") = 8.77 hours downtime/year
+99.99%   ("four nines")  = 52.6 minutes downtime/year
+99.999%  ("five nines")  = 5.26 minutes downtime/year
+99.9999% ("six nines")   = 31.5 seconds downtime/year
+────────────────────────────────────────────────────
+</code></pre><hr></hr>
+<h2 id="4-architecture-deep-dive">4. Architecture Deep Dive</h2>
+<h3 id="41-monolithic-architecture">4.1 Monolithic Architecture</h3>
+<p>In a monolithic architecture, the entire application runs as a single process (or a small number of processes) on a single machine (or a cluster of identical machines behind a load balancer).</p>
+<div class="mermaid">
+flowchart TD
+    subgraph MonolithicApp ["MONOLITHIC APPLICATION"]
+        direction TB
+        User["User<br></br>Module"]
+        Order["Order<br></br>Module"]
+        Payment["Payment<br></br>Module"]
+        SharedDB["Shared Database Layer"]
+
+        User --- SharedDB
+        Order --- SharedDB
+        Payment --- SharedDB
+    end
+
+    RDBMS[("Single RDBMS<br></br>(PostgreSQL)")]
+
+    SharedDB --- RDBMS
+</div>
+
+<p><strong>Advantages of Monoliths:</strong></p>
+<ul>
+<li>Simple to develop, test, deploy</li>
+<li>Single codebase, single deployment artifact</li>
+<li>No network calls between components (in-process communication)</li>
+<li>ACID transactions across the entire data model</li>
+<li>Easy to debug (single process, single log stream)</li>
+<li>Low latency (no serialization/deserialization overhead)</li>
+<li>Consistent: all modules see the same database state</li>
+</ul>
+<p><strong>Disadvantages of Monoliths:</strong></p>
+<ul>
+<li>Single point of failure</li>
+<li>Cannot scale individual components independently</li>
+<li>Technology lock-in (one language, one framework)</li>
+<li>Long deployment cycles (deploying entire app for one-line change)</li>
+<li>Team coordination challenges at scale</li>
+<li>Resource waste (cannot allocate more resources to hot modules)</li>
+<li>Memory and CPU limits of a single machine</li>
+</ul>
+<h3 id="42-distributed-microservices-architecture">4.2 Distributed (Microservices) Architecture</h3>
+<p>In a distributed architecture, the application is decomposed into independent services, each running in its own process, communicating via network protocols.</p>
+<div class="mermaid">
+flowchart TD
+    Gateway["API<br></br>Gateway"]
+
+    UserService["User<br></br>Service"]
+    OrderService["Order<br></br>Service"]
+    PaymentService["Payment<br></br>Service"]
+
+    UserDB[("User DB<br></br>(Postgres)")]
+    OrderDB[("Order DB<br></br>(MySQL)")]
+    PaymentDB[("Payment DB<br></br>(MongoDB)")]
+
+    Gateway --&gt; UserService
+    Gateway --&gt; OrderService
+    Gateway --&gt; PaymentService
+
+    UserService --&gt; UserDB
+    OrderService --&gt; OrderDB
+    PaymentService --&gt; PaymentDB
+</div>
+
+<p><strong>Advantages of Distributed Systems:</strong></p>
+<ul>
+<li>Independent scaling of services</li>
+<li>Technology diversity (polyglot)</li>
+<li>Independent deployments</li>
+<li>Fault isolation</li>
+<li>Team autonomy</li>
+<li>Better resource utilization</li>
+</ul>
+<p><strong>Disadvantages of Distributed Systems:</strong></p>
+<ul>
+<li>Operational complexity</li>
+<li>Network unreliability</li>
+<li>Distributed transactions are hard</li>
+<li>Debugging across services is challenging</li>
+<li>Data consistency challenges</li>
+<li>Higher latency (network calls)</li>
+<li>Monitoring and observability overhead</li>
+</ul>
+<h3 id="43-monolith-vs-distributed-detailed-comparison">4.3 Monolith vs Distributed: Detailed Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Monolith</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Application complexity</td>
+<td>Operational complexity</td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td>All-or-nothing</td>
+<td>Independent services</td>
+</tr>
+<tr>
+<td><strong>Scaling</strong></td>
+<td>Vertical (scale up)</td>
+<td>Horizontal (scale out)</td>
+</tr>
+<tr>
+<td><strong>Data Consistency</strong></td>
+<td>Strong (ACID)</td>
+<td>Eventual (usually)</td>
+</tr>
+<tr>
+<td><strong>Latency</strong></td>
+<td>Low (in-process)</td>
+<td>Higher (network calls)</td>
+</tr>
+<tr>
+<td><strong>Fault Isolation</strong></td>
+<td>Poor (one bug crashes all)</td>
+<td>Good (failures contained)</td>
+</tr>
+<tr>
+<td><strong>Technology Choice</strong></td>
+<td>One stack</td>
+<td>Polyglot</td>
+</tr>
+<tr>
+<td><strong>Team Structure</strong></td>
+<td>One team or tightly coupled</td>
+<td>Independent teams</td>
+</tr>
+<tr>
+<td><strong>Testing</strong></td>
+<td>Unit + integration (simpler)</td>
+<td>Contract + integration (complex)</td>
+</tr>
+<tr>
+<td><strong>Debugging</strong></td>
+<td>Single process, stack trace</td>
+<td>Distributed tracing required</td>
+</tr>
+<tr>
+<td><strong>Transaction</strong></td>
+<td>ACID across entire DB</td>
+<td>Saga pattern, eventual consistency</td>
+</tr>
+<tr>
+<td><strong>Initial Development</strong></td>
+<td>Faster</td>
+<td>Slower</td>
+</tr>
+<tr>
+<td><strong>Long-term Maintenance</strong></td>
+<td>Gets harder over time</td>
+<td>Easier with proper boundaries</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44-migration-stories">4.4 Migration Stories</h3>
+<h4 id="amazons-migration-2001-2006">Amazon's Migration (2001-2006)</h4>
+<p>In the early 2000s, Amazon's monolithic application was becoming unmaintainable. CEO Jeff Bezos issued his famous mandate:</p>
+<ol>
+<li>All teams will henceforth expose their data and functionality through service interfaces.</li>
+<li>Teams must communicate with each other through these interfaces.</li>
+<li>There will be no other form of interprocess communication allowed.</li>
+<li>It doesn't matter what technology they use.</li>
+<li>All service interfaces, without exception, must be designed from the ground up to be externalizable.</li>
+<li>Anyone who doesn't do this will be fired.</li>
+</ol>
+<p>This mandate transformed Amazon into a services-oriented company and eventually gave birth to AWS.</p>
+<h4 id="netflixs-migration-2008-2016">Netflix's Migration (2008-2016)</h4>
+<p>In 2008, Netflix had a major database corruption incident with their monolithic Oracle database. This was the catalyst for their migration to a distributed, cloud-native architecture on AWS.</p>
+<p>Key decisions:</p>
+<ul>
+<li>Moved from a single Oracle database to dozens of distributed databases (Cassandra, DynamoDB, etc.)</li>
+<li>Developed the Netflix OSS stack (Eureka, Zuul, Hystrix, Ribbon)</li>
+<li>Implemented the Chaos Engineering discipline (Chaos Monkey, Chaos Kong)</li>
+<li>Moved from a single data center to multi-region AWS deployment</li>
+</ul>
+<p>The migration took ~7 years but resulted in a system that could:</p>
+<ul>
+<li>Serve 238+ million subscribers globally</li>
+<li>Survive entire AWS region failures</li>
+<li>Deploy thousands of times per day</li>
+</ul>
+<h4 id="twitters-journey">Twitter's Journey</h4>
+<p>Twitter initially ran on a monolithic Ruby on Rails application. As the platform grew (remember the "Fail Whale"?), they decomposed it into:</p>
+<ul>
+<li>Timeline service</li>
+<li>Tweet service  </li>
+<li>User service</li>
+<li>Search service (Earlybird)</li>
+<li>Fan-out service</li>
+</ul>
+<p>They rewrote critical paths in Scala (using the Finatra framework) and Java for performance.</p>
+<h3 id="45-request-flow-in-a-distributed-system">4.5 Request Flow in a Distributed System</h3>
+<p>Let's trace a request through a modern distributed system — ordering food on a delivery platform:</p>
+<div class="mermaid">
+sequenceDiagram
+    participant User
+    participant Gateway as API Gateway
+    participant Auth as Auth Service
+    participant Order as Order Service
+    participant Rest as Restaurant Service
+    participant Pay as Payment Service
+    participant Notif as Notification Service
+
+    User-&gt;&gt;Gateway: POST /api/orders
+    Gateway-&gt;&gt;Auth: Validate JWT token
+    Auth--&gt;&gt;Gateway: Token valid ✓
+
+    Gateway-&gt;&gt;Order: Forward to Order Service
+    Order-&gt;&gt;Rest: Check restaurant availability
+    Rest--&gt;&gt;Order: Available ✓
+
+    Order-&gt;&gt;Pay: Charge customer
+    Pay--&gt;&gt;Order: Payment processed ✓
+
+    Order-&gt;&gt;Notif: Notify restaurant
+    Order--&gt;&gt;User: Order confirmed
+</div>
+
+<p>This flow involves:</p>
+<ul>
+<li><strong>6 network hops</strong> minimum</li>
+<li><strong>4 different services</strong> coordinated</li>
+<li><strong>Multiple databases</strong> updated</li>
+<li><strong>At least 3 potential failure points</strong> (what if payment fails? what if notification fails?)</li>
+<li><strong>Distributed transaction</strong> semantics (if payment fails, roll back the order)</li>
+</ul>
+<h3 id="46-failure-modes-in-distributed-systems">4.6 Failure Modes in Distributed Systems</h3>
+<div class="mermaid">
+graph LR
+    Root["FAILURE MODES TAXONOMY"]
+
+    Root --&gt; Node["1. Node Failures"]
+    Node --&gt; N1["Crash Failure<br></br>(node stops working)"]
+    Node --&gt; N2["Omission Failure<br></br>(node misses messages)"]
+    Node --&gt; N3["Byzantine Failure<br></br>(node acts arbitrarily)"]
+
+    Root --&gt; Network["2. Network Failures"]
+    Network --&gt; NW1["Partition<br></br>(network split)"]
+    Network --&gt; NW2["Message Loss<br></br>(dropped packets)"]
+    Network --&gt; NW3["Message Delay<br></br>(slow network)"]
+    Network --&gt; NW4["Message Corruption<br></br>(bit flips)"]
+
+    Root --&gt; Timing["3. Timing Failures"]
+    Timing --&gt; T1["Clock Drift<br></br>(clocks disagree)"]
+    Timing --&gt; T2["Timeout<br></br>(response too slow)"]
+    Timing --&gt; T3["GC Pause<br></br>(stop-the-world)"]
+
+    Root --&gt; Software["4. Software Failures"]
+    Software --&gt; S1["Bugs"]
+    Software --&gt; S2["Memory Leaks"]
+    Software --&gt; S3["Resource Exhaustion"]
+    Software --&gt; S4["Configuration Errors"]
+</div>
+
+<h3 id="47-architectures-of-distributed-systems">4.7 Architectures of Distributed Systems</h3>
+<h4 id="client-server-architecture">Client-Server Architecture</h4>
+<p>The most fundamental pattern. Clients send requests to servers, servers process them and respond.</p>
+<ul>
+<li>Examples: Web applications, REST APIs, database clients</li>
+</ul>
+<h4 id="peer-to-peer-p2p-architecture">Peer-to-Peer (P2P) Architecture</h4>
+<p>Every node is both a client and a server. No central authority.</p>
+<ul>
+<li>Examples: BitTorrent, Bitcoin, IPFS</li>
+<li>Advantages: No single point of failure, scales naturally</li>
+<li>Disadvantages: Hard to search, inconsistent quality of nodes</li>
+</ul>
+<h4 id="three-tier-architecture">Three-Tier Architecture</h4>
+<ul>
+<li><strong>Presentation Tier</strong>: User interface (web browser, mobile app)</li>
+<li><strong>Application Tier</strong>: Business logic (application servers)</li>
+<li><strong>Data Tier</strong>: Data storage (databases)</li>
+</ul>
+<h4 id="n-tier-architecture">N-Tier Architecture</h4>
+<p>Extension of three-tier with additional layers:</p>
+<ul>
+<li>API Gateway</li>
+<li>Load Balancer</li>
+<li>Application Servers</li>
+<li>Cache Layer</li>
+<li>Message Queue</li>
+<li>Database Layer</li>
+<li>Analytics Layer</li>
+</ul>
+<h4 id="event-driven-architecture">Event-Driven Architecture</h4>
+<p>Components communicate through events (asynchronous messages).</p>
+<ul>
+<li>Examples: Kafka-based architectures, CQRS/Event Sourcing</li>
+<li>Advantages: Loose coupling, scalability, resilience</li>
+<li>Disadvantages: Debugging complexity, eventual consistency</li>
+</ul>
+<hr></hr>
+<h2 id="5-visual-diagrams">5. Visual Diagrams</h2>
+<h3 id="diagram-1-monolith-vs-microservices">Diagram 1: Monolith vs Microservices</h3>
+<div class="mermaid">
+graph TB
+    subgraph Monolithic["Monolithic Architecture"]
+        Client1["Client"] --&gt; Monolith["Monolithic App<br></br>(User + Order + Payment<br></br>+ Notification)"]
+        Monolith --&gt; DB1["Single Database"]
+    end
+
+    subgraph Microservices["Microservices Architecture"]
+        Client2["Client"] --&gt; GW["API Gateway"]
+        GW --&gt; US["User Service"]
+        GW --&gt; OS["Order Service"]
+        GW --&gt; PS["Payment Service"]
+        GW --&gt; NS["Notification Service"]
+        US --&gt; DB2["User DB"]
+        OS --&gt; DB3["Order DB"]
+        PS --&gt; DB4["Payment DB"]
+        NS --&gt; MQ["Message Queue"]
+    end
+</div>
+
+<h3 id="diagram-2-request-flow-in-a-distributed-e-commerce-system">Diagram 2: Request Flow in a Distributed E-Commerce System</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant U as User
+    participant LB as Load Balancer
+    participant GW as API Gateway
+    participant Auth as Auth Service
+    participant Cart as Cart Service
+    participant Inv as Inventory Service
+    participant Pay as Payment Service
+    participant Order as Order Service
+    participant Notif as Notification Service
+    participant Cache as Redis Cache
+
+    U-&gt;&gt;LB: POST /checkout
+    LB-&gt;&gt;GW: Route to Gateway
+    GW-&gt;&gt;Auth: Validate Token
+    Auth--&gt;&gt;GW: Token Valid ✓
+
+    GW-&gt;&gt;Cart: Get Cart Items
+    Cart-&gt;&gt;Cache: Check Cache
+    Cache--&gt;&gt;Cart: Cart Data
+    Cart--&gt;&gt;GW: Cart Items
+
+    GW-&gt;&gt;Inv: Reserve Inventory
+    Inv--&gt;&gt;GW: Reserved ✓
+
+    GW-&gt;&gt;Pay: Process Payment
+    Pay--&gt;&gt;GW: Payment Success ✓
+
+    GW-&gt;&gt;Order: Create Order
+    Order--&gt;&gt;GW: Order Created
+
+    GW-&gt;&gt;Notif: Send Confirmation (async)
+
+    GW--&gt;&gt;LB: 200 OK + Order ID
+    LB--&gt;&gt;U: Order Confirmed
+</div>
+
+<h3 id="diagram-3-failure-modes-in-distributed-system">Diagram 3: Failure Modes in Distributed System</h3>
+<div class="mermaid">
+graph TD
+    subgraph Normal["Normal Operation"]
+        A1["Service A"] --&gt;|"Request"| B1["Service B"]
+        B1 --&gt;|"Response"| A1
+    end
+
+    subgraph Crash["Node Crash"]
+        A2["Service A"] --&gt;|"Request"| B2["Service B ✗"]
+        B2 -.-&gt;|"No Response"| A2
+        A2 --&gt;|"Timeout → Retry"| B2backup["Service B (Backup)"]
+    end
+
+    subgraph Partition["Network Partition"]
+        A3["Service A"] --&gt;|"Request"| NetFail["Network ✗"]
+        NetFail -.-&gt;|"Cannot Reach"| B3["Service B"]
+    end
+
+    subgraph SlowNode["Slow Node / GC Pause"]
+        A4["Service A"] --&gt;|"Request (t=0)"| B4["Service B (GC Pause)"]
+        B4 --&gt;|"Response (t=30s)"| A4
+    end
+</div>
+
+<h3 id="diagram-4-scale-cube-three-dimensions-of-scaling">Diagram 4: Scale Cube (Three Dimensions of Scaling)</h3>
+<div class="mermaid">
+graph LR
+    subgraph ScaleCube["The Scale Cube"]
+        direction TB
+        X["X-Axis: Horizontal Duplication<br></br>(Run N identical copies behind a load balancer)"]
+        Y["Y-Axis: Functional Decomposition<br></br>(Split by function/service)"]
+        Z["Z-Axis: Data Partitioning<br></br>(Split by data/customer/region)"]
+    end
+
+    X --&gt; XExample["Example: 10 identical app servers"]
+    Y --&gt; YExample["Example: Separate User, Order, Payment services"]
+    Z --&gt; ZExample["Example: US users → US shard, EU users → EU shard"]
+</div>
+
+<h3 id="diagram-5-history-and-evolution-timeline">Diagram 5: History and Evolution Timeline</h3>
+<p><strong>History of Distributed Systems:</strong></p>
+<ul>
+<li><strong>1960s</strong>: ARPANET (precursor to Internet), Time-sharing systems</li>
+<li><strong>1970s</strong>: Ethernet invented (1973), TCP/IP protocol (1974), First email systems</li>
+<li><strong>1980s</strong>: DNS invented (1983), Sun RPC &amp; NFS, Distributed databases emerge</li>
+<li><strong>1990s</strong>: World Wide Web (1991), CORBA, Java RMI, 8 Fallacies (1994), Google founded (1998)</li>
+<li><strong>2000s</strong>: MapReduce paper (2004), Amazon Dynamo paper (2007), Google BigTable (2006), CAP Theorem formalized (2002), AWS launches (2006)</li>
+<li><strong>2010s</strong>: Docker (2013), Kubernetes (2014), Apache Kafka mature, Microservices explosion, Service meshes (Istio)</li>
+<li><strong>2020s</strong>: Serverless maturity, Edge computing, WebAssembly at the edge, AI-driven autoscaling</li>
+</ul>
+<hr></hr>
+<h2 id="6-real-production-examples">6. Real Production Examples</h2>
+<h3 id="61-google-search">6.1 Google Search</h3>
+<p>Google Search is one of the most impressive distributed systems ever built. When you type a query and press Enter, here's what happens in ~200 milliseconds:</p>
+<p><strong>Architecture Overview:</strong></p>
+<ol>
+<li><strong>DNS Resolution</strong>: Your browser resolves google.com to an IP address, typically routed to the nearest Google data center via Anycast.</li>
+<li><strong>Google Front End (GFE)</strong>: The first server that handles your request. Terminates TLS, parses the HTTP request.</li>
+<li><strong>Web Server</strong>: Determines the type of query and routes it appropriately.</li>
+<li><strong>Index Servers</strong>: The query is fanned out to hundreds of index servers in parallel. Each server holds a portion of the web index (sharded by document ID). Each returns the top-K results from its shard.</li>
+<li><strong>Doc Servers</strong>: For the top results, document servers fetch snippets, metadata, and other information.</li>
+<li><strong>Ad Servers</strong>: In parallel, the ad system runs an auction to determine which ads to show.</li>
+<li><strong>Aggregation</strong>: Results from all sources are merged, ranked, and formatted.</li>
+<li><strong>Response</strong>: The final HTML is sent back to the user.</li>
+</ol>
+<p><strong>Scale Numbers:</strong></p>
+<ul>
+<li>Indexes 100+ petabytes of web data</li>
+<li>Processes 8.5 billion searches per day</li>
+<li>Median response time: ~200ms</li>
+<li>Uses custom hardware (TPUs for ML ranking)</li>
+<li>Operates 30+ data centers globally</li>
+</ul>
+<p><strong>Key Distributed Systems Concepts Used:</strong></p>
+<ul>
+<li><strong>MapReduce / Flume</strong>: For building the index</li>
+<li><strong>BigTable / Spanner</strong>: For storing structured data</li>
+<li><strong>GFS / Colossus</strong>: For distributed file storage</li>
+<li><strong>Chubby</strong>: For distributed locking</li>
+<li><strong>Borg (now Kubernetes)</strong>: For container orchestration</li>
+<li><strong>Consistent Hashing</strong>: For data distribution</li>
+</ul>
+<h3 id="62-amazon-e-commerce">6.2 Amazon E-Commerce</h3>
+<p>Amazon's architecture evolved from a monolith to thousands of microservices over 15+ years.</p>
+<p><strong>Key Services:</strong></p>
+<ul>
+<li><strong>Product Catalog Service</strong>: Manages 375M+ product listings</li>
+<li><strong>Recommendation Engine</strong>: "Customers who bought X also bought Y"</li>
+<li><strong>Inventory Service</strong>: Tracks inventory across fulfillment centers</li>
+<li><strong>Cart Service</strong>: Session-based shopping cart (eventually became DynamoDB)</li>
+<li><strong>Order Service</strong>: Complex workflow for order processing</li>
+<li><strong>Payment Service</strong>: Multiple payment method support</li>
+<li><strong>Fulfillment Service</strong>: Routes orders to optimal fulfillment centers</li>
+</ul>
+<p><strong>Key Technologies Built:</strong></p>
+<ul>
+<li><strong>DynamoDB</strong>: Born from the Amazon shopping cart requirements (always-writable, eventually consistent key-value store, see the Dynamo paper)</li>
+<li><strong>SQS</strong>: Distributed message queue for decoupling services</li>
+<li><strong>S3</strong>: Object storage used internally and externally</li>
+<li><strong>CloudFront</strong>: CDN for static content</li>
+<li><strong>AWS</strong>: Amazon built AWS largely to solve their own scaling problems</li>
+</ul>
+<p><strong>Prime Day Architecture:</strong></p>
+<ul>
+<li>Pre-scales services weeks in advance</li>
+<li>Uses chaos engineering to verify readiness</li>
+<li>Deploys to multiple AWS regions</li>
+<li>Implements sophisticated rate limiting and throttling</li>
+<li>Uses "cell-based architecture" to contain blast radius</li>
+</ul>
+<h3 id="63-netflix-streaming">6.3 Netflix Streaming</h3>
+<p>Netflix is the gold standard for resilient distributed systems design.</p>
+<p><strong>Architecture Components:</strong></p>
+<ol>
+<li><strong>Edge Services (Zuul)</strong>: API gateway handling authentication, routing, and request filtering</li>
+<li><strong>Middle Tier Services</strong>: Hundreds of microservices for business logic</li>
+<li><strong>Data Layer</strong>: <ul>
+<li>Cassandra for user data, viewing history (AP system)</li>
+<li>EVCache (memcached-based) for caching</li>
+<li>MySQL for billing data (CP system)</li>
+</ul>
+</li>
+<li><strong>Content Delivery</strong>: Open Connect CDN (Netflix's own CDN)</li>
+<li><strong>Real-time Data Pipeline</strong>: Apache Kafka + Apache Flink for real-time analytics</li>
+</ol>
+<p><strong>Key Innovations:</strong></p>
+<ul>
+<li><strong>Chaos Engineering</strong>: Invented Chaos Monkey (randomly kills production instances), Chaos Kong (simulates entire region failure), Latency Monkey (introduces artificial delays)</li>
+<li><strong>Circuit Breaker Pattern (Hystrix)</strong>: Prevents cascading failures</li>
+<li><strong>Service Discovery (Eureka)</strong>: Dynamic service registration and lookup</li>
+<li><strong>Client-Side Load Balancing (Ribbon)</strong>: Smart routing based on instance health</li>
+<li><strong>Bulkhead Pattern</strong>: Isolates thread pools per dependency</li>
+</ul>
+<p><strong>Resilience Design:</strong></p>
+<pre><code>Netflix's Resilience Layers:
+─────────────────────────────────────────────
+Layer 1: Timeouts (every call has a timeout)
+Layer 2: Retries (with exponential backoff)
+Layer 3: Circuit Breakers (stop calling failing services)
+Layer 4: Bulkheads (isolate resources per dependency)
+Layer 5: Fallbacks (degraded but functional responses)
+Layer 6: Regional Failover (entire region evacuation)
+─────────────────────────────────────────────
+</code></pre><h3 id="64-uber-architecture">6.4 Uber Architecture</h3>
+<p>Uber's platform handles real-time ride matching, pricing, navigation, and payments across 10,000+ cities.</p>
+<p><strong>Core Services:</strong></p>
+<ul>
+<li><strong>Dispatch Service</strong>: Matches riders with drivers using geospatial indexing</li>
+<li><strong>Pricing Service</strong>: Dynamic surge pricing based on supply/demand</li>
+<li><strong>ETA Service</strong>: Real-time estimated time of arrival</li>
+<li><strong>Maps Service</strong>: Custom mapping and routing</li>
+<li><strong>Payment Service</strong>: Multi-currency, multi-method payment processing</li>
+<li><strong>Trip Service</strong>: Manages the lifecycle of a trip</li>
+</ul>
+<p><strong>Technical Decisions:</strong></p>
+<ul>
+<li>Initially: Monolith in Python → Microservices in Go, Java, Node.js</li>
+<li>Developed their own RPC framework (TChannel, later replaced with gRPC)</li>
+<li>Built custom geospatial index (H3: hexagonal hierarchical spatial index)</li>
+<li>Ringpop: Consistent hash ring for distributed services</li>
+<li>Cadence: Workflow orchestration engine (now Temporal)</li>
+<li>Schemaless: Custom distributed database built on top of MySQL</li>
+<li>Apache Kafka: Real-time event streaming backbone</li>
+</ul>
+<p><strong>Scale:</strong></p>
+<ul>
+<li>5 million trips per day (peak)</li>
+<li>Processes location updates from millions of drivers simultaneously</li>
+<li>Sub-second matching latency</li>
+<li>Real-time pricing computed for every ride request</li>
+</ul>
+<h3 id="65-meta-facebook-architecture">6.5 Meta (Facebook) Architecture</h3>
+<p><strong>Key Systems:</strong></p>
+<ul>
+<li><strong>TAO</strong>: Distributed graph database for the social graph (billions of nodes, trillions of edges)</li>
+<li><strong>Memcached at Scale</strong>: Facebook's use of memcached is legendary — they run the largest memcached deployment in the world</li>
+<li><strong>MySQL + Vitess/Shard Manager</strong>: Heavily sharded MySQL for persistent storage</li>
+<li><strong>Thrift</strong>: RPC framework for inter-service communication</li>
+<li><strong>React + GraphQL</strong>: Frontend data fetching</li>
+<li><strong>ZippyDB</strong>: Distributed key-value store built on RocksDB</li>
+</ul>
+<p><strong>Scale:</strong></p>
+<ul>
+<li>3 billion monthly active users</li>
+<li>100+ petabytes of data</li>
+<li>Millions of requests per second</li>
+<li>Custom data center hardware designs (Open Compute Project)</li>
+</ul>
+<hr></hr>
+<h2 id="7-java-implementations">7. Java Implementations</h2>
+<h3 id="71-simple-client-server-communication">7.1 Simple Client-Server Communication</h3>
+<p>This example demonstrates the fundamental pattern of distributed communication: a client sends a request over the network to a server, which processes it and sends back a response.</p>
+<pre><code class="lang-java"><span class="hljs-comment">// =====================================================</span>
+<span class="hljs-comment">// SimpleDistributedServer.java</span>
+<span class="hljs-comment">// A basic TCP server that handles client requests</span>
+<span class="hljs-comment">// =====================================================</span>
+
+<span class="hljs-keyword">import</span> java.io.*;
+<span class="hljs-keyword">import</span> java.net.*;
+<span class="hljs-keyword">import</span> java.util.concurrent.*;
+<span class="hljs-keyword">import</span> java.util.logging.*;
+
+<span class="hljs-comment">/**
+ * A simple distributed system server that handles client requests.
+ * 
+ * Key distributed systems concepts demonstrated:
+ * 1. Network communication via TCP sockets
+ * 2. Concurrent request handling with thread pool
+ * 3. Request-response pattern
+ * 4. Graceful shutdown
+ * 
+ * In production, you'd use frameworks like Netty, Spring Boot,
+ * or gRPC instead of raw sockets. This is for learning.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SimpleDistributedServer</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(
+            SimpleDistributedServer.class.getName());
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> port;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> ExecutorService threadPool;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">volatile</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">running</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">private</span> ServerSocket serverSocket;
+
+    <span class="hljs-comment">// Thread pool sizing: </span>
+    <span class="hljs-comment">// - Core threads handle normal load</span>
+    <span class="hljs-comment">// - Max threads handle burst load</span>
+    <span class="hljs-comment">// - In production, tune these based on profiling</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">SimpleDistributedServer</span><span class="hljs-params">(<span class="hljs-type">int</span> port, <span class="hljs-type">int</span> maxThreads)</span> {
+        <span class="hljs-built_in">this</span>.port = port;
+        <span class="hljs-built_in">this</span>.threadPool = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadPoolExecutor</span>(
+                maxThreads / <span class="hljs-number">2</span>,       <span class="hljs-comment">// core pool size</span>
+                maxThreads,           <span class="hljs-comment">// maximum pool size</span>
+                <span class="hljs-number">60L</span>, TimeUnit.SECONDS, <span class="hljs-comment">// keep-alive time for idle threads</span>
+                <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedBlockingQueue</span>&lt;&gt;(<span class="hljs-number">1000</span>), <span class="hljs-comment">// bounded queue prevents OOM</span>
+                <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadPoolExecutor</span>.CallerRunsPolicy() <span class="hljs-comment">// backpressure</span>
+        );
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException {
+        serverSocket = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ServerSocket</span>(port);
+        logger.info(<span class="hljs-string">"Server started on port "</span> + port);
+
+        <span class="hljs-comment">// Register shutdown hook for graceful shutdown</span>
+        Runtime.getRuntime().addShutdownHook(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-built_in">this</span>::shutdown));
+
+        <span class="hljs-keyword">while</span> (running) {
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-type">Socket</span> <span class="hljs-variable">clientSocket</span> <span class="hljs-operator">=</span> serverSocket.accept();
+
+                <span class="hljs-comment">// Set socket timeout to prevent slow clients from</span>
+                <span class="hljs-comment">// holding connections indefinitely</span>
+                clientSocket.setSoTimeout(<span class="hljs-number">30_000</span>); <span class="hljs-comment">// 30 second timeout</span>
+
+                threadPool.submit(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ClientHandler</span>(clientSocket));
+            } <span class="hljs-keyword">catch</span> (SocketException e) {
+                <span class="hljs-keyword">if</span> (running) {
+                    logger.log(Level.SEVERE, <span class="hljs-string">"Socket error"</span>, e);
+                }
+                <span class="hljs-comment">// If not running, this is expected during shutdown</span>
+            }
+        }
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">shutdown</span><span class="hljs-params">()</span> {
+        running = <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">try</span> {
+            serverSocket.close();
+        } <span class="hljs-keyword">catch</span> (IOException e) {
+            logger.log(Level.WARNING, <span class="hljs-string">"Error closing server socket"</span>, e);
+        }
+        threadPool.shutdown();
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span> (!threadPool.awaitTermination(<span class="hljs-number">30</span>, TimeUnit.SECONDS)) {
+                threadPool.shutdownNow();
+            }
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+            threadPool.shutdownNow();
+            Thread.currentThread().interrupt();
+        }
+        logger.info(<span class="hljs-string">"Server shut down gracefully"</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * Handles individual client connections.
+     * Each client gets its own thread from the pool.
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ClientHandler</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Runnable</span> {
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Socket socket;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(
+                ClientHandler.class.getName());
+
+        ClientHandler(Socket socket) {
+            <span class="hljs-built_in">this</span>.socket = socket;
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> {
+            <span class="hljs-type">String</span> <span class="hljs-variable">clientAddress</span> <span class="hljs-operator">=</span> socket.getRemoteSocketAddress().toString();
+            logger.info(<span class="hljs-string">"New connection from "</span> + clientAddress);
+
+            <span class="hljs-keyword">try</span> (<span class="hljs-type">BufferedReader</span> <span class="hljs-variable">in</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(
+                         <span class="hljs-keyword">new</span> <span class="hljs-title class_">InputStreamReader</span>(socket.getInputStream()));
+                 <span class="hljs-type">PrintWriter</span> <span class="hljs-variable">out</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PrintWriter</span>(
+                         socket.getOutputStream(), <span class="hljs-literal">true</span>)) {
+
+                String request;
+                <span class="hljs-keyword">while</span> ((request = in.readLine()) != <span class="hljs-literal">null</span>) {
+                    logger.info(<span class="hljs-string">"Received from "</span> + clientAddress + <span class="hljs-string">": "</span> + request);
+
+                    <span class="hljs-comment">// Process the request</span>
+                    <span class="hljs-type">String</span> <span class="hljs-variable">response</span> <span class="hljs-operator">=</span> processRequest(request);
+
+                    <span class="hljs-comment">// Send response back to client</span>
+                    out.println(response);
+                    logger.info(<span class="hljs-string">"Sent to "</span> + clientAddress + <span class="hljs-string">": "</span> + response);
+                }
+            } <span class="hljs-keyword">catch</span> (SocketTimeoutException e) {
+                logger.warning(<span class="hljs-string">"Client "</span> + clientAddress + <span class="hljs-string">" timed out"</span>);
+            } <span class="hljs-keyword">catch</span> (IOException e) {
+                logger.log(Level.WARNING, 
+                        <span class="hljs-string">"Error handling client "</span> + clientAddress, e);
+            } <span class="hljs-keyword">finally</span> {
+                <span class="hljs-keyword">try</span> {
+                    socket.close();
+                } <span class="hljs-keyword">catch</span> (IOException e) {
+                    logger.log(Level.WARNING, <span class="hljs-string">"Error closing socket"</span>, e);
+                }
+            }
+        }
+
+        <span class="hljs-comment">/**
+         * Simple request processor.
+         * In a real system, this would route to appropriate handlers,
+         * query databases, call other services, etc.
+         */</span>
+        <span class="hljs-keyword">private</span> String <span class="hljs-title function_">processRequest</span><span class="hljs-params">(String request)</span> {
+            <span class="hljs-comment">// Simulate processing time</span>
+            <span class="hljs-keyword">try</span> {
+                Thread.sleep(<span class="hljs-number">10</span>); <span class="hljs-comment">// 10ms processing time</span>
+            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+
+            <span class="hljs-keyword">if</span> (request.startsWith(<span class="hljs-string">"GET_TIME"</span>)) {
+                <span class="hljs-keyword">return</span> <span class="hljs-string">"TIME:"</span> + System.currentTimeMillis();
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (request.startsWith(<span class="hljs-string">"ECHO:"</span>)) {
+                <span class="hljs-keyword">return</span> <span class="hljs-string">"ECHO:"</span> + request.substring(<span class="hljs-number">5</span>);
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (request.startsWith(<span class="hljs-string">"HEALTH"</span>)) {
+                <span class="hljs-keyword">return</span> <span class="hljs-string">"STATUS:HEALTHY"</span>;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> <span class="hljs-string">"ERROR:UNKNOWN_COMMAND"</span>;
+            }
+        }
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException {
+        <span class="hljs-type">int</span> <span class="hljs-variable">port</span> <span class="hljs-operator">=</span> args.length &gt; <span class="hljs-number">0</span> ? Integer.parseInt(args[<span class="hljs-number">0</span>]) : <span class="hljs-number">8080</span>;
+        <span class="hljs-type">int</span> <span class="hljs-variable">maxThreads</span> <span class="hljs-operator">=</span> Runtime.getRuntime().availableProcessors() * <span class="hljs-number">2</span>;
+
+        <span class="hljs-type">SimpleDistributedServer</span> <span class="hljs-variable">server</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleDistributedServer</span>(port, maxThreads);
+        server.start();
+    }
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-comment">// =====================================================</span>
+<span class="hljs-comment">// SimpleDistributedClient.java</span>
+<span class="hljs-comment">// A TCP client with retry logic and error handling</span>
+<span class="hljs-comment">// =====================================================</span>
+
+<span class="hljs-keyword">import</span> java.io.*;
+<span class="hljs-keyword">import</span> java.net.*;
+<span class="hljs-keyword">import</span> java.util.Optional;
+<span class="hljs-keyword">import</span> java.util.logging.*;
+
+<span class="hljs-comment">/**
+ * A client that communicates with the SimpleDistributedServer.
+ * 
+ * Key distributed systems concepts demonstrated:
+ * 1. Connection management
+ * 2. Retry with exponential backoff
+ * 3. Timeout handling
+ * 4. Graceful error handling
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SimpleDistributedClient</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(
+            SimpleDistributedClient.class.getName());
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String host;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> port;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> maxRetries;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> baseRetryDelayMs;
+    <span class="hljs-keyword">private</span> Socket socket;
+    <span class="hljs-keyword">private</span> BufferedReader in;
+    <span class="hljs-keyword">private</span> PrintWriter out;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">SimpleDistributedClient</span><span class="hljs-params">(String host, <span class="hljs-type">int</span> port)</span> {
+        <span class="hljs-built_in">this</span>(host, port, <span class="hljs-number">3</span>, <span class="hljs-number">100</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">SimpleDistributedClient</span><span class="hljs-params">(String host, <span class="hljs-type">int</span> port, 
+                                    <span class="hljs-type">int</span> maxRetries, <span class="hljs-type">int</span> baseRetryDelayMs)</span> {
+        <span class="hljs-built_in">this</span>.host = host;
+        <span class="hljs-built_in">this</span>.port = port;
+        <span class="hljs-built_in">this</span>.maxRetries = maxRetries;
+        <span class="hljs-built_in">this</span>.baseRetryDelayMs = baseRetryDelayMs;
+    }
+
+    <span class="hljs-comment">/**
+     * Connect to the server with retry logic.
+     * 
+     * Uses exponential backoff: wait 100ms, 200ms, 400ms, ...
+     * This prevents thundering herd when many clients retry simultaneously.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">connect</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException {
+        <span class="hljs-type">IOException</span> <span class="hljs-variable">lastException</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">attempt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; attempt &lt; maxRetries; attempt++) {
+            <span class="hljs-keyword">try</span> {
+                socket = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Socket</span>();
+                <span class="hljs-comment">// Connection timeout: don't wait forever</span>
+                socket.connect(
+                    <span class="hljs-keyword">new</span> <span class="hljs-title class_">InetSocketAddress</span>(host, port), 
+                    <span class="hljs-number">5000</span> <span class="hljs-comment">// 5 second connection timeout</span>
+                );
+                <span class="hljs-comment">// Read timeout: don't wait forever for responses</span>
+                socket.setSoTimeout(<span class="hljs-number">10_000</span>); <span class="hljs-comment">// 10 second read timeout</span>
+
+                in = <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(
+                        <span class="hljs-keyword">new</span> <span class="hljs-title class_">InputStreamReader</span>(socket.getInputStream()));
+                out = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PrintWriter</span>(socket.getOutputStream(), <span class="hljs-literal">true</span>);
+
+                logger.info(<span class="hljs-string">"Connected to "</span> + host + <span class="hljs-string">":"</span> + port 
+                        + <span class="hljs-string">" on attempt "</span> + (attempt + <span class="hljs-number">1</span>));
+                <span class="hljs-keyword">return</span>;
+            } <span class="hljs-keyword">catch</span> (IOException e) {
+                lastException = e;
+                logger.warning(<span class="hljs-string">"Connection attempt "</span> + (attempt + <span class="hljs-number">1</span>) 
+                        + <span class="hljs-string">" failed: "</span> + e.getMessage());
+
+                <span class="hljs-keyword">if</span> (attempt &lt; maxRetries - <span class="hljs-number">1</span>) {
+                    <span class="hljs-comment">// Exponential backoff with jitter</span>
+                    <span class="hljs-type">long</span> <span class="hljs-variable">delay</span> <span class="hljs-operator">=</span> (<span class="hljs-type">long</span>) (baseRetryDelayMs 
+                            * Math.pow(<span class="hljs-number">2</span>, attempt) 
+                            * (<span class="hljs-number">0.5</span> + Math.random() * <span class="hljs-number">0.5</span>)); <span class="hljs-comment">// add jitter</span>
+                    logger.info(<span class="hljs-string">"Retrying in "</span> + delay + <span class="hljs-string">"ms..."</span>);
+                    <span class="hljs-keyword">try</span> {
+                        Thread.sleep(delay);
+                    } <span class="hljs-keyword">catch</span> (InterruptedException ie) {
+                        Thread.currentThread().interrupt();
+                        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IOException</span>(<span class="hljs-string">"Interrupted during retry"</span>, ie);
+                    }
+                }
+            }
+        }
+
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IOException</span>(<span class="hljs-string">"Failed to connect after "</span> + maxRetries 
+                + <span class="hljs-string">" attempts"</span>, lastException);
+    }
+
+    <span class="hljs-comment">/**
+     * Send a request and receive a response.
+     * Returns Optional.empty() if the request fails.
+     */</span>
+    <span class="hljs-keyword">public</span> Optional&lt;String&gt; <span class="hljs-title function_">sendRequest</span><span class="hljs-params">(String request)</span> {
+        <span class="hljs-keyword">try</span> {
+            out.println(request);
+            <span class="hljs-type">String</span> <span class="hljs-variable">response</span> <span class="hljs-operator">=</span> in.readLine();
+            <span class="hljs-keyword">if</span> (response == <span class="hljs-literal">null</span>) {
+                logger.warning(<span class="hljs-string">"Server closed connection"</span>);
+                <span class="hljs-keyword">return</span> Optional.empty();
+            }
+            <span class="hljs-keyword">return</span> Optional.of(response);
+        } <span class="hljs-keyword">catch</span> (SocketTimeoutException e) {
+            logger.warning(<span class="hljs-string">"Request timed out: "</span> + request);
+            <span class="hljs-keyword">return</span> Optional.empty();
+        } <span class="hljs-keyword">catch</span> (IOException e) {
+            logger.log(Level.WARNING, <span class="hljs-string">"Error sending request"</span>, e);
+            <span class="hljs-keyword">return</span> Optional.empty();
+        }
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">disconnect</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span> (socket != <span class="hljs-literal">null</span> &amp;&amp; !socket.isClosed()) {
+                socket.close();
+                logger.info(<span class="hljs-string">"Disconnected from "</span> + host + <span class="hljs-string">":"</span> + port);
+            }
+        } <span class="hljs-keyword">catch</span> (IOException e) {
+            logger.log(Level.WARNING, <span class="hljs-string">"Error disconnecting"</span>, e);
+        }
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException {
+        <span class="hljs-type">SimpleDistributedClient</span> <span class="hljs-variable">client</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleDistributedClient</span>(
+                <span class="hljs-string">"localhost"</span>, <span class="hljs-number">8080</span>);
+
+        <span class="hljs-keyword">try</span> {
+            client.connect();
+
+            <span class="hljs-comment">// Send various requests</span>
+            client.sendRequest(<span class="hljs-string">"GET_TIME"</span>)
+                    .ifPresent(r -&gt; System.out.println(<span class="hljs-string">"Server time: "</span> + r));
+
+            client.sendRequest(<span class="hljs-string">"ECHO:Hello Distributed World!"</span>)
+                    .ifPresent(r -&gt; System.out.println(<span class="hljs-string">"Echo: "</span> + r));
+
+            client.sendRequest(<span class="hljs-string">"HEALTH"</span>)
+                    .ifPresent(r -&gt; System.out.println(<span class="hljs-string">"Health: "</span> + r));
+
+            client.sendRequest(<span class="hljs-string">"UNKNOWN_CMD"</span>)
+                    .ifPresent(r -&gt; System.out.println(<span class="hljs-string">"Unknown: "</span> + r));
+
+        } <span class="hljs-keyword">finally</span> {
+            client.disconnect();
+        }
+    }
+}
+</code></pre>
+<h3 id="72-simple-rpc-framework">7.2 Simple RPC Framework</h3>
+<p>Remote Procedure Call (RPC) is a foundational abstraction in distributed systems. It makes a remote call look like a local function call. Here's a simplified RPC framework:</p>
+<pre><code class="lang-java"><span class="hljs-comment">// =====================================================</span>
+<span class="hljs-comment">// SimpleRpcFramework.java</span>
+<span class="hljs-comment">// A minimal RPC framework demonstrating the concept</span>
+<span class="hljs-comment">// =====================================================</span>
+
+<span class="hljs-keyword">import</span> java.io.*;
+<span class="hljs-keyword">import</span> java.lang.reflect.*;
+<span class="hljs-keyword">import</span> java.net.*;
+<span class="hljs-keyword">import</span> java.util.concurrent.*;
+<span class="hljs-keyword">import</span> java.util.logging.*;
+
+<span class="hljs-comment">/**
+ * A simplified RPC framework that demonstrates:
+ * 1. Serialization of method calls over the network
+ * 2. Dynamic proxy for transparent remote invocation
+ * 3. Service registry and dispatch
+ * 4. Error handling across process boundaries
+ * 
+ * Production frameworks like gRPC handle:
+ * - Efficient binary serialization (Protobuf)
+ * - HTTP/2 multiplexing
+ * - Streaming
+ * - Load balancing
+ * - Interceptors/middleware
+ * - Code generation
+ */</span>
+
+<span class="hljs-comment">// --- Request and Response DTOs ---</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">RpcRequest</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Serializable</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">long</span> <span class="hljs-variable">serialVersionUID</span> <span class="hljs-operator">=</span> <span class="hljs-number">1L</span>;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String serviceName;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String methodName;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Class&lt;?&gt;[] parameterTypes;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object[] arguments;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String requestId; <span class="hljs-comment">// For tracing and deduplication</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">RpcRequest</span><span class="hljs-params">(String serviceName, String methodName,
+                      Class&lt;?&gt;[] parameterTypes, Object[] arguments)</span> {
+        <span class="hljs-built_in">this</span>.serviceName = serviceName;
+        <span class="hljs-built_in">this</span>.methodName = methodName;
+        <span class="hljs-built_in">this</span>.parameterTypes = parameterTypes;
+        <span class="hljs-built_in">this</span>.arguments = arguments;
+        <span class="hljs-built_in">this</span>.requestId = java.util.UUID.randomUUID().toString();
+    }
+
+    <span class="hljs-comment">// Getters</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getServiceName</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> serviceName; }
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getMethodName</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> methodName; }
+    <span class="hljs-keyword">public</span> Class&lt;?&gt;[] getParameterTypes() { <span class="hljs-keyword">return</span> parameterTypes; }
+    <span class="hljs-keyword">public</span> Object[] getArguments() { <span class="hljs-keyword">return</span> arguments; }
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getRequestId</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> requestId; }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">RpcResponse</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Serializable</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">long</span> <span class="hljs-variable">serialVersionUID</span> <span class="hljs-operator">=</span> <span class="hljs-number">1L</span>;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object result;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Throwable error;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String requestId;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> RpcResponse <span class="hljs-title function_">success</span><span class="hljs-params">(Object result, String requestId)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RpcResponse</span>(result, <span class="hljs-literal">null</span>, requestId);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> RpcResponse <span class="hljs-title function_">error</span><span class="hljs-params">(Throwable error, String requestId)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RpcResponse</span>(<span class="hljs-literal">null</span>, error, requestId);
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-title function_">RpcResponse</span><span class="hljs-params">(Object result, Throwable error, String requestId)</span> {
+        <span class="hljs-built_in">this</span>.result = result;
+        <span class="hljs-built_in">this</span>.error = error;
+        <span class="hljs-built_in">this</span>.requestId = requestId;
+    }
+
+    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">getResult</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> result; }
+    <span class="hljs-keyword">public</span> Throwable <span class="hljs-title function_">getError</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> error; }
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getRequestId</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> requestId; }
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isSuccess</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> error == <span class="hljs-literal">null</span>; }
+}
+
+<span class="hljs-comment">// --- RPC Server ---</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">RpcServer</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(
+            RpcServer.class.getName());
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> port;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> ConcurrentHashMap&lt;String, Object&gt; serviceRegistry = 
+            <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentHashMap</span>&lt;&gt;();
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> ExecutorService executor;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">volatile</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">running</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">RpcServer</span><span class="hljs-params">(<span class="hljs-type">int</span> port, <span class="hljs-type">int</span> threadPoolSize)</span> {
+        <span class="hljs-built_in">this</span>.port = port;
+        <span class="hljs-built_in">this</span>.executor = Executors.newFixedThreadPool(threadPoolSize);
+    }
+
+    <span class="hljs-comment">/**
+     * Register a service implementation.
+     * The service name is used by clients to identify which service to call.
+     */</span>
+    <span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-keyword">void</span> <span class="hljs-title function_">registerService</span><span class="hljs-params">(String serviceName, T implementation)</span> {
+        serviceRegistry.put(serviceName, implementation);
+        logger.info(<span class="hljs-string">"Registered service: "</span> + serviceName + <span class="hljs-string">" -&gt; "</span> 
+                + implementation.getClass().getSimpleName());
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException {
+        <span class="hljs-type">ServerSocket</span> <span class="hljs-variable">serverSocket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ServerSocket</span>(port);
+        logger.info(<span class="hljs-string">"RPC Server started on port "</span> + port);
+
+        <span class="hljs-keyword">while</span> (running) {
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-type">Socket</span> <span class="hljs-variable">clientSocket</span> <span class="hljs-operator">=</span> serverSocket.accept();
+                executor.submit(() -&gt; handleClient(clientSocket));
+            } <span class="hljs-keyword">catch</span> (SocketException e) {
+                <span class="hljs-keyword">if</span> (running) {
+                    logger.log(Level.SEVERE, <span class="hljs-string">"Server socket error"</span>, e);
+                }
+            }
+        }
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handleClient</span><span class="hljs-params">(Socket socket)</span> {
+        <span class="hljs-keyword">try</span> (<span class="hljs-type">ObjectInputStream</span> <span class="hljs-variable">in</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectInputStream</span>(
+                     socket.getInputStream());
+             <span class="hljs-type">ObjectOutputStream</span> <span class="hljs-variable">out</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectOutputStream</span>(
+                     socket.getOutputStream())) {
+
+            <span class="hljs-type">RpcRequest</span> <span class="hljs-variable">request</span> <span class="hljs-operator">=</span> (RpcRequest) in.readObject();
+            logger.info(<span class="hljs-string">"Received RPC request: "</span> + request.getServiceName() 
+                    + <span class="hljs-string">"."</span> + request.getMethodName() 
+                    + <span class="hljs-string">" ["</span> + request.getRequestId() + <span class="hljs-string">"]"</span>);
+
+            <span class="hljs-type">RpcResponse</span> <span class="hljs-variable">response</span> <span class="hljs-operator">=</span> invokeService(request);
+            out.writeObject(response);
+            out.flush();
+
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            logger.log(Level.SEVERE, <span class="hljs-string">"Error handling RPC request"</span>, e);
+        } <span class="hljs-keyword">finally</span> {
+            <span class="hljs-keyword">try</span> { socket.close(); } <span class="hljs-keyword">catch</span> (IOException ignored) {}
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Invoke the target service method using reflection.
+     * In production, code generation (like gRPC stubs) replaces reflection.
+     */</span>
+    <span class="hljs-keyword">private</span> RpcResponse <span class="hljs-title function_">invokeService</span><span class="hljs-params">(RpcRequest request)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-type">Object</span> <span class="hljs-variable">service</span> <span class="hljs-operator">=</span> serviceRegistry.get(request.getServiceName());
+            <span class="hljs-keyword">if</span> (service == <span class="hljs-literal">null</span>) {
+                <span class="hljs-keyword">return</span> RpcResponse.error(
+                    <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">"Service not found: "</span> 
+                        + request.getServiceName()),
+                    request.getRequestId()
+                );
+            }
+
+            <span class="hljs-type">Method</span> <span class="hljs-variable">method</span> <span class="hljs-operator">=</span> service.getClass().getMethod(
+                    request.getMethodName(), request.getParameterTypes());
+            <span class="hljs-type">Object</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> method.invoke(service, request.getArguments());
+
+            <span class="hljs-keyword">return</span> RpcResponse.success(result, request.getRequestId());
+        } <span class="hljs-keyword">catch</span> (InvocationTargetException e) {
+            <span class="hljs-keyword">return</span> RpcResponse.error(
+                    e.getTargetException(), request.getRequestId());
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-keyword">return</span> RpcResponse.error(e, request.getRequestId());
+        }
+    }
+}
+
+<span class="hljs-comment">// --- RPC Client (Dynamic Proxy) ---</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">RpcClient</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(
+            RpcClient.class.getName());
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String host;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> port;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">RpcClient</span><span class="hljs-params">(String host, <span class="hljs-type">int</span> port)</span> {
+        <span class="hljs-built_in">this</span>.host = host;
+        <span class="hljs-built_in">this</span>.port = port;
+    }
+
+    <span class="hljs-comment">/**
+     * Create a proxy that makes remote calls look like local calls.
+     * 
+     * This is the magic of RPC: the caller uses the proxy as if it were
+     * a local object, but each method call is serialized and sent over
+     * the network to the RPC server.
+     * 
+     * <span class="hljs-doctag">@param</span> serviceInterface The interface to proxy
+     * <span class="hljs-doctag">@param</span> serviceName The name of the remote service
+     * <span class="hljs-doctag">@return</span> A proxy that implements the interface
+     */</span>
+    <span class="hljs-meta">@SuppressWarnings("unchecked")</span>
+    <span class="hljs-keyword">public</span> &lt;T&gt; T <span class="hljs-title function_">createProxy</span><span class="hljs-params">(Class&lt;T&gt; serviceInterface, String serviceName)</span> {
+        <span class="hljs-keyword">return</span> (T) Proxy.newProxyInstance(
+                serviceInterface.getClassLoader(),
+                <span class="hljs-keyword">new</span> <span class="hljs-title class_">Class</span>&lt;?&gt;[]{serviceInterface},
+                <span class="hljs-keyword">new</span> <span class="hljs-title class_">RpcInvocationHandler</span>(host, port, serviceName)
+        );
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RpcInvocationHandler</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">InvocationHandler</span> {
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String host;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> port;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String serviceName;
+
+        RpcInvocationHandler(String host, <span class="hljs-type">int</span> port, String serviceName) {
+            <span class="hljs-built_in">this</span>.host = host;
+            <span class="hljs-built_in">this</span>.port = port;
+            <span class="hljs-built_in">this</span>.serviceName = serviceName;
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">invoke</span><span class="hljs-params">(Object proxy, Method method, Object[] args)</span> 
+                <span class="hljs-keyword">throws</span> Throwable {
+            <span class="hljs-comment">// Handle Object methods locally (toString, hashCode, equals)</span>
+            <span class="hljs-keyword">if</span> (method.getDeclaringClass() == Object.class) {
+                <span class="hljs-keyword">return</span> method.invoke(<span class="hljs-built_in">this</span>, args);
+            }
+
+            <span class="hljs-type">RpcRequest</span> <span class="hljs-variable">request</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RpcRequest</span>(
+                    serviceName,
+                    method.getName(),
+                    method.getParameterTypes(),
+                    args != <span class="hljs-literal">null</span> ? args : <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>[<span class="hljs-number">0</span>]
+            );
+
+            logger.info(<span class="hljs-string">"Sending RPC request: "</span> + serviceName + <span class="hljs-string">"."</span> 
+                    + method.getName() + <span class="hljs-string">" ["</span> + request.getRequestId() + <span class="hljs-string">"]"</span>);
+
+            <span class="hljs-comment">// Send request over network</span>
+            <span class="hljs-keyword">try</span> (<span class="hljs-type">Socket</span> <span class="hljs-variable">socket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Socket</span>(host, port);
+                 <span class="hljs-type">ObjectOutputStream</span> <span class="hljs-variable">out</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectOutputStream</span>(
+                         socket.getOutputStream());
+                 <span class="hljs-type">ObjectInputStream</span> <span class="hljs-variable">in</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectInputStream</span>(
+                         socket.getInputStream())) {
+
+                socket.setSoTimeout(<span class="hljs-number">10_000</span>); <span class="hljs-comment">// 10 second timeout</span>
+
+                out.writeObject(request);
+                out.flush();
+
+                <span class="hljs-type">RpcResponse</span> <span class="hljs-variable">response</span> <span class="hljs-operator">=</span> (RpcResponse) in.readObject();
+
+                <span class="hljs-keyword">if</span> (response.isSuccess()) {
+                    <span class="hljs-keyword">return</span> response.getResult();
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">throw</span> response.getError();
+                }
+            }
+        }
+    }
+}
+
+<span class="hljs-comment">// --- Example Service Interface and Implementation ---</span>
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserService</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Serializable</span> {
+    String <span class="hljs-title function_">getUserName</span><span class="hljs-params">(<span class="hljs-type">int</span> userId)</span>;
+    <span class="hljs-type">boolean</span> <span class="hljs-title function_">createUser</span><span class="hljs-params">(String name, String email)</span>;
+    <span class="hljs-type">int</span> <span class="hljs-title function_">getUserCount</span><span class="hljs-params">()</span>;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserService</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> ConcurrentHashMap&lt;Integer, String&gt; users = 
+            <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentHashMap</span>&lt;&gt;();
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-variable">nextId</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getUserName</span><span class="hljs-params">(<span class="hljs-type">int</span> userId)</span> {
+        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> users.get(userId);
+        <span class="hljs-keyword">if</span> (name == <span class="hljs-literal">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">"User not found: "</span> + userId);
+        }
+        <span class="hljs-keyword">return</span> name;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">createUser</span><span class="hljs-params">(String name, String email)</span> {
+        users.put(nextId++, name);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getUserCount</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> users.size();
+    }
+}
+
+<span class="hljs-comment">// --- Putting It All Together ---</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">RpcDemo</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception {
+        <span class="hljs-comment">// Start the server in a background thread</span>
+        <span class="hljs-type">RpcServer</span> <span class="hljs-variable">server</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RpcServer</span>(<span class="hljs-number">9090</span>, <span class="hljs-number">10</span>);
+        server.registerService(<span class="hljs-string">"UserService"</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserServiceImpl</span>());
+
+        <span class="hljs-type">Thread</span> <span class="hljs-variable">serverThread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(() -&gt; {
+            <span class="hljs-keyword">try</span> { server.start(); } 
+            <span class="hljs-keyword">catch</span> (IOException e) { e.printStackTrace(); }
+        });
+        serverThread.setDaemon(<span class="hljs-literal">true</span>);
+        serverThread.start();
+
+        <span class="hljs-comment">// Give the server a moment to start</span>
+        Thread.sleep(<span class="hljs-number">1000</span>);
+
+        <span class="hljs-comment">// Create a client and use the remote service</span>
+        <span class="hljs-type">RpcClient</span> <span class="hljs-variable">client</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RpcClient</span>(<span class="hljs-string">"localhost"</span>, <span class="hljs-number">9090</span>);
+        <span class="hljs-type">UserService</span> <span class="hljs-variable">userService</span> <span class="hljs-operator">=</span> client.createProxy(
+                UserService.class, <span class="hljs-string">"UserService"</span>);
+
+        <span class="hljs-comment">// These look like local method calls, but they're remote!</span>
+        userService.createUser(<span class="hljs-string">"Alice"</span>, <span class="hljs-string">"alice@example.com"</span>);
+        userService.createUser(<span class="hljs-string">"Bob"</span>, <span class="hljs-string">"bob@example.com"</span>);
+
+        System.out.println(<span class="hljs-string">"User count: "</span> + userService.getUserCount());
+        System.out.println(<span class="hljs-string">"User 1: "</span> + userService.getUserName(<span class="hljs-number">1</span>));
+        System.out.println(<span class="hljs-string">"User 2: "</span> + userService.getUserName(<span class="hljs-number">2</span>));
+
+        <span class="hljs-comment">// This will throw a RemoteException wrapped around the</span>
+        <span class="hljs-comment">// "User not found" RuntimeException</span>
+        <span class="hljs-keyword">try</span> {
+            userService.getUserName(<span class="hljs-number">999</span>);
+        } <span class="hljs-keyword">catch</span> (Throwable e) {
+            System.out.println(<span class="hljs-string">"Expected error: "</span> + e.getMessage());
+        }
+    }
+}
+</code></pre>
+<h3 id="73-health-check-and-service-discovery-simplified">7.3 Health Check and Service Discovery (Simplified)</h3>
+<pre><code class="lang-java"><span class="hljs-comment">// =====================================================</span>
+<span class="hljs-comment">// ServiceRegistry.java</span>
+<span class="hljs-comment">// Simplified service discovery with health checks</span>
+<span class="hljs-comment">// =====================================================</span>
+
+<span class="hljs-keyword">import</span> java.util.*;
+<span class="hljs-keyword">import</span> java.util.concurrent.*;
+<span class="hljs-keyword">import</span> java.util.logging.*;
+
+<span class="hljs-comment">/**
+ * A simplified service registry that demonstrates:
+ * 1. Service registration and deregistration
+ * 2. Health checking
+ * 3. Client-side service discovery
+ * 
+ * Production alternatives: Consul, Eureka, Kubernetes Service Discovery
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ServiceRegistry</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">logger</span> <span class="hljs-operator">=</span> Logger.getLogger(
+            ServiceRegistry.class.getName());
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> ConcurrentHashMap&lt;String, List&lt;ServiceInstance&gt;&gt; registry = 
+            <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentHashMap</span>&lt;&gt;();
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">ScheduledExecutorService</span> <span class="hljs-variable">healthChecker</span> <span class="hljs-operator">=</span> 
+            Executors.newScheduledThreadPool(<span class="hljs-number">2</span>);
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ServiceRegistry</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Periodically check health of all registered services</span>
+        healthChecker.scheduleAtFixedRate(
+                <span class="hljs-built_in">this</span>::checkAllHealth, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, TimeUnit.SECONDS);
+    }
+
+    <span class="hljs-comment">/**
+     * Register a service instance.
+     * In production, services self-register on startup and 
+     * send periodic heartbeats.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">register</span><span class="hljs-params">(String serviceName, ServiceInstance instance)</span> {
+        registry.computeIfAbsent(serviceName, k -&gt; 
+                <span class="hljs-keyword">new</span> <span class="hljs-title class_">CopyOnWriteArrayList</span>&lt;&gt;()).add(instance);
+        logger.info(<span class="hljs-string">"Registered: "</span> + serviceName + <span class="hljs-string">" @ "</span> 
+                + instance.getHost() + <span class="hljs-string">":"</span> + instance.getPort());
+    }
+
+    <span class="hljs-comment">/**
+     * Deregister a service instance.
+     * Called during graceful shutdown.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deregister</span><span class="hljs-params">(String serviceName, ServiceInstance instance)</span> {
+        List&lt;ServiceInstance&gt; instances = registry.get(serviceName);
+        <span class="hljs-keyword">if</span> (instances != <span class="hljs-literal">null</span>) {
+            instances.remove(instance);
+            logger.info(<span class="hljs-string">"Deregistered: "</span> + serviceName + <span class="hljs-string">" @ "</span> 
+                    + instance.getHost() + <span class="hljs-string">":"</span> + instance.getPort());
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Discover a healthy instance of a service.
+     * Uses round-robin load balancing.
+     */</span>
+    <span class="hljs-keyword">public</span> Optional&lt;ServiceInstance&gt; <span class="hljs-title function_">discover</span><span class="hljs-params">(String serviceName)</span> {
+        List&lt;ServiceInstance&gt; instances = registry.get(serviceName);
+        <span class="hljs-keyword">if</span> (instances == <span class="hljs-literal">null</span> || instances.isEmpty()) {
+            <span class="hljs-keyword">return</span> Optional.empty();
+        }
+
+        <span class="hljs-comment">// Filter to healthy instances only</span>
+        List&lt;ServiceInstance&gt; healthyInstances = instances.stream()
+                .filter(ServiceInstance::isHealthy)
+                .toList();
+
+        <span class="hljs-keyword">if</span> (healthyInstances.isEmpty()) {
+            logger.warning(<span class="hljs-string">"No healthy instances for: "</span> + serviceName);
+            <span class="hljs-keyword">return</span> Optional.empty();
+        }
+
+        <span class="hljs-comment">// Simple round-robin selection</span>
+        <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> ThreadLocalRandom.current()
+                .nextInt(healthyInstances.size());
+        <span class="hljs-keyword">return</span> Optional.of(healthyInstances.get(index));
+    }
+
+    <span class="hljs-comment">/**
+     * Check health of all registered service instances.
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">checkAllHealth</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">for</span> (Map.Entry&lt;String, List&lt;ServiceInstance&gt;&gt; entry : 
+                registry.entrySet()) {
+            <span class="hljs-keyword">for</span> (ServiceInstance instance : entry.getValue()) {
+                <span class="hljs-type">boolean</span> <span class="hljs-variable">wasHealthy</span> <span class="hljs-operator">=</span> instance.isHealthy();
+                <span class="hljs-type">boolean</span> <span class="hljs-variable">isHealthy</span> <span class="hljs-operator">=</span> instance.checkHealth();
+
+                <span class="hljs-keyword">if</span> (wasHealthy &amp;&amp; !isHealthy) {
+                    logger.warning(<span class="hljs-string">"Instance became unhealthy: "</span> 
+                            + entry.getKey() + <span class="hljs-string">" @ "</span> 
+                            + instance.getHost() + <span class="hljs-string">":"</span> + instance.getPort());
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!wasHealthy &amp;&amp; isHealthy) {
+                    logger.info(<span class="hljs-string">"Instance recovered: "</span> 
+                            + entry.getKey() + <span class="hljs-string">" @ "</span> 
+                            + instance.getHost() + <span class="hljs-string">":"</span> + instance.getPort());
+                }
+            }
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Represents a single instance of a service.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ServiceInstance</span> {
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String host;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> port;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">volatile</span> <span class="hljs-type">boolean</span> <span class="hljs-variable">healthy</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">volatile</span> <span class="hljs-type">long</span> <span class="hljs-variable">lastHealthCheck</span> <span class="hljs-operator">=</span> System.currentTimeMillis();
+
+        <span class="hljs-keyword">public</span> <span class="hljs-title function_">ServiceInstance</span><span class="hljs-params">(String host, <span class="hljs-type">int</span> port)</span> {
+            <span class="hljs-built_in">this</span>.host = host;
+            <span class="hljs-built_in">this</span>.port = port;
+        }
+
+        <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getHost</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> host; }
+        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getPort</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> port; }
+        <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isHealthy</span><span class="hljs-params">()</span> { <span class="hljs-keyword">return</span> healthy; }
+
+        <span class="hljs-comment">/**
+         * Check if this instance is healthy.
+         * In production, this would make an HTTP call to /health endpoint.
+         */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">checkHealth</span><span class="hljs-params">()</span> {
+            <span class="hljs-keyword">try</span> (java.net.<span class="hljs-type">Socket</span> <span class="hljs-variable">socket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">java</span>.net.Socket()) {
+                socket.connect(
+                    <span class="hljs-keyword">new</span> <span class="hljs-title class_">java</span>.net.InetSocketAddress(host, port), <span class="hljs-number">2000</span>);
+                healthy = <span class="hljs-literal">true</span>;
+            } <span class="hljs-keyword">catch</span> (Exception e) {
+                healthy = <span class="hljs-literal">false</span>;
+            }
+            lastHealthCheck = System.currentTimeMillis();
+            <span class="hljs-keyword">return</span> healthy;
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object o)</span> {
+            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span> == o) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+            <span class="hljs-keyword">if</span> (o == <span class="hljs-literal">null</span> || getClass() != o.getClass()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            <span class="hljs-type">ServiceInstance</span> <span class="hljs-variable">that</span> <span class="hljs-operator">=</span> (ServiceInstance) o;
+            <span class="hljs-keyword">return</span> port == that.port &amp;&amp; host.equals(that.host);
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span> {
+            <span class="hljs-keyword">return</span> Objects.hash(host, port);
+        }
+    }
+}
+</code></pre>
+<hr></hr>
+<h2 id="8-performance-analysis">8. Performance Analysis</h2>
+<h3 id="81-latency-analysis">8.1 Latency Analysis</h3>
+<p>Understanding latency in distributed systems requires understanding each component's contribution:</p>
+<pre><code>Request Latency Breakdown (typical web request):
+──────────────────────────────────────────────────────────
+Component                        Typical Latency
+──────────────────────────────────────────────────────────
+DNS Resolution                   1-50ms (cached: &lt;1ms)
+TCP Handshake                    ~1ms (same DC), ~75ms (cross-continent)
+TLS Handshake                    ~2ms (same DC, TLS 1.3)
+Load Balancer                    ~0.5ms
+API Gateway processing           ~1-5ms
+Service business logic            ~5-50ms
+Database query                    ~1-10ms (indexed), ~100ms+ (scan)
+Inter-service call               ~1-5ms (same DC)
+Serialization/Deserialization    ~0.1-1ms
+Response transmission             ~0.5ms
+──────────────────────────────────────────────────────────
+Total (same DC, single service):  ~10-50ms
+Total (multi-service, same DC):   ~30-150ms
+Total (cross-region):             ~200-500ms
+──────────────────────────────────────────────────────────
+</code></pre><h3 id="82-throughput-analysis">8.2 Throughput Analysis</h3>
+<p>Throughput depends on the bottleneck in the system:</p>
+<table>
+<thead>
+<tr>
+<th>Bottleneck</th>
+<th>Typical Throughput</th>
+<th>How to Scale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU-bound computation</td>
+<td>~10K-100K ops/sec/core</td>
+<td>Add more cores/machines</td>
+</tr>
+<tr>
+<td>Database writes (single master)</td>
+<td>~1K-10K writes/sec</td>
+<td>Shard the database</td>
+</tr>
+<tr>
+<td>Database reads</td>
+<td>~10K-100K reads/sec</td>
+<td>Add read replicas, add cache</td>
+</tr>
+<tr>
+<td>Network bandwidth</td>
+<td>~1-10 Gbps per machine</td>
+<td>Add machines, optimize payload</td>
+</tr>
+<tr>
+<td>Disk I/O</td>
+<td>~100K-1M IOPS (SSD)</td>
+<td>Use faster storage, cache</td>
+</tr>
+</tbody>
+</table>
+<h3 id="83-scalability-patterns">8.3 Scalability Patterns</h3>
+<p><strong>Amdahl's Law</strong>: The speedup of a program using multiple processors is limited by the sequential fraction of the program.</p>
+<pre><code>Speedup(N) = 1 / (S + (1-S)/N)
+
+Where:
+  S = fraction of work that must be sequential
+  N = number of processors
+
+Example:
+  If 5% of work is sequential (S = 0.05):
+  - 10 processors:  Speedup = 1 / (0.05 + 0.95/10) = 6.9x
+  - 100 processors: Speedup = 1 / (0.05 + 0.95/100) = 16.8x
+  - 1000 processors: Speedup = 1 / (0.05 + 0.95/1000) = 19.6x
+  - ∞ processors:   Speedup = 1 / 0.05 = 20x (maximum!)
+</code></pre><p>Even with 95% parallelizable work, you can never exceed 20x speedup. This is why eliminating sequential bottlenecks (single leader, global locks, shared state) is crucial.</p>
+<p><strong>Universal Scalability Law (USL)</strong>: Extends Amdahl's Law by also accounting for coherency overhead (the cost of keeping distributed copies in sync):</p>
+<pre><code>Capacity(N) = N / (1 + σ(N-1) + κ·N·(N-1))
+
+Where:
+  σ = contention parameter (queuing for shared resources)
+  κ = coherency parameter (cost of maintaining consistency)
+  N = number of nodes
+</code></pre><p>When κ &gt; 0, throughput actually <em>decreases</em> beyond a certain number of nodes. This is why naively adding more nodes can make things slower.</p>
+<h3 id="84-latency-distribution">8.4 Latency Distribution</h3>
+<p><strong>Why averages lie:</strong></p>
+<pre><code>P50 (median): 5ms      ← "typical" request
+P95:          50ms     ← 1 in 20 users sees this
+P99:          500ms    ← 1 in 100 users sees this
+P99.9:        2000ms   ← 1 in 1000 users sees this
+
+If you serve 10,000 requests/second:
+  - P99 = 100 users per second have &gt;500ms experience
+  - P99.9 = 10 users per second have &gt;2000ms experience
+
+With fan-out (service calls N backends):
+  - P99 of overall = 1 - (1 - 0.01)^N
+  - With 50 fan-out: 1 - (0.99)^50 = 39.5% of requests hit a P99 backend!
+</code></pre><p>This "tail latency amplification" is why Google designed systems to be robust against tail latencies (hedged requests, speculative execution, tied requests).</p>
+<hr></hr>
+<h2 id="9-tradeoffs">9. Tradeoffs</h2>
+<h3 id="91-the-fundamental-tradeoff-cap-theorem-preview">9.1 The Fundamental Tradeoff: CAP Theorem (Preview)</h3>
+<p>The CAP Theorem (covered in depth in a later chapter) states that a distributed system can provide at most two of three guarantees:</p>
+<ul>
+<li><strong>Consistency</strong>: Every read receives the most recent write</li>
+<li><strong>Availability</strong>: Every request receives a response (not an error)</li>
+<li><strong>Partition Tolerance</strong>: The system continues to operate despite network partitions</li>
+</ul>
+<p>Since network partitions are inevitable in a distributed system, the real choice is between <strong>CP</strong> (sacrifice availability during partitions) and <strong>AP</strong> (sacrifice consistency during partitions).</p>
+<h3 id="92-monolith-vs-distributed-when-to-choose-what">9.2 Monolith vs Distributed: When to Choose What</h3>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Choose Monolith</th>
+<th>Choose Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Team size</td>
+<td>Small (&lt; 10 engineers)</td>
+<td>Large (50+ engineers)</td>
+</tr>
+<tr>
+<td>Traffic</td>
+<td>Moderate (&lt; 10K RPS)</td>
+<td>High (&gt; 100K RPS)</td>
+</tr>
+<tr>
+<td>Time to market</td>
+<td>Critical (MVP, startup)</td>
+<td>Can invest in infra</td>
+</tr>
+<tr>
+<td>Domain complexity</td>
+<td>Simple, well-understood</td>
+<td>Complex, evolving</td>
+</tr>
+<tr>
+<td>Availability needs</td>
+<td>99.9% is sufficient</td>
+<td>99.99%+ required</td>
+</tr>
+<tr>
+<td>Data size</td>
+<td>Fits on one machine</td>
+<td>Exceeds single machine</td>
+</tr>
+<tr>
+<td>Geographic distribution</td>
+<td>Single region</td>
+<td>Multi-region</td>
+</tr>
+<tr>
+<td>Regulatory requirements</td>
+<td>Single jurisdiction</td>
+<td>Multiple jurisdictions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="93-consistency-vs-latency">9.3 Consistency vs Latency</h3>
+<p>Stronger consistency guarantees = higher latency</p>
+<pre><code>Consistency Level       Typical Latency     Use Case
+─────────────────────────────────────────────────────────────
+Linearizable            50-200ms            Bank transfers
+Sequential              20-100ms            Social media posts
+Causal                  10-50ms             Collaborative editing
+Eventual                1-10ms              DNS, CDN caches
+─────────────────────────────────────────────────────────────
+</code></pre><h3 id="94-simplicity-vs-resilience">9.4 Simplicity vs Resilience</h3>
+<p>Every layer of resilience adds complexity:</p>
+<ul>
+<li>Retries → require idempotency</li>
+<li>Replication → requires consistency protocol</li>
+<li>Sharding → requires routing logic</li>
+<li>Circuit breakers → require fallback logic</li>
+<li>Multi-region → requires data sync</li>
+</ul>
+<p><strong>Rule of Thumb</strong>: Don't add distributed systems complexity unless you have a concrete need. Start simple, measure, then add complexity where needed.</p>
+<h3 id="95-cost-analysis">9.5 Cost Analysis</h3>
+<pre><code>Cost of Distributed Systems:
+──────────────────────────────────────────────────────
+Category          Monolith    Microservices
+──────────────────────────────────────────────────────
+Infrastructure    $             $$$
+Operations        $             $$$$
+Development       $$            $$
+Testing           $             $$$
+Debugging         $             $$$$
+Monitoring        $             $$$
+──────────────────────────────────────────────────────
+Total (small)     $             $$$$  ← Microservices overkill
+Total (large)     $$$$$         $$$   ← Monolith becomes expensive
+──────────────────────────────────────────────────────
+</code></pre><hr></hr>
+<h2 id="10-failure-scenarios">10. Failure Scenarios</h2>
+<h3 id="101-network-partition">10.1 Network Partition</h3>
+<p><strong>Scenario</strong>: A network switch fails, splitting your cluster into two halves. Each half can communicate internally but not with the other.</p>
+<p><strong>Consequences</strong>:</p>
+<ul>
+<li>If you have a single-leader database, one partition loses write access</li>
+<li>If you have multiple leaders, both accept writes → split-brain → data divergence</li>
+<li>Clients in each partition see a different version of the system</li>
+</ul>
+<p><strong>Real-world Example</strong>: In 2011, Amazon had a network partition in US-East-1 that caused an EBS outage. The EBS nodes got into a "re-mirroring storm" — each node tried to replicate to find a partner, overwhelming the network.</p>
+<p><strong>Mitigation</strong>:</p>
+<ul>
+<li>Use consensus protocols (Raft, Paxos) for leader election</li>
+<li>Implement fencing tokens to prevent stale leaders from operating</li>
+<li>Design for graceful degradation during partitions</li>
+<li>Test partition scenarios regularly (Chaos Engineering)</li>
+</ul>
+<h3 id="102-cascading-failures">10.2 Cascading Failures</h3>
+<p><strong>Scenario</strong>: Service A depends on Service B. Service B becomes slow (not failed, just slow). Service A's threads are blocked waiting for B, exhausting A's thread pool. Now Service A can't handle any requests, including those that don't depend on B. Services C and D, which depend on A, also start failing.</p>
+<div class="mermaid">
+graph LR
+    User --&gt; ServiceA["Service A"]
+    ServiceC["Service C"] --&gt; ServiceA
+    ServiceD["Service D"] --&gt; ServiceA
+    ServiceA --&gt; ServiceB["Service B (SLOW!)"]
+</div>
+
+<p><strong>Timeline:</strong></p>
+<ul>
+<li><strong>t=0:</strong> Service B becomes slow (P99 → 10 seconds)</li>
+<li><strong>t=10s:</strong> Service A's thread pool exhausted</li>
+<li><strong>t=15s:</strong> Service C and D start failing</li>
+<li><strong>t=20s:</strong> All services affected → total outage</li>
+</ul>
+<p><strong>Mitigation</strong>:</p>
+<ul>
+<li><strong>Timeouts</strong>: Every remote call must have a timeout</li>
+<li><strong>Circuit Breakers</strong>: Stop calling a failing service</li>
+<li><strong>Bulkheads</strong>: Isolate thread pools per dependency</li>
+<li><strong>Fallbacks</strong>: Return degraded results when a dependency is down</li>
+</ul>
+<h3 id="103-split-brain">10.3 Split Brain</h3>
+<p><strong>Scenario</strong>: In a leader-follower setup, a network partition makes followers believe the leader is dead. They elect a new leader. Now you have two leaders accepting writes.</p>
+<p><strong>Consequences</strong>:</p>
+<ul>
+<li>Two conflicting writes to the same data</li>
+<li>Data divergence</li>
+<li>When the partition heals, you have conflicting data that must be reconciled</li>
+</ul>
+<p><strong>Real-world Example</strong>: MongoDB's replica sets have experienced split-brain scenarios where both old and new primaries accepted writes simultaneously, leading to data loss.</p>
+<p><strong>Mitigation</strong>:</p>
+<ul>
+<li>Use quorum-based leader election (majority required)</li>
+<li>Implement fencing tokens (monotonically increasing tokens that invalidate stale leaders)</li>
+<li>Use an odd number of nodes (3, 5, 7) to avoid ties</li>
+</ul>
+<h3 id="104-thundering-herd">10.4 Thundering Herd</h3>
+<p><strong>Scenario</strong>: A cached value expires, and suddenly thousands of requests hit the database simultaneously to refetch the value.</p>
+<p><strong>Mitigation</strong>:</p>
+<ul>
+<li><strong>Cache stampede protection</strong>: Only one request refreshes the cache; others wait or get stale data</li>
+<li><strong>Probabilistic early expiration</strong>: Randomly refresh cache before TTL expires</li>
+<li><strong>Distributed locking</strong>: Use a lock so only one node refreshes</li>
+</ul>
+<h3 id="105-retry-storms">10.5 Retry Storms</h3>
+<p><strong>Scenario</strong>: A service becomes temporarily overloaded. Clients retry. The retries add more load. The service becomes more overloaded. More retries. Positive feedback loop → complete collapse.</p>
+<p><strong>Mitigation</strong>:</p>
+<ul>
+<li><strong>Exponential backoff</strong>: Wait longer between retries</li>
+<li><strong>Jitter</strong>: Randomize retry timing to prevent synchronized retries</li>
+<li><strong>Circuit breakers</strong>: Stop retrying after a threshold</li>
+<li><strong>Retry budgets</strong>: Limit the total number of retries in the system</li>
+<li><strong>Server-side rate limiting</strong>: Reject excess requests with 429 status</li>
+</ul>
+<h3 id="106-data-corruption">10.6 Data Corruption</h3>
+<p><strong>Scenario</strong>: A bug in the application writes corrupted data to the database. The corrupted data is replicated to all replicas. Backups contain the corrupted data.</p>
+<p><strong>Mitigation</strong>:</p>
+<ul>
+<li><strong>Immutable data / Event Sourcing</strong>: Never update, only append. You can always replay to recover.</li>
+<li><strong>Delayed replication</strong>: One replica is intentionally delayed (e.g., 1 hour behind) so you can recover from before the corruption.</li>
+<li><strong>Point-in-time recovery</strong>: Databases that support restoring to any point in time.</li>
+<li><strong>Checksums</strong>: Detect corruption early.</li>
+</ul>
+<hr></hr>
+<h2 id="11-debugging--observability">11. Debugging &amp; Observability</h2>
+<h3 id="111-the-three-pillars-of-observability">11.1 The Three Pillars of Observability</h3>
+<p>In a distributed system, debugging is fundamentally different from debugging a monolith. You can't just look at a single log file or attach a debugger. You need three pillars:</p>
+<h4 id="1-logs">1. Logs</h4>
+<p>Structured, searchable records of events.</p>
+<pre><code class="lang-java"><span class="hljs-comment">// BAD: Unstructured log</span>
+logger.info(<span class="hljs-string">"User created successfully"</span>);
+
+<span class="hljs-comment">// GOOD: Structured log with correlation</span>
+logger.info(<span class="hljs-string">"User created successfully"</span>, Map.of(
+    <span class="hljs-string">"userId"</span>, user.getId(),
+    <span class="hljs-string">"email"</span>, user.getEmail(),
+    <span class="hljs-string">"traceId"</span>, MDC.get(<span class="hljs-string">"traceId"</span>),
+    <span class="hljs-string">"spanId"</span>, MDC.get(<span class="hljs-string">"spanId"</span>),
+    <span class="hljs-string">"service"</span>, <span class="hljs-string">"user-service"</span>,
+    <span class="hljs-string">"latencyMs"</span>, stopwatch.elapsed(TimeUnit.MILLISECONDS)
+));
+</code></pre>
+<p><strong>Tools</strong>: ELK Stack (Elasticsearch, Logstash, Kibana), Splunk, Datadog Logs, Loki</p>
+<h4 id="2-metrics">2. Metrics</h4>
+<p>Aggregated numerical measurements over time.</p>
+<p><strong>Key metrics for distributed systems:</strong></p>
+<ul>
+<li><strong>Rate</strong>: Requests per second (RPS)</li>
+<li><strong>Errors</strong>: Error rate (5xx responses)</li>
+<li><strong>Duration</strong>: P50, P95, P99 latencies</li>
+<li><strong>Saturation</strong>: CPU utilization, memory usage, queue depth</li>
+</ul>
+<p><strong>The RED Method</strong> (for services):</p>
+<ul>
+<li><strong>R</strong>ate: Number of requests per second</li>
+<li><strong>E</strong>rrors: Number of failed requests per second</li>
+<li><strong>D</strong>uration: Distribution of request latencies</li>
+</ul>
+<p><strong>The USE Method</strong> (for resources):</p>
+<ul>
+<li><strong>U</strong>tilization: Fraction of resource busy</li>
+<li><strong>S</strong>aturation: Degree of queuing</li>
+<li><strong>E</strong>rrors: Error events</li>
+</ul>
+<p><strong>Tools</strong>: Prometheus + Grafana, Datadog, CloudWatch, New Relic</p>
+<h4 id="3-distributed-tracing">3. Distributed Tracing</h4>
+<p>End-to-end tracking of a request as it traverses multiple services.</p>
+<pre><code>Trace: abc-123
+──────────────────────────────────────────────────
+├── API Gateway (2ms)
+│   ├── Auth Service (5ms)
+│   └── Order Service (95ms)  ← bottleneck!
+│       ├── Inventory Service (8ms)
+│       ├── Pricing Service (12ms)
+│       └── Database Query (65ms) ← slow query!
+└── Total: 102ms
+──────────────────────────────────────────────────
+</code></pre><p><strong>Key Concepts:</strong></p>
+<ul>
+<li><strong>Trace</strong>: The entire journey of a request</li>
+<li><strong>Span</strong>: A single unit of work within a trace</li>
+<li><strong>Context Propagation</strong>: Passing trace IDs across service boundaries (via HTTP headers, message metadata)</li>
+</ul>
+<p><strong>Tools</strong>: Jaeger, Zipkin, Datadog APM, AWS X-Ray, OpenTelemetry</p>
+<h3 id="112-debugging-distributed-systems-checklist">11.2 Debugging Distributed Systems Checklist</h3>
+<ol>
+<li><strong>Start with traces</strong>: Find the trace ID for the failing request</li>
+<li><strong>Identify the slow/failing span</strong>: Which service is the bottleneck?</li>
+<li><strong>Check that service's metrics</strong>: CPU? Memory? Error rate spike?</li>
+<li><strong>Look at that service's logs</strong>: Any errors or warnings?</li>
+<li><strong>Check dependencies</strong>: Is a downstream service or database slow?</li>
+<li><strong>Look for patterns</strong>: Is it all requests or specific users/regions?</li>
+<li><strong>Check recent deployments</strong>: Was anything deployed recently?</li>
+<li><strong>Check infrastructure</strong>: Any node failures? Network issues?</li>
+</ol>
+<h3 id="113-alerting-strategy">11.3 Alerting Strategy</h3>
+<pre><code>Alert Levels:
+─────────────────────────────────────────────────────
+Level     Response      Example
+─────────────────────────────────────────────────────
+P0        Immediate     Complete service outage
+P1        &lt; 15 min      Significant degradation (&gt;10% errors)
+P2        &lt; 1 hour      Minor degradation (&lt;5% errors)
+P3        Next day      Non-critical warning (disk 80% full)
+P4        Next sprint   Performance optimization opportunity
+─────────────────────────────────────────────────────
+
+Golden Signals to Alert On:
+- Latency:    P99 &gt; 500ms for &gt;5 minutes
+- Traffic:    RPS drops &gt;50% unexpectedly
+- Errors:     5xx rate &gt; 1% for &gt;2 minutes
+- Saturation: CPU &gt; 80% for &gt;10 minutes
+</code></pre><hr></hr>
+<h2 id="12-interview-questions">12. Interview Questions</h2>
+<h3 id="beginner-level">Beginner Level</h3>
+<p><strong>Q1: What is a distributed system? Give an example.</strong></p>
+<p><strong>Expected Answer</strong>: A distributed system is a collection of independent computers that work together and appear to users as a single system. They communicate via message passing over a network. Examples include Google Search (thousands of servers process each query), Netflix (content stored across thousands of CDN nodes globally), and even a simple web application with a separate database server.</p>
+<p><strong>Q2: What is the difference between vertical and horizontal scaling?</strong></p>
+<p><strong>Expected Answer</strong>: </p>
+<ul>
+<li><strong>Vertical scaling</strong> (scale up): Adding more resources (CPU, RAM, disk) to a single machine. Simpler but limited by hardware maximums, single point of failure, and increasingly expensive.</li>
+<li><strong>Horizontal scaling</strong> (scale out): Adding more machines. More complex (need load balancing, data distribution) but can scale almost indefinitely. This is what most large-scale systems use.</li>
+<li>Example: If your database is slow, vertical scaling means upgrading to a more powerful server. Horizontal scaling means sharding the database across multiple servers.</li>
+</ul>
+<p><strong>Q3: Name three challenges of distributed systems that don't exist in single-machine programs.</strong></p>
+<p><strong>Expected Answer</strong>:</p>
+<ol>
+<li><strong>Partial failures</strong>: Some nodes fail while others continue. In a single machine, either everything works or everything crashes.</li>
+<li><strong>Network unreliability</strong>: Messages can be lost, delayed, duplicated, or reordered. In a single machine, function calls are instant and reliable.</li>
+<li><strong>No global clock</strong>: Each machine's clock drifts independently. Ordering events across machines requires special algorithms (logical clocks, vector clocks).</li>
+</ol>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<p><strong>Q4: Explain the 8 Fallacies of Distributed Computing. Which one do you think is the most dangerous?</strong></p>
+<p><strong>Expected Answer</strong>: [List all 8 with brief explanations]. The most dangerous is arguably "The network is reliable" because it leads engineers to write code that silently fails when the network hiccups. Without retries, timeouts, and circuit breakers, a brief network issue can cascade into a total outage. However, "Latency is zero" is also extremely dangerous because it leads to chatty service designs that become unbearably slow at scale.</p>
+<p><strong>Q5: You're designing a system that needs 99.99% availability (about 52 minutes of downtime per year). What architectural decisions would you make?</strong></p>
+<p><strong>Expected Answer</strong>:</p>
+<ul>
+<li>Multi-region deployment (survive entire region failures)</li>
+<li>Active-active configuration (no single point of failure)</li>
+<li>Automated failover (human-initiated failover is too slow for 99.99%)</li>
+<li>Health checks and circuit breakers (detect and isolate failures fast)</li>
+<li>Graceful degradation (serve partial results rather than errors)</li>
+<li>Chaos engineering to verify resilience (regularly test failure scenarios)</li>
+<li>Redundant networking (multiple ISPs, multiple paths)</li>
+<li>Database replication with automatic leader election</li>
+<li>CDN for static content (reduce load on origin)</li>
+<li>Load shedding and rate limiting (protect against overload)</li>
+</ul>
+<p><strong>Q6: What is the difference between latency and throughput? Can you improve one without affecting the other?</strong></p>
+<p><strong>Expected Answer</strong>:</p>
+<ul>
+<li><strong>Latency</strong>: Time for a single request to complete (measured in ms). User-facing metric.</li>
+<li><strong>Throughput</strong>: Number of requests processed per unit time (measured in RPS). System capacity metric.</li>
+<li>They are often correlated but not the same. For example:<ul>
+<li>Adding a cache can improve both (lower latency, higher throughput)</li>
+<li>Batching can improve throughput but increase latency (waiting to fill the batch)</li>
+<li>Adding more replicas can improve throughput but doesn't improve individual request latency</li>
+<li>HTTP/2 multiplexing improves throughput on a single connection without significantly affecting individual request latency</li>
+</ul>
+</li>
+</ul>
+<h3 id="advanced--faang-level">Advanced / FAANG Level</h3>
+<p><strong>Q7: You're at Amazon and a service is experiencing cascading failures during Prime Day. Walk me through how you would diagnose and fix the issue in real-time.</strong></p>
+<p><strong>Expected Answer</strong>:</p>
+<ol>
+<li><strong>Triage (0-2 minutes)</strong>: Check dashboards for golden signals. Is it latency, errors, or traffic? Which service is the root cause?</li>
+<li><strong>Identify pattern (2-5 minutes)</strong>: Is it correlated with a deployment? A specific region? A specific customer segment? Check recent change logs.</li>
+<li><strong>Isolate (5-10 minutes)</strong>: <ul>
+<li>If it's a bad deployment: rollback immediately</li>
+<li>If it's a dependency failure: activate circuit breakers, serve from cache/fallback</li>
+<li>If it's traffic overload: activate rate limiting, shed non-critical load</li>
+</ul>
+</li>
+<li><strong>Mitigate (10-20 minutes)</strong>:<ul>
+<li>Scale up the affected service</li>
+<li>Redirect traffic away from the affected region</li>
+<li>Disable non-critical features to reduce load</li>
+</ul>
+</li>
+<li><strong>Communicate</strong>: Update the incident channel, notify stakeholders</li>
+<li><strong>Post-mortem</strong>: After the incident, write a thorough post-mortem with root cause, timeline, impact, and preventive actions</li>
+</ol>
+<p><strong>Q8: Explain why exactly-once message delivery is impossible in a distributed system. Then explain how systems like Kafka achieve "effectively exactly-once" semantics.</strong></p>
+<p><strong>Expected Answer</strong>:
+True exactly-once delivery is impossible because of the Two Generals Problem. If a sender sends a message and doesn't get an acknowledgment, it can't know if:
+(a) The message was lost (should retry)
+(b) The message was delivered but the ack was lost (should NOT retry, or will duplicate)</p>
+<p>Since there's no way to distinguish these cases, you must choose between at-most-once (never retry → may lose messages) or at-least-once (always retry → may duplicate messages).</p>
+<p>Kafka achieves "effectively exactly-once" through idempotent producers and transactional messaging:</p>
+<ul>
+<li><strong>Idempotent producer</strong>: Each message is assigned a sequence number. The broker detects and deduplicates retried messages based on (producer ID, sequence number).</li>
+<li><strong>Transactions</strong>: A producer can atomically write to multiple partitions and commit offsets, ensuring that consumed-then-produced message chains are processed exactly once.</li>
+<li>This is "effectively" exactly-once because the messages may physically be sent multiple times, but the system guarantees they are processed exactly once.</li>
+</ul>
+<p><strong>Q9: Design a system that can handle 1 million WebSocket connections on a single server. What are the bottlenecks?</strong></p>
+<p><strong>Expected Answer</strong>:</p>
+<ul>
+<li>Use non-blocking I/O (Java NIO, Netty, or epoll on Linux)</li>
+<li>Each connection needs minimal memory (~10KB for socket buffers → 10GB for 1M connections)</li>
+<li>Bottlenecks: File descriptor limits (need to raise ulimit), memory (10GB+), CPU for handling messages, network bandwidth</li>
+<li>Use event-driven architecture (single thread per event loop, not thread per connection)</li>
+<li>In Java: Netty with EpollEventLoopGroup on Linux</li>
+<li>Tune kernel parameters: net.core.somaxconn, net.ipv4.tcp_tw_reuse, fs.file-max</li>
+<li>This is the C10M problem (10 million concurrent connections)</li>
+</ul>
+<hr></hr>
+<h2 id="13-exercises">13. Exercises</h2>
+<h3 id="conceptual-exercises">Conceptual Exercises</h3>
+<p><strong>Exercise 1: Fallacy Identification</strong>
+For each scenario, identify which fallacy of distributed computing is being violated:</p>
+<ol>
+<li>A developer writes code that makes 50 sequential HTTP calls to render a single page, assuming each call takes 1ms.</li>
+<li>A system architect designs a service that stores configuration as a hardcoded list of IP addresses for its dependencies.</li>
+<li>A startup deploys their application without TLS, reasoning that "we're inside a VPC, so we're safe."</li>
+<li>A team deploys a new service that sends 1MB JSON payloads between services in different data centers.</li>
+</ol>
+<p><strong>Exercise 2: Availability Calculation</strong>
+A system has the following dependency chain: User Service → Order Service → Payment Service → Database. Each component has 99.9% availability. What is the overall system availability? How can you improve it?</p>
+<p><strong>Exercise 3: Scaling Analysis</strong>
+Your web application currently serves 1000 requests per second on a single server. Traffic is growing 10x per year. Design a scaling strategy for the next 3 years. What changes at each stage?</p>
+<h3 id="coding-exercises">Coding Exercises</h3>
+<p><strong>Exercise 4: Implement Exponential Backoff with Jitter</strong>
+Write a Java class that implements retry logic with exponential backoff and jitter. The class should:</p>
+<ul>
+<li>Accept a maximum number of retries</li>
+<li>Accept a base delay in milliseconds</li>
+<li>Add random jitter to prevent thundering herd</li>
+<li>Support a configurable maximum delay cap</li>
+<li>Return both the result and the number of attempts</li>
+</ul>
+<p><strong>Exercise 5: Implement a Simple Circuit Breaker</strong>
+Write a Java circuit breaker that:</p>
+<ul>
+<li>Tracks the number of failures in a sliding window</li>
+<li>Opens the circuit when failures exceed a threshold</li>
+<li>Periodically attempts a "half-open" test</li>
+<li>Resets to closed state on success</li>
+<li>Provides metrics (total calls, failures, circuit state)</li>
+</ul>
+<p><strong>Exercise 6: Build a Simple Key-Value Store with Replication</strong>
+Build a key-value store that:</p>
+<ul>
+<li>Runs on 3 nodes</li>
+<li>Replicates all writes to all nodes</li>
+<li>Handles node failures gracefully</li>
+<li>Demonstrates the challenge of consistency when nodes are temporarily partitioned</li>
+</ul>
+<h3 id="system-design-exercises">System Design Exercises</h3>
+<p><strong>Exercise 7: Design a URL Shortener</strong>
+Design a distributed URL shortener (like bit.ly) that handles:</p>
+<ul>
+<li>100 million new URLs per day</li>
+<li>10 billion redirects per day</li>
+<li>99.99% availability</li>
+<li>&lt; 10ms redirect latency</li>
+</ul>
+<p>Consider: ID generation, storage, caching, analytics, geographic distribution.</p>
+<p><strong>Exercise 8: Design a Real-Time Chat System</strong>
+Design a distributed chat system (like Slack) that handles:</p>
+<ul>
+<li>10 million concurrent users</li>
+<li>Real-time message delivery (&lt; 100ms)</li>
+<li>Message persistence and search</li>
+<li>Read receipts and typing indicators</li>
+<li>File sharing</li>
+</ul>
+<p>Consider: WebSocket management, message routing, presence tracking, storage.</p>
+<hr></hr>
+<h2 id="14-expert-insights">14. Expert Insights</h2>
+<h3 id="141-the-distributed-monolith-anti-pattern">14.1 The Distributed Monolith Anti-Pattern</h3>
+<p>One of the most common mistakes is building a "distributed monolith" — a system that has all the complexity of microservices with none of the benefits. Signs of a distributed monolith:</p>
+<ul>
+<li>Services must be deployed together</li>
+<li>Changing one service requires changes in many others</li>
+<li>Shared databases between services</li>
+<li>Synchronous chains of calls across many services</li>
+<li>Tightly coupled data models</li>
+</ul>
+<p><strong>How to avoid it</strong>: Define clear service boundaries along business domain lines (Domain-Driven Design). Each service should own its data and be independently deployable.</p>
+<h3 id="142-the-coordination-avoidance-principle">14.2 The Coordination Avoidance Principle</h3>
+<p>Every coordination point (locks, consensus, distributed transactions) is a potential bottleneck and failure point. The best distributed systems are designed to minimize coordination.</p>
+<p><strong>Strategies:</strong></p>
+<ul>
+<li>Use CRDTs (Conflict-free Replicated Data Types) instead of locks</li>
+<li>Use event-driven architecture instead of synchronous RPCs</li>
+<li>Use eventual consistency where possible</li>
+<li>Partition data to avoid cross-partition coordination</li>
+<li>Use idempotent operations to make retries safe</li>
+</ul>
+<h3 id="143-start-with-a-monolith-usually">14.3 Start With a Monolith (Usually)</h3>
+<p>Martin Fowler's advice: "Almost all the cases where I've heard of a system that was built as a microservice system from scratch, it has ended up in serious trouble... You shouldn't start a new project with microservices, even if you're sure your application will be big enough to make it worthwhile."</p>
+<p><strong>The recommended path:</strong></p>
+<ol>
+<li>Start with a well-structured monolith</li>
+<li>Identify performance bottlenecks and scaling needs through measurement</li>
+<li>Extract services one at a time, starting with the most critical</li>
+<li>Each extraction should solve a concrete problem, not satisfy architectural aesthetics</li>
+</ol>
+<h3 id="144-the-network-is-the-bottleneck">14.4 The Network Is the Bottleneck</h3>
+<p>In most distributed systems, the network is the bottleneck, not CPU or memory. Strategies to minimize network impact:</p>
+<ul>
+<li><strong>Data locality</strong>: Move computation to data, not data to computation</li>
+<li><strong>Batch operations</strong>: Amortize network overhead across many operations</li>
+<li><strong>Compression</strong>: Reduce payload sizes (gzip, zstd, Protocol Buffers)</li>
+<li><strong>Connection pooling</strong>: Reuse TCP connections</li>
+<li><strong>Caching</strong>: Avoid unnecessary network calls</li>
+<li><strong>Asynchronous communication</strong>: Don't block on network calls when possible</li>
+</ul>
+<h3 id="145-hidden-complexity-time">14.5 Hidden Complexity: Time</h3>
+<p>Time in distributed systems is deeply complex:</p>
+<ul>
+<li><strong>Wall clock time</strong>: Unreliable across machines (clock drift, NTP adjustments)</li>
+<li><strong>Monotonic clock</strong>: Reliable for measuring duration on a single machine, but not comparable across machines</li>
+<li><strong>Logical clocks</strong>: Lamport timestamps establish partial ordering but not wall-clock time</li>
+<li><strong>Vector clocks</strong>: Track causal ordering but grow with the number of nodes</li>
+<li><strong>Hybrid logical clocks (HLC)</strong>: Combine wall-clock time with logical counters</li>
+<li><strong>TrueTime (Google)</strong>: Uses GPS + atomic clocks to bound uncertainty</li>
+</ul>
+<p><strong>Lesson</strong>: Never use <code>System.currentTimeMillis()</code> for ordering events across machines. Use logical clocks or a centralized time service.</p>
+<h3 id="146-common-mistakes-engineers-make">14.6 Common Mistakes Engineers Make</h3>
+<ol>
+<li><strong>Not setting timeouts</strong>: Every network call must have a timeout. No exceptions.</li>
+<li><strong>Retrying without backoff</strong>: Immediate retries can cause retry storms.</li>
+<li><strong>Retrying non-idempotent operations</strong>: If your operation isn't idempotent, retrying can cause duplicates or corruption.</li>
+<li><strong>Ignoring partial failures</strong>: Assuming all-or-nothing behavior in a system designed for partial failures.</li>
+<li><strong>Premature distribution</strong>: Breaking a monolith into microservices before you need to.</li>
+<li><strong>Shared databases between services</strong>: This creates tight coupling and eliminates the independence that makes microservices valuable.</li>
+<li><strong>Not testing failure scenarios</strong>: If you haven't tested it, it will fail in production.</li>
+<li><strong>Trusting the network</strong>: See Fallacy #1.</li>
+<li><strong>Not monitoring</strong>: If you can't see it, you can't fix it.</li>
+<li><strong>Over-engineering</strong>: Using Kubernetes for a system that gets 10 requests per minute.</li>
+</ol>
+<h3 id="147-when-not-to-use-distributed-systems">14.7 When NOT to Use Distributed Systems</h3>
+<p>Don't distribute when:</p>
+<ul>
+<li>Your application fits on a single machine (most applications do!)</li>
+<li>You have a small team (&lt; 5 engineers)</li>
+<li>You need strong consistency everywhere (use a single database)</li>
+<li>Your application has low traffic (&lt; 1000 RPS)</li>
+<li>You're building an MVP (speed &gt; architecture)</li>
+<li>The complexity cost exceeds the scaling benefit</li>
+</ul>
+<p><strong>Real wisdom</strong>: A single PostgreSQL instance can handle ~10,000 transactions per second. A single modern server can handle ~50,000 HTTP requests per second. Most applications never exceed these limits.</p>
+<hr></hr>
+<h2 id="15-chapter-summary">15. Chapter Summary</h2>
+<h3 id="key-takeaways">Key Takeaways</h3>
+<ul>
+<li><p><strong>A distributed system</strong> is a collection of independent computers that appears to users as a single coherent system. Nodes communicate by passing messages over a network.</p>
+</li>
+<li><p><strong>Five reasons for distribution</strong>: Scalability, reliability, geographic distribution, economic efficiency, and regulatory requirements.</p>
+</li>
+<li><p><strong>Monoliths vs. distributed systems</strong> is not about one being better than the other — it's about choosing the right tool for your scale, team size, and requirements. Most applications should start as monoliths.</p>
+</li>
+<li><p><strong>The 8 Fallacies of Distributed Computing</strong> describe assumptions that fail in distributed environments:</p>
+<ol>
+<li>The network is reliable</li>
+<li>Latency is zero</li>
+<li>Bandwidth is infinite</li>
+<li>The network is secure</li>
+<li>Topology doesn't change</li>
+<li>There is one administrator</li>
+<li>Transport cost is zero</li>
+<li>The network is homogeneous</li>
+</ol>
+</li>
+<li><p><strong>Key properties</strong> of distributed systems include transparency, openness, scalability, and fault tolerance.</p>
+</li>
+<li><p><strong>Partial failure</strong> is the fundamental challenge — some components fail while others continue. This is fundamentally different from single-machine computing.</p>
+</li>
+<li><p><strong>No global clock</strong> means ordering events requires logical clocks, vector clocks, or specialized hardware (GPS/atomic clocks).</p>
+</li>
+<li><p><strong>Real-world systems</strong> (Google, Amazon, Netflix, Uber) evolved from monoliths to distributed architectures over years, driven by concrete scaling needs.</p>
+</li>
+<li><p><strong>Performance in distributed systems</strong> is dominated by network latency. Tail latency amplification makes P99 latencies critical.</p>
+</li>
+<li><p><strong>Common failure modes</strong> include network partitions, cascading failures, split brain, thundering herd, and retry storms. Mitigations include timeouts, retries with backoff, circuit breakers, bulkheads, and fallbacks.</p>
+</li>
+<li><p><strong>Observability</strong> through logs, metrics, and distributed tracing is essential — you cannot debug what you cannot see.</p>
+</li>
+<li><p><strong>Start simple</strong>: Don't distribute prematurely. Measure first, then scale where needed.</p>
+</li>
+</ul>
+<h3 id="whats-next">What's Next</h3>
+<p>In the next chapter, we'll dive deep into <strong>Networking Fundamentals</strong> — the communication layer that makes distributed systems possible. We'll cover TCP/IP, HTTP protocols, gRPC, DNS, load balancers, and the network behaviors that distributed systems must handle.</p>
+<hr></hr>
+<p><em>"Distributed systems are easy to build and hard to build correctly."</em><br></br><em>— Anonymous (Every Distributed Systems Engineer Ever)</em></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter-02-Networking-Fundamentals.html" class="navigation navigation-next " aria-label="Next page: Chapter 2: Networking Fundamentals">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 1: Introduction to Distributed Systems","level":"2.1","depth":1,"next":{"title":"Chapter 2: Networking Fundamentals","level":"2.2","depth":1,"path":"PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.md","ref":"PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.md","mtime":"2026-05-23T05:15:33.253Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:21:13.964Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

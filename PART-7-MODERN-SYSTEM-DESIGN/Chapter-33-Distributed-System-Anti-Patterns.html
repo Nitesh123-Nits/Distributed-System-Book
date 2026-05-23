@@ -1,0 +1,1132 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 33: Distributed System Anti-Patterns · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.0">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter-34-Performance-Engineering.html" />
+    
+    
+    <link rel="prev" href="Chapter-32-Large-Scale-System-Design-Case-Studies.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 1: Foundations</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                    
+                    Chapter 1: Introduction to Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                    
+                    Chapter 2: Networking Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                    
+                    Chapter 3: Time and Clocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                    
+                    Chapter 4: Processes, Threads, and Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2: Core Principles</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                    
+                    Chapter 5: Distributed System Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                    
+                    Chapter 6: CAP Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                    
+                    Chapter 7: Consistency Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                    
+                    Chapter 8: Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                    
+                    Chapter 9: Partitioning and Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                    
+                    Chapter 10: Consensus Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3: Storage Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-11-Distributed-Databases.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-11-Distributed-Databases.html">
+            
+                    
+                    Chapter 11: Distributed Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.html">
+            
+                    
+                    Chapter 12: Distributed Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-13-Distributed-Caching.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-13-Distributed-Caching.html">
+            
+                    
+                    Chapter 13: Distributed Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-14-Distributed-File-Systems.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-14-Distributed-File-Systems.html">
+            
+                    
+                    Chapter 14: Distributed File Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../PART-3-STORAGE-SYSTEMS/Chapter-15-Stream-Processing-Systems.html">
+            
+                <a href="../PART-3-STORAGE-SYSTEMS/Chapter-15-Stream-Processing-Systems.html">
+            
+                    
+                    Chapter 15: Stream Processing Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 4: Microservices and Cloud</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                    
+                    Chapter 16: Microservices Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                    
+                    Chapter 17: Service Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                    
+                    Chapter 18: Containerization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                    
+                    Chapter 19: Kubernetes Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                    
+                    Chapter 20: Service Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 5: Reliability and Scalability</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                    
+                    Chapter 21: Scalability Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                    
+                    Chapter 22: Reliability Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                    
+                    Chapter 23: Fault Tolerance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                    
+                    Chapter 24: Observability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                    
+                    Chapter 25: Distributed Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 6: Advanced Distributed Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                    
+                    Chapter 26: Event-Driven Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                    
+                    Chapter 27: Distributed Scheduling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                    
+                    Chapter 28: Geo-Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                    
+                    Chapter 29: Security in Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                    
+                    Chapter 30: Distributed Machine Learning Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 7: Modern System Design</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="Chapter-31-Real-Time-Systems.html">
+            
+                <a href="Chapter-31-Real-Time-Systems.html">
+            
+                    
+                    Chapter 31: Real-Time Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                <a href="Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                    
+                    Chapter 32: Large Scale System Design Case Studies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="8.3" data-path="Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                <a href="Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                    
+                    Chapter 33: Distributed System Anti-Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="Chapter-34-Performance-Engineering.html">
+            
+                <a href="Chapter-34-Performance-Engineering.html">
+            
+                    
+                    Chapter 34: Performance Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="Chapter-35-Future-of-Distributed-Systems.html">
+            
+                <a href="Chapter-35-Future-of-Distributed-Systems.html">
+            
+                    
+                    Chapter 35: Future of Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extras</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../APPENDIX-Mastery-Roadmap.html">
+            
+                <a href="../APPENDIX-Mastery-Roadmap.html">
+            
+                    
+                    Appendix: Mastery Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 33: Distributed System Anti-Patterns</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-33-distributed-system-anti-patterns">Chapter 33: Distributed System Anti-Patterns</h1>
+<h2 id="1-why-this-matters">1. Why This Matters</h2>
+<p>Building distributed systems is inherently complex. It is common for engineers transitioning from monolithic architectures to microservices to carry over practices that worked well in a single process but are disastrous in a distributed environment. Understanding these "anti-patterns" is crucial because they often seem like good ideas at first—or at least harmless conveniences—but eventually lead to severe operational issues, catastrophic failures, and immense technical debt. </p>
+<p>When you design a distributed system, you are trading the simplicity of local method calls and single-node transactions for scalability, fault tolerance, and organizational autonomy. An anti-pattern usually emerges when a design fails to respect this trade-form, inadvertently recreating the monolith's constraints across network boundaries, or ignoring the realities of network communication. Knowing these anti-patterns allows architects to avoid landmines, diagnose systemic issues in legacy architectures, and design resilient, scalable systems that can handle real-world load gracefully.</p>
+<h2 id="2-beginner-intuition">2. Beginner Intuition</h2>
+<p>Imagine you and your friends decide to cook a massive feast. </p>
+<ul>
+<li><strong>The Monolith:</strong> You all cook in one giant kitchen. You share the same fridge, the same stove, and can easily shout to each other. It’s crowded but easy to coordinate.</li>
+<li><strong>The Microservices:</strong> You all cook in your own separate kitchens across town. </li>
+</ul>
+<p>Now, imagine the anti-patterns:</p>
+<ul>
+<li><strong>Shared Database:</strong> You all try to use the <em>same fridge</em> located in the center of town. Every time you need an egg, you drive across town. (Slow, congested, single point of failure).</li>
+<li><strong>Chatty Services:</strong> You need a recipe for a cake. You call your friend to ask for the flour amount. You hang up. You call back for sugar. You hang up. You call back for eggs. (Wastes time, clogs the phone lines).</li>
+<li><strong>Synchronous Chain:</strong> You can't start cooking until Alice chops onions. Alice can't chop onions until Bob buys them. Bob can't buy them until Charlie gives him money. If Charlie is asleep, everyone is stuck waiting. (Cascading failure).</li>
+<li><strong>Distributed Monolith:</strong> You all have separate kitchens, but you are required to serve your dishes at the exact same millisecond, and you all use the same delivery truck. You have all the overhead of separate kitchens but none of the independence.</li>
+</ul>
+<p>An anti-pattern is essentially a fundamentally flawed way of organizing this distributed work that makes the system fragile, slow, or impossible to maintain.</p>
+<h2 id="3-core-theory">3. Core Theory</h2>
+<p>Distributed system anti-patterns are recurring design flaws that negatively impact system scalability, reliability, and maintainability. Let's formalize the core anti-patterns.</p>
+<h3 id="31-the-shared-database-anti-pattern">3.1 The Shared Database Anti-Pattern</h3>
+<p>Teams often extract microservices but keep them connected to the same central database to avoid the complexity of data replication and eventual consistency. 
+<strong>Problems:</strong> </p>
+<ul>
+<li><strong>Coupling:</strong> Schema changes by one service can break others.</li>
+<li><strong>Scaling Limits:</strong> The database becomes a single bottleneck for CPU, Memory, and I/O.</li>
+<li><strong>No Autonomy:</strong> Deployments must be coordinated.</li>
+</ul>
+<h3 id="32-chatty-services-and-fan-out">3.2 Chatty Services and Fan-Out</h3>
+<p>A chatty service requires multiple network calls to accomplish a single business task. </p>
+<ul>
+<li><strong>N+1 Queries:</strong> Fetching a list of items, then making a separate API call for each item's details.</li>
+<li><strong>Fan-Out Amplification:</strong> A single user request fans out to 100 internal microservices. If any one of them is slow, the entire request is slow.</li>
+</ul>
+<h3 id="33-tight-coupling">3.3 Tight Coupling</h3>
+<ul>
+<li><strong>Temporal Coupling:</strong> Services must be up at the same time to process a request (synchronous RPC).</li>
+<li><strong>Implementation Coupling:</strong> Services share code libraries for business logic, tying their release cycles together.</li>
+<li><strong>Data Coupling:</strong> Services depend on the internal structure of another service's data.</li>
+</ul>
+<h3 id="34-the-distributed-monolith">3.4 The Distributed Monolith</h3>
+<p>A system deployed as microservices but heavily intertwined. Services cannot be deployed independently. If one goes down, they all go down. It combines the worst of both worlds: the operational complexity of microservices and the rigid coupling of a monolith.</p>
+<h3 id="35-the-god-service">3.5 The God Service</h3>
+<p>A single service that accumulates too much business logic, often named <code>CoreService</code> or <code>CommonManager</code>. It handles orchestration, data aggregation, and routing, becoming a bottleneck for development and runtime performance.</p>
+<h3 id="36-synchronous-call-chains">3.6 Synchronous Call Chains</h3>
+<p>Service A calls B, which calls C, which calls D. </p>
+<ul>
+<li><strong>Latency:</strong> The total latency is the sum of all latencies.</li>
+<li><strong>Availability:</strong> The total availability is the product of all individual availabilities (e.g., 0.99 <em> 0.99 </em> 0.99 = 0.97).</li>
+</ul>
+<h3 id="37-improper-service-boundaries">3.7 Improper Service Boundaries</h3>
+<ul>
+<li><strong>Nanoservices (Too fine-grained):</strong> Services are so small that every operation requires a distributed transaction.</li>
+<li><strong>Too Coarse-grained:</strong> Services are too large, leading to God services.</li>
+</ul>
+<h3 id="38-retry-storms">3.8 Retry Storms</h3>
+<p>When a downstream service slows down, an upstream service times out and retries. If many upstream nodes retry simultaneously, they amplify the load on the struggling downstream service, completely destroying it.</p>
+<h3 id="39-distributed-transactions-everywhere">3.9 Distributed Transactions Everywhere</h3>
+<p>Relying on 2-Phase Commit (2PC) across microservices. This locks resources across the network, scaling extremely poorly and destroying availability if any participant fails.</p>
+<h3 id="310-ignoring-network-failures">3.10 Ignoring Network Failures</h3>
+<p>Assuming the network is reliable, latency is zero, and bandwidth is infinite. This leads to infinite timeouts, missing retries, and missing circuit breakers.</p>
+<h3 id="311-premature-optimization">3.11 Premature Optimization</h3>
+<p>Breaking a perfectly good monolith into microservices before there is an organizational or scaling need, simply because "that's what big tech does."</p>
+<h3 id="312-missing-idempotency">3.12 Missing Idempotency</h3>
+<p>APIs that modify state but cannot safely be retried. If a network timeout occurs, the client retries, and the operation happens twice (e.g., charging a credit card twice).</p>
+<h3 id="313-unbounded-queues">3.13 Unbounded Queues</h3>
+<p>In-memory or message broker queues without maximum size limits. Under load, these queues consume all available memory, causing OutOfMemory (OOM) crashes instead of shedding load gracefully.</p>
+<h2 id="4-architecture-deep-dive">4. Architecture Deep Dive</h2>
+<h3 id="fixing-the-shared-database">Fixing the Shared Database</h3>
+<p>To fix this, we apply the <strong>Database-per-Service</strong> pattern.</p>
+<ol>
+<li><strong>Migration Strategy:</strong> Use the Strangler Fig pattern. </li>
+<li>Set up logical schemas first, restrict access via users/roles.</li>
+<li>Use Change Data Capture (CDC) like Debezium to synchronize data during migration.</li>
+<li>Move to Event Sourcing or Saga patterns for cross-service data consistency.</li>
+</ol>
+<h3 id="fixing-chatty-services">Fixing Chatty Services</h3>
+<ol>
+<li><strong>Batch APIs:</strong> Expose endpoints that accept lists of IDs rather than single IDs.</li>
+<li><strong>GraphQL / BFF (Backend For Frontend):</strong> Aggregate data at the edge. The BFF makes the concurrent calls to backend services and returns a single unified payload to the client.</li>
+</ol>
+<h3 id="fixing-synchronous-chains">Fixing Synchronous Chains</h3>
+<p>Break the chain using <strong>Event-Driven Architecture (Asynchronous)</strong>.
+Instead of A -&gt; B -&gt; C:</p>
+<ul>
+<li>A publishes an event <code>OrderCreated</code>.</li>
+<li>B listens to <code>OrderCreated</code>, does its work, publishes <code>InventoryReserved</code>.</li>
+<li>C listens to <code>InventoryReserved</code>, etc.
+This removes temporal coupling.</li>
+</ul>
+<h3 id="fixing-retry-storms">Fixing Retry Storms</h3>
+<p>Implement <strong>Exponential Backoff with Jitter</strong>. 
+Never retry immediately. Wait 1s, 2s, 4s, 8s, and add randomness (jitter) to prevent thundering herds.
+Use <strong>Circuit Breakers</strong> (e.g., Resilience4j). If a service is failing, open the circuit and fail fast instead of overwhelming it with retries.</p>
+<h3 id="domain-driven-design-ddd-boundaries">Domain-Driven Design (DDD) Boundaries</h3>
+<p>To fix improper boundaries, identify <strong>Bounded Contexts</strong>. A service should own a distinct business capability. Data should not be shared heavily across boundaries; only domain events should cross boundaries.</p>
+<h2 id="5-visual-diagrams">5. Visual Diagrams</h2>
+<h3 id="distributed-monolith--sync-chains">Distributed Monolith &amp; Sync Chains</h3>
+<div class="mermaid">
+graph TD
+    Client --&gt; API_Gateway
+    API_Gateway --&gt; OrderService
+    OrderService -- Sync RPC --&gt; InventoryService
+    InventoryService -- Sync RPC --&gt; PaymentService
+    PaymentService -- Sync RPC --&gt; ShippingService
+
+    style PaymentService fill:#f9f,stroke:#333,stroke-width:4px
+    note[PaymentService Slowdown] --&gt; PaymentService
+    note2[Cascading Timeout causes entire chain to fail] --&gt; OrderService
+</div>
+
+<h3 id="chatty-services-vs-bff-pattern">Chatty Services vs BFF Pattern</h3>
+<div class="mermaid">
+graph LR
+    subgraph Chatty Pattern
+    Mobile1[Mobile App] --&gt; |Get User| UserSVC[User Service]
+    Mobile1 --&gt; |Get Orders| OrderSVC[Order Service]
+    Mobile1 --&gt; |Get Reviews| ReviewSVC[Review Service]
+    end
+
+    subgraph BFF Pattern
+    Mobile2[Mobile App] --&gt; |Get Home Screen| BFF[BFF Service]
+    BFF --&gt; |Concurrent Async| UserSVC2[User Service]
+    BFF --&gt; |Concurrent Async| OrderSVC2[Order Service]
+    BFF --&gt; |Concurrent Async| ReviewSVC2[Review Service]
+    end
+</div>
+
+<h3 id="retry-storm-cascade">Retry Storm Cascade</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant Client
+    participant ServiceA
+    participant ServiceB
+
+    Note over ServiceB: Service B is slightly degraded
+    Client-&gt;&gt;ServiceA: Request 1
+    ServiceA-&gt;&gt;ServiceB: Call 1 (Times out)
+    ServiceA-&gt;&gt;ServiceB: Retry 1
+    ServiceA-&gt;&gt;ServiceB: Retry 2
+    ServiceA-&gt;&gt;ServiceB: Retry 3
+    Note over ServiceB: Service B is now overwhelmed
+    Client-&gt;&gt;ServiceA: Request 2
+    ServiceA-&gt;&gt;ServiceB: Call 1...
+</div>
+
+<h2 id="6-real-production-examples">6. Real Production Examples</h2>
+<ul>
+<li><strong>Uber's N+1 Query Disaster:</strong> Early in Uber's transition to microservices, their edge layer made individual calls to the user service for every single passenger and driver ID in a batch of trips. A single page load could trigger 1000+ RPC calls. They fixed this by aggressively implementing batching endpoints and GraphQL for edge resolution.</li>
+<li><strong>Amazon's Eventual Consistency:</strong> Amazon avoids distributed transactions entirely. If a payment fails after an order is placed, they don't roll back a massive 2PC. Instead, they use a Saga-like workflow to email the user and request updated payment details. This sacrifices immediate consistency for extreme availability.</li>
+<li><strong>Netflix's Circuit Breaking:</strong> Netflix popularized the Circuit Breaker pattern (with Hystrix) because synchronous chains were taking down their streaming service. If the Recommendation service was slow, it would exhaust threads on the edge service, taking down video playback. Circuit breakers isolated the failure, allowing playback to succeed with degraded recommendations.</li>
+</ul>
+<h2 id="7-java-implementations">7. Java Implementations</h2>
+<h3 id="anti-pattern-chatty-n1-api">Anti-Pattern: Chatty N+1 API</h3>
+<pre><code class="lang-java"><span class="hljs-comment">// BAD: Chatty API causing N+1 problem</span>
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderController</span> {
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> UserServiceFeignClient userClient;
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> OrderRepository orderRepo;
+
+    <span class="hljs-meta">@GetMapping("/orders")</span>
+    <span class="hljs-keyword">public</span> List&lt;OrderDTO&gt; <span class="hljs-title function_">getOrders</span><span class="hljs-params">()</span> {
+        List&lt;Order&gt; orders = orderRepo.findAll();
+        List&lt;OrderDTO&gt; dtos = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+
+        <span class="hljs-keyword">for</span> (Order order : orders) {
+            <span class="hljs-comment">// N network calls!</span>
+            <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> userClient.getUserById(order.getUserId()); 
+            dtos.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">OrderDTO</span>(order, user));
+        }
+        <span class="hljs-keyword">return</span> dtos;
+    }
+}
+</code></pre>
+<h3 id="fix-batching-and-asynchronous-fetching">Fix: Batching and Asynchronous Fetching</h3>
+<pre><code class="lang-java"><span class="hljs-comment">// GOOD: Batching API call</span>
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderControllerFixed</span> {
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> UserServiceFeignClient userClient;
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> OrderRepository orderRepo;
+
+    <span class="hljs-meta">@GetMapping("/orders-fixed")</span>
+    <span class="hljs-keyword">public</span> List&lt;OrderDTO&gt; <span class="hljs-title function_">getOrders</span><span class="hljs-params">()</span> {
+        List&lt;Order&gt; orders = orderRepo.findAll();
+
+        <span class="hljs-comment">// Extract all IDs</span>
+        List&lt;Long&gt; userIds = orders.stream()
+            .map(Order::getUserId)
+            .distinct()
+            .collect(Collectors.toList());
+
+        <span class="hljs-comment">// 1 network call!</span>
+        Map&lt;Long, User&gt; userMap = userClient.getUsersByIds(userIds).stream()
+            .collect(Collectors.toMap(User::getId, u -&gt; u));
+
+        <span class="hljs-keyword">return</span> orders.stream()
+            .map(o -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">OrderDTO</span>(o, userMap.get(o.getUserId())))
+            .collect(Collectors.toList());
+    }
+}
+</code></pre>
+<h3 id="fixing-retry-storms-with-resilience4j-circuit-breaker--jitter">Fixing Retry Storms with Resilience4j (Circuit Breaker &amp; Jitter)</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+<span class="hljs-keyword">import</span> io.github.resilience4j.retry.annotation.Retry;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PaymentServiceGateway</span> {
+
+    <span class="hljs-comment">// Configured via application.yml to use exponential backoff and jitter</span>
+    <span class="hljs-meta">@Retry(name = "paymentRetry", fallbackMethod = "fallbackPayment")</span>
+    <span class="hljs-meta">@CircuitBreaker(name = "paymentCircuit", fallbackMethod = "fallbackPayment")</span>
+    <span class="hljs-keyword">public</span> PaymentResponse <span class="hljs-title function_">processPayment</span><span class="hljs-params">(PaymentRequest request)</span> {
+        <span class="hljs-keyword">return</span> restTemplate.postForObject(<span class="hljs-string">"/api/payments"</span>, request, PaymentResponse.class);
+    }
+
+    <span class="hljs-keyword">public</span> PaymentResponse <span class="hljs-title function_">fallbackPayment</span><span class="hljs-params">(PaymentRequest request, Throwable t)</span> {
+        <span class="hljs-comment">// Fallback logic: e.g., queue for later, or return a graceful failure message</span>
+        log.warn(<span class="hljs-string">"Payment service degraded, using fallback for request {}"</span>, request.getId());
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PaymentResponse</span>(Status.PENDING_RETRY);
+    }
+}
+</code></pre>
+<h2 id="8-performance-analysis">8. Performance Analysis</h2>
+<ul>
+<li><strong>Latency:</strong> Synchronous chains cause latency to scale linearly with the depth of the chain. <code>P99_Total = sum(P99_Service_i)</code>. This makes tail latency extremely hard to control.</li>
+<li><strong>Throughput:</strong> Shared databases bottleneck throughput. A single RDBMS can scale vertically (larger instance), but write throughput is hard-capped by disk I/O and lock contention. </li>
+<li><strong>Resource Exhaustion:</strong> Unbounded queues and missing circuit breakers lead to Thread Pool exhaustion and OOM errors. When downstream is slow, upstream holds connections open, exhausting TCP sockets and heap memory.</li>
+</ul>
+<h2 id="9-tradeoffs">9. Tradeoffs</h2>
+<table>
+<thead>
+<tr>
+<th>Anti-Pattern</th>
+<th>Intended Benefit</th>
+<th>Actual Cost</th>
+<th>Solution Tradeoff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shared DB</td>
+<td>Easy joins, no replication lag, immediate consistency</td>
+<td>High coupling, single point of failure, cannot scale independently</td>
+<td>Database-per-service requires managing eventual consistency and sagas.</td>
+</tr>
+<tr>
+<td>Sync Chains</td>
+<td>Easy to trace, easy to reason about mentally</td>
+<td>Cascading failures, terrible availability</td>
+<td>Async events make debugging harder and require robust observability.</td>
+</tr>
+<tr>
+<td>Distributed Monolith</td>
+<td>Fast to build initially using monolithic habits</td>
+<td>Deployment friction, brittle architecture</td>
+<td>Properly decoupling bounded contexts takes significant upfront design time.</td>
+</tr>
+<tr>
+<td>Missing Idempotency</td>
+<td>Simpler API design, no state tracking needed for duplicate requests</td>
+<td>Duplicate transactions (e.g. double billing) during retries</td>
+<td>Requires tracking state (e.g. idempotency keys) and storage lookup per request.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-failure-scenarios">10. Failure Scenarios</h2>
+<ol>
+<li><strong>The Distributed Deadlock (Synchronous Circular Dependencies):</strong> Service A calls B, B calls C, C calls A. All exhaust their thread pools waiting for each other. System requires a complete cold restart.</li>
+<li><strong>The Thundering Herd:</strong> A core service (like Auth) restarts. As soon as it comes up, all 50 microservices instantly retry their backlog of failed requests, crashing the Auth service again. Jitter is missing.</li>
+<li><strong>Split Brain in Data Coupling:</strong> Service A writes to a shared DB table. Service B reads from it based on an implicit assumption of a column's meaning. Service A changes the meaning of the column (e.g., Status '1' meant 'Active', now means 'Pending'). Service B silently corrupts data because the contract was implicit via the database, not via an API version.</li>
+</ol>
+<h2 id="11-debugging--observability">11. Debugging &amp; Observability</h2>
+<p>How to detect these anti-patterns in production:</p>
+<ul>
+<li><strong>Tracing (Jaeger/Zipkin):</strong> Look for deep, synchronous spans. If a single edge request results in a trace with 30 sequential spans taking 2 seconds, you have a synchronous chain or chatty service.</li>
+<li><strong>Dependency Graphs:</strong> APM tools (Datadog, New Relic) generate service maps. If your service map looks like a densely connected "death star" where everything points to everything, you have a distributed monolith with tight coupling.</li>
+<li><strong>Log Analysis:</strong> Look for high rates of <code>TimeoutException</code> followed immediately by identical requests (Retry Storms).</li>
+<li><strong>Metric Dashboards:</strong> Monitor database CPU. If the single shared database is constantly at 90% CPU, you are hitting the shared database anti-pattern limit.</li>
+</ul>
+<h2 id="12-interview-questions">12. Interview Questions</h2>
+<ul>
+<li><strong>Beginner:</strong> What is the "Shared Database" anti-pattern and why is it bad in microservices?<ul>
+<li><em>Answer:</em> It prevents independent scaling, ties deployments together, and creates a single point of failure. Services lose encapsulation.</li>
+</ul>
+</li>
+<li><strong>Intermediate:</strong> How do you solve a cascading failure caused by a slow downstream service?<ul>
+<li><em>Answer:</em> Implement a Circuit Breaker. If failures/timeouts cross a threshold, the circuit opens, immediately rejecting requests (failing fast) to prevent upstream thread exhaustion and give the downstream service time to recover.</li>
+</ul>
+</li>
+<li><strong>Advanced:</strong> Explain the N+1 problem in a microservice architecture and contrast two ways to solve it (Batching vs GraphQL BFF).<ul>
+<li><em>Answer:</em> N+1 occurs when you fetch a list, then loop and fetch details per item over the network. Batching fixes this by accepting a list of IDs. A BFF fixes this by pushing the orchestration to an edge layer which can fire async requests in parallel, reducing overall response time, though it requires maintaining a new edge service.</li>
+</ul>
+</li>
+<li><strong>FAANG-Level:</strong> If you must use a synchronous call chain for a legacy business process, how do you manage the SLA and tail latency?<ul>
+<li><em>Answer:</em> Set aggressive timeouts. Use parallel requests where possible. Pre-fetch or cache data. Use hedged requests (sending a duplicate request if the first doesn't return quickly). Set tight retry budgets (e.g. only retry 10% of requests).</li>
+</ul>
+</li>
+</ul>
+<h2 id="13-exercises">13. Exercises</h2>
+<ol>
+<li><strong>System Design:</strong> Design an e-commerce checkout flow. First, draw it using synchronous chains (Anti-pattern). Then, redesign it using an Event-Driven architecture (Sagas).</li>
+<li><strong>Code:</strong> Write a Spring Boot application that calls a mock external API. Induce a 5-second delay in the mock API. Write a loop that calls this API. Observe the thread pool exhaustion. Implement <code>Resilience4j</code> Circuit Breaker and observe the fail-fast behavior.</li>
+<li><strong>Conceptual:</strong> Review an open-source project's architecture diagram. Identify at least two potential points of tight coupling.</li>
+</ol>
+<h2 id="14-expert-insights">14. Expert Insights</h2>
+<p>"Microservices are not a free lunch; they are a highly expensive lunch that you buy when your monolithic kitchen is on fire." 
+One of the biggest mistakes senior engineers make is trying to hide network boundaries. Frameworks like gRPC and Feign make remote calls look exactly like local method calls. This abstraction leaks terribly. Developers put network calls inside <code>for</code> loops, inside database transactions, and inside retry blocks without thinking about the physical reality of the packets traveling across a data center. Always make network boundaries explicit in your code. </p>
+<p>Another hidden complexity is <strong>Eventual Consistency Fatigue</strong>. Engineers tired of complex async sagas will often quietly slip back into synchronous RPCs or distributed transactions to solve a tricky bug, re-introducing the anti-pattern. Discipline is required to maintain proper boundaries.</p>
+<h2 id="15-chapter-summary">15. Chapter Summary</h2>
+<ul>
+<li><strong>Anti-patterns</strong> in distributed systems usually stem from applying monolithic design principles to networked components.</li>
+<li><strong>Shared Databases</strong> destroy autonomy and scale. Use Database-per-service and CDC/Events.</li>
+<li><strong>Chatty Services</strong> kill performance through latency and network overhead. Use batching or a BFF.</li>
+<li><strong>Synchronous Chains</strong> destroy availability through cascading failures. Use event-driven architectures.</li>
+<li><strong>Retry Storms</strong> take down degraded systems. Use exponential backoff, jitter, and circuit breakers.</li>
+<li><strong>Distributed Monoliths</strong> happen when services are decoupled in infrastructure but tightly coupled in logic.</li>
+<li>Avoid <strong>Premature Optimization</strong>; only distribute when the organizational or scaling needs demand it.</li>
+<li><strong>Idempotency</strong> is mandatory. Never expose a state-mutating API that cannot be safely retried.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter-32-Large-Scale-System-Design-Case-Studies.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 32: Large Scale System Design Case Studies">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter-34-Performance-Engineering.html" class="navigation navigation-next " aria-label="Next page: Chapter 34: Performance Engineering">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 33: Distributed System Anti-Patterns","level":"8.3","depth":1,"next":{"title":"Chapter 34: Performance Engineering","level":"8.4","depth":1,"path":"PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.md","ref":"PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.md","articles":[]},"previous":{"title":"Chapter 32: Large Scale System Design Case Studies","level":"8.2","depth":1,"path":"PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.md","ref":"PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.md","mtime":"2026-05-23T04:12:31.775Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:21:13.964Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

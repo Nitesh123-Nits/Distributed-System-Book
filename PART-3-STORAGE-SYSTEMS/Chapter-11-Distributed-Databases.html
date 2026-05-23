@@ -1,0 +1,1282 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 11: Distributed Databases · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.0">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter-12-Distributed-Transactions.html" />
+    
+    
+    <link rel="prev" href="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 1: Foundations</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                    
+                    Chapter 1: Introduction to Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                    
+                    Chapter 2: Networking Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                    
+                    Chapter 3: Time and Clocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                    
+                    Chapter 4: Processes, Threads, and Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2: Core Principles</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                    
+                    Chapter 5: Distributed System Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                    
+                    Chapter 6: CAP Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                    
+                    Chapter 7: Consistency Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                    
+                    Chapter 8: Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                    
+                    Chapter 9: Partitioning and Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                    
+                    Chapter 10: Consensus Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3: Storage Systems</li>
+        
+        
+    
+        <li class="chapter active" data-level="4.1" data-path="Chapter-11-Distributed-Databases.html">
+            
+                <a href="Chapter-11-Distributed-Databases.html">
+            
+                    
+                    Chapter 11: Distributed Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="Chapter-12-Distributed-Transactions.html">
+            
+                <a href="Chapter-12-Distributed-Transactions.html">
+            
+                    
+                    Chapter 12: Distributed Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="Chapter-13-Distributed-Caching.html">
+            
+                <a href="Chapter-13-Distributed-Caching.html">
+            
+                    
+                    Chapter 13: Distributed Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="Chapter-14-Distributed-File-Systems.html">
+            
+                <a href="Chapter-14-Distributed-File-Systems.html">
+            
+                    
+                    Chapter 14: Distributed File Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="Chapter-15-Stream-Processing-Systems.html">
+            
+                <a href="Chapter-15-Stream-Processing-Systems.html">
+            
+                    
+                    Chapter 15: Stream Processing Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 4: Microservices and Cloud</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                    
+                    Chapter 16: Microservices Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                    
+                    Chapter 17: Service Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                    
+                    Chapter 18: Containerization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                    
+                    Chapter 19: Kubernetes Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                    
+                    Chapter 20: Service Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 5: Reliability and Scalability</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                    
+                    Chapter 21: Scalability Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                    
+                    Chapter 22: Reliability Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                    
+                    Chapter 23: Fault Tolerance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                    
+                    Chapter 24: Observability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                    
+                    Chapter 25: Distributed Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 6: Advanced Distributed Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                    
+                    Chapter 26: Event-Driven Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                    
+                    Chapter 27: Distributed Scheduling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                    
+                    Chapter 28: Geo-Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                    
+                    Chapter 29: Security in Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                    
+                    Chapter 30: Distributed Machine Learning Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 7: Modern System Design</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                    
+                    Chapter 31: Real-Time Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                    
+                    Chapter 32: Large Scale System Design Case Studies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                    
+                    Chapter 33: Distributed System Anti-Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                    
+                    Chapter 34: Performance Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                    
+                    Chapter 35: Future of Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extras</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../APPENDIX-Mastery-Roadmap.html">
+            
+                <a href="../APPENDIX-Mastery-Roadmap.html">
+            
+                    
+                    Appendix: Mastery Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 11: Distributed Databases</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-11-distributed-databases">Chapter 11: Distributed Databases</h1>
+<h2 id="1-why-this-matters">1. Why This Matters</h2>
+<p>In the era of modern internet-scale applications, data generation has outpaced Moore's Law. A single machine, no matter how vertically scaled (adding more RAM, CPU, and high-end NVMe SSDs), eventually hits a hard physical ceiling. When a database must handle petabytes of data or millions of read/write operations per second, a single-node architecture becomes a massive bottleneck and a single point of failure (SPOF).</p>
+<p>Distributed databases matter because they solve three fundamental problems:</p>
+<ol>
+<li><strong>Scalability:</strong> They allow systems to handle arbitrarily large datasets and traffic spikes by adding more commodity machines horizontally.</li>
+<li><strong>High Availability:</strong> By replicating data across multiple nodes, availability zones, or even continents, distributed databases ensure that the system remains online even if several machines catch fire or a data center loses power.</li>
+<li><strong>Latency Reduction (Geo-distribution):</strong> Users expect instantaneous responses. By distributing data closer to the user geographically (e.g., placing European users' data in a Frankfurt data center and Asian users' data in Tokyo), we drastically reduce the speed-of-light tax on network requests.</li>
+</ol>
+<p>Understanding distributed databases is the cornerstone of modern system design. Whether you are building the next global ride-sharing app, a high-frequency trading platform, or a massive social network, your data layer's architecture will dictate the ceiling of your system's capabilities.</p>
+<h2 id="2-beginner-intuition">2. Beginner Intuition</h2>
+<p>Imagine you are the chief librarian of the world's most popular library. Initially, you have one gigantic notebook (a single database) where you write down every book checked out. For a small town, this works perfectly. </p>
+<p>But soon, your library serves millions of people. A line forms out the door. People are screaming. Your hand cramps from writing so fast. What do you do?</p>
+<p>You hire more librarians (nodes). But how do you divide the work?</p>
+<ul>
+<li>You could tell Librarian A to handle all patrons whose last names start with A-M, and Librarian B to handle N-Z. This is <strong>Sharding (Partitioning)</strong>. It splits the load.</li>
+<li>But what if Librarian A gets sick? The A-M patrons are stuck. To fix this, you assign an assistant librarian who explicitly copies everything Librarian A writes down. If A gets sick, the assistant steps in. This is <strong>Replication</strong>.</li>
+<li>What if someone moves from A-M to N-Z? You need a protocol to safely transfer their records without losing them. This is <strong>Data Migration and Distributed Transactions</strong>.</li>
+<li>What if someone wants to know the total number of books checked out across the whole library? You must ask both A and B and sum their answers. This is <strong>Distributed Query Processing</strong>.</li>
+</ul>
+<p>A distributed database is simply this massive library system, automated through software, dealing constantly with librarians calling in sick (crashes), losing their notebooks (disk failures), or the intercom system breaking down (network partitions).</p>
+<h2 id="3-core-theory">3. Core Theory</h2>
+<p>To deeply understand distributed databases, one must grasp several theoretical pillars.</p>
+<h3 id="31-cap-theorem">3.1 CAP Theorem</h3>
+<p>Formulated by Eric Brewer, it states that a distributed data store can simultaneously provide at most two out of the following three guarantees:</p>
+<ul>
+<li><strong>Consistency (C):</strong> Every read receives the most recent write or an error.</li>
+<li><strong>Availability (A):</strong> Every request receives a (non-error) response, without the guarantee that it contains the most recent write.</li>
+<li><strong>Partition Tolerance (P):</strong> The system continues to operate despite an arbitrary number of messages being dropped or delayed by the network between nodes.</li>
+</ul>
+<p>In reality, network partitions (P) are unavoidable in distributed systems. Therefore, the choice is always between Consistency and Availability (CP vs. AP) during a partition. </p>
+<h3 id="32-pacelc-theorem">3.2 PACELC Theorem</h3>
+<p>An extension of CAP by Daniel Abadi. It states:</p>
+<ul>
+<li>If there is a Partition (P), how does the system trade off Availability and Consistency (A and C)?</li>
+<li>Else (E), when the system is running normally, how does it trade off Latency (L) and Consistency (C)?
+For example, DynamoDB is typically PA/EL (trades C for A during partition, trades C for L normally).</li>
+</ul>
+<h3 id="33-relational-vs-non-relational-sql-vs-nosql">3.3 Relational vs. Non-Relational (SQL vs NoSQL)</h3>
+<p><strong>SQL (Relational):</strong></p>
+<ul>
+<li>Strict schema, ACID guarantees.</li>
+<li>Normalized data models to reduce redundancy.</li>
+<li>Historically difficult to distribute because JOINs across network boundaries are incredibly slow, and enforcing strict ACID across nodes requires expensive coordination (like Two-Phase Commit).</li>
+</ul>
+<p><strong>NoSQL (Non-Relational):</strong></p>
+<ul>
+<li>Flexible schema, BASE semantics (Basically Available, Soft state, Eventual consistency).</li>
+<li>Denormalized data models designed for specific query patterns.</li>
+<li>Designed from the ground up to distribute easily by sacrificing complex operations (like multi-shard JOINs) and strict consistency.</li>
+</ul>
+<h3 id="34-sharding-partitioning-strategies">3.4 Sharding (Partitioning) Strategies</h3>
+<ul>
+<li><strong>Hash-based:</strong> Hash the partition key to determine the node. Distributes write load evenly but makes range queries impossible (since contiguous keys are hashed to random nodes).</li>
+<li><strong>Range-based:</strong> Keys are assigned to nodes based on ranges (e.g., A-C, D-F). Excellent for range queries, but highly susceptible to "hot spots" (e.g., if everyone is querying data starting with 'A', one node gets all the traffic).</li>
+</ul>
+<h2 id="4-architecture-deep-dive">4. Architecture Deep Dive</h2>
+<h3 id="41-distributed-sql-databases-newsql">4.1 Distributed SQL Databases (NewSQL)</h3>
+<p>The dream: The scalability of NoSQL with the ACID guarantees and SQL interface of traditional RDBMS.
+Systems like <strong>Google Spanner, CockroachDB, YugabyteDB, TiDB, and Vitess</strong> achieve this.</p>
+<ul>
+<li><strong>Spanner:</strong> Uses TrueTime (atomic clocks and GPS receivers) to assign globally meaningful timestamps to transactions, avoiding lock contention and achieving External Consistency.</li>
+<li><strong>CockroachDB / YugabyteDB:</strong> Build on top of an LSM-tree based KV store (RocksDB/Pebble). They use Raft consensus for replication and two-phase commit (2PC) for cross-shard transactions, utilizing Hybrid Logical Clocks (HLC) for ordering.</li>
+<li><strong>Vitess:</strong> Middleware that sits on top of MySQL, abstracting away the sharding logic so the application thinks it's talking to a monolithic MySQL database.</li>
+</ul>
+<h3 id="42-nosql-categories">4.2 NoSQL Categories</h3>
+<ol>
+<li><strong>Key-Value Stores (Redis, DynamoDB):</strong> <ul>
+<li>Operations: <code>get(key)</code>, <code>put(key, value)</code>. </li>
+<li>Fastest, simplest. Used for caching, session management, shopping carts.</li>
+</ul>
+</li>
+<li><strong>Document Stores (MongoDB, CouchDB):</strong> <ul>
+<li>Store JSON/BSON documents. </li>
+<li>Values are inspectable. Good for CMS, user profiles, rapidly changing schemas.</li>
+</ul>
+</li>
+<li><strong>Column-Family Stores (Cassandra, HBase, Bigtable):</strong> <ul>
+<li>Data stored in sparse, multi-dimensional maps. </li>
+<li>Optimized for heavy write throughput and sequential reads. Used for time-series data, IoT, metrics.</li>
+</ul>
+</li>
+<li><strong>Graph Databases (Neo4j, Amazon Neptune):</strong> <ul>
+<li>Nodes and edges. </li>
+<li>Optimized for deeply traversing relationships (e.g., "Find friends of friends who bought product X").</li>
+</ul>
+</li>
+</ol>
+<h3 id="43-storage-engines">4.3 Storage Engines</h3>
+<p>At the lowest level, how does a database write bytes to disk?</p>
+<p><strong>B-Tree (Balance Tree):</strong></p>
+<ul>
+<li>Used in traditional DBs (PostgreSQL, MySQL/InnoDB).</li>
+<li>The tree structure keeps data sorted. Pages (typically 4KB or 8KB) are updated in-place.</li>
+<li><strong>Page Splits:</strong> When a page is full, it splits into two. This causes cascading writes up the tree.</li>
+<li><strong>Write Amplification:</strong> Changing 1 byte requires rewriting an entire 8KB page. Not ideal for extremely high write throughput.</li>
+</ul>
+<p><strong>LSM-Tree (Log-Structured Merge Tree):</strong></p>
+<ul>
+<li>Used in Cassandra, RocksDB, LevelDB, HBase.</li>
+<li>Writes go into an append-only log (Write-Ahead Log) for durability, then into an in-memory tree called a <strong>Memtable</strong> (often a Skip List or Red-Black Tree).</li>
+<li>When the Memtable fills up, it is flushed to disk as an immutable <strong>SSTable (Sorted String Table)</strong>.</li>
+<li>Reads check the Memtable, then search SSTables from newest to oldest.</li>
+<li><strong>Compaction:</strong> Background threads merge SSTables to remove deleted/overwritten data and reduce read latency.<ul>
+<li><em>Size-tiered:</em> Merges SSTables of similar sizes. Great for writes, but read latency can spike.</li>
+<li><em>Leveled:</em> Maintains overlapping-free SSTables per level. Better read performance, higher write amplification during compaction.</li>
+</ul>
+</li>
+</ul>
+<h3 id="44-distributed-query-processing">4.4 Distributed Query Processing</h3>
+<p>When you run <code>SELECT * FROM users WHERE age &gt; 30</code>, what happens?</p>
+<ol>
+<li><strong>Parsing &amp; Planning:</strong> The Coordinator node parses the SQL and generates a logical plan.</li>
+<li><strong>Distribution Planning:</strong> The Coordinator consults the metadata service to locate which shards hold <code>users</code> data.</li>
+<li><strong>Scatter:</strong> The Coordinator rewrites the query for each specific shard and pushes it down to the data nodes.</li>
+<li><strong>Gather &amp; Merge:</strong> Data nodes execute the query locally and stream results back. The Coordinator merges, sorts, and limits the final result set before returning it to the client.</li>
+</ol>
+<h2 id="5-visual-diagrams">5. Visual Diagrams</h2>
+<div class="mermaid">
+graph TD
+    subgraph LSM-Tree Write Path
+        A[Client Write Request] --&gt; B{Write-Ahead Log}
+        B --&gt; C[Memtable - In Memory]
+        C -- Threshold Reached --&gt; D[Flush to Disk]
+        D --&gt; E[SSTable Level 0 - Immutable]
+        E -- Compaction --&gt; F[SSTable Level 1]
+        F -- Compaction --&gt; G[SSTable Level 2]
+    end
+</div>
+
+<div class="mermaid">
+graph TD
+    subgraph B-Tree Structure
+        R[Root Node: Keys 50, 100]
+        R --&gt; N1[Left Child: Keys 10, 30]
+        R --&gt; N2[Middle Child: Keys 60, 80]
+        R --&gt; N3[Right Child: Keys 120, 150]
+        N1 --&gt; L1[Leaf: 10, 20]
+        N1 --&gt; L2[Leaf: 30, 40]
+        N2 --&gt; L3[Leaf: 60, 70]
+        N2 --&gt; L4[Leaf: 80, 90]
+        N3 --&gt; L5[Leaf: 120, 130]
+        N3 --&gt; L6[Leaf: 150, 160]
+    end
+</div>
+
+<div class="mermaid">
+sequenceDiagram
+    participant Client
+    participant Coordinator
+    participant Shard1
+    participant Shard2
+
+    Client-&gt;&gt;Coordinator: SELECT SUM(sales) FROM orders
+    Coordinator-&gt;&gt;Shard1: Scatter: SELECT SUM(sales) FROM orders_shard1
+    Coordinator-&gt;&gt;Shard2: Scatter: SELECT SUM(sales) FROM orders_shard2
+    Shard1--&gt;&gt;Coordinator: Result: 500
+    Shard2--&gt;&gt;Coordinator: Result: 750
+    Coordinator-&gt;&gt;Coordinator: Gather &amp; Merge (500 + 750)
+    Coordinator--&gt;&gt;Client: Final Result: 1250
+</div>
+
+<div class="mermaid">
+graph TD
+    subgraph Cassandra Architecture
+        N1[Node 1] &lt;--&gt;|Gossip Protocol| N2[Node 2]
+        N2 &lt;--&gt;|Gossip Protocol| N3[Node 3]
+        N3 &lt;--&gt;|Gossip Protocol| N4[Node 4]
+        N4 &lt;--&gt;|Gossip Protocol| N1[Node 1]
+        C[Client] --&gt;|Read/Write Request| N1
+        N1 -.-&gt;|Coordinator replicates to| N2
+        N1 -.-&gt;|Coordinator replicates to| N4
+    end
+</div>
+
+<div class="mermaid">
+graph TD
+    subgraph Spanner Architecture
+        A[Client] --&gt; B[Spanner API]
+        B --&gt; C[Zone 1: Paxos Leader]
+        B --&gt; D[Zone 2: Paxos Replica]
+        B --&gt; E[Zone 3: Paxos Replica]
+        C &lt;--&gt; F[TrueTime API - GPS/Atomic Clocks]
+        D &lt;--&gt; F
+        E &lt;--&gt; F
+        C --&gt; G[Colossus Distributed File System]
+    end
+</div>
+
+<h2 id="6-real-production-examples">6. Real Production Examples</h2>
+<h3 id="google-spanner">Google Spanner</h3>
+<p>Google needed a globally distributed, synchronously replicated database to support AdWords. Sharding MySQL manually became a nightmare. Spanner provides External Consistency (linearizability) using <strong>TrueTime</strong>. By guaranteeing that clock skew between any two servers is bounded (e.g., max 7ms), Spanner can assign commit timestamps that reflect true global causality. If transaction T1 commits before T2 starts, T1's timestamp is strictly less than T2's. Spanner waits out the uncertainty window (7ms) during writes to ensure no other node can read stale data.</p>
+<h3 id="amazon-dynamodb">Amazon DynamoDB</h3>
+<p>DynamoDB powers Amazon's shopping cart. It is a fully managed proprietary KV/Document store.</p>
+<ul>
+<li><strong>Data Modeling:</strong> Requires defining a Partition Key (hash key) and an optional Sort Key. </li>
+<li><strong>LSI &amp; GSI:</strong> To query by fields other than the primary key, developers create Local Secondary Indexes (LSI - same partition key, different sort key) or Global Secondary Indexes (GSI - entirely different partition key, asynchronously replicated).</li>
+<li>It heavily favors fast, predictable single-digit millisecond latency at any scale.</li>
+</ul>
+<h3 id="apache-cassandra">Apache Cassandra</h3>
+<p>Created at Facebook, heavily inspired by Amazon Dynamo (architecture) and Google Bigtable (LSM-tree storage).</p>
+<ul>
+<li>Masterless architecture. Every node is a peer.</li>
+<li>Uses <strong>Gossip Protocol</strong> for node discovery and failure detection.</li>
+<li>Uses <strong>Consistent Hashing</strong> to distribute data across the ring.</li>
+<li>Highly tunable consistency (e.g., <code>QUORUM</code> reads and writes).</li>
+</ul>
+<h3 id="mongodb">MongoDB</h3>
+<p>The quintessential Document Store.</p>
+<ul>
+<li><strong>Replica Sets:</strong> Usually deployed as a primary with multiple secondaries. Writes go to primary; reads can go to secondaries (resulting in eventual consistency).</li>
+<li><strong>Sharding:</strong> Requires a shard key. The query router (<code>mongos</code>) routes queries to the appropriate shard. If a query lacks the shard key, it results in a "scatter-gather" query across all shards, which is incredibly inefficient.</li>
+</ul>
+<h2 id="7-java-implementations">7. Java Implementations</h2>
+<p>Let's look at the core of these distributed databases through clean, production-grade Java code.</p>
+<h3 id="71-lsm-tree-implementation-memtable--sstable-concept">7.1 LSM-Tree Implementation (Memtable + SSTable concept)</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.io.*;
+<span class="hljs-keyword">import</span> java.util.Map;
+<span class="hljs-keyword">import</span> java.util.concurrent.ConcurrentSkipListMap;
+<span class="hljs-keyword">import</span> java.util.concurrent.atomic.AtomicInteger;
+
+<span class="hljs-comment">/**
+ * A simplified LSM-Tree engine demonstrating Memtable to SSTable flush.
+ * In a real system (like RocksDB), this involves bloom filters, sparse indexes, and background compaction.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LSMEngine</span> {
+    <span class="hljs-comment">// Memtable using ConcurrentSkipListMap to maintain sorted order efficiently</span>
+    <span class="hljs-keyword">private</span> ConcurrentSkipListMap&lt;String, String&gt; memtable;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> memtableSizeLimit;
+    <span class="hljs-keyword">private</span> AtomicInteger currentSize;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String dataDir;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">LSMEngine</span><span class="hljs-params">(<span class="hljs-type">int</span> memtableSizeLimit, String dataDir)</span> {
+        <span class="hljs-built_in">this</span>.memtable = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentSkipListMap</span>&lt;&gt;();
+        <span class="hljs-built_in">this</span>.memtableSizeLimit = memtableSizeLimit;
+        <span class="hljs-built_in">this</span>.currentSize = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AtomicInteger</span>(<span class="hljs-number">0</span>);
+        <span class="hljs-built_in">this</span>.dataDir = dataDir;
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(dataDir).mkdirs();
+    }
+
+    <span class="hljs-comment">/**
+     * Writes are incredibly fast. Just append to a memory structure.
+     * (Note: Real systems write to a WAL - Write Ahead Log first for durability).
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">put</span><span class="hljs-params">(String key, String value)</span> {
+        <span class="hljs-type">int</span> <span class="hljs-variable">entrySize</span> <span class="hljs-operator">=</span> key.getBytes().length + value.getBytes().length;
+        memtable.put(key, value);
+
+        <span class="hljs-keyword">if</span> (currentSize.addAndGet(entrySize) &gt;= memtableSizeLimit) {
+            flushToDisk();
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Reads check the memtable first. If not found, they should check SSTables.
+     */</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">get</span><span class="hljs-params">(String key)</span> {
+        <span class="hljs-comment">// 1. Check Memtable</span>
+        <span class="hljs-type">String</span> <span class="hljs-variable">val</span> <span class="hljs-operator">=</span> memtable.get(key);
+        <span class="hljs-keyword">if</span> (val != <span class="hljs-literal">null</span>) {
+            <span class="hljs-keyword">return</span> val;
+        }
+        <span class="hljs-comment">// 2. Check SSTables on disk (simplified: reverse order iteration)</span>
+        <span class="hljs-keyword">return</span> searchSSTables(key);
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">flushToDisk</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">if</span> (memtable.isEmpty()) <span class="hljs-keyword">return</span>;
+
+        <span class="hljs-type">String</span> <span class="hljs-variable">sstableName</span> <span class="hljs-operator">=</span> dataDir + <span class="hljs-string">"/sstable_"</span> + System.currentTimeMillis() + <span class="hljs-string">".dat"</span>;
+        <span class="hljs-keyword">try</span> (<span class="hljs-type">BufferedWriter</span> <span class="hljs-variable">writer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedWriter</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileWriter</span>(sstableName))) {
+            <span class="hljs-comment">// Because memtable is a SkipList, data is already sorted by key!</span>
+            <span class="hljs-keyword">for</span> (Map.Entry&lt;String, String&gt; entry : memtable.entrySet()) {
+                writer.write(entry.getKey() + <span class="hljs-string">","</span> + entry.getValue());
+                writer.newLine();
+            }
+            System.out.println(<span class="hljs-string">"Flushed Memtable to SSTable: "</span> + sstableName);
+        } <span class="hljs-keyword">catch</span> (IOException e) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">"Failed to flush Memtable"</span>, e);
+        }
+
+        <span class="hljs-comment">// Reset Memtable</span>
+        memtable = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentSkipListMap</span>&lt;&gt;();
+        currentSize.set(<span class="hljs-number">0</span>);
+    }
+
+    <span class="hljs-keyword">private</span> String <span class="hljs-title function_">searchSSTables</span><span class="hljs-params">(String key)</span> {
+        <span class="hljs-comment">// In reality, we use Bloom Filters and sparse indexes to avoid scanning disk!</span>
+        <span class="hljs-comment">// This is a naive implementation for conceptual demonstration.</span>
+        <span class="hljs-type">File</span> <span class="hljs-variable">dir</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(dataDir);
+        File[] files = dir.listFiles((d, name) -&gt; name.startsWith(<span class="hljs-string">"sstable_"</span>));
+        <span class="hljs-keyword">if</span> (files == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+
+        <span class="hljs-comment">// Sort descending to read newest SSTables first</span>
+        java.util.Arrays.sort(files, (f1, f2) -&gt; f2.getName().compareTo(f1.getName()));
+
+        <span class="hljs-keyword">for</span> (File f : files) {
+            <span class="hljs-keyword">try</span> (<span class="hljs-type">BufferedReader</span> <span class="hljs-variable">reader</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileReader</span>(f))) {
+                String line;
+                <span class="hljs-keyword">while</span> ((line = reader.readLine()) != <span class="hljs-literal">null</span>) {
+                    String[] parts = line.split(<span class="hljs-string">","</span>, <span class="hljs-number">2</span>);
+                    <span class="hljs-keyword">if</span> (parts[<span class="hljs-number">0</span>].equals(key)) {
+                        <span class="hljs-keyword">return</span> parts[<span class="hljs-number">1</span>];
+                    }
+                }
+            } <span class="hljs-keyword">catch</span> (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+}
+</code></pre>
+<h3 id="72-distributed-query-router-scatter-gather">7.2 Distributed Query Router (Scatter-Gather)</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.List;
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.concurrent.*;
+
+<span class="hljs-comment">/**
+ * Demonstrates a scatter-gather distributed query processor.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DistributedQueryRouter</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">ExecutorService</span> <span class="hljs-variable">executor</span> <span class="hljs-operator">=</span> Executors.newFixedThreadPool(<span class="hljs-number">10</span>);
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> List&lt;DataNode&gt; shards;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">DistributedQueryRouter</span><span class="hljs-params">(List&lt;DataNode&gt; shards)</span> {
+        <span class="hljs-built_in">this</span>.shards = shards;
+    }
+
+    <span class="hljs-comment">/**
+     * Executes a count query across all shards in parallel and aggregates the result.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">long</span> <span class="hljs-title function_">executeGlobalCount</span><span class="hljs-params">(String table)</span> <span class="hljs-keyword">throws</span> InterruptedException, ExecutionException {
+        List&lt;Future&lt;Long&gt;&gt; futures = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+
+        <span class="hljs-comment">// Scatter Phase</span>
+        <span class="hljs-keyword">for</span> (DataNode shard : shards) {
+            futures.add(executor.submit(() -&gt; shard.localCount(table)));
+        }
+
+        <span class="hljs-comment">// Gather &amp; Merge Phase</span>
+        <span class="hljs-type">long</span> <span class="hljs-variable">totalCount</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (Future&lt;Long&gt; future : futures) {
+            totalCount += future.get(); <span class="hljs-comment">// Blocks until shard completes</span>
+        }
+
+        <span class="hljs-keyword">return</span> totalCount;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">shutdown</span><span class="hljs-params">()</span> {
+        executor.shutdown();
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">DataNode</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String nodeId;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">DataNode</span><span class="hljs-params">(String id)</span> { <span class="hljs-built_in">this</span>.nodeId = id; }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">long</span> <span class="hljs-title function_">localCount</span><span class="hljs-params">(String table)</span> {
+        <span class="hljs-comment">// Simulate disk IO and local query processing</span>
+        <span class="hljs-keyword">try</span> { Thread.sleep((<span class="hljs-type">long</span>)(Math.random() * <span class="hljs-number">100</span>)); } <span class="hljs-keyword">catch</span> (InterruptedException e) {}
+        System.out.println(<span class="hljs-string">"Node "</span> + nodeId + <span class="hljs-string">" executing local count for "</span> + table);
+        <span class="hljs-keyword">return</span> (<span class="hljs-type">long</span>) (Math.random() * <span class="hljs-number">1000</span>); <span class="hljs-comment">// return dummy count</span>
+    }
+}
+</code></pre>
+<h2 id="8-performance-analysis">8. Performance Analysis</h2>
+<h3 id="latency-vs-throughput">Latency vs Throughput</h3>
+<ul>
+<li><strong>LSM-Trees</strong> are optimized for write throughput. Because writes are sequential append-only operations (WAL + Memtable), there is no random I/O during the write path. This allows Cassandra to ingest millions of metrics per second.</li>
+<li><strong>B-Trees</strong> are optimized for read latency. You traverse the tree and typically find the data within 3-4 disk seeks (for massive datasets). </li>
+</ul>
+<h3 id="amplification-metrics">Amplification Metrics</h3>
+<ul>
+<li><strong>Write Amplification (WA):</strong> How many bytes are physically written to disk for every byte written by the app.<ul>
+<li><em>B-Trees:</em> High WA. Modifying a 10-byte row requires writing an entire 8KB page.</li>
+<li><em>LSM-Trees:</em> Moderate WA. Compaction constantly rewrites data to merge SSTables.</li>
+</ul>
+</li>
+<li><strong>Read Amplification (RA):</strong> How many blocks are read from disk to satisfy a logical read.<ul>
+<li><em>B-Trees:</em> Low RA. Usually exactly the blocks needed.</li>
+<li><em>LSM-Trees:</em> High RA. Might need to check multiple SSTables (across different levels) to find a key.</li>
+</ul>
+</li>
+<li><strong>Space Amplification (SA):</strong> Extra disk space used. LSM-trees temporarily require high SA during compaction.</li>
+</ul>
+<h2 id="9-tradeoffs">9. Tradeoffs</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Distributed SQL (Spanner/Cockroach)</th>
+<th>NoSQL (Cassandra/Dynamo)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Schema</strong></td>
+<td>Strict, relational</td>
+<td>Flexible, denormalized</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>Strict (Linearizable/Serializable)</td>
+<td>Tunable / Eventual</td>
+</tr>
+<tr>
+<td><strong>Joins</strong></td>
+<td>Supported (though cross-shard is slow)</td>
+<td>Not supported (denormalize data)</td>
+</tr>
+<tr>
+<td><strong>Write Speed</strong></td>
+<td>Slower (requires consensus, locks)</td>
+<td>Extremely Fast (leaderless, append)</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Financial ledgers, Billing systems</td>
+<td>IoT telemetry, user sessions, chat logs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>B-Tree vs LSM-Tree:</strong>
+Choose B-Tree if your workload is read-heavy or requires frequent in-place updates. Choose LSM-Tree if your workload is write-heavy (e.g., time-series).</p>
+<h2 id="10-failure-scenarios">10. Failure Scenarios</h2>
+<ol>
+<li><strong>The Network Partition:</strong> Fiber-optic cables get cut. If Datacenter A cannot talk to Datacenter B, CP systems (CockroachDB) will reject writes if they can't achieve a quorum. AP systems (Cassandra) will accept writes, resolving conflicts later using Last-Write-Wins (LWW) or Vector Clocks.</li>
+<li><strong>Hot Partitions:</strong> If you shard by <code>company_id</code>, and Apple signs up for your service, the node holding Apple's data will melt from traffic while other nodes sit idle. <strong>Fix:</strong> Salt the partition key (e.g., <code>company_id + random(1..10)</code>) or use a better hash key.</li>
+<li><strong>Zombie Nodes &amp; Split Brain:</strong> A node's garbage collector pauses for 30 seconds. The cluster thinks it's dead and elects a new leader. The GC finishes, the old node wakes up thinking it's still leader, and accepts writes. <strong>Fix:</strong> Fencing tokens, Lease timeouts.</li>
+<li><strong>Retry Storms:</strong> A node slows down. Clients time out and retry. The node is overwhelmed and dies. <strong>Fix:</strong> Exponential backoff, jitter, circuit breakers.</li>
+</ol>
+<h2 id="11-debugging--observability">11. Debugging &amp; Observability</h2>
+<p>Operating a distributed database is like flying a commercial jet. You cannot fly blind.</p>
+<ul>
+<li><strong>Compaction Queue Depth:</strong> In Cassandra/RocksDB, if compaction falls behind, reads will become extremely slow because queries have to scan dozens of SSTables.</li>
+<li><strong>Cache Hit Rates:</strong> Monitor row cache and block cache. A sudden drop means your working set has exceeded memory, causing disk thrashing.</li>
+<li><strong>Replication Lag:</strong> The time difference between data written to the primary and applied at the replica. If this spikes, read-heavy workloads relying on replicas will see stale data.</li>
+<li><strong>Distributed Tracing:</strong> Ensure queries are tagged with correlation IDs so you can trace a slow query as it fans out across 50 shards.</li>
+</ul>
+<h2 id="12-interview-questions">12. Interview Questions</h2>
+<ol>
+<li><strong>Beginner:</strong> What is the CAP theorem, and why can't we have all three?
+<em>Answer:</em> You cannot avoid network partitions in distributed systems. When one occurs, you must choose to either halt writes (favor Consistency) or accept them and risk divergent data (favor Availability).</li>
+<li><strong>Intermediate:</strong> Explain how an LSM-Tree works and why it offers superior write performance compared to a B-Tree.
+<em>Answer:</em> LSM-Trees avoid random disk I/O. Writes are buffered in memory (Memtable) and flushed as sequential blocks (SSTables). Disk sequential writes are orders of magnitude faster than random seeks.</li>
+<li><strong>Advanced:</strong> In a distributed SQL database, how do you perform a cross-shard JOIN efficiently?
+<em>Answer:</em> By co-locating data (interleaving tables). If order lines are stored on the same physical shard as the order header, the JOIN is local. Otherwise, you must use scatter-gather, bloom filters to reduce data transfer, and hash-joins in the coordinator layer.</li>
+<li><strong>Advanced:</strong> How does Google Spanner avoid read locks for read-only transactions while maintaining external consistency?
+<em>Answer:</em> Spanner uses TrueTime. Every transaction commits with a precise timestamp. A read-only transaction picks a timestamp <code>t</code> and reads from a snapshot of the database at time <code>t</code>. Because TrueTime guarantees causality, no locks are needed.</li>
+<li><strong>FAANG-level:</strong> Design a distributed rate limiter for an API platform hitting 10 million requests per second. Which database would you use and why?
+<em>Answer:</em> A typical RDBMS would melt. I'd use Redis Cluster (KV store) for its in-memory speed. I'd use the Token Bucket algorithm via Lua scripts to ensure atomicity. To handle scale, I'd hash the <code>user_id</code> to distribute load. If strict accuracy isn't required across regions, I'd use local Redis nodes and eventually sync them to reduce cross-region latency.</li>
+</ol>
+<h2 id="13-exercises">13. Exercises</h2>
+<ol>
+<li><strong>System Design:</strong> Design the data model for Twitter using Cassandra. How do you model the timeline so reads are fast? (Hint: Fan-out on write vs fan-out on read).</li>
+<li><strong>Coding:</strong> Extend the Java LSM-Tree implementation above. Add a <code>delete</code> method. (Hint: In LSM-Trees, you don't delete immediately. You insert a "Tombstone" marker).</li>
+<li><strong>Conceptual:</strong> Review your company's primary database schema. Identify 3 tables that would be extremely difficult to horizontally shard and explain why.</li>
+</ol>
+<h2 id="14-expert-insights">14. Expert Insights</h2>
+<ul>
+<li><strong>The Leaky Abstraction of NoSQL:</strong> Developers initially loved NoSQL because "you don't need schemas." In reality, NoSQL requires <em>stricter</em> upfront data modeling than SQL. In SQL, you model your data based on entities. In NoSQL (like DynamoDB), you must model your data based purely on your <em>Access Patterns</em>. If your access patterns change a year later, migrating a DynamoDB table is notoriously painful.</li>
+<li><strong>Pagination Pain:</strong> <code>OFFSET</code> and <code>LIMIT</code> queries in distributed databases are deadly. <code>LIMIT 10 OFFSET 100000</code> means every shard must generate 100,010 records, send them to the coordinator, which sorts them and drops 100,000. Use cursor-based pagination instead.</li>
+<li><strong>Clock Sync:</strong> Never trust server clocks in distributed systems. NTP drift can cause silent data corruption in Last-Write-Wins conflict resolution. Prefer logical clocks (Vector Clocks, Lamport timestamps).</li>
+</ul>
+<h2 id="15-chapter-summary">15. Chapter Summary</h2>
+<ul>
+<li><strong>Single nodes fail:</strong> Distributed databases provide horizontal scalability, high availability, and geographic data distribution.</li>
+<li><strong>CAP Theorem dictates tradeoffs:</strong> You must choose between Consistency and Availability during network Partitions.</li>
+<li><strong>Storage Engines:</strong> B-Trees (in-place updates, fast reads, slow writes) vs. LSM-Trees (append-only, fast writes, require compaction).</li>
+<li><strong>Relational vs. NoSQL:</strong> SQL provides ACID and flexibility via JOINs at the cost of hard sharding. NoSQL scales easily by sacrificing JOINs and enforcing strict access-pattern-based modeling.</li>
+<li><strong>NewSQL:</strong> Systems like Spanner and CockroachDB bring SQL and ACID to distributed architecture using advanced consensus and time-keeping mechanisms.</li>
+<li><strong>Distribution mechanics:</strong> Master-slave, Multi-master, and Leaderless architectures define how data flows and how failures are mitigated.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 10: Consensus Algorithms">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter-12-Distributed-Transactions.html" class="navigation navigation-next " aria-label="Next page: Chapter 12: Distributed Transactions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 11: Distributed Databases","level":"4.1","depth":1,"next":{"title":"Chapter 12: Distributed Transactions","level":"4.2","depth":1,"path":"PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.md","ref":"PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.md","articles":[]},"previous":{"title":"Chapter 10: Consensus Algorithms","level":"3.6","depth":1,"path":"PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.md","ref":"PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-3-STORAGE-SYSTEMS/Chapter-11-Distributed-Databases.md","mtime":"2026-05-23T04:12:33.232Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:21:13.964Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

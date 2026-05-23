@@ -1,0 +1,3954 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 13: Distributed Caching · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.0">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter-14-Distributed-File-Systems.html" />
+    
+    
+    <link rel="prev" href="Chapter-12-Distributed-Transactions.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 1: Foundations</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                    
+                    Chapter 1: Introduction to Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                    
+                    Chapter 2: Networking Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                    
+                    Chapter 3: Time and Clocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                    
+                    Chapter 4: Processes, Threads, and Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2: Core Principles</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                    
+                    Chapter 5: Distributed System Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                    
+                    Chapter 6: CAP Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                    
+                    Chapter 7: Consistency Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                    
+                    Chapter 8: Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                    
+                    Chapter 9: Partitioning and Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                    
+                    Chapter 10: Consensus Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3: Storage Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="Chapter-11-Distributed-Databases.html">
+            
+                <a href="Chapter-11-Distributed-Databases.html">
+            
+                    
+                    Chapter 11: Distributed Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="Chapter-12-Distributed-Transactions.html">
+            
+                <a href="Chapter-12-Distributed-Transactions.html">
+            
+                    
+                    Chapter 12: Distributed Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.3" data-path="Chapter-13-Distributed-Caching.html">
+            
+                <a href="Chapter-13-Distributed-Caching.html">
+            
+                    
+                    Chapter 13: Distributed Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="Chapter-14-Distributed-File-Systems.html">
+            
+                <a href="Chapter-14-Distributed-File-Systems.html">
+            
+                    
+                    Chapter 14: Distributed File Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="Chapter-15-Stream-Processing-Systems.html">
+            
+                <a href="Chapter-15-Stream-Processing-Systems.html">
+            
+                    
+                    Chapter 15: Stream Processing Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 4: Microservices and Cloud</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                    
+                    Chapter 16: Microservices Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                    
+                    Chapter 17: Service Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                    
+                    Chapter 18: Containerization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                    
+                    Chapter 19: Kubernetes Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                    
+                    Chapter 20: Service Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 5: Reliability and Scalability</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                    
+                    Chapter 21: Scalability Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                    
+                    Chapter 22: Reliability Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                    
+                    Chapter 23: Fault Tolerance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                    
+                    Chapter 24: Observability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                    
+                    Chapter 25: Distributed Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 6: Advanced Distributed Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                    
+                    Chapter 26: Event-Driven Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                    
+                    Chapter 27: Distributed Scheduling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                    
+                    Chapter 28: Geo-Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                    
+                    Chapter 29: Security in Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                    
+                    Chapter 30: Distributed Machine Learning Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 7: Modern System Design</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                    
+                    Chapter 31: Real-Time Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                    
+                    Chapter 32: Large Scale System Design Case Studies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                    
+                    Chapter 33: Distributed System Anti-Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                    
+                    Chapter 34: Performance Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                    
+                    Chapter 35: Future of Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extras</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../APPENDIX-Mastery-Roadmap.html">
+            
+                <a href="../APPENDIX-Mastery-Roadmap.html">
+            
+                    
+                    Appendix: Mastery Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 13: Distributed Caching</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-13-distributed-caching">Chapter 13: Distributed Caching</h1>
+<hr></hr>
+<blockquote>
+<p><em>"There are only two hard things in Computer Science: cache invalidation and naming things."</em>
+— Phil Karlton</p>
+</blockquote>
+<hr></hr>
+<h2 id="1-why-this-matters">1. Why This Matters</h2>
+<p>Every modern distributed system at scale relies on caching. Without caching, the internet as we know it would collapse under its own weight. Consider these numbers:</p>
+<ul>
+<li><strong>Amazon</strong> found that every 100ms of latency cost them 1% in sales</li>
+<li><strong>Google</strong> discovered that an extra 0.5 seconds in search page generation dropped traffic by 20%</li>
+<li><strong>Facebook</strong> serves billions of requests per second, with over 99% of reads served from cache</li>
+<li><strong>Netflix</strong> would need 10x more backend infrastructure without their caching layer</li>
+</ul>
+<h3 id="the-three-pillars-of-caching-value">The Three Pillars of Caching Value</h3>
+<p><strong>1. Latency Reduction</strong>
+A database query might take 5-50ms. A cache lookup takes 0.1-1ms. For a page that requires 50 database queries, that's the difference between 250ms and 5ms — a 50x improvement. Users perceive anything under 100ms as "instant." Caching is often the only way to achieve this at scale.</p>
+<p><strong>2. Throughput Amplification</strong>
+A single MySQL instance might handle 5,000 queries per second. A single Redis instance can handle 100,000+ operations per second. A single Memcached instance can handle 200,000+ operations per second. Caching amplifies your read capacity by orders of magnitude without scaling your database tier.</p>
+<p><strong>3. Cost Reduction</strong>
+Database instances are expensive — they require fast SSDs, large amounts of RAM, and high-end CPUs. A caching layer that absorbs 99% of reads means you need far fewer database replicas, saving hundreds of thousands of dollars annually at scale.</p>
+<h3 id="system-design-interview-relevance">System Design Interview Relevance</h3>
+<p>Caching appears in virtually every system design interview. You'll be asked about:</p>
+<ul>
+<li>Designing a URL shortener → cache hot URLs</li>
+<li>Designing Twitter's timeline → cache user timelines</li>
+<li>Designing a news feed → cache feed data</li>
+<li>Designing a rate limiter → use Redis for counters</li>
+<li>Designing a leaderboard → use Redis sorted sets</li>
+</ul>
+<p>Understanding distributed caching deeply is not optional — it's a <strong>prerequisite</strong> for any senior engineering role.</p>
+<h3 id="the-fundamental-caching-principle">The Fundamental Caching Principle</h3>
+<p>At its core, caching exploits a simple observation: <strong>access patterns are not uniform</strong>. In most systems, a small fraction of data accounts for the majority of accesses. This is the <strong>Pareto principle</strong> (80/20 rule) applied to data access — 20% of the data handles 80% of the traffic. By keeping this "hot" data in a faster storage tier, we dramatically improve overall system performance.</p>
+<hr></hr>
+<h2 id="2-beginner-intuition">2. Beginner Intuition</h2>
+<h3 id="the-library-analogy">The Library Analogy</h3>
+<p>Imagine you're a student writing a thesis. You frequently reference certain books.</p>
+<p><strong>Without caching (going to the library every time):</strong></p>
+<ol>
+<li>Walk to the university library (5 minutes)</li>
+<li>Find the book in the catalog (2 minutes)</li>
+<li>Locate it on the shelf (3 minutes)</li>
+<li>Read the relevant section (1 minute)</li>
+<li>Walk back to your desk (5 minutes)</li>
+<li><strong>Total: 16 minutes per reference</strong></li>
+</ol>
+<p><strong>With caching (keeping books on your desk):</strong></p>
+<ol>
+<li>Reach for the book on your desk (5 seconds)</li>
+<li>Open to the bookmarked page (5 seconds)</li>
+<li><strong>Total: 10 seconds per reference</strong></li>
+</ol>
+<p>But your desk has limited space (like cache memory). You can only keep 10 books on it. When you need an 11th book, you must decide which one to remove. This is the <strong>eviction problem</strong>.</p>
+<p>Sometimes the library updates a book with a new edition, but you still have the old one on your desk. This is the <strong>stale data problem</strong>.</p>
+<p>Sometimes 100 students all need the same popular book at the same time and rush to the library. This is the <strong>thundering herd problem</strong>.</p>
+<h3 id="the-cache-hierarchy-—-multiple-desks">The Cache Hierarchy — Multiple Desks</h3>
+<p>Now extend the analogy:</p>
+<ul>
+<li><strong>Your brain</strong> (L1/L2 CPU cache) — fastest, smallest, holds the formula you're currently using</li>
+<li><strong>Your desk</strong> (application-level cache) — fast, small, holds the books you're actively reading</li>
+<li><strong>Your room's bookshelf</strong> (distributed cache like Redis) — medium speed, medium size</li>
+<li><strong>The university library</strong> (database) — slow, large, holds everything</li>
+<li><strong>Inter-library loan</strong> (remote API/service) — slowest, largest</li>
+</ul>
+<p>Each level is progressively slower but larger. Data flows upward from slow-large to fast-small based on access patterns.</p>
+<h3 id="what-makes-caching-hard">What Makes Caching Hard?</h3>
+<p>Caching sounds simple — store frequently accessed data closer to where it's needed. But in distributed systems, it becomes incredibly complex:</p>
+<ol>
+<li><strong>Where</strong> do you cache? (client, server, CDN, database)</li>
+<li><strong>What</strong> do you cache? (raw data, computed results, HTML fragments)</li>
+<li><strong>When</strong> do you invalidate? (time-based, event-based, never)</li>
+<li><strong>How</strong> do you handle consistency? (stale reads, cache stampede)</li>
+<li><strong>How</strong> do you handle failures? (cache goes down, network partitions)</li>
+</ol>
+<hr></hr>
+<h2 id="3-core-theory">3. Core Theory</h2>
+<h3 id="31-the-cache-hierarchy">3.1 The Cache Hierarchy</h3>
+<p>Modern systems employ multiple layers of caching, each optimized for different access patterns:</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────┐
+│                        CACHE HIERARCHY                              │
+├──────────────────┬──────────┬───────────┬───────────────────────────┤
+│ Level            │ Latency  │ Size      │ Examples                  │
+├──────────────────┼──────────┼───────────┼───────────────────────────┤
+│ L1 CPU Cache     │ ~1ns     │ 64KB      │ Hardware managed          │
+│ L2 CPU Cache     │ ~4ns     │ 256KB     │ Hardware managed          │
+│ L3 CPU Cache     │ ~12ns   │ 8-32MB    │ Hardware managed          │
+│ Application Heap │ ~100ns   │ 1-32GB    │ HashMap, Guava, Caffeine  │
+│ Distributed Cache│ ~1ms     │ 10-500GB+ │ Redis, Memcached          │
+│ CDN              │ ~10ms    │ Petabytes │ CloudFront, Akamai        │
+│ Database         │ ~5-50ms  │ Terabytes │ PostgreSQL, MySQL         │
+│ Remote Storage   │ ~50-200ms│ Unlimited │ S3, GCS                   │
+└──────────────────┴──────────┴───────────┴───────────────────────────┘
+</code></pre><p><strong>L1/L2/L3 CPU Cache:</strong>
+Hardware-managed caches that exploit spatial and temporal locality. L1 is split into instruction cache (L1i) and data cache (L1d). These are per-core (L1, L2) or shared across cores (L3). Cache lines are typically 64 bytes. CPU caches use a write-back policy and MESI protocol for coherence.</p>
+<p><strong>Application-Level Cache (In-Process):</strong>
+Data stored in the application's heap memory. Examples include Java's <code>ConcurrentHashMap</code>, Google's Guava Cache, and Caffeine. Zero network overhead, but limited to a single process and lost on restart. In Java, GC pressure from large in-process caches can cause long pause times.</p>
+<p><strong>Distributed Cache (Out-of-Process):</strong>
+Shared cache accessible by multiple application instances over the network. Redis and Memcached are the dominant solutions. Survives individual application restarts, provides a shared view of cached data, and can scale horizontally.</p>
+<p><strong>CDN (Content Delivery Network):</strong>
+Geographically distributed cache nodes that serve static content (images, CSS, JS) and sometimes dynamic content from edge locations closest to users. Examples: CloudFront, Akamai, Cloudflare, Fastly.</p>
+<h3 id="32-cache-hit-and-miss">3.2 Cache Hit and Miss</h3>
+<p>The two fundamental cache operations:</p>
+<p><strong>Cache Hit:</strong> The requested data is found in the cache. The request is served directly from cache without touching the backend.</p>
+<p><strong>Cache Miss:</strong> The requested data is NOT in the cache. The system must fetch it from the backend (database, service), and typically stores it in the cache for future requests.</p>
+<p><strong>Hit Rate</strong> = Cache Hits / (Cache Hits + Cache Misses)</p>
+<p>A good cache hit rate is typically <strong>95-99%</strong>. Below 90%, you should investigate your caching strategy, key design, or eviction policy.</p>
+<p><strong>Effective Latency</strong> = (Hit Rate × Cache Latency) + (Miss Rate × Backend Latency)</p>
+<p>Example: With 95% hit rate, 1ms cache latency, 50ms DB latency:</p>
+<ul>
+<li>Effective Latency = (0.95 × 1ms) + (0.05 × 50ms) = 0.95ms + 2.5ms = <strong>3.45ms</strong></li>
+<li>Without cache: <strong>50ms</strong> (14.5x slower)</li>
+</ul>
+<h3 id="33-caching-strategies-—-the-five-canonical-patterns">3.3 Caching Strategies — The Five Canonical Patterns</h3>
+<h4 id="331-cache-aside-lazy-loading">3.3.1 Cache-Aside (Lazy Loading)</h4>
+<p>The most common caching pattern. The application manages the cache explicitly.</p>
+<p><strong>Read Path:</strong></p>
+<ol>
+<li>Application checks the cache for the requested key</li>
+<li>If cache hit → return cached data</li>
+<li>If cache miss → query the database</li>
+<li>Store the result in cache</li>
+<li>Return the data to the caller</li>
+</ol>
+<p><strong>Write Path:</strong></p>
+<ol>
+<li>Application writes to the database</li>
+<li>Application invalidates (deletes) the cache entry</li>
+<li>The next read will miss and repopulate the cache</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Only requested data is cached (no wasted memory)</li>
+<li>Cache failure doesn't bring down the system (falls back to DB)</li>
+<li>Simple to implement and reason about</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>First request always results in a cache miss (cold start)</li>
+<li>Stale data possible in a race condition between cache invalidation and reads</li>
+<li>Application must manage cache logic explicitly</li>
+</ul>
+<p><strong>When to use:</strong> Most read-heavy workloads. This is the default pattern and works well for 90% of use cases.</p>
+<h4 id="332-read-through">3.3.2 Read-Through</h4>
+<p>Similar to cache-aside, but the cache itself is responsible for loading data on a miss.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Application always reads from the cache</li>
+<li>On cache miss, the cache library/provider loads data from the database</li>
+<li>Cache stores the data and returns it to the application</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Application code is simpler (no cache-miss handling logic)</li>
+<li>Consistent data loading logic</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Data model in cache must match the data model in the database</li>
+<li>First request still results in a miss</li>
+<li>Less control over loading logic</li>
+</ul>
+<p><strong>When to use:</strong> When you want to decouple cache management from application logic. Often used with frameworks like Spring Cache.</p>
+<h4 id="333-write-through">3.3.3 Write-Through</h4>
+<p>Every write goes through the cache to the database.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Application writes data to the cache</li>
+<li>Cache synchronously writes the data to the database</li>
+<li>Both cache and database are updated atomically (from the application's perspective)</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Cache and database are always consistent</li>
+<li>No stale data in cache</li>
+<li>Simplified read path (data is always in cache after a write)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Higher write latency (write must go to cache AND database)</li>
+<li>Caches data that may never be read (wasted memory)</li>
+<li>Write bottleneck in the cache layer</li>
+</ul>
+<p><strong>When to use:</strong> Systems where data consistency is critical and write latency is acceptable. Often combined with read-through.</p>
+<h4 id="334-write-behind-write-back">3.3.4 Write-Behind (Write-Back)</h4>
+<p>Writes go to the cache first, and the cache asynchronously flushes to the database.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Application writes data to the cache</li>
+<li>Cache acknowledges the write immediately</li>
+<li>Cache asynchronously writes data to the database (batched, delayed)</li>
+<li>If the cache fails before flushing, data is lost</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Lowest write latency (write only to cache)</li>
+<li>Batching reduces database load</li>
+<li>Absorbs write spikes</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li><strong>Data loss risk</strong> if cache fails before flushing</li>
+<li>Complex to implement correctly</li>
+<li>Eventual consistency between cache and database</li>
+<li>Debugging is harder (where is the latest data?)</li>
+</ul>
+<p><strong>When to use:</strong> Write-heavy workloads where some data loss is acceptable (analytics, counters, logs). Never use for financial data.</p>
+<h4 id="335-refresh-ahead">3.3.5 Refresh-Ahead</h4>
+<p>Proactively refreshes cache entries before they expire.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Cache tracks access patterns and expiry times</li>
+<li>Before a popular entry expires, cache proactively reloads it from the database</li>
+<li>Users always get cache hits (no miss penalty)</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Eliminates cache miss latency for hot data</li>
+<li>Reduces thundering herd on expiry</li>
+<li>Smoother latency distribution</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Complex to implement</li>
+<li>Wastes resources refreshing data that might not be requested again</li>
+<li>Must accurately predict which entries to refresh</li>
+</ul>
+<p><strong>When to use:</strong> High-traffic systems where cache miss latency is unacceptable. Stock prices, sports scores, trending content.</p>
+<h3 id="34-cache-invalidation-—-the-hardest-problem">3.4 Cache Invalidation — The Hardest Problem</h3>
+<p>Phil Karlton's famous quote exists because cache invalidation is genuinely one of the hardest problems in distributed systems. The core challenge: <strong>how do you ensure the cache reflects the current state of the source of truth?</strong></p>
+<h4 id="341-ttl-based-invalidation-time-to-live">3.4.1 TTL-Based Invalidation (Time-To-Live)</h4>
+<p>Each cache entry has an expiration time. After the TTL expires, the entry is considered stale and will be refreshed on the next access.</p>
+<pre><code>Key: "user:123"
+Value: {name: "Alice", age: 30}
+TTL: 300 seconds (5 minutes)
+</code></pre><p><strong>Advantages:</strong></p>
+<ul>
+<li>Simple to implement</li>
+<li>Bounds staleness to the TTL window</li>
+<li>Self-healing (stale data eventually expires)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Data can be stale for up to the entire TTL duration</li>
+<li>Short TTLs reduce hit rate; long TTLs increase staleness</li>
+<li>Doesn't handle urgent invalidation (user changes password)</li>
+</ul>
+<p><strong>Best practices:</strong></p>
+<ul>
+<li>Use different TTLs for different data types (user profile: 5min, product price: 30sec, config: 1hr)</li>
+<li>Add jitter to TTLs to prevent synchronized expiration (thundering herd)</li>
+<li>Use shorter TTLs for frequently changing data</li>
+</ul>
+<h4 id="342-event-based-invalidation">3.4.2 Event-Based Invalidation</h4>
+<p>When the source data changes, an event is published and the cache entry is invalidated or updated.</p>
+<p><strong>Approaches:</strong></p>
+<ul>
+<li><strong>Database triggers:</strong> Database fires a trigger on update → invalidates cache</li>
+<li><strong>Application events:</strong> Application publishes events to a message broker → consumers invalidate cache</li>
+<li><strong>Change Data Capture (CDC):</strong> Tools like Debezium capture database changes → stream to cache invalidation service</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Near-real-time consistency</li>
+<li>No stale data window (like TTL)</li>
+<li>Can update cache proactively (not just invalidate)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Complex infrastructure (message brokers, CDC pipelines)</li>
+<li>Event ordering and delivery guarantees are tricky</li>
+<li>Failure in event pipeline means stale cache</li>
+</ul>
+<h4 id="343-version-based-invalidation">3.4.3 Version-Based Invalidation</h4>
+<p>Each piece of data has a version number. The cache stores data with its version. On read, the version is checked against the source.</p>
+<pre><code>Cache entry: { key: "product:456", version: 7, data: {...} }
+Database:    { id: 456, version: 8, data: {...} }
+→ Cache entry is stale, refresh needed
+</code></pre><p><strong>Advantages:</strong></p>
+<ul>
+<li>Precise staleness detection</li>
+<li>Works well with optimistic concurrency</li>
+<li>Can be combined with ETags in HTTP caching</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Requires a version check on every read (or periodic check)</li>
+<li>Version store itself needs to be fast (defeating the purpose if it's in the DB)</li>
+</ul>
+<h3 id="35-cache-eviction-policies">3.5 Cache Eviction Policies</h3>
+<p>When the cache is full and a new entry needs to be added, which existing entry should be removed?</p>
+<h4 id="lru-least-recently-used">LRU (Least Recently Used)</h4>
+<p>Evicts the entry that hasn't been accessed for the longest time. Based on the assumption that recently accessed data will likely be accessed again (temporal locality).</p>
+<p><strong>Implementation:</strong> Doubly-linked list + HashMap. O(1) for get and put.</p>
+<p><strong>Pros:</strong> Simple, effective for most workloads
+<strong>Cons:</strong> Scan pollution (a one-time scan of many items can evict frequently used items)</p>
+<h4 id="lfu-least-frequently-used">LFU (Least Frequently Used)</h4>
+<p>Evicts the entry that has been accessed the fewest number of times. Based on the assumption that frequently accessed data is more important.</p>
+<p><strong>Implementation:</strong> Min-heap or frequency-bucketed linked lists. O(1) with O(n) space.</p>
+<p><strong>Pros:</strong> Better than LRU for stable access patterns
+<strong>Cons:</strong> Slow to adapt (newly added popular items have low frequency), frequency counts require maintenance</p>
+<h4 id="fifo-first-in-first-out">FIFO (First In, First Out)</h4>
+<p>Evicts the oldest entry regardless of access pattern.</p>
+<p><strong>Implementation:</strong> Simple queue.</p>
+<p><strong>Pros:</strong> Simplest to implement
+<strong>Cons:</strong> No consideration of access patterns, poor hit rate</p>
+<h4 id="random">Random</h4>
+<p>Evicts a random entry.</p>
+<p><strong>Implementation:</strong> Random selection.</p>
+<p><strong>Pros:</strong> No overhead, surprisingly competitive in some workloads
+<strong>Cons:</strong> Unpredictable behavior, can evict hot data</p>
+<h4 id="arc-adaptive-replacement-cache">ARC (Adaptive Replacement Cache)</h4>
+<p>Self-tuning algorithm that balances between recency (LRU) and frequency (LFU). Maintains two LRU lists and dynamically adjusts the balance based on workload.</p>
+<p><strong>How ARC Works:</strong></p>
+<ol>
+<li>Maintains two lists: T1 (recently accessed once) and T2 (accessed multiple times)</li>
+<li>Also maintains "ghost" lists B1 and B2 for recently evicted entries</li>
+<li>If a cache miss hits B1 (entry was recently evicted from T1), increase T1's target size</li>
+<li>If a cache miss hits B2, increase T2's target size</li>
+<li>The algorithm adapts to the actual workload automatically</li>
+</ol>
+<p><strong>Pros:</strong> Adapts to changing workloads, excellent hit rate
+<strong>Cons:</strong> More complex to implement, patented (IBM), more memory overhead</p>
+<h3 id="36-cache-consistency-problems">3.6 Cache Consistency Problems</h3>
+<h4 id="stale-data">Stale Data</h4>
+<p>The cache contains an outdated version of the data. Causes: TTL hasn't expired yet, invalidation event was lost, race condition between write and invalidation.</p>
+<h4 id="thundering-herd">Thundering Herd</h4>
+<p>When a popular cache entry expires, many concurrent requests simultaneously miss the cache and all hit the database, potentially overwhelming it.</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>Locking:</strong> Only one request fetches from DB; others wait for the cache to be populated</li>
+<li><strong>Stale-while-revalidate:</strong> Serve stale data while refreshing in background</li>
+<li><strong>Jittered TTLs:</strong> Add random jitter so entries don't all expire at the same time</li>
+</ul>
+<h4 id="cache-stampede">Cache Stampede</h4>
+<p>Similar to thundering herd, but caused by a cache server restart or crash. All entries are cold, so all requests miss and hit the database simultaneously.</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>Cache warming:</strong> Pre-populate cache before directing traffic</li>
+<li><strong>Gradual traffic shift:</strong> Slowly redirect traffic to new cache nodes</li>
+<li><strong>Probabilistic early expiration:</strong> Each request has a small probability of refreshing before actual TTL expiry</li>
+</ul>
+<h4 id="hot-keys">Hot Keys</h4>
+<p>A small number of cache keys receive a disproportionately large number of requests. This can overwhelm a single cache node (since keys are typically sharded by key hash).</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>Local caching:</strong> Cache hot keys in application memory</li>
+<li><strong>Key replication:</strong> Replicate hot keys across multiple cache nodes with suffixed key names (<code>key:1</code>, <code>key:2</code>, ..., <code>key:N</code>)</li>
+<li><strong>Read replicas:</strong> Use Redis read replicas for hot keys</li>
+</ul>
+<hr></hr>
+<h2 id="4-architecture-deep-dive">4. Architecture Deep Dive</h2>
+<h3 id="41-redis-deep-dive">4.1 Redis Deep Dive</h3>
+<p>Redis (Remote Dictionary Server) is the most popular distributed caching solution. It's an in-memory data structure server that supports persistence, replication, clustering, and Lua scripting.</p>
+<h4 id="411-data-structures">4.1.1 Data Structures</h4>
+<p>Redis is not just a key-value store — it's a <strong>data structure server</strong>. This distinction is crucial because it means you can perform operations on the data stored in Redis without fetching it, modifying it, and writing it back.</p>
+<p><strong>Strings</strong>
+The simplest Redis type. Can hold text, integers, or binary data up to 512MB.</p>
+<pre><code>SET user:123:name "Alice"           → OK
+GET user:123:name                   → "Alice"
+INCR page:home:views               → 1 (atomic increment)
+SETEX session:abc123 3600 "data"    → OK (expires in 1 hour)
+MSET key1 "val1" key2 "val2"       → OK (set multiple)
+MGET key1 key2                     → ["val1", "val2"]
+</code></pre><p>Use cases: caching, counters, rate limiting, session storage, distributed locks.</p>
+<p><strong>Hashes</strong>
+Maps of field-value pairs. Think of them as mini-objects.</p>
+<pre><code>HSET user:123 name "Alice" age "30" city "NYC"
+HGET user:123 name                  → "Alice"
+HGETALL user:123                    → {name: "Alice", age: "30", city: "NYC"}
+HINCRBY user:123 age 1              → 31 (increment a field)
+HDEL user:123 city                  → 1 (delete a field)
+</code></pre><p>Use cases: storing objects, user profiles, configuration. More memory-efficient than storing each field as a separate key.</p>
+<p><strong>Lists</strong>
+Ordered collections of strings, implemented as linked lists. O(1) push/pop at head or tail.</p>
+<pre><code>LPUSH queue:emails "email1" "email2"  → 2
+RPUSH queue:emails "email3"            → 3
+LPOP queue:emails                      → "email2"
+RPOP queue:emails                      → "email3"
+LRANGE queue:emails 0 -1              → ["email1"]
+LLEN queue:emails                      → 1
+</code></pre><p>Use cases: message queues, activity feeds, recent items lists.</p>
+<p><strong>Sets</strong>
+Unordered collections of unique strings.</p>
+<pre><code>SADD tags:post:1 "redis" "cache" "distributed"
+SMEMBERS tags:post:1                    → {"redis", "cache", "distributed"}
+SISMEMBER tags:post:1 "redis"           → 1 (true)
+SINTER tags:post:1 tags:post:2          → intersection of sets
+SUNION tags:post:1 tags:post:2          → union of sets
+SCARD tags:post:1                       → 3 (cardinality)
+</code></pre><p>Use cases: tags, unique visitors, set operations (mutual friends, common interests).</p>
+<p><strong>Sorted Sets (ZSets)</strong>
+Like sets, but each member has a score. Members are ordered by score. This is one of Redis's most powerful data structures.</p>
+<pre><code>ZADD leaderboard 100 "alice" 85 "bob" 92 "charlie"
+ZRANGE leaderboard 0 -1 WITHSCORES     → [("bob",85), ("charlie",92), ("alice",100)]
+ZREVRANGE leaderboard 0 2 WITHSCORES   → [("alice",100), ("charlie",92), ("bob",85)]
+ZRANK leaderboard "bob"                 → 0 (rank, 0-indexed)
+ZRANGEBYSCORE leaderboard 90 100       → ["charlie", "alice"]
+ZINCRBY leaderboard 20 "bob"           → 105
+</code></pre><p>Use cases: leaderboards, priority queues, rate limiters (sliding window), time-series data.</p>
+<p><strong>Streams</strong>
+Append-only log data structure, introduced in Redis 5.0. Similar to Kafka topics but within Redis.</p>
+<pre><code>XADD mystream * sensor-id 1234 temperature 19.8
+XADD mystream * sensor-id 1234 temperature 20.1
+XLEN mystream                           → 2
+XRANGE mystream - +                     → all entries
+XREAD COUNT 10 BLOCK 5000 STREAMS mystream 0
+</code></pre><p>Consumer groups provide Kafka-like functionality:</p>
+<pre><code>XGROUP CREATE mystream mygroup 0
+XREADGROUP GROUP mygroup consumer1 COUNT 1 BLOCK 2000 STREAMS mystream &gt;
+XACK mystream mygroup 1526569495631-0
+</code></pre><p>Use cases: event sourcing, activity feeds, real-time analytics, message queuing.</p>
+<p><strong>HyperLogLog</strong>
+Probabilistic data structure for estimating the cardinality of a set. Uses only ~12KB of memory regardless of the number of elements.</p>
+<pre><code>PFADD visitors:2024-01-15 "user1" "user2" "user3"
+PFADD visitors:2024-01-15 "user1" "user4"          → user1 already counted
+PFCOUNT visitors:2024-01-15                          → ~4 (0.81% standard error)
+PFMERGE visitors:week visitors:2024-01-15 visitors:2024-01-16
+</code></pre><p>Use cases: unique visitor counts, unique search queries, unique events. Any scenario where you need approximate cardinality of a very large set.</p>
+<p><strong>Bitmaps</strong>
+Not a separate data type — actually strings treated as bit arrays. Extremely memory-efficient for boolean operations.</p>
+<pre><code>SETBIT user:123:features 0 1       → set feature 0 to ON
+SETBIT user:123:features 1 0       → set feature 1 to OFF
+GETBIT user:123:features 0         → 1
+BITCOUNT user:123:features         → 1
+BITOP AND result bitmap1 bitmap2   → AND operation
+</code></pre><p>Use cases: feature flags, daily active users, bloom filters.</p>
+<h4 id="412-redis-persistence">4.1.2 Redis Persistence</h4>
+<p>Redis is an in-memory store, but it provides persistence mechanisms to survive restarts.</p>
+<p><strong>RDB (Redis Database) Snapshots</strong>
+Point-in-time snapshots of the dataset, written to disk as a compact binary file.</p>
+<pre><code># redis.conf
+save 900 1      # Save if at least 1 key changed in 900 seconds
+save 300 10     # Save if at least 10 keys changed in 300 seconds
+save 60 10000   # Save if at least 10000 keys changed in 60 seconds
+</code></pre><p>How it works:</p>
+<ol>
+<li>Redis forks the process (using <code>fork()</code> syscall with copy-on-write)</li>
+<li>Child process writes the dataset to a temp RDB file</li>
+<li>When complete, the temp file replaces the old RDB file</li>
+<li>Parent process continues serving requests</li>
+</ol>
+<p><strong>Pros:</strong> Compact file, fast restart, good for backups
+<strong>Cons:</strong> Data loss between snapshots (up to last save interval), fork() can be slow with large datasets</p>
+<p><strong>AOF (Append-Only File)</strong>
+Logs every write operation. On restart, Redis replays the AOF to reconstruct the dataset.</p>
+<pre><code># redis.conf
+appendonly yes
+appendfsync everysec    # fsync every second (recommended)
+# appendfsync always    # fsync on every write (safest, slowest)
+# appendfsync no        # let OS decide when to fsync (fastest, least safe)
+</code></pre><p>AOF file contains human-readable commands:</p>
+<pre><code>*3\r\n$3\r\nSET\r\n$5\r\nuser1\r\n$5\r\nAlice\r\n
+*3\r\n$3\r\nSET\r\n$5\r\nuser2\r\n$3\r\nBob\r\n
+</code></pre><p><strong>AOF Rewriting:</strong> Over time, AOF files grow large. Redis can rewrite the AOF file to contain only the minimal set of commands to reconstruct the current dataset.</p>
+<p><strong>Pros:</strong> More durable (at most 1 second of data loss with <code>everysec</code>), human-readable
+<strong>Cons:</strong> Larger file size, slower restart than RDB</p>
+<p><strong>Hybrid Persistence (Redis 4.0+)</strong>
+Combines RDB and AOF. The AOF file starts with an RDB snapshot, followed by AOF commands. On restart, Redis loads the RDB snapshot first (fast), then replays AOF commands (for recent changes).</p>
+<pre><code># redis.conf
+aof-use-rdb-preamble yes
+</code></pre><p><strong>Pros:</strong> Fast restart (RDB) + minimal data loss (AOF)
+<strong>Cons:</strong> More complex, AOF file format is not purely human-readable</p>
+<h4 id="413-redis-replication-and-sentinel">4.1.3 Redis Replication and Sentinel</h4>
+<p><strong>Replication</strong>
+Redis uses asynchronous master-replica replication. One master handles writes; replicas receive copies and handle reads.</p>
+<pre><code># On replica
+REPLICAOF master-host 6379
+</code></pre><p>Replication process:</p>
+<ol>
+<li>Replica connects to master and sends <code>PSYNC</code> command</li>
+<li>Master starts background save (RDB) and buffers new writes</li>
+<li>Master sends RDB file to replica</li>
+<li>Replica loads RDB into memory</li>
+<li>Master sends buffered write commands to replica</li>
+<li>Ongoing: master streams write commands to replica in real-time</li>
+</ol>
+<p><strong>Partial resynchronization:</strong> If a replica disconnects briefly, it can request only the missing commands (using the replication offset) instead of a full resync. This uses the replication backlog buffer.</p>
+<p><strong>Redis Sentinel</strong>
+Provides high availability through automatic failover. Sentinel is a separate process that monitors Redis instances.</p>
+<p>Sentinel capabilities:</p>
+<ol>
+<li><strong>Monitoring:</strong> Checks if master and replicas are working</li>
+<li><strong>Notification:</strong> Alerts administrators via API when something goes wrong</li>
+<li><strong>Automatic failover:</strong> Promotes a replica to master when the master fails</li>
+<li><strong>Configuration provider:</strong> Clients connect to Sentinel to discover the current master</li>
+</ol>
+<pre><code># sentinel.conf
+sentinel monitor mymaster 192.168.1.100 6379 2    # quorum of 2
+sentinel down-after-milliseconds mymaster 5000     # 5s to detect failure
+sentinel failover-timeout mymaster 60000            # 60s failover timeout
+sentinel parallel-syncs mymaster 1                  # 1 replica syncs at a time
+</code></pre><p>Failover process:</p>
+<ol>
+<li>Sentinel detects master is down (subjective down: SDOWN)</li>
+<li>Multiple Sentinels agree master is down (objective down: ODOWN, requires quorum)</li>
+<li>Sentinel leader election (using Raft-like algorithm)</li>
+<li>Leader Sentinel selects best replica (considers replication offset, priority, run ID)</li>
+<li>Promotes selected replica to master</li>
+<li>Reconfigures other replicas to replicate from new master</li>
+<li>Updates clients via Pub/Sub</li>
+</ol>
+<h4 id="414-redis-cluster">4.1.4 Redis Cluster</h4>
+<p>Redis Cluster provides horizontal scaling by sharding data across multiple master nodes. Introduced in Redis 3.0.</p>
+<p><strong>Hash Slots</strong>
+Redis Cluster divides the keyspace into 16,384 hash slots. Each key is mapped to a slot using CRC16:</p>
+<pre><code>slot = CRC16(key) mod 16384
+</code></pre><p>Each master node is responsible for a subset of slots. For example:</p>
+<ul>
+<li>Node A: slots 0-5460</li>
+<li>Node B: slots 5461-10922</li>
+<li>Node C: slots 10923-16383</li>
+</ul>
+<p><strong>Hash Tags</strong>
+You can force related keys to map to the same slot using hash tags:</p>
+<pre><code>SET {user:123}.profile "..."    → slot = CRC16("user:123")
+SET {user:123}.sessions "..."   → same slot!
+</code></pre><p>This enables multi-key operations (MGET, transactions) on related keys.</p>
+<p><strong>Cluster Communication</strong>
+Nodes communicate via a gossip protocol on a dedicated bus port (data port + 10000). Every node sends periodic PING messages to random nodes and receives PONG responses. This gossip protocol shares:</p>
+<ul>
+<li>Cluster topology</li>
+<li>Node health status</li>
+<li>Slot assignments</li>
+<li>Failover decisions</li>
+</ul>
+<p><strong>Resharding (Live Migration)</strong>
+When adding or removing nodes, slots must be redistributed. Redis Cluster supports live resharding — migrating slots between nodes with zero downtime.</p>
+<pre><code># Using redis-cli
+redis-cli --cluster reshard 192.168.1.100:6379
+</code></pre><p>During migration:</p>
+<ol>
+<li>Source node marks slot as MIGRATING</li>
+<li>Target node marks slot as IMPORTING</li>
+<li>Keys are migrated one by one</li>
+<li>Clients hitting MIGRATING slot get ASK redirect to target</li>
+<li>When complete, slot assignment is updated via gossip</li>
+</ol>
+<p><strong>Failover in Redis Cluster</strong>
+Each master has one or more replicas. If a master fails:</p>
+<ol>
+<li>Replicas detect master is unreachable (via heartbeat timeout)</li>
+<li>Replicas request votes from other masters (like Raft election)</li>
+<li>Elected replica promotes itself to master</li>
+<li>New master announces new epoch and takes over slots</li>
+<li>Cluster continues operating (assuming majority of masters are alive)</li>
+</ol>
+<p>Cluster requires a majority of masters to be available. If more than half the masters are down, the cluster stops accepting writes (to prevent split-brain).</p>
+<h4 id="415-redis-pubsub">4.1.5 Redis Pub/Sub</h4>
+<p>Redis supports publish/subscribe messaging.</p>
+<pre><code># Subscriber
+SUBSCRIBE news:sports news:tech
+
+# Publisher
+PUBLISH news:sports "Goal scored!"    → returns number of subscribers who received
+PUBLISH news:tech "New release!"
+</code></pre><p>Pattern subscriptions:</p>
+<pre><code>PSUBSCRIBE news:*                      → subscribes to all news channels
+</code></pre><p><strong>Limitations:</strong></p>
+<ul>
+<li><strong>Fire-and-forget:</strong> Messages are lost if no subscribers are listening</li>
+<li><strong>No persistence:</strong> Messages are not stored</li>
+<li><strong>No consumer groups:</strong> Every subscriber gets every message (no load balancing)</li>
+<li><strong>No acknowledgment:</strong> No way to know if a subscriber processed the message</li>
+<li><strong>Memory pressure:</strong> Slow subscribers cause publisher buffer to grow</li>
+</ul>
+<p>For reliable messaging, use Redis Streams instead.</p>
+<h4 id="416-redis-streams-vs-kafka">4.1.6 Redis Streams vs Kafka</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Redis Streams</th>
+<th>Apache Kafka</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Storage</strong></td>
+<td>In-memory (with persistence)</td>
+<td>Disk-based (with page cache)</td>
+</tr>
+<tr>
+<td><strong>Throughput</strong></td>
+<td>100K-500K msg/sec per node</td>
+<td>1M+ msg/sec per broker</td>
+</tr>
+<tr>
+<td><strong>Latency</strong></td>
+<td>Sub-millisecond</td>
+<td>2-10ms</td>
+</tr>
+<tr>
+<td><strong>Retention</strong></td>
+<td>Memory-limited</td>
+<td>Configurable (days/unlimited)</td>
+</tr>
+<tr>
+<td><strong>Consumer Groups</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Ordering</strong></td>
+<td>Per-stream</td>
+<td>Per-partition</td>
+</tr>
+<tr>
+<td><strong>Replay</strong></td>
+<td>Yes (by ID)</td>
+<td>Yes (by offset)</td>
+</tr>
+<tr>
+<td><strong>Cluster</strong></td>
+<td>Redis Cluster (single-stream on one shard)</td>
+<td>Native partitioning</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Real-time, small-medium throughput</td>
+<td>High-throughput, long-term event storage</td>
+</tr>
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Low (Redis is already in stack)</td>
+<td>High (separate cluster, ZooKeeper/KRaft)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When to choose Redis Streams:</strong></p>
+<ul>
+<li>Already using Redis</li>
+<li>Low-to-medium throughput messaging</li>
+<li>Sub-millisecond latency required</li>
+<li>Short-lived event data</li>
+<li>Simpler operational requirements</li>
+</ul>
+<p><strong>When to choose Kafka:</strong></p>
+<ul>
+<li>High throughput (millions of events/sec)</li>
+<li>Long-term event storage (days, weeks)</li>
+<li>Event sourcing / stream processing</li>
+<li>Complex event routing and processing</li>
+<li>Multiple independent consumer applications</li>
+</ul>
+<h3 id="42-memcached-deep-dive">4.2 Memcached Deep Dive</h3>
+<p>Memcached is a high-performance, distributed memory object caching system. While simpler than Redis, it excels at pure caching workloads.</p>
+<h4 id="421-architecture">4.2.1 Architecture</h4>
+<p>Memcached uses a simple client-server architecture:</p>
+<ul>
+<li><strong>Shared-nothing:</strong> Each Memcached instance operates independently</li>
+<li><strong>Client-side sharding:</strong> The client determines which server holds a given key (using consistent hashing)</li>
+<li><strong>Multi-threaded:</strong> Unlike Redis (single-threaded for commands), Memcached is multi-threaded and can use multiple CPU cores</li>
+<li><strong>Simple protocol:</strong> Text and binary protocols for GET, SET, DELETE, etc.</li>
+</ul>
+<h4 id="422-slab-allocation">4.2.2 Slab Allocation</h4>
+<p>Memcached uses a <strong>slab allocator</strong> to manage memory efficiently and avoid fragmentation.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Memory is divided into <strong>slab classes</strong> of different sizes (64B, 128B, 256B, ..., 1MB)</li>
+<li>Each slab class has <strong>pages</strong> (default 1MB) divided into <strong>chunks</strong> of the class's size</li>
+<li>When storing an item, Memcached finds the smallest slab class that fits the item</li>
+<li>Items are stored in chunks of that slab class</li>
+</ol>
+<pre><code>Slab Class 1: chunk size = 96 bytes    → small items (keys, counters)
+Slab Class 2: chunk size = 120 bytes
+Slab Class 3: chunk size = 152 bytes
+...
+Slab Class 42: chunk size = 1048576 bytes (1MB) → largest items
+</code></pre><p><strong>Growth factor:</strong> By default, each slab class is 1.25x the size of the previous one. You can tune this with <code>-f</code> flag.</p>
+<p><strong>Internal waste:</strong> If an item is 100 bytes and the nearest slab class is 120 bytes, 20 bytes are wasted per item. This is the tradeoff for avoiding memory fragmentation.</p>
+<h4 id="423-memcached-vs-redis-comparison">4.2.3 Memcached vs Redis Comparison</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Memcached</th>
+<th>Redis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Types</strong></td>
+<td>Strings only</td>
+<td>Strings, Hashes, Lists, Sets, Sorted Sets, Streams, HyperLogLog, Bitmaps</td>
+</tr>
+<tr>
+<td><strong>Threading</strong></td>
+<td>Multi-threaded</td>
+<td>Single-threaded (6.0+ I/O threads for reads)</td>
+</tr>
+<tr>
+<td><strong>Persistence</strong></td>
+<td>None</td>
+<td>RDB, AOF, Hybrid</td>
+</tr>
+<tr>
+<td><strong>Replication</strong></td>
+<td>None (client-managed)</td>
+<td>Master-replica</td>
+</tr>
+<tr>
+<td><strong>Clustering</strong></td>
+<td>Client-side sharding</td>
+<td>Native cluster (hash slots)</td>
+</tr>
+<tr>
+<td><strong>Memory Efficiency</strong></td>
+<td>Better for simple strings</td>
+<td>Better for complex structures</td>
+</tr>
+<tr>
+<td><strong>Max Value Size</strong></td>
+<td>1MB (default)</td>
+<td>512MB</td>
+</tr>
+<tr>
+<td><strong>Pub/Sub</strong></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Lua Scripting</strong></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Transactions</strong></td>
+<td>No</td>
+<td>Yes (MULTI/EXEC)</td>
+</tr>
+<tr>
+<td><strong>Eviction</strong></td>
+<td>LRU per slab class</td>
+<td>Multiple policies (LRU, LFU, etc.)</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Simple, high-throughput caching</td>
+<td>Versatile caching + data structures</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When to choose Memcached:</strong></p>
+<ul>
+<li>Simple key-value caching only</li>
+<li>Need multi-threading for CPU-bound operations</li>
+<li>Slightly better memory efficiency for simple strings</li>
+<li>Very large cache (100GB+) with simple data</li>
+</ul>
+<p><strong>When to choose Redis:</strong></p>
+<ul>
+<li>Need rich data structures</li>
+<li>Need persistence</li>
+<li>Need Pub/Sub or Streams</li>
+<li>Need replication/clustering built in</li>
+<li>Most modern use cases</li>
+</ul>
+<hr></hr>
+<h2 id="5-visual-diagrams">5. Visual Diagrams</h2>
+<h3 id="51-cache-aside-flow">5.1 Cache-Aside Flow</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant App as Application
+    participant Cache as Redis Cache
+    participant DB as Database
+
+    App-&gt;&gt;Cache: GET user:123
+    alt Cache Hit
+        Cache--&gt;&gt;App: Return cached data
+    else Cache Miss
+        Cache--&gt;&gt;App: null (miss)
+        App-&gt;&gt;DB: SELECT * FROM users WHERE id=123
+        DB--&gt;&gt;App: User data
+        App-&gt;&gt;Cache: SET user:123 {data} EX 300
+        Cache--&gt;&gt;App: OK
+    end
+    App--&gt;&gt;App: Return user data to caller
+</div>
+
+<h3 id="52-write-through-flow">5.2 Write-Through Flow</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant App as Application
+    participant Cache as Cache Layer
+    participant DB as Database
+
+    App-&gt;&gt;Cache: Write user:123 = {updated data}
+    Cache-&gt;&gt;DB: UPDATE users SET ... WHERE id=123
+    DB--&gt;&gt;Cache: ACK (success)
+    Cache-&gt;&gt;Cache: Store in cache
+    Cache--&gt;&gt;App: ACK (success)
+
+    Note over App,DB: Both cache and DB are consistent
+
+    App-&gt;&gt;Cache: Read user:123
+    Cache--&gt;&gt;App: Return data (always fresh)
+</div>
+
+<h3 id="53-write-behind-flow">5.3 Write-Behind Flow</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant App as Application
+    participant Cache as Cache Layer
+    participant Queue as Write Queue
+    participant DB as Database
+
+    App-&gt;&gt;Cache: Write user:123 = {data}
+    Cache-&gt;&gt;Cache: Store in cache
+    Cache--&gt;&gt;App: ACK (immediate)
+    Cache-&gt;&gt;Queue: Enqueue write operation
+
+    Note over Queue,DB: Asynchronous batch flush
+
+    loop Every N seconds or N items
+        Queue-&gt;&gt;DB: Batch INSERT/UPDATE
+        DB--&gt;&gt;Queue: ACK
+    end
+</div>
+
+<h3 id="54-redis-cluster-architecture">5.4 Redis Cluster Architecture</h3>
+<div class="mermaid">
+graph TB
+    subgraph "Redis Cluster (16384 hash slots)"
+        subgraph "Shard 1 (Slots 0-5460)"
+            M1["Master 1<br></br>192.168.1.1:6379"]
+            R1a["Replica 1a<br></br>192.168.1.4:6379"]
+            R1b["Replica 1b<br></br>192.168.1.5:6379"]
+            M1 --&gt;|replication| R1a
+            M1 --&gt;|replication| R1b
+        end
+
+        subgraph "Shard 2 (Slots 5461-10922)"
+            M2["Master 2<br></br>192.168.1.2:6379"]
+            R2a["Replica 2a<br></br>192.168.1.6:6379"]
+            M2 --&gt;|replication| R2a
+        end
+
+        subgraph "Shard 3 (Slots 10923-16383)"
+            M3["Master 3<br></br>192.168.1.3:6379"]
+            R3a["Replica 3a<br></br>192.168.1.7:6379"]
+            M3 --&gt;|replication| R3a
+        end
+
+        M1 &lt;--&gt;|gossip| M2
+        M2 &lt;--&gt;|gossip| M3
+        M1 &lt;--&gt;|gossip| M3
+    end
+
+    Client["Client Application"]
+    Client --&gt;|"SET user:1 (slot 7459)"| M2
+    Client --&gt;|"GET product:5 (slot 12843)"| M3
+    Client --&gt;|"GET order:3 (slot 2397)"| M1
+</div>
+
+<h3 id="55-cache-stampede-scenario">5.5 Cache Stampede Scenario</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant R1 as Request 1
+    participant R2 as Request 2
+    participant R3 as Request 3
+    participant RN as Request N...
+    participant Cache as Cache
+    participant DB as Database
+
+    Note over Cache: Popular key "trending:feed" expires at T=0
+
+    R1-&gt;&gt;Cache: GET trending:feed
+    Cache--&gt;&gt;R1: MISS (expired)
+    R2-&gt;&gt;Cache: GET trending:feed
+    Cache--&gt;&gt;R2: MISS (expired)
+    R3-&gt;&gt;Cache: GET trending:feed
+    Cache--&gt;&gt;R3: MISS (expired)
+    RN-&gt;&gt;Cache: GET trending:feed
+    Cache--&gt;&gt;RN: MISS (expired)
+
+    Note over DB: All requests hit DB simultaneously!
+
+    R1-&gt;&gt;DB: Heavy query
+    R2-&gt;&gt;DB: Heavy query
+    R3-&gt;&gt;DB: Heavy query
+    RN-&gt;&gt;DB: Heavy query
+
+    Note over DB: DB overwhelmed! Latency spikes, timeouts
+
+    DB--&gt;&gt;R1: Result (slow)
+    R1-&gt;&gt;Cache: SET trending:feed
+    DB--&gt;&gt;R2: Result (slow)
+    DB--&gt;&gt;R3: Result (slow)
+    DB--&gt;&gt;RN: Result (slow)
+</div>
+
+<h3 id="56-cache-stampede-solution-—-locking">5.6 Cache Stampede Solution — Locking</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant R1 as Request 1
+    participant R2 as Request 2
+    participant R3 as Request 3
+    participant Cache as Cache
+    participant Lock as Distributed Lock
+    participant DB as Database
+
+    Note over Cache: Key "trending:feed" expires
+
+    R1-&gt;&gt;Cache: GET trending:feed → MISS
+    R1-&gt;&gt;Lock: SETNX trending:feed:lock (acquire lock)
+    Lock--&gt;&gt;R1: OK (lock acquired)
+
+    R2-&gt;&gt;Cache: GET trending:feed → MISS
+    R2-&gt;&gt;Lock: SETNX trending:feed:lock
+    Lock--&gt;&gt;R2: FAIL (already locked)
+    R2-&gt;&gt;R2: Wait/retry with backoff
+
+    R3-&gt;&gt;Cache: GET trending:feed → MISS
+    R3-&gt;&gt;Lock: SETNX trending:feed:lock
+    Lock--&gt;&gt;R3: FAIL (already locked)
+    R3-&gt;&gt;R3: Wait/retry with backoff
+
+    R1-&gt;&gt;DB: Heavy query
+    DB--&gt;&gt;R1: Result
+    R1-&gt;&gt;Cache: SET trending:feed {data} EX 300
+    R1-&gt;&gt;Lock: DEL trending:feed:lock
+
+    R2-&gt;&gt;Cache: GET trending:feed → HIT!
+    Cache--&gt;&gt;R2: Fresh data
+    R3-&gt;&gt;Cache: GET trending:feed → HIT!
+    Cache--&gt;&gt;R3: Fresh data
+
+    Note over R1,DB: Only 1 DB query instead of N!
+</div>
+
+<h3 id="57-cdn-caching-flow">5.7 CDN Caching Flow</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant User as User (NYC)
+    participant Edge as CDN Edge (NYC)
+    participant Origin as Origin Shield
+    participant Server as Origin Server (US-West)
+
+    User-&gt;&gt;Edge: GET /images/product-123.jpg
+
+    alt Edge Cache Hit
+        Edge--&gt;&gt;User: 200 OK (cached, 5ms)
+    else Edge Cache Miss
+        Edge-&gt;&gt;Origin: GET /images/product-123.jpg
+        alt Origin Shield Hit
+            Origin--&gt;&gt;Edge: 200 OK (cached, 20ms)
+        else Origin Shield Miss
+            Origin-&gt;&gt;Server: GET /images/product-123.jpg
+            Server--&gt;&gt;Origin: 200 OK (100ms)
+            Origin-&gt;&gt;Origin: Cache response
+        end
+        Origin--&gt;&gt;Edge: Response
+        Edge-&gt;&gt;Edge: Cache response
+        Edge--&gt;&gt;User: 200 OK
+    end
+</div>
+
+<h3 id="58-multi-tier-caching-architecture">5.8 Multi-Tier Caching Architecture</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────┐
+│                     MULTI-TIER CACHING ARCHITECTURE                   │
+│                                                                        │
+│  ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐           │
+│  │ Client 1 │    │ Client 2 │    │ Client 3 │    │ Client N │           │
+│  └────┬─────┘    └────┬─────┘    └────┬─────┘    └────┬─────┘           │
+│       │               │               │               │                 │
+│  ┌────▼───────────────▼───────────────▼───────────────▼────┐           │
+│  │                     CDN Edge Nodes                       │           │
+│  │            (Static assets, API responses)                │ TIER 1    │
+│  └─────────────────────────┬───────────────────────────────┘           │
+│                            │ Miss                                       │
+│  ┌─────────────────────────▼───────────────────────────────┐           │
+│  │                   API Gateway Cache                      │           │
+│  │              (Rate limiting, auth tokens)                │ TIER 2    │
+│  └─────────────────────────┬───────────────────────────────┘           │
+│                            │ Miss                                       │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
+│  │ App Srv 1 │  │ App Srv 2 │  │ App Srv 3 │  │ App Srv N │              │
+│  │┌────────┐│  │┌────────┐│  │┌────────┐│  │┌────────┐│              │
+│  ││L1 Cache││  ││L1 Cache││  ││L1 Cache││  ││L1 Cache││ TIER 3       │
+│  │└────────┘│  │└────────┘│  │└────────┘│  │└────────┘│ (In-process) │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘              │
+│       │              │              │              │                    │
+│  ┌────▼──────────────▼──────────────▼──────────────▼────┐              │
+│  │              Distributed Cache (Redis Cluster)        │              │
+│  │                    (Shared state)                     │ TIER 4       │
+│  └──────────────────────────┬───────────────────────────┘              │
+│                             │ Miss                                      │
+│  ┌──────────────────────────▼───────────────────────────┐              │
+│  │                  Database (PostgreSQL)                 │              │
+│  │                  (Source of truth)                     │ TIER 5       │
+│  └──────────────────────────────────────────────────────┘              │
+└──────────────────────────────────────────────────────────────────────┘
+</code></pre><hr></hr>
+<h2 id="6-real-production-examples">6. Real Production Examples</h2>
+<h3 id="61-facebooks-memcached-fleet-tao">6.1 Facebook's Memcached Fleet (TAO)</h3>
+<p>Facebook operates one of the largest Memcached deployments in the world, serving <strong>billions of requests per second</strong>.</p>
+<p><strong>Scale:</strong></p>
+<ul>
+<li>Thousands of Memcached servers</li>
+<li>Trillions of items cached</li>
+<li>Multiple data center regions</li>
+<li>Over 99% cache hit rate</li>
+</ul>
+<p><strong>Architecture Evolution:</strong></p>
+<p><strong>Phase 1: Simple Memcached</strong>
+Initially, Facebook used Memcached as a simple look-aside cache. Applications would check Memcached first, and on a miss, query MySQL.</p>
+<p><strong>Phase 2: Regional Pools</strong>
+As traffic grew, they introduced regional Memcached pools:</p>
+<ul>
+<li><strong>Wildcard pool:</strong> Default pool for most keys</li>
+<li><strong>Regional pool:</strong> Data replicated per region to reduce cross-region latency</li>
+<li><strong>Small pool:</strong> High-throughput keys isolated to prevent eviction</li>
+</ul>
+<p><strong>Phase 3: Lease Mechanism</strong>
+To solve thundering herd and stale sets, Facebook introduced <strong>leases</strong>:</p>
+<ol>
+<li>On cache miss, Memcached returns a <strong>lease token</strong> (64-bit ID)</li>
+<li>Only the request holding the lease can set the value</li>
+<li>Other concurrent misses get a "try again later" response</li>
+<li>Leases expire after 10 seconds (in case the holder crashes)</li>
+<li>This solved thundering herd with minimal overhead</li>
+</ol>
+<p><strong>Phase 4: McRouter</strong>
+Facebook built <strong>McRouter</strong>, a Memcached protocol router that provides:</p>
+<ul>
+<li>Connection pooling</li>
+<li>Prefix-based routing</li>
+<li>Failover handling</li>
+<li>Replication across pools</li>
+<li>Warm-up from other regions</li>
+</ul>
+<p><strong>Phase 5: TAO (The Associations and Objects)</strong>
+TAO is Facebook's graph-aware caching system built on top of Memcached:</p>
+<ul>
+<li>Objects (nodes): users, posts, photos</li>
+<li>Associations (edges): friendships, likes, comments</li>
+<li>TAO provides a graph API with caching built in</li>
+<li>Write-through cache for objects</li>
+<li>Eventual consistency across regions</li>
+</ul>
+<p><strong>Key lessons from Facebook:</strong></p>
+<ol>
+<li>At extreme scale, even Memcached needs a routing layer</li>
+<li>Thundering herd is a real problem that needs active mitigation</li>
+<li>Cross-region consistency requires careful design</li>
+<li>Simple protocols (Memcached text protocol) scale well</li>
+</ol>
+<h3 id="62-netflix-evcache">6.2 Netflix EVCache</h3>
+<p>Netflix built <strong>EVCache</strong> (Ephemeral Volatile Cache) on top of Memcached for their global streaming platform.</p>
+<p><strong>Scale:</strong></p>
+<ul>
+<li>~50 million operations per second</li>
+<li>Thousands of Memcached instances</li>
+<li>Multiple AWS regions</li>
+<li>Petabytes of cached data</li>
+</ul>
+<p><strong>Architecture:</strong></p>
+<ul>
+<li>Built on top of Memcached with a Java client library</li>
+<li>Uses consistent hashing for key distribution</li>
+<li>Zone-aware replication (data replicated across AWS Availability Zones)</li>
+<li>Automatic fallback to other zones on failure</li>
+</ul>
+<p><strong>Key Features:</strong></p>
+<ol>
+<li><p><strong>Zone-Aware Replication:</strong></p>
+<ul>
+<li>Data written to all zones in a region simultaneously</li>
+<li>Reads go to the nearest zone</li>
+<li>If one zone fails, reads automatically go to another zone</li>
+</ul>
+</li>
+<li><p><strong>Dynamic Tuning:</strong></p>
+<ul>
+<li>Cache sizes automatically adjusted based on hit rates</li>
+<li>Monitoring dashboards track hit rates, latency, eviction rates</li>
+<li>Alert on hit rate drops below threshold</li>
+</ul>
+</li>
+<li><p><strong>Data Chunking:</strong></p>
+<ul>
+<li>Large values are automatically split into chunks</li>
+<li>Stored across multiple Memcached keys</li>
+<li>Reassembled transparently on read</li>
+</ul>
+</li>
+<li><p><strong>Near-Cache (L1):</strong></p>
+<ul>
+<li>In-process cache (Caffeine) in front of EVCache</li>
+<li>Reduces network calls for extremely hot data</li>
+<li>Short TTL (seconds) to balance staleness vs performance</li>
+</ul>
+</li>
+</ol>
+<p><strong>Key lessons from Netflix:</strong></p>
+<ol>
+<li>Multi-zone replication is essential for availability</li>
+<li>In-process caching in front of distributed cache reduces latency further</li>
+<li>Automatic chunking handles large values transparently</li>
+<li>Monitoring and dynamic tuning are critical at scale</li>
+</ol>
+<h3 id="63-twitters-caching-architecture">6.3 Twitter's Caching Architecture</h3>
+<p>Twitter uses a combination of Redis and Memcached for different use cases.</p>
+<p><strong>Timeline Caching:</strong></p>
+<ul>
+<li>User timelines are cached in Redis</li>
+<li>Each timeline is a Redis list of tweet IDs</li>
+<li>When a user opens Twitter, their cached timeline is served from Redis</li>
+<li>Timeline fanout: when a celebrity tweets, the tweet ID is fanned out to millions of follower timelines in Redis</li>
+</ul>
+<p><strong>Counting:</strong></p>
+<ul>
+<li>Like counts, retweet counts, follower counts stored in Redis</li>
+<li>Uses Redis <code>INCR</code>/<code>DECR</code> for atomic counters</li>
+<li>Periodically synced to database</li>
+</ul>
+<p><strong>Rate Limiting:</strong></p>
+<ul>
+<li>API rate limiting using Redis sorted sets</li>
+<li>Sliding window rate limiter implementation</li>
+</ul>
+<p><strong>Twemproxy (nutcracker):</strong>
+Twitter built <strong>Twemproxy</strong>, an open-source proxy for Memcached and Redis:</p>
+<ul>
+<li>Automatic sharding across multiple Redis/Memcached instances</li>
+<li>Connection pooling</li>
+<li>Consistent hashing with configurable hash functions</li>
+<li>Pipelining support</li>
+<li>Supports both Memcached and Redis protocols</li>
+</ul>
+<p><strong>Key lessons from Twitter:</strong></p>
+<ol>
+<li>Different cache technologies for different use cases (Redis for timelines, Memcached for general caching)</li>
+<li>Fanout-on-write for timeline construction (pre-compute and cache)</li>
+<li>Proxy layers (Twemproxy) help manage large cache fleets</li>
+<li>Redis data structures (lists, sorted sets) enable complex use cases beyond simple caching</li>
+</ol>
+<h3 id="64-real-world-cdn-caching">6.4 Real-World CDN Caching</h3>
+<p><strong>Cloudflare:</strong></p>
+<ul>
+<li>Serves 20%+ of all internet traffic</li>
+<li>300+ data centers globally</li>
+<li>Caches static assets at the edge</li>
+<li>Tiered caching (edge → regional tier → origin)</li>
+<li>Workers (edge compute) for dynamic caching logic</li>
+</ul>
+<p><strong>Akamai:</strong></p>
+<ul>
+<li>The largest CDN with 350,000+ servers in 130+ countries</li>
+<li>Intelligent platform that routes requests to optimal edge servers</li>
+<li>SureRoute technology for dynamic content acceleration</li>
+<li>EdgeCompute for running code at the edge</li>
+</ul>
+<hr></hr>
+<h2 id="7-java-implementations">7. Java Implementations</h2>
+<h3 id="71-redis-cache-with-spring-boot-—-cache-aside-pattern">7.1 Redis Cache with Spring Boot — Cache-Aside Pattern</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+<span class="hljs-keyword">import</span> org.springframework.cache.annotation.EnableCaching;
+
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableCaching</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CachingApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(CachingApplication.class, args);
+    }
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.context.annotation.Bean;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.Configuration;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.cache.RedisCacheConfiguration;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.cache.RedisCacheManager;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.connection.RedisConnectionFactory;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.serializer.RedisSerializationContext;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.serializer.StringRedisSerializer;
+
+<span class="hljs-keyword">import</span> java.time.Duration;
+<span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.Map;
+
+<span class="hljs-comment">/**
+ * Redis cache configuration with multiple cache regions.
+ * 
+ * Production considerations:
+ * - Different TTLs for different data types
+ * - JSON serialization for debuggability
+ * - Key prefixing for namespace isolation
+ * - Connection pooling via Lettuce
+ */</span>
+<span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RedisCacheConfig</span> {
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-keyword">public</span> RedisConnectionFactory <span class="hljs-title function_">redisConnectionFactory</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// In production, configure with:</span>
+        <span class="hljs-comment">// - Connection pool (max-active, max-idle, min-idle)</span>
+        <span class="hljs-comment">// - SSL/TLS for encryption in transit</span>
+        <span class="hljs-comment">// - Cluster configuration for Redis Cluster</span>
+        <span class="hljs-comment">// - Sentinel configuration for HA</span>
+        <span class="hljs-type">LettuceConnectionFactory</span> <span class="hljs-variable">factory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LettuceConnectionFactory</span>(<span class="hljs-string">"localhost"</span>, <span class="hljs-number">6379</span>);
+        <span class="hljs-keyword">return</span> factory;
+    }
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-keyword">public</span> RedisCacheManager <span class="hljs-title function_">cacheManager</span><span class="hljs-params">(RedisConnectionFactory connectionFactory)</span> {
+        <span class="hljs-comment">// Default cache configuration</span>
+        <span class="hljs-type">RedisCacheConfiguration</span> <span class="hljs-variable">defaultConfig</span> <span class="hljs-operator">=</span> RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofMinutes(<span class="hljs-number">10</span>))
+                .serializeKeysWith(
+                    RedisSerializationContext.SerializationPair.fromSerializer(
+                        <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringRedisSerializer</span>()))
+                .serializeValuesWith(
+                    RedisSerializationContext.SerializationPair.fromSerializer(
+                        <span class="hljs-keyword">new</span> <span class="hljs-title class_">GenericJackson2JsonRedisSerializer</span>()))
+                .disableCachingNullValues()  <span class="hljs-comment">// Don't cache null (prevent cache penetration)</span>
+                .prefixCacheNameWith(<span class="hljs-string">"myapp:"</span>);  <span class="hljs-comment">// Namespace isolation</span>
+
+        <span class="hljs-comment">// Per-cache TTL configuration</span>
+        Map&lt;String, RedisCacheConfiguration&gt; cacheConfigurations = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+
+        <span class="hljs-comment">// User profiles: 5-minute TTL (changes occasionally)</span>
+        cacheConfigurations.put(<span class="hljs-string">"users"</span>, defaultConfig
+                .entryTtl(Duration.ofMinutes(<span class="hljs-number">5</span>)));
+
+        <span class="hljs-comment">// Product catalog: 30-minute TTL (changes rarely)</span>
+        cacheConfigurations.put(<span class="hljs-string">"products"</span>, defaultConfig
+                .entryTtl(Duration.ofMinutes(<span class="hljs-number">30</span>)));
+
+        <span class="hljs-comment">// Session data: 1-hour TTL</span>
+        cacheConfigurations.put(<span class="hljs-string">"sessions"</span>, defaultConfig
+                .entryTtl(Duration.ofHours(<span class="hljs-number">1</span>)));
+
+        <span class="hljs-comment">// Leaderboard: 30-second TTL (changes frequently)</span>
+        cacheConfigurations.put(<span class="hljs-string">"leaderboard"</span>, defaultConfig
+                .entryTtl(Duration.ofSeconds(<span class="hljs-number">30</span>)));
+
+        <span class="hljs-keyword">return</span> RedisCacheManager.builder(connectionFactory)
+                .cacheDefaults(defaultConfig)
+                .withInitialCacheConfigurations(cacheConfigurations)
+                .transactionAware()  <span class="hljs-comment">// Participate in Spring transactions</span>
+                .build();
+    }
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.cache.annotation.CacheEvict;
+<span class="hljs-keyword">import</span> org.springframework.cache.annotation.CachePut;
+<span class="hljs-keyword">import</span> org.springframework.cache.annotation.Cacheable;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+
+<span class="hljs-keyword">import</span> java.util.Optional;
+
+<span class="hljs-comment">/**
+ * User service with cache-aside pattern using Spring Cache annotations.
+ * 
+ * <span class="hljs-doctag">@Cacheable</span>: Read-through (check cache first, load from DB on miss)
+ * <span class="hljs-doctag">@CachePut</span>: Update cache after write (write-through for reads)
+ * <span class="hljs-doctag">@CacheEvict</span>: Invalidate cache entry
+ */</span>
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> UserRepository userRepository;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">UserService</span><span class="hljs-params">(UserRepository userRepository)</span> {
+        <span class="hljs-built_in">this</span>.userRepository = userRepository;
+    }
+
+    <span class="hljs-comment">/**
+     * Cache-aside read: check cache → miss → load from DB → store in cache.
+     * 
+     * The key is generated from the method parameter (userId).
+     * Cache name: "users"
+     * Unless: don't cache if result is null (optional, we also disabled null caching globally)
+     * Sync: true ensures only one thread loads from DB on cache miss (prevents thundering herd)
+     */</span>
+    <span class="hljs-meta">@Cacheable(value = "users", key = "#userId", sync = true)</span>
+    <span class="hljs-keyword">public</span> User <span class="hljs-title function_">getUserById</span><span class="hljs-params">(Long userId)</span> {
+        <span class="hljs-comment">// This method body executes ONLY on cache miss</span>
+        <span class="hljs-comment">// Spring intercepts the call, checks cache first</span>
+        System.out.println(<span class="hljs-string">"Cache MISS for user: "</span> + userId + <span class="hljs-string">" — loading from database"</span>);
+        <span class="hljs-keyword">return</span> userRepository.findById(userId)
+                .orElseThrow(() -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserNotFoundException</span>(<span class="hljs-string">"User not found: "</span> + userId));
+    }
+
+    <span class="hljs-comment">/**
+     * Update user and update the cache.
+     * <span class="hljs-doctag">@CachePut</span> always executes the method and puts the result in cache.
+     * This ensures the cache is consistent after an update.
+     */</span>
+    <span class="hljs-meta">@CachePut(value = "users", key = "#user.id")</span>
+    <span class="hljs-keyword">public</span> User <span class="hljs-title function_">updateUser</span><span class="hljs-params">(User user)</span> {
+        System.out.println(<span class="hljs-string">"Updating user: "</span> + user.getId() + <span class="hljs-string">" — writing to DB and cache"</span>);
+        <span class="hljs-keyword">return</span> userRepository.save(user);
+    }
+
+    <span class="hljs-comment">/**
+     * Delete user and evict from cache.
+     * <span class="hljs-doctag">@CacheEvict</span> removes the entry from cache.
+     * beforeInvocation=false: evict after successful deletion (default)
+     */</span>
+    <span class="hljs-meta">@CacheEvict(value = "users", key = "#userId")</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">deleteUser</span><span class="hljs-params">(Long userId)</span> {
+        System.out.println(<span class="hljs-string">"Deleting user: "</span> + userId + <span class="hljs-string">" — removing from DB and cache"</span>);
+        userRepository.deleteById(userId);
+    }
+
+    <span class="hljs-comment">/**
+     * Clear all user cache entries.
+     * allEntries=true: removes all entries in the "users" cache.
+     * Use with caution in production — can cause thundering herd.
+     */</span>
+    <span class="hljs-meta">@CacheEvict(value = "users", allEntries = true)</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">clearUserCache</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">"Clearing entire user cache"</span>);
+    }
+}
+</code></pre>
+<h3 id="72-production-grade-redis-cache-service-manual-control">7.2 Production-Grade Redis Cache Service (Manual Control)</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.fasterxml.jackson.core.JsonProcessingException;
+<span class="hljs-keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;
+<span class="hljs-keyword">import</span> org.slf4j.Logger;
+<span class="hljs-keyword">import</span> org.slf4j.LoggerFactory;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.core.RedisTemplate;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.core.script.DefaultRedisScript;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+
+<span class="hljs-keyword">import</span> java.time.Duration;
+<span class="hljs-keyword">import</span> java.util.*;
+<span class="hljs-keyword">import</span> java.util.concurrent.ThreadLocalRandom;
+<span class="hljs-keyword">import</span> java.util.concurrent.TimeUnit;
+<span class="hljs-keyword">import</span> java.util.function.Supplier;
+
+<span class="hljs-comment">/**
+ * Production-grade Redis cache service with:
+ * - Cache-aside pattern with thundering herd protection
+ * - Jittered TTLs to prevent synchronized expiration
+ * - Cache penetration protection (null value caching)
+ * - Distributed locking for cache refresh
+ * - Metrics and logging
+ * - Graceful degradation on Redis failures
+ */</span>
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RedisCacheService</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Logger</span> <span class="hljs-variable">log</span> <span class="hljs-operator">=</span> LoggerFactory.getLogger(RedisCacheService.class);
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">NULL_PLACEHOLDER</span> <span class="hljs-operator">=</span> <span class="hljs-string">"__NULL__"</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Duration</span> <span class="hljs-variable">LOCK_TIMEOUT</span> <span class="hljs-operator">=</span> Duration.ofSeconds(<span class="hljs-number">10</span>);
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Duration</span> <span class="hljs-variable">NULL_CACHE_TTL</span> <span class="hljs-operator">=</span> Duration.ofMinutes(<span class="hljs-number">1</span>);
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> RedisTemplate&lt;String, String&gt; redisTemplate;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> ObjectMapper objectMapper;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> CacheMetrics cacheMetrics;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">RedisCacheService</span><span class="hljs-params">(RedisTemplate&lt;String, String&gt; redisTemplate,
+                             ObjectMapper objectMapper,
+                             CacheMetrics cacheMetrics)</span> {
+        <span class="hljs-built_in">this</span>.redisTemplate = redisTemplate;
+        <span class="hljs-built_in">this</span>.objectMapper = objectMapper;
+        <span class="hljs-built_in">this</span>.cacheMetrics = cacheMetrics;
+    }
+
+    <span class="hljs-comment">/**
+     * Get a value from cache with automatic fallback to loader on miss.
+     * Includes thundering herd protection via distributed locking.
+     *
+     * <span class="hljs-doctag">@param</span> key        Cache key
+     * <span class="hljs-doctag">@param</span> type       Expected return type class
+     * <span class="hljs-doctag">@param</span> ttl        Time-to-live for cached value
+     * <span class="hljs-doctag">@param</span> loader     Function to load data on cache miss
+     * <span class="hljs-doctag">@return</span> Cached or loaded value, or null if not found
+     */</span>
+    <span class="hljs-keyword">public</span> &lt;T&gt; T <span class="hljs-title function_">getOrLoad</span><span class="hljs-params">(String key, Class&lt;T&gt; type, Duration ttl, Supplier&lt;T&gt; loader)</span> {
+        <span class="hljs-type">long</span> <span class="hljs-variable">startTime</span> <span class="hljs-operator">=</span> System.nanoTime();
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// Step 1: Try cache</span>
+            <span class="hljs-type">String</span> <span class="hljs-variable">cached</span> <span class="hljs-operator">=</span> safeRedisGet(key);
+            <span class="hljs-keyword">if</span> (cached != <span class="hljs-literal">null</span>) {
+                cacheMetrics.recordHit(key);
+                <span class="hljs-keyword">if</span> (NULL_PLACEHOLDER.equals(cached)) {
+                    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;  <span class="hljs-comment">// Cached null — prevents cache penetration</span>
+                }
+                <span class="hljs-keyword">return</span> deserialize(cached, type);
+            }
+
+            <span class="hljs-comment">// Step 2: Cache miss — try to acquire lock to prevent thundering herd</span>
+            cacheMetrics.recordMiss(key);
+            <span class="hljs-type">String</span> <span class="hljs-variable">lockKey</span> <span class="hljs-operator">=</span> key + <span class="hljs-string">":lock"</span>;
+            <span class="hljs-type">boolean</span> <span class="hljs-variable">lockAcquired</span> <span class="hljs-operator">=</span> tryAcquireLock(lockKey, LOCK_TIMEOUT);
+
+            <span class="hljs-keyword">if</span> (lockAcquired) {
+                <span class="hljs-keyword">try</span> {
+                    <span class="hljs-comment">// Double-check cache (another thread might have populated it)</span>
+                    cached = safeRedisGet(key);
+                    <span class="hljs-keyword">if</span> (cached != <span class="hljs-literal">null</span> &amp;&amp; !NULL_PLACEHOLDER.equals(cached)) {
+                        <span class="hljs-keyword">return</span> deserialize(cached, type);
+                    }
+
+                    <span class="hljs-comment">// Load from source</span>
+                    <span class="hljs-type">T</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> loader.get();
+
+                    <span class="hljs-comment">// Cache the result (with jittered TTL)</span>
+                    <span class="hljs-type">Duration</span> <span class="hljs-variable">jitteredTtl</span> <span class="hljs-operator">=</span> addJitter(ttl);
+                    <span class="hljs-keyword">if</span> (value != <span class="hljs-literal">null</span>) {
+                        safeRedisSet(key, serialize(value), jitteredTtl);
+                    } <span class="hljs-keyword">else</span> {
+                        <span class="hljs-comment">// Cache null to prevent cache penetration</span>
+                        safeRedisSet(key, NULL_PLACEHOLDER, NULL_CACHE_TTL);
+                    }
+
+                    <span class="hljs-keyword">return</span> value;
+                } <span class="hljs-keyword">finally</span> {
+                    releaseLock(lockKey);
+                }
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-comment">// Could not acquire lock — another thread is loading</span>
+                <span class="hljs-comment">// Wait briefly and retry from cache</span>
+                <span class="hljs-keyword">return</span> waitAndRetry(key, type, ttl, loader, <span class="hljs-number">3</span>);
+            }
+        } <span class="hljs-keyword">finally</span> {
+            <span class="hljs-type">long</span> <span class="hljs-variable">elapsed</span> <span class="hljs-operator">=</span> System.nanoTime() - startTime;
+            cacheMetrics.recordLatency(key, elapsed);
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Invalidate a cache entry.
+     * Uses DEL rather than setting empty — cleaner semantics.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">invalidate</span><span class="hljs-params">(String key)</span> {
+        <span class="hljs-keyword">try</span> {
+            redisTemplate.delete(key);
+            log.debug(<span class="hljs-string">"Cache invalidated: {}"</span>, key);
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            log.warn(<span class="hljs-string">"Failed to invalidate cache key: {}"</span>, key, e);
+            <span class="hljs-comment">// Don't throw — cache invalidation failure is not critical</span>
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Invalidate multiple cache entries matching a pattern.
+     * WARNING: KEYS command is O(N) — use SCAN in production for large keyspaces.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">invalidatePattern</span><span class="hljs-params">(String pattern)</span> {
+        <span class="hljs-keyword">try</span> {
+            Set&lt;String&gt; keys = redisTemplate.keys(pattern);
+            <span class="hljs-keyword">if</span> (keys != <span class="hljs-literal">null</span> &amp;&amp; !keys.isEmpty()) {
+                redisTemplate.delete(keys);
+                log.info(<span class="hljs-string">"Invalidated {} keys matching pattern: {}"</span>, keys.size(), pattern);
+            }
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            log.warn(<span class="hljs-string">"Failed to invalidate pattern: {}"</span>, pattern, e);
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Multi-get for batch cache operations.
+     * Reduces network round-trips via Redis MGET.
+     */</span>
+    <span class="hljs-keyword">public</span> &lt;T&gt; Map&lt;String, T&gt; <span class="hljs-title function_">multiGet</span><span class="hljs-params">(List&lt;String&gt; keys, Class&lt;T&gt; type)</span> {
+        <span class="hljs-keyword">try</span> {
+            List&lt;String&gt; values = redisTemplate.opsForValue().multiGet(keys);
+            Map&lt;String, T&gt; result = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+            <span class="hljs-keyword">if</span> (values != <span class="hljs-literal">null</span>) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; keys.size(); i++) {
+                    <span class="hljs-type">String</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> values.get(i);
+                    <span class="hljs-keyword">if</span> (value != <span class="hljs-literal">null</span> &amp;&amp; !NULL_PLACEHOLDER.equals(value)) {
+                        result.put(keys.get(i), deserialize(value, type));
+                    }
+                }
+            }
+            <span class="hljs-keyword">return</span> result;
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            log.warn(<span class="hljs-string">"Multi-get failed for {} keys"</span>, keys.size(), e);
+            <span class="hljs-keyword">return</span> Collections.emptyMap();
+        }
+    }
+
+    <span class="hljs-comment">// --- Private helper methods ---</span>
+
+    <span class="hljs-keyword">private</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">tryAcquireLock</span><span class="hljs-params">(String lockKey, Duration timeout)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-type">Boolean</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> redisTemplate.opsForValue()
+                    .setIfAbsent(lockKey, <span class="hljs-string">"locked"</span>, timeout.toMillis(), TimeUnit.MILLISECONDS);
+            <span class="hljs-keyword">return</span> Boolean.TRUE.equals(result);
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            log.warn(<span class="hljs-string">"Failed to acquire lock: {}"</span>, lockKey, e);
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;  <span class="hljs-comment">// On failure, proceed without lock</span>
+        }
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">releaseLock</span><span class="hljs-params">(String lockKey)</span> {
+        <span class="hljs-keyword">try</span> {
+            redisTemplate.delete(lockKey);
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            log.warn(<span class="hljs-string">"Failed to release lock: {}"</span>, lockKey, e);
+            <span class="hljs-comment">// Lock will expire via TTL anyway</span>
+        }
+    }
+
+    <span class="hljs-keyword">private</span> &lt;T&gt; T <span class="hljs-title function_">waitAndRetry</span><span class="hljs-params">(String key, Class&lt;T&gt; type, Duration ttl,
+                                Supplier&lt;T&gt; loader, <span class="hljs-type">int</span> maxRetries)</span> {
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; maxRetries; i++) {
+            <span class="hljs-keyword">try</span> {
+                Thread.sleep(<span class="hljs-number">50</span> * (i + <span class="hljs-number">1</span>));  <span class="hljs-comment">// Progressive backoff: 50ms, 100ms, 150ms</span>
+            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                <span class="hljs-keyword">break</span>;
+            }
+            <span class="hljs-type">String</span> <span class="hljs-variable">cached</span> <span class="hljs-operator">=</span> safeRedisGet(key);
+            <span class="hljs-keyword">if</span> (cached != <span class="hljs-literal">null</span>) {
+                <span class="hljs-keyword">if</span> (NULL_PLACEHOLDER.equals(cached)) <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+                <span class="hljs-keyword">return</span> deserialize(cached, type);
+            }
+        }
+        <span class="hljs-comment">// Fallback: load directly (no lock protection)</span>
+        log.warn(<span class="hljs-string">"Lock contention exceeded retries for key: {}. Loading directly."</span>, key);
+        <span class="hljs-keyword">return</span> loader.get();
+    }
+
+    <span class="hljs-comment">/**
+     * Add jitter to TTL to prevent synchronized cache expiration.
+     * Adds ±10% random variation.
+     */</span>
+    <span class="hljs-keyword">private</span> Duration <span class="hljs-title function_">addJitter</span><span class="hljs-params">(Duration baseTtl)</span> {
+        <span class="hljs-type">long</span> <span class="hljs-variable">baseMs</span> <span class="hljs-operator">=</span> baseTtl.toMillis();
+        <span class="hljs-type">long</span> <span class="hljs-variable">jitter</span> <span class="hljs-operator">=</span> (<span class="hljs-type">long</span>) (baseMs * <span class="hljs-number">0.1</span> * (ThreadLocalRandom.current().nextDouble() * <span class="hljs-number">2</span> - <span class="hljs-number">1</span>));
+        <span class="hljs-keyword">return</span> Duration.ofMillis(baseMs + jitter);
+    }
+
+    <span class="hljs-keyword">private</span> String <span class="hljs-title function_">safeRedisGet</span><span class="hljs-params">(String key)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> redisTemplate.opsForValue().get(key);
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            log.warn(<span class="hljs-string">"Redis GET failed for key: {}"</span>, key, e);
+            cacheMetrics.recordError(key);
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;  <span class="hljs-comment">// Graceful degradation — treat as cache miss</span>
+        }
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">safeRedisSet</span><span class="hljs-params">(String key, String value, Duration ttl)</span> {
+        <span class="hljs-keyword">try</span> {
+            redisTemplate.opsForValue().set(key, value, ttl.toMillis(), TimeUnit.MILLISECONDS);
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            log.warn(<span class="hljs-string">"Redis SET failed for key: {}"</span>, key, e);
+            cacheMetrics.recordError(key);
+            <span class="hljs-comment">// Don't throw — cache write failure is not critical</span>
+        }
+    }
+
+    <span class="hljs-keyword">private</span> String <span class="hljs-title function_">serialize</span><span class="hljs-params">(Object value)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> objectMapper.writeValueAsString(value);
+        } <span class="hljs-keyword">catch</span> (JsonProcessingException e) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CacheSerializationException</span>(<span class="hljs-string">"Failed to serialize cache value"</span>, e);
+        }
+    }
+
+    <span class="hljs-keyword">private</span> &lt;T&gt; T <span class="hljs-title function_">deserialize</span><span class="hljs-params">(String json, Class&lt;T&gt; type)</span> {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> objectMapper.readValue(json, type);
+        } <span class="hljs-keyword">catch</span> (JsonProcessingException e) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CacheSerializationException</span>(<span class="hljs-string">"Failed to deserialize cache value"</span>, e);
+        }
+    }
+}
+</code></pre>
+<h3 id="73-lru-cache-implementation">7.3 LRU Cache Implementation</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.Map;
+
+<span class="hljs-comment">/**
+ * Thread-safe LRU (Least Recently Used) Cache implementation.
+ * 
+ * Uses a doubly-linked list + HashMap for O(1) get and put operations.
+ * The head of the list contains the most recently used item.
+ * The tail contains the least recently used item (eviction candidate).
+ *
+ * This is a common interview question and also the basis for
+ * understanding how production caches like Memcached work internally.
+ *
+ * Time Complexity: O(1) for get, put, remove
+ * Space Complexity: O(capacity)
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LRUCache</span>&lt;K, V&gt; {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> capacity;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Map&lt;K, Node&lt;K, V&gt;&gt; cache;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Node&lt;K, V&gt; head;  <span class="hljs-comment">// Sentinel head (MRU side)</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Node&lt;K, V&gt; tail;  <span class="hljs-comment">// Sentinel tail (LRU side)</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> size;
+
+    <span class="hljs-comment">// Metrics</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-type">long</span> hits;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">long</span> misses;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">long</span> evictions;
+
+    <span class="hljs-comment">/**
+     * Doubly-linked list node.
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span>&lt;K, V&gt; {
+        K key;
+        V value;
+        Node&lt;K, V&gt; prev;
+        Node&lt;K, V&gt; next;
+
+        Node() {
+            <span class="hljs-comment">// Sentinel node constructor</span>
+        }
+
+        Node(K key, V value) {
+            <span class="hljs-built_in">this</span>.key = key;
+            <span class="hljs-built_in">this</span>.value = value;
+        }
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">LRUCache</span><span class="hljs-params">(<span class="hljs-type">int</span> capacity)</span> {
+        <span class="hljs-keyword">if</span> (capacity &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>(<span class="hljs-string">"Capacity must be positive: "</span> + capacity);
+        }
+        <span class="hljs-built_in">this</span>.capacity = capacity;
+        <span class="hljs-built_in">this</span>.cache = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;(capacity);
+        <span class="hljs-built_in">this</span>.size = <span class="hljs-number">0</span>;
+        <span class="hljs-built_in">this</span>.hits = <span class="hljs-number">0</span>;
+        <span class="hljs-built_in">this</span>.misses = <span class="hljs-number">0</span>;
+        <span class="hljs-built_in">this</span>.evictions = <span class="hljs-number">0</span>;
+
+        <span class="hljs-comment">// Initialize sentinel nodes</span>
+        <span class="hljs-comment">// head &lt;-&gt; tail (empty list)</span>
+        head = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Node</span>&lt;&gt;();
+        tail = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Node</span>&lt;&gt;();
+        head.next = tail;
+        tail.prev = head;
+    }
+
+    <span class="hljs-comment">/**
+     * Get value by key. Moves the accessed node to the head (most recently used).
+     * Returns null if key not found.
+     *
+     * Time: O(1)
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> V <span class="hljs-title function_">get</span><span class="hljs-params">(K key)</span> {
+        Node&lt;K, V&gt; node = cache.get(key);
+        <span class="hljs-keyword">if</span> (node == <span class="hljs-literal">null</span>) {
+            misses++;
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+        }
+        hits++;
+        <span class="hljs-comment">// Move to head (mark as most recently used)</span>
+        moveToHead(node);
+        <span class="hljs-keyword">return</span> node.value;
+    }
+
+    <span class="hljs-comment">/**
+     * Put key-value pair. If key exists, update value and move to head.
+     * If cache is full, evict the least recently used entry (tail).
+     *
+     * Time: O(1)
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">put</span><span class="hljs-params">(K key, V value)</span> {
+        Node&lt;K, V&gt; existing = cache.get(key);
+
+        <span class="hljs-keyword">if</span> (existing != <span class="hljs-literal">null</span>) {
+            <span class="hljs-comment">// Update existing entry</span>
+            existing.value = value;
+            moveToHead(existing);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// Add new entry</span>
+            Node&lt;K, V&gt; newNode = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Node</span>&lt;&gt;(key, value);
+            cache.put(key, newNode);
+            addToHead(newNode);
+            size++;
+
+            <span class="hljs-comment">// Evict if over capacity</span>
+            <span class="hljs-keyword">if</span> (size &gt; capacity) {
+                Node&lt;K, V&gt; evicted = removeTail();
+                cache.remove(evicted.key);
+                size--;
+                evictions++;
+            }
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Remove a key from the cache.
+     *
+     * Time: O(1)
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> V <span class="hljs-title function_">remove</span><span class="hljs-params">(K key)</span> {
+        Node&lt;K, V&gt; node = cache.remove(key);
+        <span class="hljs-keyword">if</span> (node != <span class="hljs-literal">null</span>) {
+            removeNode(node);
+            size--;
+            <span class="hljs-keyword">return</span> node.value;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * Check if key exists in cache without affecting LRU order.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">containsKey</span><span class="hljs-params">(K key)</span> {
+        <span class="hljs-keyword">return</span> cache.containsKey(key);
+    }
+
+    <span class="hljs-comment">/**
+     * Get current size of cache.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-type">int</span> <span class="hljs-title function_">size</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> size;
+    }
+
+    <span class="hljs-comment">/**
+     * Get cache hit rate as a percentage.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getHitRate</span><span class="hljs-params">()</span> {
+        <span class="hljs-type">long</span> <span class="hljs-variable">total</span> <span class="hljs-operator">=</span> hits + misses;
+        <span class="hljs-keyword">return</span> total == <span class="hljs-number">0</span> ? <span class="hljs-number">0.0</span> : (<span class="hljs-type">double</span>) hits / total * <span class="hljs-number">100</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * Get cache statistics.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> String <span class="hljs-title function_">getStats</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> String.format(
+                <span class="hljs-string">"LRUCache[size=%d, capacity=%d, hits=%d, misses=%d, evictions=%d, hitRate=%.1f%%]"</span>,
+                size, capacity, hits, misses, evictions, getHitRate());
+    }
+
+    <span class="hljs-comment">// --- Internal linked list operations ---</span>
+
+    <span class="hljs-comment">/**
+     * Add a node right after the head sentinel.
+     * head &lt;-&gt; newNode &lt;-&gt; ... &lt;-&gt; tail
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addToHead</span><span class="hljs-params">(Node&lt;K, V&gt; node)</span> {
+        node.prev = head;
+        node.next = head.next;
+        head.next.prev = node;
+        head.next = node;
+    }
+
+    <span class="hljs-comment">/**
+     * Remove a node from wherever it is in the list.
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">removeNode</span><span class="hljs-params">(Node&lt;K, V&gt; node)</span> {
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+    }
+
+    <span class="hljs-comment">/**
+     * Move an existing node to the head (most recently used position).
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">moveToHead</span><span class="hljs-params">(Node&lt;K, V&gt; node)</span> {
+        removeNode(node);
+        addToHead(node);
+    }
+
+    <span class="hljs-comment">/**
+     * Remove and return the node just before the tail sentinel (LRU item).
+     */</span>
+    <span class="hljs-keyword">private</span> Node&lt;K, V&gt; <span class="hljs-title function_">removeTail</span><span class="hljs-params">()</span> {
+        Node&lt;K, V&gt; lru = tail.prev;
+        removeNode(lru);
+        <span class="hljs-keyword">return</span> lru;
+    }
+
+    <span class="hljs-comment">// --- Main method for demonstration ---</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        LRUCache&lt;String, String&gt; cache = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LRUCache</span>&lt;&gt;(<span class="hljs-number">3</span>);
+
+        cache.put(<span class="hljs-string">"a"</span>, <span class="hljs-string">"Alice"</span>);
+        cache.put(<span class="hljs-string">"b"</span>, <span class="hljs-string">"Bob"</span>);
+        cache.put(<span class="hljs-string">"c"</span>, <span class="hljs-string">"Charlie"</span>);
+        System.out.println(<span class="hljs-string">"After adding a, b, c: "</span> + cache.getStats());
+
+        cache.get(<span class="hljs-string">"a"</span>);  <span class="hljs-comment">// Access 'a' — now 'b' is LRU</span>
+        System.out.println(<span class="hljs-string">"After accessing 'a': "</span> + cache.getStats());
+
+        cache.put(<span class="hljs-string">"d"</span>, <span class="hljs-string">"Diana"</span>);  <span class="hljs-comment">// Exceeds capacity — evicts 'b' (LRU)</span>
+        System.out.println(<span class="hljs-string">"After adding 'd' (evicts 'b'): "</span> + cache.getStats());
+
+        System.out.println(<span class="hljs-string">"get('b') = "</span> + cache.get(<span class="hljs-string">"b"</span>));  <span class="hljs-comment">// null — evicted</span>
+        System.out.println(<span class="hljs-string">"get('a') = "</span> + cache.get(<span class="hljs-string">"a"</span>));  <span class="hljs-comment">// Alice — still present</span>
+        System.out.println(<span class="hljs-string">"get('c') = "</span> + cache.get(<span class="hljs-string">"c"</span>));  <span class="hljs-comment">// Charlie — still present</span>
+        System.out.println(<span class="hljs-string">"get('d') = "</span> + cache.get(<span class="hljs-string">"d"</span>));  <span class="hljs-comment">// Diana — still present</span>
+
+        System.out.println(<span class="hljs-string">"Final: "</span> + cache.getStats());
+    }
+}
+</code></pre>
+<h3 id="74-distributed-cache-with-consistent-hashing">7.4 Distributed Cache with Consistent Hashing</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.nio.charset.StandardCharsets;
+<span class="hljs-keyword">import</span> java.security.MessageDigest;
+<span class="hljs-keyword">import</span> java.security.NoSuchAlgorithmException;
+<span class="hljs-keyword">import</span> java.util.*;
+<span class="hljs-keyword">import</span> java.util.concurrent.ConcurrentSkipListMap;
+
+<span class="hljs-comment">/**
+ * Consistent Hashing ring for distributing cache keys across nodes.
+ * 
+ * Why Consistent Hashing?
+ * With simple modular hashing (hash(key) % N), adding or removing a node
+ * causes nearly ALL keys to be remapped. With consistent hashing, only
+ * K/N keys are remapped (K = total keys, N = total nodes).
+ *
+ * Virtual Nodes:
+ * To ensure even distribution, each physical node is mapped to multiple
+ * "virtual nodes" on the hash ring. More virtual nodes = better distribution.
+ * Typical production value: 100-200 virtual nodes per physical node.
+ *
+ * Used by: Memcached clients, DynamoDB, Cassandra, Akamai CDN
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ConsistentHashRing</span>&lt;T&gt; {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> virtualNodesPerNode;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> NavigableMap&lt;Long, T&gt; ring;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Map&lt;T, List&lt;Long&gt;&gt; nodePositions;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> MessageDigest md5;
+
+    <span class="hljs-comment">/**
+     * Create a consistent hash ring.
+     * 
+     * <span class="hljs-doctag">@param</span> virtualNodesPerNode Number of virtual nodes per physical node.
+     *                            Higher = better distribution, more memory.
+     *                            Recommended: 100-200 for production.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ConsistentHashRing</span><span class="hljs-params">(<span class="hljs-type">int</span> virtualNodesPerNode)</span> {
+        <span class="hljs-built_in">this</span>.virtualNodesPerNode = virtualNodesPerNode;
+        <span class="hljs-built_in">this</span>.ring = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentSkipListMap</span>&lt;&gt;();
+        <span class="hljs-built_in">this</span>.nodePositions = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-built_in">this</span>.md5 = MessageDigest.getInstance(<span class="hljs-string">"MD5"</span>);
+        } <span class="hljs-keyword">catch</span> (NoSuchAlgorithmException e) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">"MD5 not available"</span>, e);
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Add a node to the ring with virtual nodes.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addNode</span><span class="hljs-params">(T node)</span> {
+        List&lt;Long&gt; positions = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; virtualNodesPerNode; i++) {
+            <span class="hljs-type">long</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> hash(node.toString() + <span class="hljs-string">"#"</span> + i);
+            ring.put(hash, node);
+            positions.add(hash);
+        }
+        nodePositions.put(node, positions);
+    }
+
+    <span class="hljs-comment">/**
+     * Remove a node and all its virtual nodes from the ring.
+     * Keys that were on this node will be redistributed to the next node clockwise.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">removeNode</span><span class="hljs-params">(T node)</span> {
+        List&lt;Long&gt; positions = nodePositions.remove(node);
+        <span class="hljs-keyword">if</span> (positions != <span class="hljs-literal">null</span>) {
+            positions.forEach(ring::remove);
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Get the node responsible for the given key.
+     * Walks clockwise on the ring from the key's hash position
+     * to find the first node.
+     *
+     * <span class="hljs-doctag">@param</span> key The cache key
+     * <span class="hljs-doctag">@return</span> The responsible node, or null if ring is empty
+     */</span>
+    <span class="hljs-keyword">public</span> T <span class="hljs-title function_">getNode</span><span class="hljs-params">(String key)</span> {
+        <span class="hljs-keyword">if</span> (ring.isEmpty()) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+        }
+
+        <span class="hljs-type">long</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> hash(key);
+
+        <span class="hljs-comment">// Find the first node clockwise from the key's hash</span>
+        Map.Entry&lt;Long, T&gt; entry = ring.ceilingEntry(hash);
+
+        <span class="hljs-comment">// If we've gone past the end, wrap around to the beginning</span>
+        <span class="hljs-keyword">if</span> (entry == <span class="hljs-literal">null</span>) {
+            entry = ring.firstEntry();
+        }
+
+        <span class="hljs-keyword">return</span> entry.getValue();
+    }
+
+    <span class="hljs-comment">/**
+     * Get N nodes responsible for the given key (for replication).
+     * Returns N distinct physical nodes clockwise from the key's position.
+     */</span>
+    <span class="hljs-keyword">public</span> List&lt;T&gt; <span class="hljs-title function_">getNodes</span><span class="hljs-params">(String key, <span class="hljs-type">int</span> count)</span> {
+        <span class="hljs-keyword">if</span> (ring.isEmpty()) {
+            <span class="hljs-keyword">return</span> Collections.emptyList();
+        }
+
+        <span class="hljs-type">long</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> hash(key);
+        List&lt;T&gt; result = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+        Set&lt;T&gt; seen = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();
+
+        <span class="hljs-comment">// Walk clockwise from the key's position</span>
+        NavigableMap&lt;Long, T&gt; tailMap = ring.tailMap(hash, <span class="hljs-literal">true</span>);
+
+        <span class="hljs-keyword">for</span> (T node : tailMap.values()) {
+            <span class="hljs-keyword">if</span> (seen.add(node)) {
+                result.add(node);
+                <span class="hljs-keyword">if</span> (result.size() &gt;= count) <span class="hljs-keyword">return</span> result;
+            }
+        }
+
+        <span class="hljs-comment">// Wrap around to the beginning of the ring</span>
+        <span class="hljs-keyword">for</span> (T node : ring.values()) {
+            <span class="hljs-keyword">if</span> (seen.add(node)) {
+                result.add(node);
+                <span class="hljs-keyword">if</span> (result.size() &gt;= count) <span class="hljs-keyword">return</span> result;
+            }
+        }
+
+        <span class="hljs-keyword">return</span> result;
+    }
+
+    <span class="hljs-comment">/**
+     * Get the number of physical nodes in the ring.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getNodeCount</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> nodePositions.size();
+    }
+
+    <span class="hljs-comment">/**
+     * Hash function using MD5.
+     * MD5 provides good distribution. We use the first 8 bytes as a long.
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-type">long</span> <span class="hljs-title function_">hash</span><span class="hljs-params">(String key)</span> {
+        <span class="hljs-type">byte</span>[] digest;
+        <span class="hljs-keyword">synchronized</span> (md5) {
+            md5.reset();
+            digest = md5.digest(key.getBytes(StandardCharsets.UTF_8));
+        }
+        <span class="hljs-comment">// Use first 8 bytes as a long value</span>
+        <span class="hljs-type">long</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">8</span>; i++) {
+            hash = (hash &lt;&lt; <span class="hljs-number">8</span>) | (digest[i] &amp; <span class="hljs-number">0xFF</span>);
+        }
+        <span class="hljs-keyword">return</span> hash;
+    }
+
+    <span class="hljs-comment">// --- Main method for demonstration ---</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        ConsistentHashRing&lt;String&gt; ring = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConsistentHashRing</span>&lt;&gt;(<span class="hljs-number">150</span>);
+
+        <span class="hljs-comment">// Add cache nodes</span>
+        ring.addNode(<span class="hljs-string">"redis-node-1"</span>);
+        ring.addNode(<span class="hljs-string">"redis-node-2"</span>);
+        ring.addNode(<span class="hljs-string">"redis-node-3"</span>);
+
+        <span class="hljs-comment">// Distribute some keys</span>
+        String[] keys = {<span class="hljs-string">"user:1"</span>, <span class="hljs-string">"user:2"</span>, <span class="hljs-string">"user:3"</span>, <span class="hljs-string">"product:100"</span>,
+                         <span class="hljs-string">"session:abc"</span>, <span class="hljs-string">"order:500"</span>, <span class="hljs-string">"cart:42"</span>};
+
+        System.out.println(<span class="hljs-string">"=== Initial Distribution ==="</span>);
+        Map&lt;String, Integer&gt; distribution = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+        <span class="hljs-keyword">for</span> (String key : keys) {
+            <span class="hljs-type">String</span> <span class="hljs-variable">node</span> <span class="hljs-operator">=</span> ring.getNode(key);
+            distribution.merge(node, <span class="hljs-number">1</span>, Integer::sum);
+            System.out.printf(<span class="hljs-string">"Key: %-15s → Node: %s%n"</span>, key, node);
+        }
+        System.out.println(<span class="hljs-string">"Distribution: "</span> + distribution);
+
+        <span class="hljs-comment">// Add a new node (simulating scaling out)</span>
+        System.out.println(<span class="hljs-string">"\n=== After Adding redis-node-4 ==="</span>);
+        ring.addNode(<span class="hljs-string">"redis-node-4"</span>);
+        <span class="hljs-type">int</span> <span class="hljs-variable">remapped</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+        distribution.clear();
+        <span class="hljs-keyword">for</span> (String key : keys) {
+            <span class="hljs-type">String</span> <span class="hljs-variable">node</span> <span class="hljs-operator">=</span> ring.getNode(key);
+            distribution.merge(node, <span class="hljs-number">1</span>, Integer::sum);
+            System.out.printf(<span class="hljs-string">"Key: %-15s → Node: %s%n"</span>, key, node);
+        }
+        System.out.println(<span class="hljs-string">"Distribution: "</span> + distribution);
+
+        <span class="hljs-comment">// Get replicas for a key</span>
+        System.out.println(<span class="hljs-string">"\n=== Replication (3 copies) ==="</span>);
+        List&lt;String&gt; replicas = ring.getNodes(<span class="hljs-string">"user:1"</span>, <span class="hljs-number">3</span>);
+        System.out.println(<span class="hljs-string">"Replicas for 'user:1': "</span> + replicas);
+
+        <span class="hljs-comment">// Remove a node (simulating node failure)</span>
+        System.out.println(<span class="hljs-string">"\n=== After Removing redis-node-2 ==="</span>);
+        ring.removeNode(<span class="hljs-string">"redis-node-2"</span>);
+        distribution.clear();
+        <span class="hljs-keyword">for</span> (String key : keys) {
+            <span class="hljs-type">String</span> <span class="hljs-variable">node</span> <span class="hljs-operator">=</span> ring.getNode(key);
+            distribution.merge(node, <span class="hljs-number">1</span>, Integer::sum);
+            System.out.printf(<span class="hljs-string">"Key: %-15s → Node: %s%n"</span>, key, node);
+        }
+        System.out.println(<span class="hljs-string">"Distribution: "</span> + distribution);
+    }
+}
+</code></pre>
+<h3 id="75-redis-based-sliding-window-rate-limiter">7.5 Redis-Based Sliding Window Rate Limiter</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.data.redis.core.RedisTemplate;
+<span class="hljs-keyword">import</span> org.springframework.data.redis.core.script.DefaultRedisScript;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Component;
+
+<span class="hljs-keyword">import</span> java.time.Instant;
+<span class="hljs-keyword">import</span> java.util.Collections;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-comment">/**
+ * Sliding window rate limiter using Redis Sorted Sets.
+ *
+ * Algorithm:
+ * 1. Each request adds an entry to a sorted set with score = current timestamp
+ * 2. Remove all entries outside the window (older than windowSize ago)
+ * 3. Count remaining entries
+ * 4. If count &lt;= maxRequests, allow; otherwise, deny
+ *
+ * Advantages over fixed window:
+ * - No boundary spike problem
+ * - Smooth rate limiting across windows
+ *
+ * Uses Lua script for atomicity — all operations execute in a single Redis call.
+ */</span>
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SlidingWindowRateLimiter</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> RedisTemplate&lt;String, String&gt; redisTemplate;
+
+    <span class="hljs-comment">// Lua script for atomic rate limiting</span>
+    <span class="hljs-comment">// Executed entirely on the Redis server — no race conditions</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">RATE_LIMIT_SCRIPT</span> <span class="hljs-operator">=</span> <span class="hljs-string">"""
+        local key = KEYS[1]
+        local now = tonumber(ARGV[1])
+        local window = tonumber(ARGV[2])
+        local max_requests = tonumber(ARGV[3])
+        local request_id = ARGV[4]
+
+        -- Remove entries outside the window
+        redis.call('ZREMRANGEBYSCORE', key, 0, now - window)
+
+        -- Count current entries in the window
+        local current_count = redis.call('ZCARD', key)
+
+        if current_count &lt; max_requests then
+            -- Allow: add this request
+            redis.call('ZADD', key, now, request_id)
+            -- Set expiry on the key to auto-cleanup
+            redis.call('PEXPIRE', key, window)
+            return 1  -- allowed
+        else
+            return 0  -- denied
+        end
+        """</span>;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> DefaultRedisScript&lt;Long&gt; rateLimitScript;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">SlidingWindowRateLimiter</span><span class="hljs-params">(RedisTemplate&lt;String, String&gt; redisTemplate)</span> {
+        <span class="hljs-built_in">this</span>.redisTemplate = redisTemplate;
+        <span class="hljs-built_in">this</span>.rateLimitScript = <span class="hljs-keyword">new</span> <span class="hljs-title class_">DefaultRedisScript</span>&lt;&gt;(RATE_LIMIT_SCRIPT, Long.class);
+    }
+
+    <span class="hljs-comment">/**
+     * Check if a request is allowed under the rate limit.
+     *
+     * <span class="hljs-doctag">@param</span> clientId     Unique client identifier (IP, user ID, API key)
+     * <span class="hljs-doctag">@param</span> maxRequests  Maximum requests allowed in the window
+     * <span class="hljs-doctag">@param</span> windowMillis Window size in milliseconds
+     * <span class="hljs-doctag">@return</span> true if request is allowed, false if rate limited
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isAllowed</span><span class="hljs-params">(String clientId, <span class="hljs-type">int</span> maxRequests, <span class="hljs-type">long</span> windowMillis)</span> {
+        <span class="hljs-type">String</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> <span class="hljs-string">"rate_limit:"</span> + clientId;
+        <span class="hljs-type">long</span> <span class="hljs-variable">now</span> <span class="hljs-operator">=</span> Instant.now().toEpochMilli();
+        <span class="hljs-type">String</span> <span class="hljs-variable">requestId</span> <span class="hljs-operator">=</span> now + <span class="hljs-string">":"</span> + Thread.currentThread().getId();
+
+        <span class="hljs-type">Long</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> redisTemplate.execute(
+                rateLimitScript,
+                Collections.singletonList(key),
+                String.valueOf(now),
+                String.valueOf(windowMillis),
+                String.valueOf(maxRequests),
+                requestId
+        );
+
+        <span class="hljs-keyword">return</span> result != <span class="hljs-literal">null</span> &amp;&amp; result == <span class="hljs-number">1L</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * Get remaining requests in the current window.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">long</span> <span class="hljs-title function_">getRemainingRequests</span><span class="hljs-params">(String clientId, <span class="hljs-type">int</span> maxRequests, <span class="hljs-type">long</span> windowMillis)</span> {
+        <span class="hljs-type">String</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> <span class="hljs-string">"rate_limit:"</span> + clientId;
+        <span class="hljs-type">long</span> <span class="hljs-variable">now</span> <span class="hljs-operator">=</span> Instant.now().toEpochMilli();
+        <span class="hljs-type">long</span> <span class="hljs-variable">windowStart</span> <span class="hljs-operator">=</span> now - windowMillis;
+
+        <span class="hljs-comment">// Remove expired entries</span>
+        redisTemplate.opsForZSet().removeRangeByScore(key, <span class="hljs-number">0</span>, windowStart);
+
+        <span class="hljs-comment">// Count current entries</span>
+        <span class="hljs-type">Long</span> <span class="hljs-variable">currentCount</span> <span class="hljs-operator">=</span> redisTemplate.opsForZSet().zCard(key);
+        <span class="hljs-type">long</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> currentCount != <span class="hljs-literal">null</span> ? currentCount : <span class="hljs-number">0</span>;
+
+        <span class="hljs-keyword">return</span> Math.max(<span class="hljs-number">0</span>, maxRequests - count);
+    }
+}
+</code></pre>
+<hr></hr>
+<h2 id="8-performance-analysis">8. Performance Analysis</h2>
+<h3 id="81-latency-comparison">8.1 Latency Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Typical Latency</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1 CPU cache hit</td>
+<td>~1 ns</td>
+<td>Hardware managed</td>
+</tr>
+<tr>
+<td>L2 CPU cache hit</td>
+<td>~4 ns</td>
+<td>Hardware managed</td>
+</tr>
+<tr>
+<td>L3 CPU cache hit</td>
+<td>~12 ns</td>
+<td>Hardware managed</td>
+</tr>
+<tr>
+<td>In-process cache (Caffeine)</td>
+<td>~50-100 ns</td>
+<td>No network, no serialization</td>
+</tr>
+<tr>
+<td>Redis GET (local)</td>
+<td>~0.2-0.5 ms</td>
+<td>Network + deserialization</td>
+</tr>
+<tr>
+<td>Redis GET (same AZ)</td>
+<td>~0.5-1 ms</td>
+<td>Network within AZ</td>
+</tr>
+<tr>
+<td>Redis GET (cross-AZ)</td>
+<td>~1-3 ms</td>
+<td>Cross-AZ network</td>
+</tr>
+<tr>
+<td>Redis GET (cross-region)</td>
+<td>~50-150 ms</td>
+<td>WAN latency</td>
+</tr>
+<tr>
+<td>Memcached GET (local)</td>
+<td>~0.1-0.3 ms</td>
+<td>Slightly faster than Redis for simple gets</td>
+</tr>
+<tr>
+<td>MySQL query (indexed)</td>
+<td>~1-5 ms</td>
+<td>Disk I/O + query parsing</td>
+</tr>
+<tr>
+<td>MySQL query (complex)</td>
+<td>~10-100 ms</td>
+<td>Joins, aggregations</td>
+</tr>
+<tr>
+<td>PostgreSQL query (indexed)</td>
+<td>~2-10 ms</td>
+<td>Similar to MySQL</td>
+</tr>
+<tr>
+<td>S3 GET</td>
+<td>~50-200 ms</td>
+<td>Network + object retrieval</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-throughput-comparison">8.2 Throughput Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Throughput (ops/sec per node)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redis (single thread)</td>
+<td>100,000-200,000</td>
+<td>GET/SET operations</td>
+</tr>
+<tr>
+<td>Redis (with I/O threads)</td>
+<td>200,000-500,000</td>
+<td>Redis 6.0+</td>
+</tr>
+<tr>
+<td>Memcached (multi-threaded)</td>
+<td>200,000-700,000</td>
+<td>Scales with CPU cores</td>
+</tr>
+<tr>
+<td>Caffeine (in-process)</td>
+<td>10,000,000+</td>
+<td>No network overhead</td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td>3,000-10,000</td>
+<td>Depending on query complexity</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>2,000-8,000</td>
+<td>Depending on query complexity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="83-memory-efficiency">8.3 Memory Efficiency</h3>
+<p><strong>Redis memory overhead per key:</strong></p>
+<ul>
+<li>Small string: ~90 bytes overhead (key + metadata + pointer + SDS)</li>
+<li>Hash with &lt; 128 fields: ziplist encoding, very compact</li>
+<li>Hash with &gt; 128 fields: hashtable encoding, ~100 bytes per field</li>
+<li>List with &lt; 128 elements: ziplist encoding</li>
+<li>Sorted set: ~100 bytes per entry (skip list + hash table)</li>
+</ul>
+<p><strong>Memcached memory overhead per key:</strong></p>
+<ul>
+<li>Slab chunk overhead: typically 48-56 bytes per item</li>
+<li>More memory-efficient for simple key-value strings</li>
+<li>Less overhead per item, but wasted space from slab class rounding</li>
+</ul>
+<p><strong>Memory optimization strategies:</strong></p>
+<ol>
+<li>Use appropriate data structures (hashes for objects instead of separate keys)</li>
+<li>Enable compression for large values</li>
+<li>Use short key names in high-volume scenarios</li>
+<li>Set appropriate <code>maxmemory</code> and eviction policy</li>
+<li>Monitor memory fragmentation ratio</li>
+</ol>
+<h3 id="84-scalability-patterns">8.4 Scalability Patterns</h3>
+<p><strong>Vertical Scaling:</strong></p>
+<ul>
+<li>Increase memory on existing nodes</li>
+<li>Redis supports up to ~25GB per instance effectively (fork() performance degrades beyond this)</li>
+<li>Memcached can use more memory per instance (no fork overhead)</li>
+</ul>
+<p><strong>Horizontal Scaling:</strong></p>
+<ul>
+<li>Redis Cluster: up to 1000 nodes</li>
+<li>Memcached: unlimited client-side sharding</li>
+<li>Read replicas for read-heavy workloads</li>
+</ul>
+<p><strong>Typical production sizing:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Workload</th>
+<th>Cache Size</th>
+<th>Nodes</th>
+<th>Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small SaaS app</td>
+<td>1-5 GB</td>
+<td>1 Redis + 1 replica</td>
+<td>Cache-aside</td>
+</tr>
+<tr>
+<td>Medium e-commerce</td>
+<td>10-50 GB</td>
+<td>3-node Redis Cluster</td>
+<td>Cache-aside + write-through</td>
+</tr>
+<tr>
+<td>Large social media</td>
+<td>100-500 GB</td>
+<td>10-30 Redis Cluster nodes</td>
+<td>Multi-tier caching</td>
+</tr>
+<tr>
+<td>Mega-scale (Facebook)</td>
+<td>1+ TB</td>
+<td>1000s of Memcached</td>
+<td>Custom fleet + TAO</td>
+</tr>
+</tbody>
+</table>
+<hr></hr>
+<h2 id="9-tradeoffs">9. Tradeoffs</h2>
+<h3 id="91-cache-vs-no-cache">9.1 Cache vs No Cache</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>With Cache</th>
+<th>Without Cache</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read Latency</td>
+<td>Low (sub-ms)</td>
+<td>High (5-50ms)</td>
+</tr>
+<tr>
+<td>System Complexity</td>
+<td>Higher (cache invalidation, consistency)</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Cache servers + DB</td>
+<td>DB only (but need more replicas)</td>
+</tr>
+<tr>
+<td>Data Freshness</td>
+<td>Potentially stale</td>
+<td>Always fresh</td>
+</tr>
+<tr>
+<td>Failure Modes</td>
+<td>More (cache crash, stale data, stampede)</td>
+<td>Fewer</td>
+</tr>
+<tr>
+<td>Operational Overhead</td>
+<td>Higher (monitoring, tuning, scaling)</td>
+<td>Lower</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When NOT to use caching:</strong></p>
+<ul>
+<li>Data changes very frequently and staleness is unacceptable</li>
+<li>Access patterns are uniform (no hot data)</li>
+<li>Data set is small enough to fit entirely in database memory</li>
+<li>Strong consistency is an absolute requirement</li>
+<li>Regulatory requirements prohibit caching certain data</li>
+</ul>
+<h3 id="92-redis-vs-memcached">9.2 Redis vs Memcached</h3>
+<table>
+<thead>
+<tr>
+<th>Decision Factor</th>
+<th>Choose Redis</th>
+<th>Choose Memcached</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data complexity</td>
+<td>Complex structures needed</td>
+<td>Simple key-value only</td>
+</tr>
+<tr>
+<td>Persistence</td>
+<td>Need durability</td>
+<td>Pure cache (ephemeral)</td>
+</tr>
+<tr>
+<td>High availability</td>
+<td>Built-in replication + Sentinel</td>
+<td>Must build externally</td>
+</tr>
+<tr>
+<td>Memory efficiency</td>
+<td>Acceptable overhead</td>
+<td>Maximum efficiency needed</td>
+</tr>
+<tr>
+<td>Operational simplicity</td>
+<td>Prefer single tool</td>
+<td>Don't mind separate systems</td>
+</tr>
+<tr>
+<td>Multi-threading</td>
+<td>Acceptable (Redis 6.0+ threads)</td>
+<td>Critical (fully multi-threaded)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="93-in-process-vs-distributed-cache">9.3 In-Process vs Distributed Cache</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>In-Process (Caffeine)</th>
+<th>Distributed (Redis)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Latency</td>
+<td>~100 ns</td>
+<td>~0.5-1 ms</td>
+</tr>
+<tr>
+<td>Capacity</td>
+<td>Limited by heap</td>
+<td>100s of GB</td>
+</tr>
+<tr>
+<td>Consistency</td>
+<td>Per-instance (no sharing)</td>
+<td>Shared across instances</td>
+</tr>
+<tr>
+<td>Failure impact</td>
+<td>Lost on restart</td>
+<td>Survives app restart</td>
+</tr>
+<tr>
+<td>GC pressure</td>
+<td>Can cause GC pauses</td>
+<td>No GC impact</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>None</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Hot data, config, small datasets</td>
+<td>Shared state, sessions, large datasets</td>
+</tr>
+</tbody>
+</table>
+<h3 id="94-caching-strategy-tradeoffs">9.4 Caching Strategy Tradeoffs</h3>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Consistency</th>
+<th>Latency</th>
+<th>Complexity</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cache-aside</td>
+<td>Eventual</td>
+<td>Miss penalty</td>
+<td>Low</td>
+<td>Most read-heavy workloads</td>
+</tr>
+<tr>
+<td>Read-through</td>
+<td>Eventual</td>
+<td>Miss penalty</td>
+<td>Medium</td>
+<td>Decoupled cache loading</td>
+</tr>
+<tr>
+<td>Write-through</td>
+<td>Strong</td>
+<td>Higher writes</td>
+<td>Medium</td>
+<td>Consistency-critical writes</td>
+</tr>
+<tr>
+<td>Write-behind</td>
+<td>Weak</td>
+<td>Low writes</td>
+<td>High</td>
+<td>Write-heavy, loss-tolerant</td>
+</tr>
+<tr>
+<td>Refresh-ahead</td>
+<td>Strong-ish</td>
+<td>Very low</td>
+<td>High</td>
+<td>Hot data, latency-sensitive</td>
+</tr>
+</tbody>
+</table>
+<h3 id="95-ttl-tradeoffs">9.5 TTL Tradeoffs</h3>
+<table>
+<thead>
+<tr>
+<th>Short TTL (seconds)</th>
+<th>Long TTL (hours)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fresh data</td>
+<td>Potentially stale data</td>
+</tr>
+<tr>
+<td>Lower hit rate</td>
+<td>Higher hit rate</td>
+</tr>
+<tr>
+<td>More DB load</td>
+<td>Less DB load</td>
+</tr>
+<tr>
+<td>Higher latency variance</td>
+<td>Lower latency variance</td>
+</tr>
+<tr>
+<td>Good for: prices, inventory</td>
+<td>Good for: user profiles, config</td>
+</tr>
+</tbody>
+</table>
+<h3 id="96-cap-theorem-implications">9.6 CAP Theorem Implications</h3>
+<p>Caching inherently introduces eventual consistency:</p>
+<ul>
+<li>Cache and database are two separate data stores</li>
+<li>There's always a window where cache ≠ database</li>
+<li>You're trading <strong>consistency</strong> for <strong>availability</strong> and <strong>performance</strong></li>
+</ul>
+<p>In a network partition:</p>
+<ul>
+<li>If cache is available but DB is not → serve stale data (AP)</li>
+<li>If cache is unavailable → fallback to DB (assuming DB is up)</li>
+<li>If both are partitioned → decide: serve stale or error?</li>
+</ul>
+<hr></hr>
+<h2 id="10-failure-scenarios">10. Failure Scenarios</h2>
+<h3 id="101-cache-server-crash">10.1 Cache Server Crash</h3>
+<p><strong>Scenario:</strong> Redis instance crashes or OOM kills.</p>
+<p><strong>Impact:</strong> All cached data lost (unless persistence is enabled). All requests hit the database — <strong>cache stampede</strong>.</p>
+<p><strong>Mitigations:</strong></p>
+<ol>
+<li><strong>Redis Sentinel/Cluster:</strong> Automatic failover to replica within seconds</li>
+<li><strong>Graceful degradation:</strong> Application works (slowly) without cache</li>
+<li><strong>Cache warming:</strong> Pre-populate cache before directing traffic</li>
+<li><strong>Circuit breaker:</strong> If DB is overwhelmed, reject requests rather than cascade failure</li>
+<li><strong>Persistence:</strong> RDB/AOF for faster recovery</li>
+</ol>
+<h3 id="102-network-partition-between-app-and-cache">10.2 Network Partition Between App and Cache</h3>
+<p><strong>Scenario:</strong> Network issue between application servers and Redis cluster.</p>
+<p><strong>Impact:</strong> All cache operations time out. Application falls back to database. Database gets hammered.</p>
+<p><strong>Mitigations:</strong></p>
+<ol>
+<li><strong>Short timeouts:</strong> Don't wait too long for cache (100-500ms timeout)</li>
+<li><strong>Local cache fallback:</strong> Use in-process cache as L1</li>
+<li><strong>Circuit breaker:</strong> After N failures, stop trying cache for M seconds</li>
+<li><strong>Multiple AZ deployment:</strong> Cache nodes in multiple availability zones</li>
+</ol>
+<h3 id="103-thundering-herd-on-cache-expiry">10.3 Thundering Herd on Cache Expiry</h3>
+<p><strong>Scenario:</strong> A popular key expires. 10,000 concurrent requests all miss and hit the database simultaneously.</p>
+<p><strong>Impact:</strong> Database overloaded, increased latency, potential cascading failure.</p>
+<p><strong>Mitigations:</strong></p>
+<ol>
+<li><strong>Distributed lock:</strong> Only one request refreshes the cache; others wait</li>
+<li><strong>Stale-while-revalidate:</strong> Serve stale value while refreshing in background</li>
+<li><strong>Jittered TTLs:</strong> Prevent synchronized expiration</li>
+<li><strong>Probabilistic early expiration:</strong> Refresh before actual expiry</li>
+<li><strong>Background refresh thread:</strong> Dedicated thread refreshes before expiry</li>
+</ol>
+<h3 id="104-hot-key-problem">10.4 Hot Key Problem</h3>
+<p><strong>Scenario:</strong> A celebrity's profile is cached on a single Redis node. That celebrity goes viral and receives 1M requests per second to that single key.</p>
+<p><strong>Impact:</strong> Single Redis node overwhelmed. Other keys on that node also affected.</p>
+<p><strong>Mitigations:</strong></p>
+<ol>
+<li><strong>Key replication:</strong> Store as <code>celebrity:123:v1</code>, <code>celebrity:123:v2</code>, ..., <code>celebrity:123:vN</code> on different nodes. Client randomly picks a suffix.</li>
+<li><strong>Local cache:</strong> Cache hot keys in application memory (Caffeine)</li>
+<li><strong>Read replicas:</strong> Route reads to Redis replicas</li>
+<li><strong>Key sharding:</strong> Split the value into sub-keys</li>
+</ol>
+<h3 id="105-cache-penetration">10.5 Cache Penetration</h3>
+<p><strong>Scenario:</strong> Requests for data that doesn't exist in the database. Every request misses cache AND misses database.</p>
+<p><strong>Impact:</strong> Database gets hammered with pointless queries. Attacker can exploit this.</p>
+<p><strong>Mitigations:</strong></p>
+<ol>
+<li><strong>Cache null values:</strong> Cache the "not found" result with a short TTL</li>
+<li><strong>Bloom filter:</strong> Check a bloom filter before cache/DB lookup. If bloom filter says "definitely not present," return immediately.</li>
+<li><strong>Input validation:</strong> Validate key format before cache lookup</li>
+</ol>
+<h3 id="106-cache-avalanche">10.6 Cache Avalanche</h3>
+<p><strong>Scenario:</strong> A large number of cache entries expire at the same time (e.g., all loaded at startup with the same TTL).</p>
+<p><strong>Impact:</strong> Massive database load spike.</p>
+<p><strong>Mitigations:</strong></p>
+<ol>
+<li><strong>Jittered TTLs:</strong> Add random variation to TTLs</li>
+<li><strong>Staggered warm-up:</strong> Load cache entries gradually</li>
+<li><strong>Never-expire with background refresh:</strong> Keys never expire; background process refreshes them</li>
+</ol>
+<h3 id="107-inconsistency-between-cache-and-database">10.7 Inconsistency Between Cache and Database</h3>
+<p><strong>Scenario:</strong> Write to DB succeeds, but cache invalidation fails (network error, Redis down).</p>
+<p><strong>Impact:</strong> Stale data served from cache until TTL expires.</p>
+<p><strong>Mitigations:</strong></p>
+<ol>
+<li><strong>Retry invalidation:</strong> Retry with exponential backoff</li>
+<li><strong>Outbox pattern:</strong> Write invalidation event to outbox table; process asynchronously</li>
+<li><strong>CDC-based invalidation:</strong> Use Change Data Capture to invalidate cache based on DB changes</li>
+<li><strong>Short TTLs:</strong> Bound staleness even if invalidation fails</li>
+<li><strong>Double-delete:</strong> Delete cache before AND after DB write (with a short delay)</li>
+</ol>
+<h3 id="108-split-brain-in-redis-sentinel">10.8 Split Brain in Redis Sentinel</h3>
+<p><strong>Scenario:</strong> Network partition causes Sentinel to promote a replica while the old master is still running. Two masters accept writes — data divergence.</p>
+<p><strong>Impact:</strong> Data loss when the old master rejoins (it becomes a replica and loses its writes).</p>
+<p><strong>Mitigations:</strong></p>
+<ol>
+<li><strong><code>min-replicas-to-write</code>:</strong> Old master rejects writes if it can't reach replicas</li>
+<li><strong><code>min-replicas-max-lag</code>:</strong> Additional safety check</li>
+<li><strong>Odd number of Sentinels:</strong> Ensure clean majority elections</li>
+<li><strong>Fencing tokens:</strong> Application uses fencing tokens to detect stale masters</li>
+</ol>
+<hr></hr>
+<h2 id="11-debugging--observability">11. Debugging &amp; Observability</h2>
+<h3 id="111-key-metrics-to-monitor">11.1 Key Metrics to Monitor</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Alert Threshold</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hit Rate</td>
+<td>% of requests served from cache</td>
+<td>&lt; 90%</td>
+<td>Check TTL, key design, eviction</td>
+</tr>
+<tr>
+<td>Miss Rate</td>
+<td>% of requests not in cache</td>
+<td>&gt; 10%</td>
+<td>Same as above</td>
+</tr>
+<tr>
+<td>Latency (p50, p95, p99)</td>
+<td>Cache operation latency</td>
+<td>p99 &gt; 5ms</td>
+<td>Check network, memory</td>
+</tr>
+<tr>
+<td>Eviction Rate</td>
+<td>Keys evicted per second</td>
+<td>Consistently high</td>
+<td>Increase memory or reduce TTL</td>
+</tr>
+<tr>
+<td>Memory Usage</td>
+<td>% of maxmemory used</td>
+<td>&gt; 80%</td>
+<td>Scale up or tune eviction</td>
+</tr>
+<tr>
+<td>Connection Count</td>
+<td>Active connections</td>
+<td>&gt; 80% of max</td>
+<td>Connection pooling</td>
+</tr>
+<tr>
+<td>CPU Usage</td>
+<td>Redis server CPU</td>
+<td>&gt; 70%</td>
+<td>Check slow commands, optimize</td>
+</tr>
+<tr>
+<td>Replication Lag</td>
+<td>Bytes behind master</td>
+<td>&gt; 1MB</td>
+<td>Check network, replica capacity</td>
+</tr>
+<tr>
+<td>Keyspace Misses</td>
+<td>Total misses (INFO stats)</td>
+<td>Trending up</td>
+<td>Check cache strategy</td>
+</tr>
+<tr>
+<td>Fragmentation Ratio</td>
+<td>used_memory_rss / used_memory</td>
+<td>&gt; 1.5</td>
+<td>Restart Redis or enable active defrag</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-redis-monitoring-commands">11.2 Redis Monitoring Commands</h3>
+<pre><code class="lang-bash"><span class="hljs-comment"># Real-time statistics</span>
+redis-cli INFO stats
+redis-cli INFO memory
+redis-cli INFO replication
+redis-cli INFO keyspace
+
+<span class="hljs-comment"># Slow query log</span>
+redis-cli SLOWLOG GET 10
+
+<span class="hljs-comment"># Monitor all commands in real-time (use carefully in production!)</span>
+redis-cli MONITOR
+
+<span class="hljs-comment"># Memory usage for a specific key</span>
+redis-cli MEMORY USAGE mykey
+
+<span class="hljs-comment"># Client list and connections</span>
+redis-cli CLIENT LIST
+
+<span class="hljs-comment"># Big keys analysis</span>
+redis-cli --bigkeys
+
+<span class="hljs-comment"># Memory analysis</span>
+redis-cli --memkeys
+
+<span class="hljs-comment"># Latency monitoring</span>
+redis-cli --latency
+redis-cli --latency-history
+</code></pre>
+<h3 id="113-logging-best-practices">11.3 Logging Best Practices</h3>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * Cache operation logging for debugging and observability.
+ * 
+ * Log levels:
+ * - DE<span class="hljs-doctag">BUG:</span> Individual cache hits/misses (disable in production)
+ * - INFO: Cache statistics summaries, configuration changes
+ * - WARN: Cache failures, high miss rates, eviction spikes
+ * - ERROR: Cache unavailable, serialization failures
+ */</span>
+
+<span class="hljs-comment">// Log cache miss with context</span>
+log.debug(<span class="hljs-string">"Cache MISS: key={}, latency={}ms, fallback=database"</span>, key, latencyMs);
+
+<span class="hljs-comment">// Log cache hit (sampling at high throughput)</span>
+<span class="hljs-keyword">if</span> (ThreadLocalRandom.current().nextInt(<span class="hljs-number">100</span>) == <span class="hljs-number">0</span>) {  <span class="hljs-comment">// 1% sampling</span>
+    log.debug(<span class="hljs-string">"Cache HIT (sampled): key={}, latency={}μs"</span>, key, latencyMicros);
+}
+
+<span class="hljs-comment">// Log cache error</span>
+log.warn(<span class="hljs-string">"Cache operation failed: key={}, operation={}, error={}"</span>,
+         key, <span class="hljs-string">"GET"</span>, e.getMessage());
+
+<span class="hljs-comment">// Log periodic statistics</span>
+log.info(<span class="hljs-string">"Cache stats: hitRate={:.1f}%, size={}, evictions={}, "</span> +
+         <span class="hljs-string">"avgLatency={}ms"</span>, hitRate, size, evictions, avgLatencyMs);
+</code></pre>
+<h3 id="114-distributed-tracing-with-cache-operations">11.4 Distributed Tracing with Cache Operations</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> io.opentelemetry.api.trace.Span;
+<span class="hljs-keyword">import</span> io.opentelemetry.api.trace.Tracer;
+
+<span class="hljs-comment">/**
+ * Wrapping cache operations with OpenTelemetry spans
+ * for end-to-end distributed tracing.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TracedCacheService</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> RedisCacheService delegate;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Tracer tracer;
+
+    <span class="hljs-keyword">public</span> &lt;T&gt; T <span class="hljs-title function_">getOrLoad</span><span class="hljs-params">(String key, Class&lt;T&gt; type, Duration ttl, 
+                           Supplier&lt;T&gt; loader)</span> {
+        <span class="hljs-type">Span</span> <span class="hljs-variable">span</span> <span class="hljs-operator">=</span> tracer.spanBuilder(<span class="hljs-string">"cache.getOrLoad"</span>)
+                .setAttribute(<span class="hljs-string">"cache.key"</span>, key)
+                .setAttribute(<span class="hljs-string">"cache.type"</span>, <span class="hljs-string">"redis"</span>)
+                .startSpan();
+
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-type">T</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> delegate.getOrLoad(key, type, ttl, loader);
+            span.setAttribute(<span class="hljs-string">"cache.hit"</span>, result != <span class="hljs-literal">null</span>);
+            <span class="hljs-keyword">return</span> result;
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            span.recordException(e);
+            <span class="hljs-keyword">throw</span> e;
+        } <span class="hljs-keyword">finally</span> {
+            span.end();
+        }
+    }
+}
+</code></pre>
+<h3 id="115-grafana-dashboard-panels">11.5 Grafana Dashboard Panels</h3>
+<p>Key dashboard panels for a Redis cache:</p>
+<ol>
+<li><strong>Hit Rate Over Time</strong> — Line chart showing hit rate % over 24h</li>
+<li><strong>Latency Distribution</strong> — Histogram of p50/p95/p99 latencies</li>
+<li><strong>Memory Usage</strong> — Gauge showing current vs max memory</li>
+<li><strong>Eviction Rate</strong> — Line chart showing evictions per second</li>
+<li><strong>Connection Count</strong> — Current connections vs max</li>
+<li><strong>Key Count per DB</strong> — Number of keys in each Redis database</li>
+<li><strong>Replication Status</strong> — Lag, connection status per replica</li>
+<li><strong>Slow Commands</strong> — Count and duration of slow operations</li>
+<li><strong>Cache Errors</strong> — Error rate broken down by type</li>
+<li><strong>Top Hot Keys</strong> — Most accessed keys (requires custom tracking)</li>
+</ol>
+<hr></hr>
+<h2 id="12-interview-questions">12. Interview Questions</h2>
+<h3 id="beginner-level">Beginner Level</h3>
+<p><strong>Q1: What is caching and why do we use it?</strong>
+<strong>A:</strong> Caching stores frequently accessed data in a faster storage layer (usually memory) to reduce latency, increase throughput, and lower backend load. It exploits the principle that a small percentage of data accounts for most accesses (temporal locality). For example, instead of querying a database for every user profile view, we cache the profile in Redis and serve subsequent requests from memory (~0.5ms vs ~5ms).</p>
+<p><strong>Q2: What is the difference between cache hit and cache miss?</strong>
+<strong>A:</strong> A cache hit occurs when the requested data is found in the cache — the request is served directly without touching the backend. A cache miss occurs when the data is NOT in the cache — the system must fetch it from the database and typically stores it in the cache for future requests. The cache hit rate (hits / total requests) is a key metric — a good system achieves 95-99%.</p>
+<p><strong>Q3: Explain the cache-aside pattern.</strong>
+<strong>A:</strong> Cache-aside (lazy loading) is the most common caching pattern:</p>
+<ul>
+<li><strong>Read:</strong> Check cache → if hit, return data. If miss, query database → store result in cache → return data.</li>
+<li><strong>Write:</strong> Write to database → invalidate (delete) cache entry.
+The application manages the cache explicitly. It's simple, resilient to cache failures (falls back to DB), and only caches data that's actually requested. The downside is a cold start miss on the first request and potential staleness between invalidation and the next read.</li>
+</ul>
+<p><strong>Q4: What is TTL and why is it important?</strong>
+<strong>A:</strong> Time-To-Live (TTL) is the expiration time set on a cache entry. After the TTL expires, the entry is considered stale and will be refreshed on the next access. TTL is important because:</p>
+<ol>
+<li>Prevents indefinitely stale data</li>
+<li>Bounds the staleness window</li>
+<li>Automatically frees memory over time</li>
+<li>Short TTLs mean fresher data but lower hit rates; long TTLs mean higher hit rates but more staleness.</li>
+</ol>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<p><strong>Q5: How would you handle the thundering herd problem?</strong>
+<strong>A:</strong> Thundering herd occurs when a popular cache entry expires and many concurrent requests simultaneously miss and overload the database. Solutions:</p>
+<ol>
+<li><strong>Distributed locking:</strong> Use Redis SETNX to let only one request load from the database. Other requests wait and retry from cache.</li>
+<li><strong>Stale-while-revalidate:</strong> Continue serving the stale value while one request refreshes in the background.</li>
+<li><strong>Jittered TTLs:</strong> Add random variation to TTLs so entries don't all expire simultaneously.</li>
+<li><strong>Probabilistic early expiration:</strong> Each request has a small probability of refreshing before actual expiry (XFetch algorithm).</li>
+</ol>
+<p><strong>Q6: Compare write-through and write-behind caching strategies.</strong>
+<strong>A:</strong></p>
+<ul>
+<li><strong>Write-through:</strong> Writes go to both cache and database synchronously. Pros: cache is always consistent with DB, simplified reads. Cons: higher write latency (two writes), caches data that may not be read.</li>
+<li><strong>Write-behind (write-back):</strong> Writes go to cache only, then asynchronously flushed to database in batches. Pros: much lower write latency, database load is smoothed by batching. Cons: risk of data loss if cache crashes before flush, complex implementation, harder debugging.</li>
+<li>Choose write-through when consistency matters; write-behind when write performance matters and some data loss is acceptable.</li>
+</ul>
+<p><strong>Q7: How does Redis Cluster achieve horizontal scaling?</strong>
+<strong>A:</strong> Redis Cluster divides the keyspace into 16,384 hash slots. Each key is mapped to a slot via <code>CRC16(key) % 16384</code>. Each master node owns a subset of slots. When a client sends a command, if the key belongs to a different node, the node returns a MOVED redirect. The client then connects to the correct node. Resharding moves slots between nodes live. Failover promotes replicas when a master fails, using a Raft-like election among masters.</p>
+<p><strong>Q8: How would you design a cache for a system where data consistency is critical?</strong>
+<strong>A:</strong> Several approaches:</p>
+<ol>
+<li><strong>Write-through cache:</strong> Every write updates both cache and DB synchronously</li>
+<li><strong>Event-based invalidation via CDC:</strong> Use Change Data Capture (e.g., Debezium) to capture DB changes and invalidate/update cache</li>
+<li><strong>Short TTLs:</strong> Bound staleness to seconds</li>
+<li><strong>Read-your-writes consistency:</strong> After a write, bypass cache for that user's subsequent reads for a short period</li>
+<li><strong>Version-based validation:</strong> Store version numbers; validate on every read</li>
+<li>Combine approaches: CDC for real-time invalidation + short TTL as safety net</li>
+</ol>
+<h3 id="advanced--faang-level">Advanced / FAANG Level</h3>
+<p><strong>Q9: Design Twitter's celebrity tweet caching to handle millions of reads per second for a single key.</strong>
+<strong>A:</strong> The hot key problem. A single Redis node can't handle 1M+ ops/sec for one key. Solutions:</p>
+<ol>
+<li><strong>Key replication with random suffix:</strong> Store the tweet as <code>tweet:123:v0</code> through <code>tweet:123:v99</code> across different Redis nodes. Clients randomly pick a suffix, distributing load across 100 nodes.</li>
+<li><strong>L1 in-process cache:</strong> Each application server caches the hot tweet in Caffeine with a 1-second TTL. This absorbs 99% of reads before hitting Redis.</li>
+<li><strong>Read replicas:</strong> Each Redis master has multiple replicas; route reads to replicas.</li>
+<li><strong>CDN caching:</strong> For the API response, cache at the CDN edge.</li>
+<li><strong>Combination:</strong> L1 (Caffeine, 1s TTL) → L2 (Redis replicated key, 30s TTL) → Database. This creates a multi-tier solution that handles millions of reads.</li>
+</ol>
+<p><strong>Q10: Facebook serves billions of requests per second through Memcached. How did they solve the thundering herd problem at this scale?</strong>
+<strong>A:</strong> Facebook introduced the <strong>lease mechanism</strong>:</p>
+<ol>
+<li>On cache miss, Memcached returns a unique 64-bit lease token to the requesting client</li>
+<li>Only the client holding the lease can SET the value</li>
+<li>Concurrent misses for the same key receive a "try again shortly" response</li>
+<li>If the lease holder crashes, the lease expires after 10 seconds</li>
+<li>This reduced the peak DB load by 10x during cache stampedes</li>
+</ol>
+<p>Additionally, they built McRouter (a Memcached protocol proxy) that handles connection pooling, routing, and replication. They also use regional pools (replicated per data center) and the TAO system (a graph-aware cache) that provides consistency guarantees for social graph data.</p>
+<p><strong>Q11: How would you design a globally distributed caching system for an e-commerce platform operating in 20 countries?</strong>
+<strong>A:</strong> Multi-region architecture:</p>
+<ol>
+<li><strong>CDN Layer:</strong> Static assets (images, JS, CSS) cached at CloudFront/Akamai edge nodes in all 20 countries</li>
+<li><strong>API Response Cache:</strong> Dynamic API responses cached at regional API gateways</li>
+<li><strong>Regional Redis Clusters:</strong> One Redis Cluster per region (US, EU, APAC) for user sessions, cart data</li>
+<li><strong>Global Redis (CRDTs):</strong> For inventory/counters, use Redis with CRDT-based multi-master replication (or build atop a globally consistent store)</li>
+<li><strong>Consistency Strategy:</strong><ul>
+<li>User profiles: eventually consistent with event-based invalidation (CDC)</li>
+<li>Inventory: use a separate strong-consistency system (not cache)</li>
+<li>Prices: cached with 30-second TTL + event-based invalidation</li>
+<li>Product catalog: cached with 10-minute TTL</li>
+</ul>
+</li>
+<li><strong>Cache Warming:</strong> When deploying a new region, warm cache from neighboring region before directing traffic</li>
+<li><strong>Monitoring:</strong> Per-region dashboards tracking hit rates, latency, staleness</li>
+</ol>
+<p><strong>Q12: Explain the "delete-then-write" vs "write-then-delete" ordering problem in cache invalidation.</strong>
+<strong>A:</strong> This is a subtle race condition:</p>
+<p><strong>Option A: Delete cache, then update DB</strong></p>
+<ol>
+<li>Thread A deletes cache for key X</li>
+<li>Thread B reads key X → cache miss → reads DB (old value) → writes old value to cache</li>
+<li>Thread A updates DB with new value</li>
+<li>Result: Cache has stale data, DB has new data. Inconsistent until TTL.</li>
+</ol>
+<p><strong>Option B: Update DB, then delete cache</strong></p>
+<ol>
+<li>Thread A updates DB with new value</li>
+<li>Thread B reads key X → cache hit (old value, stale briefly)</li>
+<li>Thread A deletes cache for key X</li>
+<li>Thread C reads key X → cache miss → reads DB (new value) → writes new value to cache</li>
+<li>Result: Brief staleness for Thread B, but cache is eventually consistent. This is the preferred approach.</li>
+</ol>
+<p><strong>Option B is preferred</strong> because the inconsistency window is much shorter. The "delete after write" approach combined with short TTLs provides good enough consistency for most systems.</p>
+<p>For stronger guarantees, use the <strong>delayed double-delete</strong> pattern: Delete cache → Update DB → Wait 500ms → Delete cache again. The second delete catches the race condition from Option A.</p>
+<hr></hr>
+<h2 id="13-exercises">13. Exercises</h2>
+<h3 id="exercise-1-conceptual-—-cache-design-for-an-e-commerce-platform">Exercise 1: Conceptual — Cache Design for an E-Commerce Platform</h3>
+<p>Design the caching strategy for an e-commerce platform with the following requirements:</p>
+<ul>
+<li>Product catalog with 10M products (changes daily)</li>
+<li>User profiles (50M users, changes rarely)</li>
+<li>Shopping cart (highly dynamic, per-session)</li>
+<li>Product reviews (append-only, updated every few minutes)</li>
+<li>Inventory counts (changes frequently, consistency critical)</li>
+<li>Homepage recommendations (computed hourly)</li>
+</ul>
+<p>For each data type, specify:</p>
+<ol>
+<li>Caching strategy (cache-aside, write-through, etc.)</li>
+<li>TTL</li>
+<li>Invalidation strategy</li>
+<li>Cache location (in-process, Redis, CDN)</li>
+<li>What happens on cache failure?</li>
+</ol>
+<h3 id="exercise-2-coding-—-implement-lfu-cache">Exercise 2: Coding — Implement LFU Cache</h3>
+<p>Implement a Least Frequently Used (LFU) cache in Java with O(1) time complexity for <code>get()</code> and <code>put()</code>. The cache should:</p>
+<ul>
+<li>Evict the least frequently used item when full</li>
+<li>If multiple items have the same frequency, evict the least recently used among them</li>
+<li>Support <code>get(key)</code> → returns value or -1</li>
+<li>Support <code>put(key, value)</code> → inserts or updates</li>
+</ul>
+<p>Hint: Use a HashMap for key-value lookup, a HashMap for key-frequency, and a LinkedHashMap for each frequency bucket.</p>
+<h3 id="exercise-3-system-design-—-design-a-distributed-rate-limiter">Exercise 3: System Design — Design a Distributed Rate Limiter</h3>
+<p>Design a distributed rate limiter that:</p>
+<ul>
+<li>Supports sliding window algorithm</li>
+<li>Handles 100K requests/second</li>
+<li>Works across multiple application instances</li>
+<li>Provides accurate limiting (no significant over-counting)</li>
+<li>Handles Redis failures gracefully</li>
+<li>Supports different rate limits for different API keys/tiers</li>
+</ul>
+<p>Consider: consistency vs performance, local counting vs centralized, token bucket vs sliding window.</p>
+<h3 id="exercise-4-debugging-—-cache-performance-investigation">Exercise 4: Debugging — Cache Performance Investigation</h3>
+<p>Your team reports that the cache hit rate for the user profile service dropped from 98% to 72% overnight. The service hasn't deployed any changes. What would you investigate?</p>
+<p>Consider:</p>
+<ol>
+<li>What metrics would you check first?</li>
+<li>What could cause a sudden hit rate drop?</li>
+<li>How would you diagnose the root cause?</li>
+<li>What are the potential fixes?</li>
+</ol>
+<h3 id="exercise-5-coding-—-multi-level-cache">Exercise 5: Coding — Multi-Level Cache</h3>
+<p>Implement a two-level cache in Java:</p>
+<ul>
+<li>L1: In-process Caffeine cache (fast, small, per-instance)</li>
+<li>L2: Redis (slower, large, shared)</li>
+<li>Lookups check L1 first, then L2, then database</li>
+<li>Writes go to database, then invalidate L2, then invalidate L1 (across all instances via Redis Pub/Sub)</li>
+</ul>
+<h3 id="exercise-6-analysis-—-ttl-optimization">Exercise 6: Analysis — TTL Optimization</h3>
+<p>Given the following access pattern data for a cache key:</p>
+<ul>
+<li>Average time between accesses: 45 seconds</li>
+<li>P99 time between accesses: 5 minutes</li>
+<li>Time to regenerate from DB: 200ms</li>
+<li>DB can handle: 1000 QPS additional load</li>
+<li>Current traffic: 10,000 QPS for this key</li>
+<li>Acceptable staleness: 60 seconds</li>
+</ul>
+<p>What TTL would you set? Justify your answer considering hit rate, staleness, and DB load.</p>
+<hr></hr>
+<h2 id="14-expert-insights">14. Expert Insights</h2>
+<h3 id="141-hidden-complexities">14.1 Hidden Complexities</h3>
+<p><strong>Serialization Costs:</strong>
+In high-throughput systems, the CPU cost of serializing/deserializing objects to/from Redis can become the bottleneck, not the network. JSON serialization is human-readable but slow. Protobuf or MessagePack can be 5-10x faster. At Facebook's scale, they use a compact binary serialization format. Always benchmark serialization formats for your data.</p>
+<p><strong>Connection Pool Tuning:</strong>
+Redis uses a single thread for commands. If your application creates hundreds of connections, Redis spends time managing connections instead of processing commands. Use connection pooling (Lettuce pool, Jedis pool) with:</p>
+<ul>
+<li><code>maxActive</code>: Number of connections = number of application threads that make cache calls concurrently</li>
+<li><code>maxIdle</code>: Keep connections warm to avoid reconnection cost</li>
+<li><code>minIdle</code>: Minimum warm connections for consistent latency</li>
+</ul>
+<p><strong>Memory Fragmentation:</strong>
+Redis allocates memory using jemalloc. Over time, as keys are created and deleted, memory can become fragmented — Redis reports using 10GB but the OS shows 15GB allocated (<code>mem_fragmentation_ratio &gt; 1.5</code>). Solutions:</p>
+<ul>
+<li>Enable <code>activedefrag</code> (Redis 4.0+)</li>
+<li>Restart Redis periodically (during maintenance windows)</li>
+<li>Use consistent key sizes to reduce fragmentation</li>
+</ul>
+<p><strong>Large Key Problem:</strong>
+Storing large values (&gt;100KB) in Redis causes issues:</p>
+<ul>
+<li>Blocks the event loop during serialization</li>
+<li>Increases replication lag</li>
+<li>Can cause timeout errors</li>
+<li>Consumes network bandwidth</li>
+</ul>
+<p>Solutions: compress large values, split into sub-keys, use Redis Streams for large datasets.</p>
+<h3 id="142-industry-lessons">14.2 Industry Lessons</h3>
+<p><strong>Lesson 1: Cache is not a database</strong>
+Teams often start using Redis as a primary store instead of a cache. This works until it doesn't — Redis OOMs, data loss occurs, and there's no recovery. Always have a source of truth (database) that can reconstruct cached data. Exception: Redis with persistence for specific use cases like rate limiters, leaderboards, session storage where data loss is acceptable.</p>
+<p><strong>Lesson 2: Monitor before you cache, measure after</strong>
+Before adding caching, instrument your database queries to understand access patterns. After adding caching, monitor hit rates closely. A cache with a 60% hit rate is adding complexity without sufficient benefit. If hit rate is low, investigate:</p>
+<ul>
+<li>Are keys too specific? (cache per-user per-page vs per-page)</li>
+<li>Is TTL too short?</li>
+<li>Is the data genuinely random access?</li>
+</ul>
+<p><strong>Lesson 3: Cache warming is critical for deployments</strong>
+When deploying a new application version or scaling out, new instances have empty caches. If all traffic is suddenly routed to them — stampede. Solutions:</p>
+<ul>
+<li>Gradual traffic shift (canary deployment)</li>
+<li>Pre-warm cache from database before accepting traffic</li>
+<li>Copy cache from existing instances</li>
+</ul>
+<p><strong>Lesson 4: The "cache everything" anti-pattern</strong>
+Caching every database query leads to:</p>
+<ul>
+<li>Massive memory consumption</li>
+<li>Low overall hit rate</li>
+<li>Complex invalidation</li>
+<li>Debugging nightmares</li>
+</ul>
+<p>Instead, cache the 20% of data that serves 80% of traffic. Use database query logs and application metrics to identify hot data.</p>
+<p><strong>Lesson 5: Operational readiness</strong>
+Before launching a cache in production, prepare for:</p>
+<ul>
+<li>Cache down: Application must work without cache (graceful degradation)</li>
+<li>Cache full: Know your eviction policy and max memory limits</li>
+<li>Cache inconsistency: Have a manual invalidation tool/runbook</li>
+<li>Cache performance: Dashboard for hit rate, latency, memory</li>
+<li>Cache recovery: Know how long it takes to warm a cold cache</li>
+</ul>
+<h3 id="143-common-mistakes-engineers-make">14.3 Common Mistakes Engineers Make</h3>
+<ol>
+<li><strong>Not handling cache failures gracefully</strong> — Application throws an error instead of falling back to database</li>
+<li><strong>Using KEYS command in production</strong> — KEYS * is O(N) and blocks Redis. Use SCAN instead</li>
+<li><strong>Storing Java objects without proper serialization</strong> — Leading to ClassNotFoundException after code changes</li>
+<li><strong>Setting the same TTL for all keys</strong> — Causes synchronized expiration (thundering herd)</li>
+<li><strong>Not setting maxmemory</strong> — Redis grows until OOM-killed by the OS</li>
+<li><strong>Using Redis as primary store without persistence</strong> — Data loss on restart</li>
+<li><strong>Not monitoring replication lag</strong> — Reading from replica with high lag = stale reads</li>
+<li><strong>Caching error responses</strong> — An API timeout cached for 5 minutes means 5 minutes of errors</li>
+<li><strong>Not thinking about key naming</strong> — Poor key design leads to collisions, difficulty debugging</li>
+<li><strong>Ignoring serialization/deserialization costs</strong> — Can dominate CPU at high throughput</li>
+</ol>
+<h3 id="144-modern-cloud-native-caching">14.4 Modern Cloud-Native Caching</h3>
+<p><strong>AWS ElastiCache:</strong></p>
+<ul>
+<li>Managed Redis and Memcached</li>
+<li>Multi-AZ with automatic failover</li>
+<li>Encryption at rest and in transit</li>
+<li>Global Datastore for cross-region replication</li>
+</ul>
+<p><strong>Google Cloud Memorystore:</strong></p>
+<ul>
+<li>Managed Redis and Memcached</li>
+<li>Automatic patching</li>
+<li>VPC integration</li>
+</ul>
+<p><strong>Azure Cache for Redis:</strong></p>
+<ul>
+<li>Managed Redis</li>
+<li>Enterprise tier with Redis modules</li>
+<li>Active geo-replication</li>
+</ul>
+<p><strong>Best practices for cloud-native caching:</strong></p>
+<ol>
+<li>Use managed services — operational overhead of running Redis yourself is significant</li>
+<li>Deploy in the same VPC as your application</li>
+<li>Use private endpoints (no public access)</li>
+<li>Enable encryption for sensitive data</li>
+<li>Set up alerts for memory, connection, and hit rate metrics</li>
+<li>Use reserved instances for cost savings</li>
+<li>Test failover regularly</li>
+</ol>
+<hr></hr>
+<h2 id="15-chapter-summary">15. Chapter Summary</h2>
+<h3 id="key-concepts">Key Concepts</h3>
+<ul>
+<li><strong>Caching</strong> exploits non-uniform access patterns to store hot data in faster storage tiers, reducing latency (10-100x), increasing throughput, and reducing costs</li>
+<li>The <strong>cache hierarchy</strong> spans CPU caches → in-process caches → distributed caches → CDN → database → cold storage</li>
+<li><strong>Cache hit rate</strong> (95-99% target) is the most important metric for evaluating cache effectiveness</li>
+</ul>
+<h3 id="caching-strategies">Caching Strategies</h3>
+<ul>
+<li><strong>Cache-aside</strong> (most common): application manages cache, simple, resilient</li>
+<li><strong>Read-through</strong>: cache manages loading, cleaner application code</li>
+<li><strong>Write-through</strong>: synchronous cache+DB writes, strong consistency</li>
+<li><strong>Write-behind</strong>: async DB writes, low latency, data loss risk</li>
+<li><strong>Refresh-ahead</strong>: proactive refresh, eliminates miss latency for hot data</li>
+</ul>
+<h3 id="cache-invalidation">Cache Invalidation</h3>
+<ul>
+<li><strong>TTL-based</strong>: simple, bounds staleness, but has freshness vs hit rate tradeoff</li>
+<li><strong>Event-based</strong>: near-real-time, complex infrastructure (CDC, message brokers)</li>
+<li><strong>Version-based</strong>: precise, but requires version check mechanism</li>
+</ul>
+<h3 id="redis">Redis</h3>
+<ul>
+<li>Rich data structures: strings, hashes, lists, sets, sorted sets, streams, HyperLogLog</li>
+<li>Persistence: RDB (snapshots), AOF (append log), hybrid</li>
+<li>High availability: replication + Redis Sentinel (automatic failover)</li>
+<li>Horizontal scaling: Redis Cluster with 16,384 hash slots</li>
+<li>Pub/Sub for messaging; Streams for reliable messaging with consumer groups</li>
+</ul>
+<h3 id="memcached">Memcached</h3>
+<ul>
+<li>Simpler than Redis, but higher throughput for simple key-value operations</li>
+<li>Multi-threaded (uses all CPU cores)</li>
+<li>Slab allocation prevents memory fragmentation</li>
+<li>No persistence, no replication — pure caching</li>
+</ul>
+<h3 id="critical-problems">Critical Problems</h3>
+<ul>
+<li><strong>Thundering herd</strong>: many requests hit DB simultaneously on cache miss → use locking, stale-while-revalidate</li>
+<li><strong>Cache stampede</strong>: cache cold start overwhelms DB → use warming, gradual traffic shift</li>
+<li><strong>Hot keys</strong>: single key overwhelms a cache node → use key replication, L1 cache</li>
+<li><strong>Cache penetration</strong>: requests for non-existent data → cache null values, bloom filters</li>
+<li><strong>Stale data</strong>: cache doesn't reflect DB state → use event-based invalidation, short TTLs</li>
+</ul>
+<h3 id="production-best-practices">Production Best Practices</h3>
+<ul>
+<li>Use different TTLs per data type with jitter</li>
+<li>Always handle cache failures gracefully (fallback to DB)</li>
+<li>Monitor hit rate, latency, memory, evictions continuously</li>
+<li>Use consistent hashing for key distribution</li>
+<li>Multi-tier caching (L1 in-process + L2 distributed + CDN) for best performance</li>
+<li>Cache is not a database — always have a source of truth</li>
+</ul>
+<h3 id="eviction-policies">Eviction Policies</h3>
+<ul>
+<li><strong>LRU</strong> (most common): evicts least recently used, good for temporal locality</li>
+<li><strong>LFU</strong>: evicts least frequently used, good for stable access patterns</li>
+<li><strong>ARC</strong>: adaptive, self-tuning between recency and frequency</li>
+<li><strong>FIFO/Random</strong>: simple but generally lower hit rates</li>
+</ul>
+<h3 id="real-world-systems">Real-World Systems</h3>
+<ul>
+<li><strong>Facebook</strong>: Thousands of Memcached servers, leases for thundering herd, McRouter for routing, TAO for graph caching</li>
+<li><strong>Netflix</strong>: EVCache (Memcached-based), zone-aware replication, near-cache (Caffeine L1)</li>
+<li><strong>Twitter</strong>: Redis for timelines and counters, Twemproxy for sharding, fanout-on-write pattern</li>
+</ul>
+<hr></hr>
+<p><em>Next Chapter: <a href="Chapter-14-Distributed-File-Systems.html">Chapter 14 — Distributed File Systems</a></em></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter-12-Distributed-Transactions.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 12: Distributed Transactions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter-14-Distributed-File-Systems.html" class="navigation navigation-next " aria-label="Next page: Chapter 14: Distributed File Systems">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 13: Distributed Caching","level":"4.3","depth":1,"next":{"title":"Chapter 14: Distributed File Systems","level":"4.4","depth":1,"path":"PART-3-STORAGE-SYSTEMS/Chapter-14-Distributed-File-Systems.md","ref":"PART-3-STORAGE-SYSTEMS/Chapter-14-Distributed-File-Systems.md","articles":[]},"previous":{"title":"Chapter 12: Distributed Transactions","level":"4.2","depth":1,"path":"PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.md","ref":"PART-3-STORAGE-SYSTEMS/Chapter-12-Distributed-Transactions.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-3-STORAGE-SYSTEMS/Chapter-13-Distributed-Caching.md","mtime":"2026-05-23T03:54:43.136Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:21:13.964Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

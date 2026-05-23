@@ -1,0 +1,1415 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter 14: Distributed File Systems · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.2.0">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter-15-Stream-Processing-Systems.html" />
+    
+    
+    <link rel="prev" href="Chapter-13-Distributed-Caching.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 1: Foundations</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-01-Introduction-to-Distributed-Systems.html">
+            
+                    
+                    Chapter 1: Introduction to Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-02-Networking-Fundamentals.html">
+            
+                    
+                    Chapter 2: Networking Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-03-Time-and-Clocks.html">
+            
+                    
+                    Chapter 3: Time and Clocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                <a href="../PART-1-FOUNDATIONS/Chapter-04-Processes-Threads-Concurrency.html">
+            
+                    
+                    Chapter 4: Processes, Threads, and Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 2: Core Principles</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-05-Distributed-System-Models.html">
+            
+                    
+                    Chapter 5: Distributed System Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-06-CAP-Theorem.html">
+            
+                    
+                    Chapter 6: CAP Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-07-Consistency-Models.html">
+            
+                    
+                    Chapter 7: Consistency Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-08-Replication.html">
+            
+                    
+                    Chapter 8: Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-09-Partitioning-and-Sharding.html">
+            
+                    
+                    Chapter 9: Partitioning and Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                <a href="../PART-2-CORE-PRINCIPLES/Chapter-10-Consensus-Algorithms.html">
+            
+                    
+                    Chapter 10: Consensus Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 3: Storage Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="Chapter-11-Distributed-Databases.html">
+            
+                <a href="Chapter-11-Distributed-Databases.html">
+            
+                    
+                    Chapter 11: Distributed Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="Chapter-12-Distributed-Transactions.html">
+            
+                <a href="Chapter-12-Distributed-Transactions.html">
+            
+                    
+                    Chapter 12: Distributed Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="Chapter-13-Distributed-Caching.html">
+            
+                <a href="Chapter-13-Distributed-Caching.html">
+            
+                    
+                    Chapter 13: Distributed Caching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4" data-path="Chapter-14-Distributed-File-Systems.html">
+            
+                <a href="Chapter-14-Distributed-File-Systems.html">
+            
+                    
+                    Chapter 14: Distributed File Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="Chapter-15-Stream-Processing-Systems.html">
+            
+                <a href="Chapter-15-Stream-Processing-Systems.html">
+            
+                    
+                    Chapter 15: Stream Processing Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 4: Microservices and Cloud</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-16-Microservices-Architecture.html">
+            
+                    
+                    Chapter 16: Microservices Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-17-Service-Discovery.html">
+            
+                    
+                    Chapter 17: Service Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-18-Containerization.html">
+            
+                    
+                    Chapter 18: Containerization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-19-Kubernetes-Deep-Dive.html">
+            
+                    
+                    Chapter 19: Kubernetes Deep Dive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                <a href="../PART-4-MICROSERVICES-AND-CLOUD/Chapter-20-Service-Mesh.html">
+            
+                    
+                    Chapter 20: Service Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 5: Reliability and Scalability</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-21-Scalability-Patterns.html">
+            
+                    
+                    Chapter 21: Scalability Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-22-Reliability-Engineering.html">
+            
+                    
+                    Chapter 22: Reliability Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-23-Fault-Tolerance.html">
+            
+                    
+                    Chapter 23: Fault Tolerance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-24-Observability.html">
+            
+                    
+                    Chapter 24: Observability
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                <a href="../PART-5-RELIABILITY-AND-SCALABILITY/Chapter-25-Distributed-Monitoring.html">
+            
+                    
+                    Chapter 25: Distributed Monitoring
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 6: Advanced Distributed Systems</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-26-Event-Driven-Architecture.html">
+            
+                    
+                    Chapter 26: Event-Driven Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-27-Distributed-Scheduling.html">
+            
+                    
+                    Chapter 27: Distributed Scheduling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-28-Geo-Distributed-Systems.html">
+            
+                    
+                    Chapter 28: Geo-Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-29-Security-in-Distributed-Systems.html">
+            
+                    
+                    Chapter 29: Security in Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                <a href="../PART-6-ADVANCED-DISTRIBUTED-SYSTEMS/Chapter-30-Distributed-Machine-Learning-Systems.html">
+            
+                    
+                    Chapter 30: Distributed Machine Learning Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part 7: Modern System Design</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-31-Real-Time-Systems.html">
+            
+                    
+                    Chapter 31: Real-Time Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-32-Large-Scale-System-Design-Case-Studies.html">
+            
+                    
+                    Chapter 32: Large Scale System Design Case Studies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-33-Distributed-System-Anti-Patterns.html">
+            
+                    
+                    Chapter 33: Distributed System Anti-Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-34-Performance-Engineering.html">
+            
+                    
+                    Chapter 34: Performance Engineering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                <a href="../PART-7-MODERN-SYSTEM-DESIGN/Chapter-35-Future-of-Distributed-Systems.html">
+            
+                    
+                    Chapter 35: Future of Distributed Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extras</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../APPENDIX-Mastery-Roadmap.html">
+            
+                <a href="../APPENDIX-Mastery-Roadmap.html">
+            
+                    
+                    Appendix: Mastery Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 14: Distributed File Systems</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-14-distributed-file-systems">Chapter 14: Distributed File Systems</h1>
+<h2 id="1-why-this-matters">1. Why This Matters</h2>
+<p>In the early days of computing, scaling storage was a matter of buying a bigger, more expensive hard drive (scale-up or vertical scaling). However, as the Internet exploded in the late 1990s and early 2000s, companies like Google and Yahoo realized that vertical scaling was a dead end. The sheer volume of web pages, logs, and user data outpaced the physical limitations and financial viability of single-machine storage architectures. </p>
+<p>Distributed File Systems (DFS) were born out of a fundamental paradigm shift: <strong>instead of buying one million-dollar supercomputer with an ultra-reliable disk array (SAN/NAS), buy a thousand one-thousand-dollar commodity computers with cheap, failure-prone disks, and use software to make the entire cluster look like a single, massive, highly reliable file system.</strong></p>
+<p>This matters profoundly because virtually every modern distributed data system—from databases (Cassandra, HBase) to Big Data processing engines (Hadoop MapReduce, Apache Spark) to AI/ML model training pipelines—relies on a distributed storage layer. If you cannot store petabytes of data reliably, you cannot process petabytes of data.</p>
+<p>Furthermore, DFS architectures force engineers to confront the harsh realities of distributed systems:</p>
+<ul>
+<li><strong>Hardware fails constantly:</strong> In a cluster of 10,000 machines, disk crashes, network switches failing, and power outages are not edge cases; they are daily occurrences.</li>
+<li><strong>Network bandwidth is finite:</strong> Moving data to compute is expensive. DFS designs prioritize moving compute to the data (data locality).</li>
+<li><strong>Throughput over Latency:</strong> While a local SSD can fetch a 4KB file in microseconds, a DFS might take milliseconds. But a DFS can deliver gigabytes per second of sustained sequential read throughput across thousands of parallel clients, which is exactly what analytics and AI workloads demand.</li>
+</ul>
+<p>Understanding Distributed File Systems is the foundation for understanding everything else in the data engineering and large-scale backend infrastructure space. </p>
+<hr></hr>
+<h2 id="2-beginner-intuition">2. Beginner Intuition</h2>
+<p>Imagine you are managing a <strong>massive municipal library</strong> containing millions of books. </p>
+<p>If you try to put all the books into a single, giant building, you run into problems: the foundation might crack under the weight, the doors will get jammed with thousands of people trying to enter at once, and if the building catches fire, you lose all human knowledge. This is a single physical hard drive.</p>
+<p>To solve this, you decide to rent <strong>hundreds of smaller, cheap warehouses</strong> spread across the city. </p>
+<ul>
+<li>The warehouses are the <strong>Data Nodes (or Chunkservers)</strong>. Their only job is to store boxes of books on shelves. </li>
+<li>To prevent data loss when a warehouse floods, you make a rule: every box of books must be copied and stored in at least <strong>three different warehouses</strong>. This is <strong>Replication</strong>.</li>
+<li>However, if people just walk into random warehouses, they will never find the book they want. So, you build a small, highly organized <strong>Central Catalog Office</strong>. </li>
+<li>This office is the <strong>Master Node (or NameNode)</strong>. It doesn't store the actual books; it only stores a ledger (metadata) that says: <em>"The Harry Potter series is in Box #452. Box #452 is located in Warehouse A, Warehouse D, and Warehouse F."</em></li>
+</ul>
+<p>When a user wants to read a book, they:</p>
+<ol>
+<li>Call the Central Catalog Office to ask where the box is.</li>
+<li>The Catalog Office tells them the locations.</li>
+<li>The user hangs up and drives <em>directly</em> to the nearest warehouse to get the books.</li>
+</ol>
+<p>By separating the <strong>metadata</strong> (the catalog) from the <strong>actual data</strong> (the warehouses), and by ensuring everything is replicated, you have built a system that can scale infinitely simply by renting more warehouses, and can survive multiple warehouses burning down simultaneously.</p>
+<hr></hr>
+<h2 id="3-core-theory">3. Core Theory</h2>
+<p>Before diving into specific systems, we must establish the theoretical primitives that govern distributed file systems.</p>
+<h3 id="31-posix-vs-relaxed-semantics">3.1 POSIX vs. Relaxed Semantics</h3>
+<p>Traditional file systems (ext4, NTFS) adhere strictly to POSIX semantics. POSIX guarantees strong consistency: if Client A writes a byte to a file, Client B will instantly see that byte upon reading. POSIX supports random writes, file locking, and directory hard links. 
+In a distributed environment, providing strict POSIX semantics across thousands of nodes introduces massive locking overhead and latency. Therefore, modern DFS (like GFS and HDFS) <strong>relax POSIX semantics</strong>. They typically optimize for:</p>
+<ul>
+<li><strong>WORM (Write Once, Read Many):</strong> Files are created, written sequentially, and then closed. They are rarely or never modified, only read.</li>
+<li><strong>Appends:</strong> If modifications are allowed, they are usually restricted to appending data to the end of a file, rather than overwriting data in the middle.</li>
+</ul>
+<h3 id="32-blocks-and-chunks">3.2 Blocks and Chunks</h3>
+<p>A typical OS file system manages data in small blocks (e.g., 4KB). In a DFS, managing petabytes of data in 4KB blocks would require an impossibly large metadata catalog. Thus, a DFS divides files into massive chunks (e.g., 64MB in GFS, 128MB or 256MB in HDFS). </p>
+<ul>
+<li>A 1GB file in HDFS (with 128MB blocks) is split into 8 blocks. </li>
+<li>These blocks are stored as regular, individual files on the local Linux file system of the worker nodes.</li>
+</ul>
+<h3 id="33-replication-vs-erasure-coding">3.3 Replication vs. Erasure Coding</h3>
+<p>To achieve fault tolerance, a DFS must store redundant data.</p>
+<ul>
+<li><strong>Replication:</strong> The simplest method. A Replication Factor (RF) of 3 means 3 exact copies of a block exist. This has a 200% storage overhead.</li>
+<li><strong>Erasure Coding (EC):</strong> An advanced mathematical technique (like Reed-Solomon). Data is split into $k$ data fragments and $m$ parity fragments. For example, RS(6,3) means 6 chunks of data generate 3 chunks of parity. You can lose <em>any</em> 3 chunks and still recover the original data. The storage overhead is only 50% ($3/6$), but it requires heavy CPU computation to reconstruct lost data and increases network traffic during recovery.</li>
+</ul>
+<h3 id="34-consistency-models-in-storage">3.4 Consistency Models in Storage</h3>
+<ul>
+<li><strong>Strong Consistency:</strong> A read always returns the latest written data.</li>
+<li><strong>Eventual Consistency:</strong> A read might return stale data, but eventually, all replicas will converge. Object stores (like early Amazon S3) heavily utilized eventual consistency for high availability. </li>
+</ul>
+<h3 id="35-the-cap-theorem-implication">3.5 The CAP Theorem Implication</h3>
+<p>DFS architectures generally prioritize <strong>C</strong>onsistency and <strong>P</strong>artition Tolerance over strict <strong>A</strong>vailability. If the central metadata node goes down, the file system becomes temporarily unavailable rather than allowing split-brain writes that would corrupt the global namespace.</p>
+<hr></hr>
+<h2 id="4-architecture-deep-dive">4. Architecture Deep Dive</h2>
+<h3 id="41-google-file-system-gfs">4.1 Google File System (GFS)</h3>
+<p>Published in a seminal 2003 paper, GFS was designed for Google's specific workloads: massive web crawls and index generation.</p>
+<h4 id="architecture-components">Architecture Components</h4>
+<ul>
+<li><strong>Single Master:</strong> Maintains all file system metadata. This includes the namespace (directory tree), access control information, mapping of files to chunks, and current locations of chunks. The Master holds this entirely in memory for fast access.</li>
+<li><strong>Chunkservers:</strong> Commodity Linux machines running a GFS daemon. They store chunks as standard local Linux files and read/write them specified by chunk handles and byte ranges.</li>
+<li><strong>Clients:</strong> GFS library linked into applications. They communicate with the Master for metadata, but read/write data directly to/from Chunkservers.</li>
+</ul>
+<h4 id="the-64mb-chunk-size-decision">The 64MB Chunk Size Decision</h4>
+<p>GFS chose an unusually large chunk size of 64MB. 
+<strong>Advantages:</strong></p>
+<ol>
+<li><strong>Reduces Master Load:</strong> Clients interact with the Master less frequently. A single request gives the location for 64MB of data.</li>
+<li><strong>Network Efficiency:</strong> Clients can keep persistent TCP connections to Chunkservers to read large amounts of data.</li>
+<li><strong>Metadata Size:</strong> The Master needs less than 64 bytes of metadata per 64MB chunk, allowing petabytes of file metadata to fit into gigabytes of RAM.</li>
+</ol>
+<p><strong>Disadvantages (The Small Files Problem):</strong>
+If a file is 1MB, it still consumes a chunk (though logically it only takes 1MB on disk, not 64MB). If thousands of clients simultaneously access a small file (like an executable), the single Chunkserver holding it becomes a bottleneck. Google mitigated this by using higher replication factors for hot executables and staggering client start times.</p>
+<h4 id="replication-strategy">Replication Strategy</h4>
+<p>By default, GFS replicates chunks 3 times. The Master places replicas across different server racks. If a rack's switch fails, the data remains available on another rack. </p>
+<h4 id="relaxed-consistency-model">Relaxed Consistency Model</h4>
+<p>GFS consistency is complex:</p>
+<ul>
+<li><strong>Defined:</strong> All replicas are identical, and the client knows exactly what was written.</li>
+<li><strong>Consistent but Undefined:</strong> All replicas are identical, but multiple clients wrote concurrently, resulting in interleaved data (a mix of fragments).</li>
+<li><strong>Inconsistent:</strong> Replicas differ.</li>
+</ul>
+<p>GFS relies on a <strong>Primary Replica</strong> to serialize mutations. The Master grants a "chunk lease" to one replica, making it the primary. The primary dictates the order of operations, and secondary replicas must follow that exact order.</p>
+<h4 id="record-append-operations">Record Append Operations</h4>
+<p>Google built GFS primarily for MapReduce, where hundreds of workers might append logs to a single file simultaneously. GFS introduced <strong>Atomic Record Append</strong>. 
+Instead of the client specifying the offset to write at, the client just says "append this data". GFS guarantees the data is written atomically <strong>at least once</strong> as a contiguous sequence of bytes. 
+Because of the "at least once" guarantee, concurrent appends might result in duplicates or padding bytes. Applications using GFS were written to handle this by inserting checksums and unique identifiers in their records to filter out duplicates.</p>
+<h4 id="master-failure-handling">Master Failure Handling</h4>
+<p>The single Master is a vulnerability. </p>
+<ul>
+<li><strong>Operation Log:</strong> Every metadata change is written to an operation log, which is synchronously replicated to remote machines. </li>
+<li><strong>Checkpoints:</strong> To prevent the log from growing infinitely, the Master creates B-tree checkpoints of its state.</li>
+<li><strong>Shadow Masters:</strong> If the primary Master dies, external monitoring systems promote a shadow master. Shadow masters continuously read the operation log to stay up-to-date and provide read-only access even while the primary is down.</li>
+</ul>
+<h3 id="42-hadoop-distributed-file-system-hdfs">4.2 Hadoop Distributed File System (HDFS)</h3>
+<p>HDFS is an open-source clone of GFS, created by Doug Cutting at Yahoo. It forms the backbone of the Hadoop ecosystem.</p>
+<h4 id="architecture-components">Architecture Components</h4>
+<ul>
+<li><strong>NameNode (The Master):</strong> Stores the namespace tree, the <code>FsImage</code> (checkpoint of metadata), and the <code>EditLog</code> (operation log).</li>
+<li><strong>DataNode (The Chunkserver):</strong> Stores actual blocks (default 128MB or 256MB). Sends periodic Heartbeats and BlockReports to the NameNode.</li>
+</ul>
+<h4 id="block-replication-and-rack-awareness">Block Replication and Rack Awareness</h4>
+<p>When an HDFS client writes a file, the NameNode allocates blocks and dictates a <strong>Rack-Aware Placement Policy</strong>:</p>
+<ol>
+<li><strong>Replica 1:</strong> Placed on the same node as the writer (or a random node if the writer is outside the cluster).</li>
+<li><strong>Replica 2:</strong> Placed on a different, remote rack.</li>
+<li><strong>Replica 3:</strong> Placed on the <em>same</em> remote rack as Replica 2, but on a different node.
+This brilliant policy minimizes cross-rack network traffic during writes (only one cross-rack hop) while still protecting against a total rack switch failure.</li>
+</ol>
+<h4 id="detailed-data-flow-reads-and-writes">Detailed Data Flow (Reads and Writes)</h4>
+<p><strong>HDFS Read Flow:</strong></p>
+<ol>
+<li>Client calls <code>open()</code> on <code>FileSystem</code>.</li>
+<li>RPC to NameNode to get the block locations for the first few blocks. NameNode returns DataNodes sorted by proximity to the client.</li>
+<li>Client calls <code>read()</code>, connecting to the closest DataNode. Data streams directly from DataNode to Client.</li>
+<li>When the block ends, the client closes the connection and connects to the best DataNode for the next block.</li>
+</ol>
+<p><strong>HDFS Write Pipeline Flow:</strong></p>
+<ol>
+<li>Client calls <code>create()</code>. NameNode checks permissions and ensures the file doesn't exist.</li>
+<li>Client writes data to an internal queue.</li>
+<li>Client requests a block allocation. NameNode returns a list of 3 DataNodes.</li>
+<li>The client forms a <strong>pipeline</strong>: Client $\rightarrow$ DN1 $\rightarrow$ DN2 $\rightarrow$ DN3.</li>
+<li>Data is pushed in small packets (e.g., 64KB). Client pushes to DN1; DN1 writes to its disk and forwards to DN2; DN2 writes and forwards to DN3.</li>
+<li>Acknowledgments flow backwards (DN3 $\rightarrow$ DN2 $\rightarrow$ DN1 $\rightarrow$ Client).</li>
+<li>If a DataNode fails during the write, the pipeline is torn down, the failed node is removed, and the block is committed to the remaining nodes. The NameNode will asynchronously replicate the block to a new 3rd node later.</li>
+</ol>
+<h4 id="hdfs-federation-and-high-availability-ha">HDFS Federation and High Availability (HA)</h4>
+<ul>
+<li><strong>Federation:</strong> Because the NameNode keeps all metadata in RAM, it becomes a bottleneck around 100-200 million files. Federation allows multiple active NameNodes. For example, <code>NameNode A</code> manages <code>/user</code>, while <code>NameNode B</code> manages <code>/logs</code>. They share the same underlying pool of DataNodes.</li>
+<li><strong>HA NameNode:</strong> Solves the single-point-of-failure problem. An Active NameNode and a Standby NameNode. The Active writes edits to a cluster of <strong>JournalNodes</strong> (quorum-based). The Standby constantly reads from JournalNodes to stay strictly synchronized. ZooKeeper and a ZKFailoverController (ZKFC) monitor the nodes and automatically trigger failover if the Active dies.</li>
+</ul>
+<h3 id="43-ceph">4.3 Ceph</h3>
+<p>While GFS and HDFS are optimized for massive sequential files, <strong>Ceph</strong> aims to be the unified "everything" storage system: Object, Block, and File, all in one cluster.</p>
+<h4 id="the-crush-algorithm">The CRUSH Algorithm</h4>
+<p>The most revolutionary aspect of Ceph is that <strong>it has no central metadata server for data placement.</strong> 
+In HDFS, you must ask the NameNode where a block is. In Ceph, clients use the <strong>CRUSH (Controlled Replication Under Scalable Hashing)</strong> algorithm.
+Given a file name and a cluster topology map, the client runs a deterministic mathematical function to calculate exactly which OSD (Object Storage Daemon / worker node) holds the data. 
+Because calculation replaces lookups, Ceph eliminates the central metadata bottleneck completely.</p>
+<h4 id="storage-abstractions">Storage Abstractions</h4>
+<ol>
+<li><strong>RADOS (Reliable Autonomic Distributed Object Store):</strong> The foundational layer. Everything in Ceph is ultimately an object stored in RADOS.</li>
+<li><strong>RBD (RADOS Block Device):</strong> Strips block device commands (like a virtual hard drive for VMs) and stores the blocks as objects in RADOS. Crucial for OpenStack and Kubernetes persistent volumes.</li>
+<li><strong>CephFS:</strong> A POSIX-compliant distributed file system built on top of RADOS. It uses a separate Metadata Server (MDS) cluster purely to handle directory trees and POSIX permissions, while data flows directly via CRUSH to OSDs.</li>
+<li><strong>RGW (RADOS Gateway):</strong> Provides S3-compatible REST object storage APIs.</li>
+</ol>
+<h4 id="self-healing-and-peering">Self-Healing and Peering</h4>
+<p>Ceph OSDs constantly heartbeat each other. If an OSD crashes, the cluster map is updated. The CRUSH algorithm inherently knows that data previously mapped to the dead node must now map to other surviving nodes. The surviving OSDs autonomously communicate (peering) and begin transferring data (backfilling) to restore the replication factor, completely transparent to the client.</p>
+<h3 id="44-object-storage-s3-gcs-azure-blob">4.4 Object Storage (S3, GCS, Azure Blob)</h3>
+<p>The cloud revolution brought Object Storage to the forefront. Unlike POSIX file systems, Object Storage features a <strong>Flat Namespace</strong>.</p>
+<h4 id="architecture">Architecture</h4>
+<p>There are no directories. <code>/images/2026/photo.jpg</code> is not a file inside a folder inside a folder. The entire string is simply a unique <strong>Key</strong>.</p>
+<ul>
+<li><strong>Data Model:</strong> An object consists of Data (the file), Metadata (key-value pairs), and a globally unique Key.</li>
+<li><strong>RESTful Interface:</strong> Accessed purely via HTTP verbs (PUT, GET, DELETE, HEAD). </li>
+</ul>
+<h4 id="consistency-models">Consistency Models</h4>
+<p>Originally, systems like Amazon S3 offered <strong>Eventual Consistency</strong> to maximize availability across global data centers. If you wrote a new object and immediately read it, you might get a 404 Not Found. 
+However, due to massive engineering efforts, modern S3 now provides <strong>Strong Read-After-Write Consistency</strong> for both new objects and overwrites, using complex consensus protocols behind the API gateway.</p>
+<h4 id="tiered-storage">Tiered Storage</h4>
+<p>Because objects are self-contained and immutable, they are perfectly suited for lifecycle policies. Object stores automatically migrate cold data:</p>
+<ul>
+<li><strong>Hot/Standard:</strong> Fast SSDs/HDDs, immediate access.</li>
+<li><strong>Infrequent Access (IA):</strong> Cheaper storage, higher retrieval costs.</li>
+<li><strong>Archive (Glacier):</strong> Tape drives or spun-down disks. Retrieval takes minutes to hours, but storage is pennies per terabyte.</li>
+</ul>
+<hr></hr>
+<h2 id="5-visual-diagrams">5. Visual Diagrams</h2>
+<h3 id="51-gfs-architecture">5.1 GFS Architecture</h3>
+<div class="mermaid">
+graph TD
+    classDef master fill:#f9d0c4,stroke:#333,stroke-width:2px;
+    classDef chunkserver fill:#d4e6f1,stroke:#333,stroke-width:2px;
+    classDef client fill:#d5f5e3,stroke:#333,stroke-width:2px;
+
+    Client[GFS Client App]:::client
+    Master((GFS Master<br></br>Metadata in RAM)):::master
+    CS1[Chunkserver 1<br></br>Linux FS]:::chunkserver
+    CS2[Chunkserver 2<br></br>Linux FS]:::chunkserver
+    CS3[Chunkserver n<br></br>Linux FS]:::chunkserver
+
+    Client --&gt;|1. Filename &amp; Chunk Index| Master
+    Master --&gt;|2. Chunk Handle &amp; Locations| Client
+    Client --&gt;|3. Read/Write Data| CS1
+    Client --&gt;|3. Read/Write Data| CS2
+    Master -.-&gt;|Heartbeats / Block Reports / Replicate cmds| CS1
+    Master -.-&gt;|Heartbeats / Block Reports / Replicate cmds| CS2
+    Master -.-&gt;|Heartbeats / Block Reports / Replicate cmds| CS3
+</div>
+
+<h3 id="52-hdfs-write-pipeline-flow">5.2 HDFS Write Pipeline Flow</h3>
+<div class="mermaid">
+sequenceDiagram
+    participant C as HDFS Client
+    participant NN as NameNode (Active)
+    participant DN1 as DataNode 1 (Rack 1)
+    participant DN2 as DataNode 2 (Rack 2)
+    participant DN3 as DataNode 3 (Rack 2)
+
+    C-&gt;&gt;NN: create(/user/data.csv)
+    NN--&gt;&gt;C: OK, file created in metadata
+    C-&gt;&gt;NN: getBlockLocations()
+    NN--&gt;&gt;C: List: DN1, DN2, DN3
+
+    note over C, DN3: Pipeline Construction
+    C-&gt;&gt;DN1: Establish TCP connection
+    DN1-&gt;&gt;DN2: Forward connection
+    DN2-&gt;&gt;DN3: Forward connection
+    DN3--&gt;&gt;DN2: Ack Ready
+    DN2--&gt;&gt;DN1: Ack Ready
+    DN1--&gt;&gt;C: Pipeline Ready
+
+    note over C, DN3: Data Streaming (64KB packets)
+    C-&gt;&gt;DN1: Write Packet 1
+    DN1-&gt;&gt;DN2: Forward Packet 1 (while writing to disk)
+    DN2-&gt;&gt;DN3: Forward Packet 1 (while writing to disk)
+    DN3--&gt;&gt;DN2: Ack Packet 1
+    DN2--&gt;&gt;DN1: Ack Packet 1
+    DN1--&gt;&gt;C: Ack Packet 1
+
+    C-&gt;&gt;NN: complete(/user/data.csv)
+    NN--&gt;&gt;C: Success
+</div>
+
+<h3 id="53-ceph-crush-data-placement">5.3 Ceph CRUSH Data Placement</h3>
+<div class="mermaid">
+graph TD
+    classDef logic fill:#fcf3cf,stroke:#333,stroke-width:2px;
+    classDef storage fill:#ebdef0,stroke:#333,stroke-width:2px;
+
+    Client[Ceph Client]
+    Hash[Hash Function]:::logic
+    PG[Placement Group ID]:::logic
+    CRUSH[CRUSH Mathematical Function + Cluster Map]:::logic
+
+    OSD1[(OSD 1)]:::storage
+    OSD2[(OSD 5)]:::storage
+    OSD3[(OSD 12)]:::storage
+
+    Client --&gt;|File: video.mp4| Hash
+    Hash --&gt; PG
+    PG --&gt; CRUSH
+    CRUSH --&gt;|Deterministic Output| OSD1
+    CRUSH --&gt;|Deterministic Output| OSD2
+    CRUSH --&gt;|Deterministic Output| OSD3
+    Client -.-&gt;|Direct IO| OSD1
+</div>
+
+<h3 id="54-object-storage-architecture-eg-s3">5.4 Object Storage Architecture (e.g., S3)</h3>
+<div class="mermaid">
+graph LR
+    Client((Client))
+    API[Load Balancer &amp; API Gateway]
+    Auth[IAM / Auth Service]
+    Meta[(Metadata DB<br></br>Cassandra/Dynamo)]
+    Storage[(Storage Fleet<br></br>Blob Nodes)]
+
+    Client --&gt;|PUT /bucket/doc.pdf| API
+    API --&gt; Auth
+    Auth --&gt; API
+    API --&gt;|1. Store bytes| Storage
+    API --&gt;|2. Write Key &amp; S3 path| Meta
+</div>
+
+<hr></hr>
+<h2 id="6-real-production-examples">6. Real Production Examples</h2>
+<h3 id="61-google-colossus-the-gfs-successor">6.1 Google Colossus (The GFS Successor)</h3>
+<p>By 2010, the single-master design of GFS hit its absolute limits. A single machine could no longer hold the metadata for Google's ever-growing clusters. Google engineered <strong>Colossus</strong>.</p>
+<ul>
+<li><strong>Distributed Metadata:</strong> Instead of a single RAM-based Master, Colossus stores its metadata in <strong>Bigtable</strong> (Google's NoSQL distributed database). This allows metadata to scale infinitely.</li>
+<li><strong>Smaller Chunks &amp; Erasure Coding:</strong> Because metadata scaling is no longer a bottleneck, Colossus supports chunk sizes as small as 1MB. It aggressively utilizes Reed-Solomon Erasure Coding rather than 3x replication, saving Google billions of dollars in hard drive costs.</li>
+</ul>
+<h3 id="62-facebooks-f4-warm-storage">6.2 Facebook's f4 (Warm Storage)</h3>
+<p>Facebook generates petabytes of photos and videos daily. They realized that data has temperature: new photos are "hot" (read constantly), but after 3 months, they become "warm" or "cold" (rarely read, but must never be deleted).</p>
+<ul>
+<li><strong>Haystack:</strong> Facebook's system for Hot data.</li>
+<li><strong>f4:</strong> Built specifically for Warm data. It assumes objects are immutable. It uses extremely dense storage racks with low-power CPUs. It uses a highly optimized Erasure Coding scheme (10 data blocks + 4 parity blocks) reducing replication overhead to just 1.4x (compared to 3.0x), completely revolutionizing cost-efficiency for social media scale.</li>
+</ul>
+<h3 id="63-linkedin-ambry">6.3 LinkedIn Ambry</h3>
+<p>LinkedIn required a system optimized for storing billions of small media files (profile pictures, resumes, PDFs) with extremely low latency. HDFS was too slow, and commercial SANs were too expensive.</p>
+<ul>
+<li><strong>Ambry:</strong> An open-source distributed object store designed by LinkedIn. It excels at <strong>small object storage</strong>. Instead of managing files individually, Ambry batches millions of small objects into large, append-only segment files. It uses aggressive memory mapping and zero-copy network I/O, delivering near-disk-speed reads over the network.</li>
+</ul>
+<hr></hr>
+<h2 id="7-java-implementations">7. Java Implementations</h2>
+<p>Let's look at how these systems are implemented and interacted with in the real world using production-grade Java.</p>
+<h3 id="71-hdfs-client-readwrite-operations">7.1 HDFS Client Read/Write Operations</h3>
+<p>When interacting with HDFS, you use the <code>org.apache.hadoop.fs.FileSystem</code> API. This abstracts away the complex NameNode RPCs and DataNode pipelines.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.hadoop.conf.Configuration;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FSDataInputStream;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FSDataOutputStream;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FileSystem;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.Path;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.nio.charset.StandardCharsets;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HdfsClientService</span> {
+    <span class="hljs-keyword">private</span> FileSystem fs;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">HdfsClientService</span><span class="hljs-params">(String hdfsUri)</span> <span class="hljs-keyword">throws</span> IOException {
+        <span class="hljs-type">Configuration</span> <span class="hljs-variable">conf</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Configuration</span>();
+        <span class="hljs-comment">// Point the client to the NameNode URI</span>
+        conf.set(<span class="hljs-string">"fs.defaultFS"</span>, hdfsUri);
+        <span class="hljs-comment">// Optimize for large sequential reads</span>
+        conf.setInt(<span class="hljs-string">"io.file.buffer.size"</span>, <span class="hljs-number">131072</span>); 
+        <span class="hljs-built_in">this</span>.fs = FileSystem.get(conf);
+    }
+
+    <span class="hljs-comment">/**
+     * Writes a file to HDFS, handling the underlying pipeline abstraction automatically.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">writeFile</span><span class="hljs-params">(String targetPath, String content)</span> <span class="hljs-keyword">throws</span> IOException {
+        <span class="hljs-type">Path</span> <span class="hljs-variable">path</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Path</span>(targetPath);
+
+        <span class="hljs-comment">// overwrite=true. Note: HDFS does not support random writes, only create/append.</span>
+        <span class="hljs-keyword">try</span> (<span class="hljs-type">FSDataOutputStream</span> <span class="hljs-variable">out</span> <span class="hljs-operator">=</span> fs.create(path, <span class="hljs-literal">true</span>)) {
+            <span class="hljs-type">byte</span>[] bytes = content.getBytes(StandardCharsets.UTF_8);
+            out.write(bytes);
+            <span class="hljs-comment">// hsync() forces buffers to be flushed to DataNode disks (durability guarantee)</span>
+            out.hsync(); 
+            System.out.println(<span class="hljs-string">"File written successfully to HDFS: "</span> + path);
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Reads a file. HDFS attempts to read from the closest replica automatically.
+     */</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">readFile</span><span class="hljs-params">(String sourcePath)</span> <span class="hljs-keyword">throws</span> IOException {
+        <span class="hljs-type">Path</span> <span class="hljs-variable">path</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Path</span>(sourcePath);
+        <span class="hljs-keyword">if</span> (!fs.exists(path)) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">"File not found: "</span> + sourcePath);
+        }
+
+        <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();
+        <span class="hljs-type">byte</span>[] buffer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[<span class="hljs-number">4096</span>];
+        <span class="hljs-type">int</span> bytesRead;
+
+        <span class="hljs-keyword">try</span> (<span class="hljs-type">FSDataInputStream</span> <span class="hljs-variable">in</span> <span class="hljs-operator">=</span> fs.open(path)) {
+            <span class="hljs-keyword">while</span> ((bytesRead = in.read(buffer)) &gt; <span class="hljs-number">0</span>) {
+                result.append(<span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(buffer, <span class="hljs-number">0</span>, bytesRead, StandardCharsets.UTF_8));
+            }
+        }
+        <span class="hljs-keyword">return</span> result.toString();
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">close</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException {
+        <span class="hljs-keyword">if</span> (fs != <span class="hljs-literal">null</span>) fs.close();
+    }
+}
+</code></pre>
+<h3 id="72-simple-distributed-file-system-chunk-server-spring-boot">7.2 Simple Distributed File System Chunk Server (Spring Boot)</h3>
+<p>To understand a DataNode/Chunkserver, here is a simplified implementation in Java. It receives a chunk over HTTP and saves it to local disk, computing a checksum.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.*;
+<span class="hljs-keyword">import</span> org.springframework.http.ResponseEntity;
+<span class="hljs-keyword">import</span> org.springframework.http.HttpStatus;
+<span class="hljs-keyword">import</span> java.io.*;
+<span class="hljs-keyword">import</span> java.nio.file.*;
+<span class="hljs-keyword">import</span> java.security.MessageDigest;
+
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping("/api/chunk")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ChunkServerApplication</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">STORAGE_DIR</span> <span class="hljs-operator">=</span> <span class="hljs-string">"/var/dfs/data/"</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(STORAGE_DIR).mkdirs(); <span class="hljs-comment">// Ensure data directory exists</span>
+        SpringApplication.run(ChunkServerApplication.class, args);
+    }
+
+    <span class="hljs-comment">/**
+     * Endpoint to receive a chunk from a client or coordinator.
+     */</span>
+    <span class="hljs-meta">@PostMapping("/{chunkId}")</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;String&gt; <span class="hljs-title function_">storeChunk</span><span class="hljs-params">(
+            <span class="hljs-meta">@PathVariable</span> String chunkId, 
+            <span class="hljs-meta">@RequestBody</span> <span class="hljs-type">byte</span>[] data)</span> {
+
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-type">Path</span> <span class="hljs-variable">path</span> <span class="hljs-operator">=</span> Paths.get(STORAGE_DIR, chunkId);
+
+            <span class="hljs-comment">// 1. Write the raw data</span>
+            Files.write(path, data, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+
+            <span class="hljs-comment">// 2. Compute checksum for data integrity (Silent Corruption protection)</span>
+            <span class="hljs-type">MessageDigest</span> <span class="hljs-variable">digest</span> <span class="hljs-operator">=</span> MessageDigest.getInstance(<span class="hljs-string">"SHA-256"</span>);
+            <span class="hljs-type">byte</span>[] hash = digest.digest(data);
+            <span class="hljs-type">String</span> <span class="hljs-variable">checksum</span> <span class="hljs-operator">=</span> bytesToHex(hash);
+
+            <span class="hljs-comment">// 3. Store checksum metadata alongside the chunk</span>
+            Files.writeString(Paths.get(STORAGE_DIR, chunkId + <span class="hljs-string">".meta"</span>), checksum);
+
+            <span class="hljs-keyword">return</span> ResponseEntity.ok(<span class="hljs-string">"Chunk stored successfully. Checksum: "</span> + checksum);
+
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-keyword">return</span> ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body(<span class="hljs-string">"Failed to store chunk: "</span> + e.getMessage());
+        }
+    }
+
+    <span class="hljs-comment">// Helper for checksum formatting</span>
+    <span class="hljs-keyword">private</span> String <span class="hljs-title function_">bytesToHex</span><span class="hljs-params">(<span class="hljs-type">byte</span>[] bytes)</span> {
+        <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">byte</span> b : bytes) {
+            sb.append(String.format(<span class="hljs-string">"%02x"</span>, b));
+        }
+        <span class="hljs-keyword">return</span> sb.toString();
+    }
+}
+</code></pre>
+<h3 id="73-file-upload-with-replication-coordinator">7.3 File Upload with Replication Coordinator</h3>
+<p>This shows how a Master node or Client might coordinate writing a single chunk to 3 different nodes concurrently to achieve Replication Factor 3.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.concurrent.*;
+<span class="hljs-keyword">import</span> java.util.List;
+<span class="hljs-keyword">import</span> java.net.http.*;
+<span class="hljs-keyword">import</span> java.net.URI;
+<span class="hljs-keyword">import</span> java.time.Duration;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ReplicationCoordinator</span> {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> HttpClient httpClient;
+    <span class="hljs-comment">// Thread pool to handle parallel uploads</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">ExecutorService</span> <span class="hljs-variable">executor</span> <span class="hljs-operator">=</span> Executors.newFixedThreadPool(<span class="hljs-number">10</span>);
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ReplicationCoordinator</span><span class="hljs-params">()</span> {
+        <span class="hljs-built_in">this</span>.httpClient = HttpClient.newBuilder()
+                .connectTimeout(Duration.ofSeconds(<span class="hljs-number">5</span>))
+                .build();
+    }
+
+    <span class="hljs-comment">/**
+     * Replicates a chunk to a list of target DataNodes concurrently.
+     * Returns true only if a quorum (majority) of nodes successfully write the data.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">replicateChunk</span><span class="hljs-params">(String chunkId, <span class="hljs-type">byte</span>[] data, List&lt;String&gt; dataNodeUrls)</span> {
+        <span class="hljs-type">CountDownLatch</span> <span class="hljs-variable">latch</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CountDownLatch</span>(dataNodeUrls.size());
+        ConcurrentLinkedQueue&lt;Boolean&gt; results = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentLinkedQueue</span>&lt;&gt;();
+
+        <span class="hljs-keyword">for</span> (String url : dataNodeUrls) {
+            executor.submit(() -&gt; {
+                <span class="hljs-keyword">try</span> {
+                    <span class="hljs-type">HttpRequest</span> <span class="hljs-variable">request</span> <span class="hljs-operator">=</span> HttpRequest.newBuilder()
+                            .uri(URI.create(url + <span class="hljs-string">"/api/chunk/"</span> + chunkId))
+                            .header(<span class="hljs-string">"Content-Type"</span>, <span class="hljs-string">"application/octet-stream"</span>)
+                            .POST(HttpRequest.BodyPublishers.ofByteArray(data))
+                            .build();
+
+                    HttpResponse&lt;String&gt; response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+                    <span class="hljs-keyword">if</span> (response.statusCode() == <span class="hljs-number">200</span>) {
+                        results.add(<span class="hljs-literal">true</span>);
+                    } <span class="hljs-keyword">else</span> {
+                        System.err.println(<span class="hljs-string">"Node "</span> + url + <span class="hljs-string">" failed: "</span> + response.body());
+                        results.add(<span class="hljs-literal">false</span>);
+                    }
+                } <span class="hljs-keyword">catch</span> (Exception e) {
+                    System.err.println(<span class="hljs-string">"Network error to node "</span> + url + <span class="hljs-string">": "</span> + e.getMessage());
+                    results.add(<span class="hljs-literal">false</span>);
+                } <span class="hljs-keyword">finally</span> {
+                    latch.countDown();
+                }
+            });
+        }
+
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// Wait up to 10 seconds for all replications to finish</span>
+            latch.await(<span class="hljs-number">10</span>, TimeUnit.SECONDS);
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        <span class="hljs-comment">// Check if we achieved quorum</span>
+        <span class="hljs-type">long</span> <span class="hljs-variable">successCount</span> <span class="hljs-operator">=</span> results.stream().filter(r -&gt; r).count();
+        <span class="hljs-type">int</span> <span class="hljs-variable">requiredQuorum</span> <span class="hljs-operator">=</span> (dataNodeUrls.size() / <span class="hljs-number">2</span>) + <span class="hljs-number">1</span>;
+
+        System.out.println(<span class="hljs-string">"Replication success: "</span> + successCount + <span class="hljs-string">"/"</span> + dataNodeUrls.size());
+        <span class="hljs-keyword">return</span> successCount &gt;= requiredQuorum;
+    }
+}
+</code></pre>
+<hr></hr>
+<h2 id="8-performance-analysis">8. Performance Analysis</h2>
+<p>When analyzing the performance of Distributed File Systems, the rules of single-machine systems are inverted.</p>
+<h3 id="81-throughput-vs-latency">8.1 Throughput vs. Latency</h3>
+<p>DFS architectures happily sacrifice microsecond latency to achieve terabytes-per-second throughput. 
+If a data scientist queries a 10TB dataset, saving 5 milliseconds on a file open operation is irrelevant. What matters is the ability of 500 DataNodes to stream data into 500 Spark executor nodes simultaneously via parallel TCP connections. DFS architectures use large buffers, pipeline writes, and read-ahead caching to maximize network interface saturation.</p>
+<h3 id="82-the-metadata-bottleneck">8.2 The Metadata Bottleneck</h3>
+<p>In HDFS, the NameNode holds the entire <code>FsImage</code> in JVM Heap Space. Each file, directory, and block object takes roughly 150 bytes of RAM. 
+If you have 100 million files, the NameNode requires ~15GB of RAM just for metadata. If you have 1 billion files, you need 150GB of RAM, and JVM Garbage Collection pauses become catastrophic. A 10-second "Stop The World" GC pause on the NameNode causes DataNodes to assume the NameNode is dead, triggering a massive, chaotic failover. This is why small files kill Hadoop.</p>
+<h3 id="83-network-bisection-bandwidth">8.3 Network Bisection Bandwidth</h3>
+<p>Data locality is performance. If a Spark node is running on Rack 1, but the data block is on Rack 4, the data must traverse the Top-of-Rack (ToR) switch and the core aggregation switches. If 1,000 nodes do this simultaneously, the core network becomes heavily oversubscribed and acts as the ultimate bottleneck. HDFS combats this by ensuring compute engines schedule tasks on the exact same physical node (or at least the same rack) where the data block resides.</p>
+<hr></hr>
+<h2 id="9-tradeoffs">9. Tradeoffs</h2>
+<p>Designing a storage layer requires choosing between strict constraints. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Feature</th>
+<th style="text-align:left">HDFS / GFS</th>
+<th style="text-align:left">Ceph</th>
+<th style="text-align:left">Cloud Object Storage (S3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Primary Abstraction</strong></td>
+<td style="text-align:left">Large Files, Append-Only</td>
+<td style="text-align:left">Block, Object, File (POSIX)</td>
+<td style="text-align:left">Objects / Blobs</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Metadata Architecture</strong></td>
+<td style="text-align:left">Centralized (NameNode)</td>
+<td style="text-align:left">Decentralized (CRUSH Map)</td>
+<td style="text-align:left">Distributed DB behind API</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Target Workload</strong></td>
+<td style="text-align:left">Big Data Analytics (Spark/Hadoop)</td>
+<td style="text-align:left">VM Storage (Kubernetes/OpenStack)</td>
+<td style="text-align:left">Web apps, Backups, Cloud-native</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Consistency</strong></td>
+<td style="text-align:left">Strong (File level)</td>
+<td style="text-align:left">Strong</td>
+<td style="text-align:left">Strong (Read-after-write)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Complexity to Run</strong></td>
+<td style="text-align:left">Medium</td>
+<td style="text-align:left">Very High</td>
+<td style="text-align:left">Zero (Managed Service)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Replication vs. Erasure Coding Tradeoff:</strong></p>
+<ul>
+<li><em>Replication</em> is fast to read, fast to recover, but highly expensive (200% storage waste).</li>
+<li><em>Erasure Coding</em> is computationally expensive (CPU heavy), slow to recover (must fetch multiple network chunks to rebuild), but cheap (50% storage waste). Modern systems use Replication for "Hot" data and background-convert it to Erasure Coding when it becomes "Cold".</li>
+</ul>
+<hr></hr>
+<h2 id="10-failure-scenarios">10. Failure Scenarios</h2>
+<p>A robust DFS is defined not by how it runs when healthy, but by how it survives chaos.</p>
+<h3 id="101-network-partition--split-brain">10.1 Network Partition &amp; Split Brain</h3>
+<p><strong>Scenario:</strong> The switch connecting Rack A (where Active NameNode lives) to Rack B (where Standby NameNode lives) fails. Both NameNodes think the other is dead. Both attempt to become Active.
+<strong>Resolution:</strong> HDFS uses <strong>Fencing</strong>. The ZooKeeper failover controller detects the split. Before the Standby takes over, it executes a fencing script (e.g., SSHing into the Active's power supply and shutting it off, or revoking its write access to the shared JournalNodes). The rule is: <em>Shoot the other node in the head before taking the crown.</em></p>
+<h3 id="102-datanode-crash-during-pipeline-write">10.2 DataNode Crash During Pipeline Write</h3>
+<p><strong>Scenario:</strong> Client is writing Block 1 through pipeline DN1 $\rightarrow$ DN2 $\rightarrow$ DN3. DN2's power supply blows up halfway through the block.
+<strong>Resolution:</strong> The pipeline halts immediately. DN1 detects DN2 is gone. The client contacts the NameNode, reports DN2 dead, and requests a new pipeline with just DN1 and DN3. The remaining data is appended. Later, the NameNode detects DN3 is missing a replica and schedules an async replication to a new node to restore RF=3.</p>
+<h3 id="103-silent-data-corruption-bit-rot">10.3 Silent Data Corruption (Bit Rot)</h3>
+<p><strong>Scenario:</strong> A magnetic disk flips a 0 to a 1 due to cosmic rays or hardware degradation. The OS doesn't notice.
+<strong>Resolution:</strong> Checksums. When a client writes data, it also computes CRC32 checksums and sends them. The DataNode stores these checksums in a separate <code>.meta</code> file. When a client reads data, it verifies the checksums. Furthermore, DataNodes run a background thread (Block Scanner) that constantly reads its own disks, verifying checksums. If a block is rotten, the DataNode deletes it and asks the NameNode for a fresh replica.</p>
+<hr></hr>
+<h2 id="11-debugging--observability">11. Debugging &amp; Observability</h2>
+<p>Operating a distributed file system requires specialized tooling:</p>
+<ul>
+<li><strong>FSCK (File System Check):</strong> HDFS provides <code>hdfs fsck /</code>. This command scans the entire namespace, identifying under-replicated blocks, corrupt blocks, and missing replicas.</li>
+<li><strong>NameNode UI &amp; JMX:</strong> Operators rely heavily on JMX metrics exposed by the NameNode: RPC queue times, Heap Memory utilization, and the count of live vs. dead DataNodes.</li>
+<li><strong>Slow Node Detection:</strong> In a 5,000 node cluster, a few nodes will have failing disks that don't crash, but respond with 500ms latency. These "slow nodes" drag down the entire MapReduce job. Observability pipelines must track 99th percentile I/O latency per DataNode to automatically blacklist dying hardware.</li>
+</ul>
+<hr></hr>
+<h2 id="12-interview-questions">12. Interview Questions</h2>
+<p><strong>Q1 (Beginner): Why do distributed file systems use large block sizes like 128MB instead of 4KB?</strong>
+<em>Answer:</em> To minimize metadata size on the centralized master node (NameNode), allowing the system to scale to petabytes. It also reduces network overhead, as clients can stream large continuous chunks of data without constantly querying the master for new locations.</p>
+<p><strong>Q2 (Intermediate): Walk me through what happens in HDFS when a client reads a file.</strong>
+<em>Answer:</em> 1) Client contacts NameNode with the file path. 2) NameNode verifies permissions and returns a list of blocks and the DataNodes holding replicas, sorted by network proximity. 3) Client closes NameNode connection and connects directly to the nearest DataNode. 4) Client streams the block. 5) Repeats for subsequent blocks.</p>
+<p><strong>Q3 (Advanced): How does the Ceph CRUSH algorithm fundamentally differ from HDFS architecture?</strong>
+<em>Answer:</em> HDFS uses a centralized metadata server (NameNode) to track exact block locations. Ceph has no central lookup server for data placement. Instead, Ceph clients use the CRUSH hashing algorithm to deterministically calculate which Object Storage Daemon (OSD) holds the data, based on the file name and a cluster topology map. This eliminates the central bottleneck entirely.</p>
+<p><strong>Q4 (FAANG System Design): You are designing a warm-storage Blob system for social media images (like Facebook f4). How do you reduce storage costs?</strong>
+<em>Answer:</em> 1) Abandon POSIX compliance; blobs are immutable. 2) Batch small images into massive multi-gigabyte segment files to reduce metadata overhead. 3) Move from 3x Replication to Erasure Coding (e.g., Reed-Solomon 10+4), dropping storage overhead from 200% to 40%. 4) Use high-density disk enclosures and low-power CPUs since I/O will be infrequent.</p>
+<p><strong>Q5 (Advanced): What is "Fencing" and why is it critical in HA setups?</strong>
+<em>Answer:</em> Fencing prevents Split-Brain syndrome during network partitions, where two master nodes both think they are active and attempt to write conflicting metadata. Fencing actively isolates the failed primary—either by cutting its power (STONITH: Shoot The Other Node In The Head) or revoking its network access—before the standby safely assumes control.</p>
+<hr></hr>
+<h2 id="13-exercises">13. Exercises</h2>
+<ol>
+<li><strong>Conceptual Design:</strong> Calculate the raw storage needed to store 10 Petabytes of logical data using HDFS with 3x replication, vs an Object Store using Reed-Solomon (6,3) Erasure coding. (Answer: HDFS = 30 PB. RS = 15 PB).</li>
+<li><strong>Coding (Java):</strong> Using the Java <code>Files</code> and <code>MessageDigest</code> APIs, write a small utility that takes a local 1GB file, splits it into 128MB chunks, computes the SHA-256 for each chunk, and saves them to a simulated <code>/tmp/dfs/</code> directory.</li>
+<li><strong>System Design:</strong> Sketch out a distributed object storage architecture. Include the Load Balancer, the API Gateway handling Auth, the Metadata Database mapping Keys to physical storage, and the background garbage collection process for deleted objects.</li>
+</ol>
+<hr></hr>
+<h2 id="14-expert-insights">14. Expert Insights</h2>
+<p><strong>The Small Files Problem will haunt you.</strong> 
+In the enterprise, users love dumping millions of 10KB JSON files into HDFS. This exhausts the NameNode's RAM rapidly. Experts combat this using Hadoop Archives (HAR) to pack small files together, or by shifting the workload to Object Storage (S3), which handles billions of small files much better due to distributed NoSQL metadata layers.</p>
+<p><strong>Cloud Object Storage is eating the world.</strong>
+While HDFS revolutionized the 2010s, maintaining physical disks, tuning JVMs, and upgrading NameNodes requires highly paid operational teams. Today, the industry standard is decoupling compute from storage. Companies spin up ephemeral Spark clusters that read directly from Amazon S3 or Google Cloud Storage, process the data, write results back to S3, and terminate the cluster. </p>
+<p><strong>Watch out for Thundering Herds.</strong>
+When a network switch bounces, 100 DataNodes might reconnect to the NameNode at the exact same millisecond, sending massive Block Reports. This can overwhelm the NameNode's RPC queue, causing it to crash. Enterprise tuning requires randomizing heartbeat intervals and utilizing backoff mechanisms.</p>
+<hr></hr>
+<h2 id="15-chapter-summary">15. Chapter Summary</h2>
+<ul>
+<li><strong>Distributed File Systems (DFS)</strong> allow thousands of commodity machines to act as a single, fault-tolerant storage volume, prioritizing throughput and data locality over low latency.</li>
+<li><strong>Google File System (GFS)</strong> pioneered the architecture of a centralized Master storing metadata in RAM, and Chunkservers storing massive 64MB blocks to reduce metadata size and network overhead.</li>
+<li><strong>HDFS</strong> brought GFS to the open-source world, introducing robust pipeline writes, Rack-Aware replica placement, and High Availability NameNodes to solve the single-point-of-failure.</li>
+<li><strong>Ceph</strong> revolutionized placement by using the <strong>CRUSH algorithm</strong>, replacing centralized lookup tables with decentralized hash calculations, supporting Object, Block, and File storage simultaneously.</li>
+<li><strong>Object Storage (S3)</strong> dominates modern cloud architectures due to its massive scalability, flat namespace, RESTful APIs, and built-in tiered storage lifecycles.</li>
+<li>Storage systems must aggressively balance <strong>Cost vs. Reliability</strong>, utilizing 3x Replication for hot data and CPU-intensive Erasure Coding for warm/cold data to save petabytes of disk space.</li>
+<li>Handling failures—from silent bit rot to catastrophic split-brain scenarios—requires checksums, fencing, and operation log checkpoints to guarantee data integrity.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter-13-Distributed-Caching.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 13: Distributed Caching">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter-15-Stream-Processing-Systems.html" class="navigation navigation-next " aria-label="Next page: Chapter 15: Stream Processing Systems">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 14: Distributed File Systems","level":"4.4","depth":1,"next":{"title":"Chapter 15: Stream Processing Systems","level":"4.5","depth":1,"path":"PART-3-STORAGE-SYSTEMS/Chapter-15-Stream-Processing-Systems.md","ref":"PART-3-STORAGE-SYSTEMS/Chapter-15-Stream-Processing-Systems.md","articles":[]},"previous":{"title":"Chapter 13: Distributed Caching","level":"4.3","depth":1,"path":"PART-3-STORAGE-SYSTEMS/Chapter-13-Distributed-Caching.md","ref":"PART-3-STORAGE-SYSTEMS/Chapter-13-Distributed-Caching.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid-gb3"],"pluginsConfig":{"mermaid-gb3":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"PART-3-STORAGE-SYSTEMS/Chapter-14-Distributed-File-Systems.md","mtime":"2026-05-23T04:12:45.925Z","type":"markdown"},"gitbook":{"version":"6.2.0","time":"2026-05-23T05:21:13.964Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
